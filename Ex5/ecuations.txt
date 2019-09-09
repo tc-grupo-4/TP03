@@ -1,0 +1,9 @@
+(Vi-Vm)/R3 + (Vd-Vm)/(1/(s C2)) - (Vm-Vo)/R3
+(Vi-V1)/R1 - (V1-Vd)/R21 -(V1-V2)/(1/(s C1))
+(V1-Vd)/R22 - (Vd-Vm)/(1/(s C2)) -(Vd-V2)/R22
+(V2-Vo)/R1 + (Vm-Vo)/R3
+Vo+Vm Aw
+
+UNK: Vm,Vd,V1,V2
+IM: Aw,s,Zc1,Zc2
+RE: Vi,Vo,V1,V2,Vd,Vm,R1,R21,R22,R3,C1,C2
