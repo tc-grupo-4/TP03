@@ -1,9 +1,8 @@
-(Vi-Vm)/R3 + (Vd-Vm)/(1/(s C2)) - (Vm-Vo)/R3
-(Vi-V1)/R1 - (V1-Vd)/R21 -(V1-V2)/(1/(s C1))
-(V1-Vd)/R22 - (Vd-Vm)/(1/(s C2)) -(Vd-V2)/R22
-(V2-Vo)/R1 + (Vm-Vo)/R3
-Vo+Vm Aw
+(Vi)/(10 R2) + (Vd)/(1/(s C2)) +(Vo)/(10 R2)
+(Vi-V1)/R1 - (V1-Vd)/(R2*k) -(V1-V2)/(1/(s 10 C2))
+(V1-Vd)/(R2*(1-k)) - (Vd)/(1/(s C2)) -(Vd-V2)/(R2*(1-k))
+(V2-Vo)/R1 + (-Vo)/(10 R2)
 
-UNK: Vm,Vd,V1,V2
-IM: Aw,s,Zc1,Zc2
-RE: Vi,Vo,V1,V2,Vd,Vm,R1,R21,R22,R3,C1,C2
+UNK: Vd,V1,V2
+IM: s
+RE: Vi,Vo,V1,V2,Vd,R1,R2,C2,k
