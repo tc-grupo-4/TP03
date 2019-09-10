@@ -7,6 +7,40 @@ from sympy.solvers.inequalities import reduce_rational_inequalities
 from sympy.solvers import solve
 import sympy as sy
 import numpy as np
+import matplotlib.pyplot as plt
+
+
+def plotExpress(expressQz, expressQp,expressA):
+    k = np.linspace(0.0,1.0,num=100)
+    qz = []
+    qp = []
+    a =[]
+    expressQz = substitute(expressQz)
+    expressQp = substitute(expressQp)
+    expressA = substitute(expressA)
+    for u in range(0,100):
+        qz.append(expressQz.subs(K,k[u]))
+        qp.append(expressQp.subs(K,k[u]))
+        a.append(expressA.subs(K,k[u]))
+    plt.plot(k,qz)
+    plt.plot(k,qp)
+    plt.plot(k,a)
+    plt.legend(["Qz","Qp","A"])
+    plt.grid(which = "both")
+    plt.xlabel("K")
+    plt.ylabel("Valor")
+    plt.show()
+    return
+
+
+
+def substitute(express):
+    express = express.subs(R1,330)
+    express = express.subs(R2,2000)
+    express = express.subs(C2,10*10**-9)
+    return express
+
+
 
 init_printing(use_unicode=True)
 Vi = Symbol('Vi', real=True)
@@ -48,18 +82,15 @@ wo = sy.simplify(wo)
 
 
 C=2*R1+R2
-B=C2*K**2*R2**2+9*C2*K*R2**2-C2*R1**2-31*C2*R1*R2-10*C2*R2**2
+B=-C2*K**2*R2**2-9*C2*K*R2**2+C2*R1**2+31*C2*R1*R2+10*C2*R2**2
 E=-C2*K**2 *R2**2+11*C2*K*R2**2+C2*R1**2+31*C2*R1*R2
 
 Qz= C/(B *wo)
-#Qz = Qz.subs(K,1)
-#Qz = sy.simplify(Qz)
-
 Qp = C/(E*wo)
-#Qp = Qp.subs(K,1)
-#Qp = sy.simplify(Qp)
-
 A=Qp/Qz
 A = sy.simplify(A)
 
-print(sy.latex(Qp))
+#print(wo)
+
+plotExpress(Qz,Qp,A)
+
