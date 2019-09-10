@@ -309,7 +309,7 @@ Q_{z}=\frac{C}{B\omega_{0}}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Q_{z}=-\frac{10C_{2}\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{C_{2}K^{2}R_{2}^{2}+9C_{2}KR_{2}^{2}-C_{2}R_{1}^{2}-31C_{2}R_{1}R_{2}-10C_{2}R_{2}^{2}}
+Q_{z}=-\frac{10\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{R_{1}^{2}+310R_{1}R_{2}+10R_{2}^{2}}
 \]
 
 \end_inset
@@ -331,7 +331,7 @@ Q_{p}=\frac{C}{E\omega_{0}}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Q_{p}=-\frac{10C_{2}\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{-C_{2}K^{2}R_{2}^{2}+11C_{2}KR_{2}^{2}+C_{2}R_{1}^{2}+31C_{2}R_{1}R_{2}}
+Q_{p}=\frac{10C_{2}\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{C_{2}K^{2}R_{2}^{2}-11C_{2}KR_{2}^{2}-C_{2}R_{1}^{2}-31C_{2}R_{1}R_{2}}
 \]
 
 \end_inset
@@ -353,7 +353,7 @@ A=\frac{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{R_{1}\left(R_{1}+31R_{2}\right)}\app
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A=\frac{R_{1}\left(R_{1}+31R_{2}\right)}{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}\approx\frac{3R_{1}}{R_{2}+3R_{1}}\,K=1
+A=\frac{R_{1}\left(R_{1}+31R_{2}\right)}{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}\approx\frac{3R_{1}}{R_{2}+3R}\,K=1
 \]
 
 \end_inset

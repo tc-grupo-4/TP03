@@ -150,7 +150,7 @@ Transferencia
 \begin_layout Standard
 Al calcular la transferencia genericamente para cualquier valor de impedancias,
  y llamando a 
-\begin_inset Formula $R_{2}=R_{2}^{'}+R_{2}^{''}$
+\begin_inset Formula $R_{2}=R_{21}+R_{22}$
 \end_inset
 
 , el calculo de la transferencia se expresa como la ecuación (
@@ -165,19 +165,8 @@ reference "eq:5_1"
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
-H(s)=-G\,\frac{\frac{s^{2}}{\omega_{0}^{2}}+\left(\frac{2\xi_{1}}{\omega_{0}}\right)s+1}{\frac{s^{2}}{\omega_{0}^{2}}+\left(\frac{2\xi_{2}}{\omega_{0}}\right)s+1}\label{eq:5_1}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
 \[
-G=\frac{A_{vol}R_{1}+2R_{2}k}{A_{vol}R_{1}+2A_{vol}R_{2}k+2R_{1}+4R_{2}k}
+H(s)=-\frac{C_{2}R_{3}s\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)\left(C_{1}R_{2}s+1\right)+C_{2}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)+\left(-KR_{2}-2R_{1}\left(C_{1}R_{2}s+1\right)+R_{2}\left(K-1\right)\right)\left(C_{1}C_{2}KR_{2}^{2}s^{2}\left(K-1\right)-C_{1}R_{2}s-1\right)}{C_{2}R_{3}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(C_{1}R_{2}s+1\right)+C_{2}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)+\left(-KR_{2}-2R_{1}\left(C_{1}R_{2}s+1\right)+R_{2}\left(K-1\right)\right)\left(C_{1}C_{2}KR_{2}^{2}s^{2}\left(K-1\right)-C_{1}R_{2}s-1\right)}
 \]
 
 \end_inset
@@ -188,7 +177,7 @@ G=\frac{A_{vol}R_{1}+2R_{2}k}{A_{vol}R_{1}+2A_{vol}R_{2}k+2R_{1}+4R_{2}k}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{2\xi_{1}}{\omega_{0}}=\frac{2C_{1}R_{1}R_{2}k+C_{2}R_{1}R_{2}(1-k)+C_{2}R_{2}^{2}k(1-k)+C_{2}R_{2}kR_{3}}{R_{1}+2R_{2}k}
+H(s)=-\frac{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s+9C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-10C_{2}R_{2}^{2}s-2R_{1}-R_{2}}{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s-11C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-2R_{1}-R_{2}}
 \]
 
 \end_inset
@@ -199,7 +188,7 @@ G=\frac{A_{vol}R_{1}+2R_{2}k}{A_{vol}R_{1}+2A_{vol}R_{2}k+2R_{1}+4R_{2}k}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{1}{\omega_{0}^{2}}=\frac{C_{1}C_{2}R_{1}R_{2}^{2}k(1-k)}{R_{1}+2R_{2}k}
+H(s)=-\frac{As^{2}+Bs+C}{Ds^{2}+Es+F}
 \]
 
 \end_inset
@@ -210,7 +199,7 @@ G=\frac{A_{vol}R_{1}+2R_{2}k}{A_{vol}R_{1}+2A_{vol}R_{2}k+2R_{1}+4R_{2}k}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{2\xi_{2}}{\omega_{0}}=\frac{2A_{vol}C_{1}R_{1}R_{2}k+A_{vol}C_{2}R_{1}^{2}+A_{vol}C_{2}R_{1}R_{2}k+A_{vol}C_{2}R_{1}R_{2}(1-k)+A_{vol}C_{2}R_{1}R_{3}+A_{vol}C_{2}R_{2}^{2}k(1-k)+A_{vol}C_{2}R_{2}kR_{3}+4C_{1}R_{1}R_{2}k+C_{2}R_{1}^{2}+C_{2}R_{1}R_{2}k+2C_{2}R_{1}R_{2}(1-k)+C_{2}R_{1}R_{3}+2C_{2}R_{2}^{2}k(1-k)+2C_{2}R_{2}kR_{3}}{A_{vol}R_{1}+2A_{vol}R_{2}k+2R_{1}+4R_{2}k}
+A=20C_{2}^{2}K^{2}R_{1}R_{2}^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}-10C_{2}^{2}R_{1}^{2}R_{2}-100C_{2}^{2}R_{1}R_{2}^{2}\approx-100C_{2}^{2}R_{1}R_{2}^{2}
 \]
 
 \end_inset
@@ -221,7 +210,7 @@ G=\frac{A_{vol}R_{1}+2R_{2}k}{A_{vol}R_{1}+2A_{vol}R_{2}k+2R_{1}+4R_{2}k}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{1}{\omega_{0}^{2}}=\frac{2A_{vol}C_{1}C_{2}R_{1}^{2}R_{2}k+A_{vol}C_{1}C_{2}R_{1}R_{2}^{2}k(1-k)+2A_{vol}C_{1}C_{2}R_{1}R_{2}kR_{3}+2C_{1}C_{2}R_{1}^{2}R_{2}k+2C_{1}C_{2}R_{1}R_{2}^{2}k(1-k)+2C_{1}C_{2}R_{1}R_{2}kR_{3}}{A_{vol}R_{1}+2A_{vol}R_{2}k+2R_{1}+4R_{2}k}
+B=C_{2}K^{2}R_{2}^{2}+9C_{2}KR_{2}^{2}-C_{2}R_{1}^{2}-31C_{2}R_{1}R_{2}-10C_{2}R_{2}^{2}
 \]
 
 \end_inset
@@ -230,15 +219,146 @@ G=\frac{A_{vol}R_{1}+2R_{2}k}{A_{vol}R_{1}+2A_{vol}R_{2}k+2R_{1}+4R_{2}k}
 \end_layout
 
 \begin_layout Standard
-Considerando 
-\begin_inset Formula $R_{3}=10R_{2}$
+\begin_inset Formula 
+\[
+C=-2R_{1}-R_{2}
+\]
+
 \end_inset
 
- y 
-\begin_inset Formula $C_{1}=10C_{2}$
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D=20C_{2}^{2}K^{2}R_{1}R_{2}^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}-10C_{2}^{2}R_{1}^{2}R_{2}-100C_{2}^{2}R_{1}R_{2}^{2}=A
+\]
+
 \end_inset
 
- se obtiene que:
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E=C_{2}K^{2}R_{2}^{2}-11C_{2}KR_{2}^{2}-C_{2}R_{1}^{2}-31C_{2}R_{1}R_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F=-2R_{1}-R_{2}=C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Rightarrow H(s)=-\frac{As^{2}+Bs+C}{As^{2}+Ds+C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\omega_{0}^{2}}=\frac{A}{C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Rightarrow\omega_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{10C_{2}R_{2}}\Longrightarrow f_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{20\pi C_{2}R_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{z}=\frac{C}{B\omega_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{z}=-\frac{10\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{R_{1}^{2}+310R_{1}R_{2}+10R_{2}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{p}=\frac{C}{E\omega_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{p}=\frac{10C_{2}\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{C_{2}K^{2}R_{2}^{2}-11C_{2}KR_{2}^{2}-C_{2}R_{1}^{2}-31C_{2}R_{1}R_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\frac{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{R_{1}\left(R_{1}+31R_{2}\right)}\approx\frac{3R_{1}+R_{2}}{3R_{1}}\,K=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\frac{R_{1}\left(R_{1}+31R_{2}\right)}{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}\approx\frac{3R_{1}}{R_{2}+3R_{1}}\,K=1
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
