@@ -8,6 +8,7 @@ from sympy.solvers import solve
 import sympy as sy
 import numpy as np
 import matplotlib.pyplot as plt
+from mpmath import *
 
 
 def plotExpress(expressQz, expressQp,expressA):
@@ -29,6 +30,38 @@ def plotExpress(expressQz, expressQp,expressA):
     plt.grid(which = "both")
     plt.xlabel("K")
     plt.ylabel("Valor")
+    plt.show()
+    return
+
+def plotH(express):
+    steps = 5
+    k = np.linspace(0.0,1.0,num=steps)
+    freq = np.logspace(1,6,base=10,num= 100)
+    fig, (ax1,ax2) = plt.subplots(2,1)
+    for u in range(0,steps):
+        modk = []
+        phasek =[]
+        temp = sy.Abs(express).subs(K,k[u])
+        temp2 = sy.atan(sy.im(express).subs(K,k[u])/sy.re(express).subs(K,k[u]))
+        for i in range(0,100):
+            hola=(temp.subs(s,I*2*pi*freq[i])).evalf()
+            hola = 20*log(hola,10)
+            hola2=temp2.subs(s,I*2*pi*freq[i])*180/pi
+            modk.append(hola)
+            phasek.append(hola2)
+        ax1.semilogx(freq,modk)
+        ax2.semilogx(freq,phasek)
+    #plt.semilogx(freq,phasek)
+    ax1.grid(which = "both")
+    ax2.grid(which = "both")
+    plt.xlabel("Frecuencia (Hz)")
+    ax1.set(ylabel="Modulo (dB)")
+    ax2.set(ylabel="Fase (°)")
+    text = []
+    for i in range(0,steps):
+        string = "K="+str(k[i])
+        text.append(string)
+    ax1.legend(text,loc='upper right')
     plt.show()
     return
 
@@ -90,7 +123,14 @@ Qp = C/(E*wo)
 A=Qp/Qz
 A = sy.simplify(A)
 
+
+#H = substitute(H)
+
 #print(wo)
 
-plotExpress(Qz,Qp,A)
+#plotExpress(Qz,Qp,A)
+
+print(H)
+#plotH(H)
+
 
