@@ -1,0 +1,96 @@
+Added Component: Designator=BufferGyrator(J014)
+Added Component: Designator=BufferGyrator(J014)
+Added Component: Designator=BufferGyrator(J014)
+Added Component: Designator=BufferGyrator(J014)
+Added Component: Designator=CapRLC(C0805)
+Added Component: Designator=CapRLC(C0805)
+Added Component: Designator=CapRLC(C0805)
+Added Component: Designator=CapRLC(C0805)
+Added Component: Designator=CGyrator1(C0805)
+Added Component: Designator=CGyrator1(C0805)
+Added Component: Designator=CGyrator1(C0805)
+Added Component: Designator=CGyrator1(C0805)
+Added Component: Designator=CGyrator1(C0805)
+Added Component: Designator=GND(PIN1)
+Added Component: Designator=GND(PIN1)
+Added Component: Designator=GND(PIN1)
+Added Component: Designator=GND(PIN1)
+Added Component: Designator=GND(PIN1)
+Added Component: Designator=GND(PIN1)
+Added Component: Designator=GND(PIN1)
+Added Component: Designator=ResRLC(6-0805_M)
+Added Component: Designator=ResRLC(6-0805_M)
+Added Component: Designator=ResRLC(6-0805_M)
+Added Component: Designator=ResRLC(6-0805_M)
+Added Component: Designator=RGyratorInput(6-0805_M)
+Added Component: Designator=RGyratorInput(6-0805_M)
+Added Component: Designator=RGyratorInput(6-0805_M)
+Added Component: Designator=RGyratorInput(6-0805_M)
+Added Component: Designator=RGyrator(6-0805_M)
+Added Component: Designator=RGyrator(6-0805_M)
+Added Component: Designator=RGyrator(6-0805_M)
+Added Component: Designator=RGyrator(6-0805_M)
+Added Component: Designator=Vin(PIN1)
+Added Component: Designator=Vin(PIN1)
+Added Component: Designator=Vin(PIN1)
+Added Component: Designator=Vin(PIN1)
+Added Component: Designator=VoutC+(PIN1)
+Added Component: Designator=VoutC-(PIN1)
+Added Component: Designator=Vout(PIN1)
+Added Component: Designator=Vout(PIN1)
+Added Component: Designator=Vout(PIN1)
+Added Pin To Net: NetName=GND Pin=CapRLC-1
+Added Pin To Net: NetName=GND Pin=CapRLC-1
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=RGyrator-2
+Added Pin To Net: NetName=GND Pin=RGyrator-2
+Added Pin To Net: NetName=GND Pin=RGyrator-2
+Added Pin To Net: NetName=GND Pin=RGyrator-2
+Added Net: Name=GND
+Added Pin To Net: NetName=NetBufferGyrator_12 Pin=BufferGyrator-12
+Added Pin To Net: NetName=NetBufferGyrator_12 Pin=CGyrator1-1
+Added Pin To Net: NetName=NetBufferGyrator_12 Pin=CGyrator1-1
+Added Pin To Net: NetName=NetBufferGyrator_12 Pin=RGyrator-1
+Added Net: Name=NetBufferGyrator_12
+Added Pin To Net: NetName=NetBufferGyrator_13 Pin=BufferGyrator-13
+Added Pin To Net: NetName=NetBufferGyrator_13 Pin=RGyratorInput-1
+Added Net: Name=NetBufferGyrator_13
+Added Pin To Net: NetName=NetCapRLC_1 Pin=CapRLC-1
+Added Pin To Net: NetName=NetCapRLC_1 Pin=CGyrator1-2
+Added Pin To Net: NetName=NetCapRLC_1 Pin=RGyratorInput-2
+Added Pin To Net: NetName=NetCapRLC_1 Pin=VoutC--1
+Added Net: Name=NetCapRLC_1
+Added Pin To Net: NetName=NetCapRLC_2 Pin=CapRLC-2
+Added Pin To Net: NetName=NetCapRLC_2 Pin=CGyrator1-2
+Added Pin To Net: NetName=NetCapRLC_2 Pin=CGyrator1-2
+Added Pin To Net: NetName=NetCapRLC_2 Pin=ResRLC-2
+Added Pin To Net: NetName=NetCapRLC_2 Pin=RGyratorInput-2
+Added Pin To Net: NetName=NetCapRLC_2 Pin=Vout-1
+Added Net: Name=NetCapRLC_2
+Added Pin To Net: NetName=NetResRLC_1 Pin=ResRLC-1
+Added Pin To Net: NetName=NetResRLC_1 Pin=Vin-1
+Added Net: Name=NetResRLC_1
+Added Pin To Net: NetName=VCC+ Pin=BufferGyrator-4
+Added Pin To Net: NetName=VCC+ Pin=BufferGyrator-4
+Added Pin To Net: NetName=VCC+ Pin=BufferGyrator-4
+Added Pin To Net: NetName=VCC+ Pin=BufferGyrator-4
+Added Net: Name=VCC+
+Added Pin To Net: NetName=VCC- Pin=BufferGyrator-11
+Added Pin To Net: NetName=VCC- Pin=BufferGyrator-11
+Added Pin To Net: NetName=VCC- Pin=BufferGyrator-11
+Added Pin To Net: NetName=VCC- Pin=BufferGyrator-11
+Added Net: Name=VCC-
+Added Class: Name=PasaAltos(HP)
+Added Class: Name=PasaBajo(LP)
+Added Class: Name=PasaBanda(BP)
+Added Class: Name=RechazaBanda(BR)
+Added Room: Name=PasaAltos(HP)
+Added Room: Name=PasaBajo(LP)
+Added Room: Name=PasaBanda(BP)
+Added Room: Name=RechazaBanda(BR)

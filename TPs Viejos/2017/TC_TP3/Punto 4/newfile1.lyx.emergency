@@ -1,0 +1,3764 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Control de tonos y ecualizador de fase
+\end_layout
+
+\begin_layout Standard
+Un ecualizador de banda es un filtro no convencional que permite la amplicación
+ −y atenuación− variable de una banda de frecuencias, sin alterar las frecuencia
+s externas a ésta.
+ Su implementación a base de amplicadores operacionales se encuentra en
+ la gura (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuito-control-de"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsection
+Función transferencia
+\end_layout
+
+\begin_layout Standard
+El circuito que analizaremos es el que se detalla en la siguiente figura:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename circuito control de tonos.PNG
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito control de Tonos
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Circuito-control-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para hallar la función transferencia 
+\begin_inset Formula $H(s)=\frac{V_{o}}{V_{in}}$
+\end_inset
+
+ utilizamos el método de resolución por nodos.
+ Para ello se reemplazó el potenciómetro por dos resistencias, siendo una
+ de 
+\begin_inset Formula $K*R_{2}$
+\end_inset
+
+y la siguiente 
+\begin_inset Formula $(1-K)*R_{2}$
+\end_inset
+
+siendo el valor de K entre 0 y 1.
+\end_layout
+
+\begin_layout Standard
+Con ayuda de maple se llega a la función transferencia:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{As^{2}+B_{1}s+C}{As^{2}+B_{2}s+C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la cual los valores A, 
+\begin_inset Formula $B_{1},$
+\end_inset
+
+
+\begin_inset Formula $B_{2}$
+\end_inset
+
+ y C son los siguientes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=2R_{2}R_{1}C_{2}C_{1}(K(K-1)R_{2}-\frac{R_{1}+R_{3}}{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{1}=((1-K)R_{2}+R_{1})(-KR_{2}-R_{1}-R_{3})C_{2}-2C_{1}R_{1}R_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{2}=(KR_{2}-R_{1})((K-1)R_{2}-R_{1}-R_{3})C_{2}-2C_{1}R_{1}R_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=-2R_{1}-R_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La función transferencia corresponde a un cero y polo de segundo orden.
+ Asociando términos dicha expresión lleva la forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{(\frac{S}{w_{0}})^{^{2}}+(\frac{S}{Q_{z}w_{0}})+1}{(\frac{S}{w_{0}})^{^{2}}+(\frac{S}{Q_{p}w_{0}})+1}\label{eq:EcTransReFormalAmeo}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta espresión determina un filtro pasa-banda en la cual :
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $W_{0}:$
+\end_inset
+
+ frecuencia central de la banda.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+y
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+: factores de calidad correspondientes al cero y polo respectivamente.
+\end_layout
+
+\begin_layout Standard
+Aplicando las siguientes consideraciones de diseño se realizaron las siguientes
+ simplificaciones:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{3}\gg R_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{3}=10.R_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C_{1}=10.C_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con dichas consideraciones la función transferencia puede ser reducida a
+ la forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(S)=-\frac{100C_{2}^{^{2}}R_{1}R_{2}^{^{2}}S^{^{2}}-C_{2}R_{2}^{^{2}}K^{^{2}}S-9C_{2}R_{2}^{^{2}}KS+C_{2}R_{1}^{^{2}}S+31C_{2}R_{1}R_{2}S+10C_{2}R_{2}^{^{2}}S+2R_{1}+R_{2}}{100C_{2}^{^{2}}R_{1}R_{2}^{^{2}}S^{^{2}}-C_{2}R_{2}^{^{2}}K^{^{2}}S+11C_{2}R_{1}^{^{2}}S+31C_{2}R_{1}R_{2}S+2R_{1}+R_{2}}\label{fTransfReducida}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resulta de la ecuacion (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fTransfReducida"
+
+\end_inset
+
+) que el término que acompaña al coeficiente cuadrático, elevado a la (-1)
+ es :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{0}^{^{2}}=\frac{2R_{1}+R_{2}}{100C_{2}^{^{2}}R_{1}R_{2}^{^{2}}}\label{eq:w01}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{20\pi R_{2}C_{2}}\label{eq:frecuencia central}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede observar de la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:frecuencia central"
+
+\end_inset
+
+) que la frecuencia central no depende del parámetro K, por lo que al variar
+ el potenciómetro la frecuencia central seguirá siendo la misma.
+\end_layout
+
+\begin_layout Standard
+Para hallar la amplitud de la frecuencia central 
+\begin_inset Formula $A_{0}$
+\end_inset
+
+ , se reemplaza a S como 
+\begin_inset Formula $S=jw_{0}$
+\end_inset
+
+en la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EcTransReFormalAmeo"
+
+\end_inset
+
+), por lo que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{0=}\frac{(\frac{jw_{0}}{w_{0}})^{^{2}}+(\frac{jw_{0}}{Q_{z}w_{0}})+1}{(\frac{jw_{0}}{w_{0}})^{^{2}}+(\frac{jw_{0}}{Q_{p}w_{0}})+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{0}=\frac{j^{^{2}}+\frac{j}{Q_{z}}+1}{j^{^{2}}+\frac{j}{Q_{p}}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{0}==\frac{-1+\frac{j}{Q_{z}}+1}{-1+\frac{j}{Q_{p}}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se obtiene:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{0}=\frac{Q_{p}}{Q_{z}}\label{eq:A0 con qus}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir de la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:A0 con qus"
+
+\end_inset
+
+) es interesante hallar las expresiones correspondientes a 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+ y 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ para asi poder hallar y poder definir la ganancia del circuito (en veces)
+ en la frecuencia central.
+ Para ello se parte de la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fTransfReducida"
+
+\end_inset
+
+) asociando los coeficientes que acompañan al primer orden del polinomio,
+ tanto en el nominador como en el denominador.
+ Así las expresiones para 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+y 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ quedan determinadas por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q_{p}=10(2R_{1}+R_{2})R_{2}\frac{1}{\sqrt{\frac{2R_{1}+R_{2}}{R_{1}}}}\frac{1}{(-2R_{2}^{2}K^{2}+11R_{2}^{2}K+R_{1}^{2}+31R_{1}R_{2})}\label{eq:qp}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q_{z}=10(2R_{1}+R_{2})R_{2}\frac{1}{\sqrt{\frac{2R_{1}+R_{2}}{R_{1}}}}\frac{1}{(-2R_{2}^{2}K^{2}-9R_{2}^{2}K+R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2})}\label{qz}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto
+\begin_inset Formula $A_{0}$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{0}=\frac{-R_{2}^{2}K^{2}-9R_{2}^{2}K+R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{-R_{2}^{2}K^{2}+11R_{2}^{2}K+R_{1}^{2}+31R_{1}R_{2}}\label{eq:A0Complete}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con la expresión (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:A0Complete"
+
+\end_inset
+
+) se puede observar que la amplitud de la frecuencia central depende únicamente
+ de las resitencias 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+y 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+, pero por simplificaciones de diseño que se realizo anteriormente 
+\begin_inset Formula $R_{3}$
+\end_inset
+
+ queda ligada al valor de 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+.
+ Entonces con los valores 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ determinados, la amplificación o atenuación de la frecuencia será en función
+ del potenciómetro.
+ 
+\end_layout
+
+\begin_layout Standard
+Analizaremos ahora la expresión (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:A0Complete"
+
+\end_inset
+
+) para la máxima ganancia, la misma será entonces tomando K=0 y la máxima
+ atenuación con K=1.
+ 
+\end_layout
+
+\begin_layout Standard
+Evaluando (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:A0Complete"
+
+\end_inset
+
+) con K=0:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{0}(K=0)=\frac{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{R_{1}^{2}+31R_{1}R_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuena que 
+\begin_inset Formula $R_{2}\gg R_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{0}(K=0)=\frac{R_{1}(R_{1}+31R_{2})+10R_{2}^{2}}{R_{1}(R_{1}+31R_{2})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{0}(K=0)\approx\frac{31R_{2}R_{1}+10R_{2}^{2}}{31R_{2}R_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{0}(K=0)\approx\frac{3R_{1}+R_{2}}{3R_{1}}\label{eq:a0 con k=0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+análogamente con K=1:
+\begin_inset Formula 
+\[
+A_{0}(K=1)=\frac{R_{1}^{2}+31R_{1}R_{2}}{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+por lo tanto teniendo en cuenta que 
+\begin_inset Formula $R_{2}\gg R_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{0}(K=1)\approx\frac{31R_{2}R_{1}}{31R_{2}R_{1}+10R_{2}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{0}(K=1)\approx\frac{3R_{1}}{3R_{1}+R_{2}}\label{eq:a0 con k=1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con las expresiones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a0 con k=0"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a0 con k=1"
+
+\end_inset
+
+) podemos deducir que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{3R_{1}}{3R_{1}+R_{2}}\leq A_{0}\leq\frac{3R_{1}+R_{2}}{3R_{1}}\label{eq:<A0<}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto se pudieron definir el valor máximo y mínimo de 
+\begin_inset Formula $A_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Definiendo los valores de todos los componentes, analizaremos como influye
+ la variación del potenciómetro (k) en la ganancia y en fase a la frecuencia
+ central.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $555\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $50k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150nf
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15nf
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores de los compontentes utilizados
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:valores para las singularidades"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dados los valores en la tabla(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:valores para las singularidades"
+
+\end_inset
+
+) la frecuencia central viene dada por la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:frecuencia central"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{0}=700Hz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y su amplitud mínima y máxima de acuerdo a (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:<A0<"
+
+\end_inset
+
+) sera:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+0.25<A_{0}<4
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+o lo que es equivalente
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-12dB<A_{0}<12dB
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación se expone con un gráfico cómo la variación de k influye sobre
+ la amplitud:
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename bode con los k de matlab.png
+	lyxscale 50
+	scale 65
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta en frecuencia para valores de la tabla (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:valores para las singularidades"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diagramas paramétricos
+\end_layout
+
+\begin_layout Subsubsection
+Análisis de Fase mínima
+\end_layout
+
+\begin_layout Standard
+La posición de los polos y ceros en una función transferencia caracteriza
+ el sistema en función del comportamiento de su fase.
+ Si tanto los polos como los ceros se encuentran en el semiplano izquierdo
+ del plano 
+\begin_inset Formula $s$
+\end_inset
+
+ se dice que el sistema es de fase mínima porque 
+\begin_inset Formula $\Delta\theta_{fase\,mínima}<\Delta\theta_{fase\,no\,mínima}$
+\end_inset
+
+ , con 
+\begin_inset Formula $\Delta\theta=|\theta_{s\rightarrow\infty}-\theta_{s\rightarrow0}|$
+\end_inset
+
+.
+ Las transferencias para sistemas de segundo orden de fase mínima y no mínima
+ se encuentran en las siguientes ecuaciones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{fm}(s)=G_{fm}\frac{\frac{s^{2}}{w_{z}^{2}}+\frac{s}{Q_{z}w_{z}}+1}{\frac{s^{2}}{w_{p}^{2}}+\frac{s}{Q_{p}w_{p}}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{fnm}(s)=G_{fm}\frac{\frac{s^{2}}{w_{z}^{2}}-\frac{s}{Q_{z}w_{z}}+1}{\frac{s^{2}}{w_{p}^{2}}+\frac{s}{Q_{p}w_{p}}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+en las cuales (
+\begin_inset Formula $Q_{i},w_{i}$
+\end_inset
+
+) 
+\begin_inset Formula $\epsilon\mathbb{R^{\text{+}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y como 
+\begin_inset Formula $Q_{i}\leq0\Leftrightarrow(k<0\vee k>1$
+\end_inset
+
+ lo cual es absurdo, deducimos que el circuito ecualizador es de fase mínima.
+\end_layout
+
+\begin_layout Subsubsection
+Trasnformación del circuito a sistema de fase no mínima
+\end_layout
+
+\begin_layout Standard
+Dado un sistema de fase mínima, se puede transformar a un sistema de fase
+ no mínima sabiendo que la transferencia de dos sistemas en cascada es el
+ producto de las dos transferencias.
+ La idea de la transformación se realiza si el numerador de una transferencia
+ coincide con el denominador de otra.
+ Es decir que se anulan un par de polos y ceros.
+ Si se tienen dos sistemas 
+\begin_inset Formula $H_{fase\,mínima}(s)$
+\end_inset
+
+ y 
+\begin_inset Formula $H_{fase\,no\,mínima}(s)$
+\end_inset
+
+ que cumplen dicha condición, se obtiene 
+\begin_inset Formula $H_{fase\,no\,mínima}^{total}(s)$
+\end_inset
+
+ que viene dada por la siguiente ecuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{fase\,no\,mínima}^{total}(s)=\frac{\frac{s^{2}}{w_{1}^{2}}+\frac{s}{Q_{1}w_{1}}+1}{\frac{s^{2}}{w_{2}^{2}}+\frac{s}{Q_{2}w_{2}}+1}*\frac{\frac{s^{2}}{w_{3}^{2}}-\frac{s}{Q_{3}w_{3}}+1}{\frac{s^{2}}{w_{1}^{2}}+\frac{s}{Q_{1}w_{1}}+1}=\frac{\frac{s^{2}}{w_{3}^{2}}-\frac{s}{Q_{3}w_{3}}+1}{\frac{s^{2}}{w_{2}^{2}}+\frac{s}{Q_{2}w_{2}}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es posible transformar el circuito en uno de fase no mínima mediante la
+ utilización de un ecualizador de fase.
+ Cualquier orden es suciente y asumiendo el comportamiento del amplicador
+ como ideal entonces no importan los valores del control de tonos, puesto
+ en cascada con el ecualizador de fase presentará ceros en el semieje derecho,
+ dejando de ser un sistema de fase mínima.
+ 
+\end_layout
+
+\begin_layout Standard
+Para implementar dicho ecualizador, se usa un filtro genérico de segundo
+ orden formado por un RLC.
+ A continuación se muestra una conexión en cascada del control de tonos
+ con un ecualizador de fase para convertir al sistema en uno de fase no
+ mínima.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename circuito fase minima.PNG
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Control de tonos de fase no mínima
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Singularidades
+\end_layout
+
+\begin_layout Standard
+Se hará un estudio de las singularidades de la etapa partiendo de la ecuación
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EcTransReFormalAmeo"
+
+\end_inset
+
+) que refleja la forma de la función de transferencia completa.
+ 
+\end_layout
+
+\begin_layout Standard
+Para calcualar los polos del circuito se iguala el denominador a cero, ya
+ que en ese punto la transferencia sería infinita.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\frac{S}{w_{0}})^{^{2}}+(\frac{S}{w_{0}Q_{p}})+1=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{polos_{1,2}}=-\frac{1}{2}\frac{w_{p}(1{}_{-}^{+}\sqrt{-4Q_{p}^{^{2}}+1})}{Q_{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los polos siempre caerán en el semiplano negativo, se analizará si serán
+ complejos conjugados, reales y coincidentes o un par de reales negativos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-4Q_{p}^{^{2}}+1<0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{p}>\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces:
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+<
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ los polos seran reales negativos.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $Q_{p}=\frac{1}{2}$
+\end_inset
+
+ los polos seran reales y coincidentes.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $Q_{p}>\frac{1}{2}$
+\end_inset
+
+los polos seran complejos conjugados.
+\end_layout
+
+\begin_layout Standard
+Análogamente se realiza el mismo procedimiento para analizar los ceros:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{ceros_{1,2}}=-\frac{1}{2}\frac{w_{z}(1{}_{-}^{+}\sqrt{-4Q_{z}^{^{2}}+1})}{Q_{z}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces:
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+<
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ los ceros seran reales negativos.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $Q_{z}=\frac{1}{2}$
+\end_inset
+
+ los ceros seran reales y coincidentes.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $Q_{z}>\frac{1}{2}$
+\end_inset
+
+los ceros seran complejos conjugados.
+\end_layout
+
+\begin_layout Standard
+Tanto 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+como 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ dependen de las resistencias 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ y el factor k del potenciómetro.
+ Elijiendo valores para los componentes(tabla (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:valores para las singularidades"
+
+\end_inset
+
+)), se procederá a trazar los correspondientes diagrámas paramétricos para
+ analizar la variación de los polos y ceros con respecto a K.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename polos y ceros.png
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de polos y ceros con k variante
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-polos"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando el potenciómetro se encuentra en su mínimo, se presentan dos polos
+ complejos conjugados en el semieje izquierdo y dos ceros reales y diferentes
+ también en el semieje izquierdo.
+ Inversamente, cuando el potenciómetro se encuentra al mínimo, se observan
+ dos ceros complejos conjugados en el mismo lugar donde se econtraban los
+ polos para el caso anterior, y existen también dos polos reales y diferentes
+ donde antes se encontraban los ceros.
+ Para el valor medio exacto del potenciómetro, los ceros y polos coinciden
+ todos en un punto asemejando una ganancia estática de 1.
+\end_layout
+
+\begin_layout Standard
+Los polos serán complejos conjugados si el factor de calidad es mayor a
+ 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ .
+ Al depender de k, y observando el gráfico de la figura (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-polos"
+
+\end_inset
+
+), se aprecia que ésto sucede para 0 < k < 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ aproximadamente.
+ Si el radicando se hace cero, entonces se tendrán dos polos reales negativos
+ coincidentes.
+ Para el rango de valores 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ < k < 1 (aproximadamente) se tendrán dos polos reales negativos equiespaciados.
+ Los ceros también se encuentran en el semiplano negativo, a la izquierda
+ del eje jω, porlo tanto podemos concluir como se explicó anteriormente,
+ que el circuito se trata de uno de fase mínima.
+ Todas las singularidades, en cualquier momento, se encuentran en el semieje
+ negativo del plano S.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ecualizador de 3 bandas
+\end_layout
+
+\begin_layout Standard
+Un ecualizador gráfico es un circuito compuesto por n ecualizadores de banda
+ ubicadas en el rango de frecuencias audibles -20 Hz a 20 kHz-.
+ Se busca utilizar el circuito desarrollado anteriormente con las mismas
+ condiciones de diseño, para tres bandas.
+ 
+\end_layout
+
+\begin_layout Standard
+Se realizo un análisis previo al diseño del ecualizador para tener un panorama
+ más claro al momento de escojer los valores de los componentes.
+\end_layout
+
+\begin_layout Standard
+Para determinar la ganancia que queremos obtener del circuito se deben tener
+ en cuenta distintos factores.
+ Por un lado analizaremos que sucede con los factores de calidad 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+ y 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ en función de la amplitud 
+\begin_inset Formula $A_{0}$
+\end_inset
+
+,ya que los mismos determinaran el ancho de la campana en la frecuencia
+ central al variar el potenciómetro.
+ Si los factores de calidad son muy bajos el ancho de la campana será muy
+ extenso y podría llegar a interferir a frecuencias no deseadas.
+ Por otro lado también deberemos tener en cuenta que la elección de los
+ componentes deben estar ligados entre sí para que todo el análisis y expresione
+s realizadas hasta el momento sean válidas.
+ Mayormente se deberá tener cuidado con la elección de 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ya que el análisis se realizo tomando que 
+\begin_inset Formula $10R_{2}\gg R_{1}$
+\end_inset
+
+ por lo que se deberá tener en cuenta que 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ sea aproximadamente 10 veces mayor que 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+para minimizar errores.
+\end_layout
+
+\begin_layout Standard
+Primero se procederá a hacer el análisis con 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+y luego análogamente con 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+, tomando K=0 ya que se quiere obtener una expresión para la ganancia máxima.
+\end_layout
+
+\begin_layout Standard
+Partiendo de la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a0 con k=0"
+
+\end_inset
+
+) obtenemos que, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{2}=R_{1}3(1+A_{0})\label{eq:r2 en funcion de r1 y A0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y reemplazando en la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:qp"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{p}=\frac{30(1+A_{0})\sqrt{5+3A_{0}}}{94+93A_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dQ_{p}}{dA_{0}}=\frac{15(279A_{0}^{2}+567A_{0}+292)}{\sqrt{3A_{0}+5}(93A_{0}+94)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observamos que entonces 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+ no tiene máximo y su mínimo esta determinado en 
+\begin_inset Formula $A_{0}=0$
+\end_inset
+
+ cuyo valor es de 
+\begin_inset Formula $\frac{30\sqrt{5}}{94}=0.714$
+\end_inset
+
+ y que 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+lím_{A_{0\rightarrow\infty}}Q_{p}=\infty
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se deduce así que cuanto mayor sea 
+\begin_inset Formula $A_{0}$
+\end_inset
+
+mayor será el factor de calidad 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Análogamente reemplazando (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:r2 en funcion de r1 y A0"
+
+\end_inset
+
+) en (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "qz"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{z}=\frac{30(1+A_{0})\sqrt{5+3A_{0}}}{94+93A_{0}+90(1+A_{0})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dQ_{z}}{dA_{0}}=\frac{-15(338+963A_{0}+891A_{0}^{2}+270A_{0}^{3})}{\sqrt{(5+3A_{0})}(184+273A_{0}+90A_{0}^{2})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ tampoco tiene mínimo ( en el dominio ya que 
+\begin_inset Formula $A_{0}\geq0$
+\end_inset
+
+ ) pero tiene una cota superior en 
+\begin_inset Formula $A_{0}=0$
+\end_inset
+
+ , consiguiendo un valor de 
+\begin_inset Formula $Q_{zMáx}=\frac{30\sqrt{5}}{184}=0.365$
+\end_inset
+
+.
+ y 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+lím_{A_{0\rightarrow\infty}}Q_{z}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación se representa una gráfica de 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+(
+\color red
+rojo
+\color inherit
+),
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+(
+\color green
+verde
+\color inherit
+) para poder tener una imagen más clara de lo comentado anteriormente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename QvsA0.PNG
+	scale 70
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{z},Q_{p}$
+\end_inset
+
+en función de 
+\begin_inset Formula $A_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya que para que el ecualizador funcione correctamente y pueda ser utilizado
+ para sistemas de audio y sonido, la máxima ganancia que puede tener esta
+ establecida en 18dB = 8 veces.
+ Concluímos así, que no podremos mejorar los factores de calidad del circuito
+ mas allá de 2, eso conlleva que el ancho de la campana sera bastante amplio
+ y no se podrían incluir demasiados circuitos para controlar distintas frecuenci
+as ya que interferirían demasiado.
+\end_layout
+
+\begin_layout Subsubsection
+Elección frecuencia central
+\end_layout
+
+\begin_layout Standard
+El rango audible para un humano ronda entre los 20 Hz y los 20 KHz y el
+ cual puede ser caracterizdo:
+\end_layout
+
+\begin_layout Itemize
+Tonos graves: frecuencias bajas, que corresponden a las cuatro primeras
+ octavas (de 16 a 256 Hz).
+ Las dos primeras corresponden al rango 16 y 64 Hz, donde no todas las personas
+ son capaces de percibirlos, ya que entran en juego factores como la sensibilida
+d de cada persona o la presbiacusia (disminución de la audición por la edad).
+ 
+\end_layout
+
+\begin_layout Itemize
+Tonos medios: frecuencias medias, que corresponden a la quinta, sexta y
+ séptima octava y que pertenecen al rango de 256 Hz a 2 kHz.
+ 
+\end_layout
+
+\begin_layout Itemize
+Tonos agudos: frecuencias altas, asociadas a la octava, novena y décima
+ octava.
+ Cubren el rango entre los 2 kHz y los 16 kHz.
+ La undécima octava cubre el resto del espectro audible, de los 16 kHz a
+ los 20 kHz.
+ En este rango entran en consideración los efectos de sensibilidad y de
+ presbiacusia mencionados anteriormente.
+ 
+\end_layout
+
+\begin_layout Standard
+Los ecualizadores profesionales suelen tener, al menos, 10 bandas.
+ Las normas ISO establecen que las bandas de frecuencia han de ser, 31,
+ 63, 125, 250, 500, 1000, 2000, 4000, 8000 y 16 000 Hercios.
+ Además, por otro lado, la magnitud de realce-atenuación suele estar entre
+ los 
+\begin_inset Formula $_{-}^{+}10$
+\end_inset
+
+ y 
+\begin_inset Formula $_{-}^{+}18$
+\end_inset
+
+ dB como máximo.
+\end_layout
+
+\begin_layout Standard
+Se busca tener una ganancia de 
+\begin_inset Formula $_{-}^{+}12$
+\end_inset
+
+dB, 4 veces en realce y 0.25 de atenuación, ya que es un valor bastante típico
+ en el estándar de los ecualizadores comerciales.
+ Así 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+y 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+quedan ligadas por la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:<A0<"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{0}=\frac{3R_{1}+R_{2}}{3R_{1}}=4
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{2}=9R_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se escojió este valor para la ganancia por distintos motivos.
+ Por una parte el oído humano es capaz de detectar cambios en el volumen
+ cuando a éstos tienen una variación de aproximadamente 1dB, por lo que
+ para asegurarse de que se pueda tener un mayor control de las frecuencias
+ se tomo un valor elevado, pero no el máximo.
+ En otro lugar también se consideró la relación que deben tener 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+con 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+para que todo el análisis previo sea válido y se cometa menor dispersion
+ posible de errores.
+\end_layout
+
+\begin_layout Standard
+Así las frecuencias centrales quedan determinadas por la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:frecuencia central"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{0}=\frac{\sqrt{11}}{20\pi R_{2}C_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las 3 frecuencias centrales se escojieron:
+\end_layout
+
+\begin_layout Itemize
+63 Hz para frecuencias graves.
+\end_layout
+
+\begin_layout Itemize
+700 Hz para frecuencias medias.
+\end_layout
+
+\begin_layout Itemize
+8000 Hz para frecuencias agudas.
+\end_layout
+
+\begin_layout Standard
+Las mismas fueron escojidas basándose en las normas ISO escojiendo 63Hz
+ para las frecuencias bajas y 8000 Hz para frecuencias altas.
+ Luego para manejar las frecuencias medias se calculó que 700Hz ses el valor
+ equi-espaciado logarítmicamente de las dos frecuencias anteriores.
+ Al principio se había tomado 500Hz pero al ver las simulaciones se mostraba
+ que no era bueno el contraste que se obtenía ya que las frecuencias medias
+ y bajas se superponían demasiado y lo mismo si se tomaba 1kHz, es por ello
+ que se realizo se calculó el valor anterior mencionado.
+\end_layout
+
+\begin_layout Standard
+Tomando el potenciómetro de 
+\begin_inset Formula $5K\varOmega$
+\end_inset
+
+ los valores de los componentes quedan determinados por la siguiente tabla:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frecuencia Central (Hz)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}(\Omega)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}(\Omega)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}(\Omega)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}(nF)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}(nF)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+63
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+560
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1670
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+167
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+700
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+560
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+560
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores de compontentes 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Conexión de las etapas
+\end_layout
+
+\begin_layout Standard
+Las etapas puden conextarse de dos maneras distintas, éstas son en cascada
+ o en paralelo.
+ Conectando en cascada la función transferencia sera la suma de las etapas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{total}(s)=\sum H(s)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename cascada.PNG
+	scale 65
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conexión en cascada 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el caso de la conexión paralelo, hay que tener en cuenta que las tres
+ bandas del ecualizador deben sumarse para lograr el efecto deseado del
+ ecualizador de tres bandas.
+ Esto se lograría incorporando un sumador al final, el cual debe estar compensad
+o para lograr que tenga una ganancia unitaria con el fin de que no modifique
+ la amplitud deseada del circuito.
+ Se debe agregar una resistencia entre el amplicador operacional sumador
+ y la alimentación para que no se generen efectos indeseados en la suma.
+ De no ponerla, se sumarían tres veces los resultados de las etapas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename conexion en paralelo.PNG
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conexión en paralelo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\size larger
+\color orange
+Ruido
+\end_layout
+
+\begin_layout Standard
+Se llama ruido a toda aquella señal indesaeble que se está midiendo.
+ Se desea estudiar los aspectos de ruido que están ligados a las dos topologías
+ propuestas.
+ El factor de ruido (F) es la magnitud de ruido generado por un dispositivo
+ electrónico o un sistema.
+ La relación señal/ruido de la señal es el cociente entre la potencia de
+ la misma y la potencia del ruido que la afecta.
+ Esto se conoce como SNR (signal to noise ratio, en inglés).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+SNR=\frac{Potencia\,de\,señal}{Potencia\,de\,ruido}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Factor\,de\,ruido=\frac{SNR_{in}}{SNR_{out}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para un amplicador operacional, tanto la señal como el ruido de entrada
+ también se ven amplicado la cantidad de veces que tenga como ganancia el
+ circuito.
+ Los amplicadores operacionales, al igual que los componentes pasivos del
+ circuito, introducen también ruido y éste se va amplicando etapa a etapa.
+ En la topología en paralelo este efecto es menor por las consideraciones
+ de esta configuración.
+ Como el ecualizador propuesto consta de tres bandas, las diferencias de
+ ruido entre ambos casos no son signicativas.
+ Sí podría serlo, sin embargo, en la situación de contar con ecualizadores
+ más complejos.
+\end_layout
+
+\begin_layout Standard
+La fórmula de Friis sirve para poder representar como contribuye cada etapa
+ del circuito conectada en cascada a la figura de ruido.
+ Dados 
+\begin_inset Formula $F_{n}$
+\end_inset
+
+ y 
+\begin_inset Formula $G_{n}$
+\end_inset
+
+, factor de ruido y ganancia en potencia se puede escribir de manera genérica
+ para la etapa n-ésima.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F=F_{1}+\frac{F_{2}-1}{G_{1}}+\frac{F_{3}-1}{G_{2}}+...+\frac{F_{n}-1}{G_{1}G_{2}...G_{n-1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\size larger
+\color orange
+Simulaciones en cascada y paralelo
+\end_layout
+
+\begin_layout Standard
+Para la elección entre conexión en cascada y paralelo se realizaron las
+ respectivas simulaciones para poder analizar cual era de mayor conveniencia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename cascada-paralelo-simulacion-high.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación cascada y paralelo en máximo realce de las 3 frecuencias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename cascada-paralelo-simulacion-low.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación cascada y paralelo en máxima atenuación de las 3 frecuencias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede observar que en la conexión en cascada funciona de mucho mejor
+ manera en atenuación, ya que la conexión en paralelo falla notablemente
+ creando una sola campana en la que el efecto no es deseado para atenuar.
+ Al notar este efecto se realizaron distintas simulaciones con otras configuraci
+ones como la de la figura(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Simulación-con-máxima"
+
+\end_inset
+
+) :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename simulacion cascada fea 1.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación con máxima atenuación frecuencia baja y alta
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Simulación-con-máxima"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pudimos concluir que la conexión en paralelo traía muchas complicaciones
+ con la banda central con configuraciones en las que atenúa la banda central.
+ No se comporta como se desearía para un ecualizador.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Implementación en placa impresa
+\end_layout
+
+\begin_layout Standard
+Se realizo el circuito en una placa impresa utilizando conexión en cascada.
+ La justificación de esta elección de conectar en cascada parte de distintas
+ razones.En primer lugar básicamente la conexión en cascada tiene una mayor
+ facilidad de implementación en la placa impresa, lleva menos componentes
+ y menos conexiones.
+ Luego tambieén porque como se analizaron en las simulaciones si bien la
+ conexión en paralelo tiene mayor selectividad en realce, se comporta de
+ manera muy distinta en atenuación.
+ Es por ellosque aunque la conexión en cascada tenga un poco menos de factor
+ de calidad se comporta mejor manera en atenuación y lo que se desea es
+ que el circuito se comporte de manera similar tanto en realce como en atenuació
+n.
+ Por otro lado en conexión en casacada nos aseguramos que el circuito será
+ de fase mínima para la implementación que se desea, por lo tanto será estable,
+ lo que no nos asegura lo mismo la conexión en paralelo.
+\end_layout
+
+\begin_layout Standard
+En la placa se incluyó un la posibilidad de conectar tanto un generador
+ de señales, como un jack stéreo de 3.5mm.
+ Vale aclarar que como el circuito esta diseñado para una señal mono se
+ pasa de la señal de stéreo a mono.
+ A su vez a la salida se impentó la misma posibilidad de conexión con un
+ jack para poder conectar un dispositivo de audio y apreciar con mayor efectivid
+ad el ecualizador.
+\end_layout
+
+\begin_layout Standard
+La placa debe ser alimentada con una tensión menor a la que haga saturar
+ al operacional, en nuestro caso 15V, considerando un margen de seguridad.
+ La impedancia de entrada del circuito no será comparable a la impedancia
+ de salida del generador, que es de 50 ohms.
+ La impedancia de salida es baja debido a la baja impedancia de salida del
+ amplicador operacional.
+ 
+\end_layout
+
+\begin_layout Standard
+Se eligió utilizar el modelo TL082 ya que tiene buenas características a
+ nivel general y de ruido.Ya que los operacionales tienen los mismos pines
+ conectores que los modelos TL072 y LM833, entre otros utilizados para aplicacio
+nes de audio, se utilizaron tres sócalos, uno para cada frecuencia, por
+ tanto 1 operacional para cada uno.
+ Si bien se estan desperdiciando 3 operacionales ésto da la posibilidad
+ de implementar 3 operacionales distintos para las distintas frecuencias.
+\end_layout
+
+\begin_layout Subsubsection
+Mediciones
+\end_layout
+
+\begin_layout Standard
+Se realizaron las mediciones de respuesta en frecuencia e impedancia de
+ entrada para poder contrastar con las simulaciones.
+ Se obtuvieron los siguientes gráficos:
+\end_layout
+
+\begin_layout Standard
+Respuesta en frecuencia
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename medidoVsSimuladobode.png
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta en frecuencia medido y simulado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename simuladovsmedido fase realce max.png
+	scale 75
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Realce
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename simuladovsMedido fase atenuacion.png
+	scale 75
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Atenuación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como puede apreciarse, las curvas teóricas se ajustan con un aceptable grado
+ de exactitud a las medidas en laboratorio.
+ En cuanto a la posición de equilibrio , no se presentan aquí los resultados,
+ dado que no se obtendrá una perfecta linea recta por la imposibilidad de
+ ajustar los potenciómetros exactamente en su posición media.
+ Esto provocaría un gráfico con variaciones producidas por error humano
+ y no por un defecto o particularidad en el dispositivo, por ello se considera
+ que mostrar la respuesta de ese caso no aporta información enriquecedora
+ a este inciso.
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\size larger
+\color orange
+Impedancia de entrada 
+\end_layout
+
+\begin_layout Standard
+Para medir la impedancia de entrada se añadió una resistencia de valor conocido
+ en serie a la entrada del sistema.
+ Miediendo la caída de tensión sobre la resistencia se puede determinar
+ así la corriente que pasa por la misma que resulta ser la mimsa que ingresa
+ al sistema.
+ Luego se divide la tensión de entrada del sistema por la corriente y asi
+ obteniendo la impedancia de entrada e un barrido de frecuencias para el
+ espectro audible.
+\end_layout
+
+\begin_layout Standard
+Para determinar el orden de la resistencia a utilizar para la medición,
+ se realizaron simulaciones de impedancia de entrada.
+\end_layout
+
+\begin_layout Standard
+Los datos que se obtuvieron contrastando con las simulaciones se aprecian
+ en el siguiente gráfico:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename zin.png
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulado y medido de impedancia de entrada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Puede apreciarse que la impedancia de entrada medida es casi idéntica y
+ tiene la misma forma que la simulada.
+ Las pequeñas diferencias que pueden existir se deben a que los componentes
+ utilizados tiene bastante tolerancia.
+ La alta similitud entre la curva simulada y los valores medidos es que
+ el operacional utilizado tiene muy alta impedancia.
+\end_layout
+
+\begin_layout Subsubsection
+Hoja de datos
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\size larger
+\color orange
+Descripción
+\end_layout
+
+\begin_layout Standard
+El circuito es un ecualizador de 3 bandas con un promedio de 
+\begin_inset Formula $_{-}^{+}12dB$
+\end_inset
+
+ de ganancia.Cuenta con entrada de audio stéreo y salida mono.
+ Las frecuencias centrales de las bandas son:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parámetro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frecuencia central de bajos 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+63
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frecuencia central de medios 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+700
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frecuencia central de altos 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Frecuencias centrales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Originalmente esta pe
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="6">
+<features rotate="90" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Símbolo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parámetro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mín
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Typ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Máx
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidades
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tensión de alimentación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $_{-}^{+}5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $_{-}^{+}18$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volts
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $I_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Corriente de entrada
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $_{-}^{+}11$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mA
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Z_{in}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Impedancia de entrada
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+408
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+559
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1691
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ganancia/atenuación Low
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-11.8
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11.8
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ganancia/atenuación Mid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-12.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12.1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ganancia/atenuación High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-12.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12.3
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entrada y salida: Mini plug 3.5mm
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Características eléctricas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+Acerca de la topología, la elección del modelo en cascada proviene del bajo
+ numero de bandas y de la simetría.
+ La implementación en paralelo puede ser utilizada sin problemas para problemas
+ con más bandas y para obtener una señal con menor ruido propagado.
+ Por otra parte la conguración en cascada de los controles de tonos no permiten
+ aislar la señal que le corresponde a una etapa en particular.
+ Todas las etapas modican la señal de entrada en algun grado, dando a la
+ salida una señal diferente a la original.
+\end_layout
+
+\begin_layout Standard
+Si bien la alimentación típica del amplificador utilizado es de +15V y −15V
+ , las señales de audio utilizadas rondan los 2V pico a pico , con lo cual,
+ dada una amplificación máxima de 12db , lo que corrresponde a una máxima
+ salida de 8V pico a pico, por lo que si se trabaja dentro de un buen rango
+ de tensión (por arriba de los 
+\begin_inset Formula $_{-}^{+}10V,$
+\end_inset
+
+no debería haber problema con la saturación de los operacionales.Nótese que
+ para el rango de frecuencias trabajadas, el slew rate no presenta ningún
+ inconveniente.
+ 
+\end_layout
+
+\begin_layout Standard
+En cuanto al ecualizador de fase, las condiciones de diseño para los capacitores
+ crean una restricción que limita las bandas en su ancho, a favor de ecuaciones
+ simplicadas para un diseño rápido.
+ En líneas generales, dado un circuito como estos el comportamiento paramétrico
+ de las singularidades es una buena herramienta para comprender el funcionmiento.
+ Además, la simplicación de la función transferencia permite entender el
+ rol de cada componente y descifrar la cantidad de grados de libertad.
+\end_layout
+
+\end_body
+\end_document

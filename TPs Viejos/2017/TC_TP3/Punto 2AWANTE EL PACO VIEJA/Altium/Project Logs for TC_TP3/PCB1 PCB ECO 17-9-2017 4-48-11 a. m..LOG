@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=GND Pin=CapRLC BR-1
+Removed Pin From Net: NetName=NetCapRLC BR_2 Pin=CGyrator1-2
+Removed Pin From Net: NetName=NetCapRLC BR_2 Pin=RGyratorInput BR-2
+Added Pin To Net: NetName=NetCapRLC BR_1 Pin=CapRLC BR-1
+Added Pin To Net: NetName=NetCapRLC BR_1 Pin=CGyrator1-2
+Added Pin To Net: NetName=NetCapRLC BR_1 Pin=RGyratorInput BR-2
+Added Net: Name=NetCapRLC BR_1
+Added Member To Class: ClassName=RechazaBanda(BR) Member=Component CapRLC BR Cap Semi
+Added Room: Name=PasaBanda(BP)
+Added Room: Name=RechazaBanda(BR)
+Added Room: Name=TopSheet

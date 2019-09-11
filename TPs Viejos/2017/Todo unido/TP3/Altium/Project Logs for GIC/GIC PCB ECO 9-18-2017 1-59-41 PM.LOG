@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=C2 Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Footprint: Designator=C6 Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Footprint: Designator=Comp_+Vcc Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Footprint: Designator=Comp_-vcc Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Designator: OldDesignator=Comp_+Vcc NewDesignator=C_+VCC
+Change Component Designator: OldDesignator=Comp_-vcc NewDesignator=C_-VCC
+Added Room: Name=GIC

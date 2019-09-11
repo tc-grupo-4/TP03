@@ -1,0 +1,6 @@
+Questionable use of curly braces in "r4 n001 vout {r4}"
+    Error: undefined symbol in: "[r4]"
+Questionable use of curly braces in "r5_2 n001 0 {r5}"
+    Error: undefined symbol in: "[r5]"
+Circuit: * C:\Users\ignac\Desktop\TC_TP3\spice\esquematico_spice.asc
+

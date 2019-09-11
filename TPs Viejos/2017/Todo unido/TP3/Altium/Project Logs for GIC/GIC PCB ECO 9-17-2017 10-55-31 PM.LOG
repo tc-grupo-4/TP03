@@ -1,0 +1,21 @@
+Change Component Designator: OldDesignator=P? NewDesignator=PVin
+Change Component Designator: OldDesignator=P? NewDesignator=PVout
+Added Component: Designator=U1(JG008)
+Added Pin To Net: NetName=-VCC Pin=P?-1
+Added Pin To Net: NetName=NetC6_2 Pin=PVin-1
+Added Pin To Net: NetName=NetC2_1 Pin=U1-1
+Added Pin To Net: NetName=NetC2_2 Pin=U1-2
+Added Pin To Net: NetName=NetR4_1_2 Pin=U1-3
+Added Pin To Net: NetName=-VCC Pin=U1-4
+Added Pin To Net: NetName=NetC6_1 Pin=U1-5
+Added Pin To Net: NetName=NetC2_2 Pin=U1-6
+Added Pin To Net: NetName=+VCC Pin=U1-8
+Added Pin To Net: NetName=NetPVout_1 Pin=PVout-1
+Added Pin To Net: NetName=NetPVout_1 Pin=R3-2
+Added Pin To Net: NetName=NetPVout_1 Pin=R4_1-1
+Added Pin To Net: NetName=NetPVout_1 Pin=R4_2-1
+Added Pin To Net: NetName=NetPVout_1 Pin=U1-7
+Added Net: Name=NetPVout_1
+Added Member To Class: ClassName=GIC Member=Component PVin Plug
+Added Member To Class: ClassName=GIC Member=Component PVout Plug
+Added Member To Class: ClassName=GIC Member=Component U1 TL082JG

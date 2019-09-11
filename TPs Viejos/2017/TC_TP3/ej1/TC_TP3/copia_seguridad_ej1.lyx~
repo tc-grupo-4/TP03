@@ -1,0 +1,6990 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Filtro GIC
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+En la siguiente experiencia se implementó el uso de un GIC (Generalized
+ Impedance Converter).
+ Un GIC es un circuito conformado por dos Op-Amps cuya impedancia de entrada
+ logra efectivamente simular el efecto de las impedancias de componentes
+ almacenadores de energía como capacitores y bobinas.
+ Es principalmente utilizado en circuitos que requieren bobinas para funcionar,
+ las cuales no se encuentran estandarizadas para uso comercial y cuyo precio
+ es muy elevado debido a la necesidad de ser comisionadas a ser diseñadas
+ para un uso especifico, agregando enormes costos al diseño y ralentizando
+ el mismo.
+ Además el circuito GIC-L (nombre utilizado para GICs que reemplazan bobinas)
+ resuelve muchos problemas que presentan las bobinas generalmente, como
+ su capacitancia, sus perdidas y principalmente el campo magnético que genera
+ que es susceptible a inductancias mutuas.
+ Agregado a esto este circuito a demostrado ser poco sensible a la tolerancia
+ de sus componentes pasivos y los efectos no ideales de los Op-Amps.
+ Sin embargo, el GIC también tiene sus desperfectos: el uso de Op-Amps en
+ su diseño limita severamente el ancho de banda para el cual un GIC funciona
+ correctamente, siendo limitado por el GBWP de los operacionales, limitando
+ su uso a frecuencias menores a 1MHz en el mejor de los casos.
+ 
+\end_layout
+
+\begin_layout Subsection
+Circuito Utilizado
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Circuito_guia.PNG
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito correspondiente a analizar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El circuito GIC se compone de dos amplificadores operacionales que cumplen
+ la función de transmitir la tensión a la entrada del GIC a todos los puntos
+ donde se encuentran las entradas de los operacionales conectadas.
+ De esta manera logra tener una impedancia de entrada que puede moldearse
+ a representar cualquier componente pasivo dependiendo de la ubicación de
+ los capacitores y resistencias dentro del GIC.
+ Se debe tomar las salvedades al modificarlo para obtener la impedancia
+ de entrada requerida de que las entradas de los operacionales tengan un
+ camino a tierra para poder suplir la corriente de Bias de los mismos, y
+ la salida del GIC debe mantenerse conectada a masa, de lo contrario no
+ se puede hacer la simplificación de asumir que el GIC afecta el circuito
+ como el equivalente de un componente con impedancia idéntica a su impedancia
+ de entrada que se vería modificada por cualquier circuito o componente
+ al que se le conectase la salida del GIC.
+\end_layout
+
+\begin_layout Standard
+El circuito que se va a estudió se deduce que es un High Pass Notch, ya
+ que según las consideraciones presentadas por la cátedra, el único circuito
+ entre los propuesto que tiene una resistencia 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ es un filtro High Pass Notch, siendo el cual se analizó.
+ 
+\end_layout
+
+\begin_layout Standard
+Para la presente implementación se simularon en MATLAB y LTSpice los cambios
+ en los parámetros del filtro con GIC ideal.
+ Los cálculos auxiliares fueron realizados en Maple.
+\end_layout
+
+\begin_layout Standard
+En el análisis que prosigue se estudian:
+\end_layout
+
+\begin_layout Itemize
+La transferencia del circuito y sus simplificaciones
+\end_layout
+
+\begin_layout Itemize
+Profundidad del Notch
+\end_layout
+
+\begin_layout Itemize
+Impedancia de entrada
+\end_layout
+
+\begin_layout Itemize
+La sensibilidad de los valores característicos del filtro:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\omega_{z}:$
+\end_inset
+
+ frecuencia de los de ceros de transmisión
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\omega_{p}:$
+\end_inset
+
+ frecuencia de los polos del circuito
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Q:$
+\end_inset
+
+ selectividad.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Z_{inp}:$
+\end_inset
+
+ impedancia de entrada
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $G_{n}:$
+\end_inset
+
+ ganancia en altas frecuencias
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Características del Circuito
+\end_layout
+
+\begin_layout Subsubsection
+Circuito Genérico
+\end_layout
+
+\begin_layout Standard
+Se procedió a obtener la función transferencia del circuito equivalente
+ con operacionales considerados ideales y se obtiene luego la transferencia
+ por nodos.
+ El uso de la función transferencia en nuestro caso radicó en obtener las
+ expresiones de otros valores característicos del circuito, como el factor
+ de calidad del High Pass Notch, la ubicación de los polos y ceros y para
+ obtener la respuesta en frecuencia utilizando la ayuda de MATLAB y Maple
+ para luego compararla con las simulaciones y mediciones.
+ A su vez se puede realizó el análisis de sensibilidades de los valores
+ característicos mencionados para entrar en la etapa de diseño y elegir
+ los componentes acordes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Circuito.png
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Corrientes y Tensión del circuito a analizar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se procedió a obtener la 
+\begin_inset Formula $H(s)$
+\end_inset
+
+ del circuito utilizando el método de nodos.
+ Primero se debe notar que por asumir amplificadores operacionales ideales,
+ las entradas de los mismos tendrán la misma tensión ya que sus amplificaciones
+ a lazo abierto son infinitas: 
+\begin_inset Formula $Vout=A_{vol}(V^{+}-V^{-})$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ si 
+\begin_inset Formula $A_{vol}\rightarrow\infty$
+\end_inset
+
+
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $V^{+}-V^{-}=0$
+\end_inset
+
+ y por lo tanto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V^{+}=V^{-}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+por ende
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{1}=V_{3}=V_{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego como la impedancia de entrada de los Op-Amps ideales es infinita y
+ representa un circuito abierto, no circula corriente por estos terminales,
+ simplificando los nodos.
+ Para los nodos conectados a la salida de un operacional, se considera unicament
+e la relación proporcional de las corrientes no pertenecientes a la salida
+ del amplificador, la cual depende de la relación entre las impedancias
+ por las que circulan.
+ El sistema de ecuaciones de nodos final resulta:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+I_{1}=\frac{V_{1}-V_{2}}{R_{1}}\\
+I_{2}=(V_{2}-V_{1})sC_{2}\\
+I_{3}=I_{2}\\
+I_{3}=\frac{V_{1}-V_{out}}{R_{3}}\\
+I_{4}=\frac{V_{out}-V_{1}}{R_{4}}\\
+I_{5}=-\frac{V_{1}}{R_{5}}\\
+I_{6}=-\frac{V_{1}}{R_{6}}\\
+I_{V_{in}}=I_{R_{7}}+I_{C_{6}}+I_{8}\\
+I_{R_{7}}=\frac{V_{in}-V_{1}}{R_{7}}\\
+I_{C_{6}}=(V_{in}-V_{1})sC_{6}\\
+I_{8}=\frac{V_{in}-V_{1}}{R_{8}}\\
+I_{1}=I_{6}+I_{7}\\
+I_{4}+I_{5}+I_{8}=0
+\end{cases}\label{eq:sistema ecuaciones circuito}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego resolviendo el sistema de ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sistema ecuaciones circuito"
+
+\end_inset
+
+), utilizando Maple, se obtiene la siguiente transferencia
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(s)_{generico}=\frac{V_{out}}{V_{in}}=\frac{R_{5}}{(R_{5}+R_{8})}\frac{s^{2}(C_{2}C_{6}R_{1}R_{3}R_{8}(\frac{1}{R_{5}}+\frac{1}{R_{4}}))+sC_{2}R_{1}R_{3}(\frac{R_{8}}{R_{5}R_{7}}-\frac{1}{R_{6}}+\frac{R_{8}}{R_{4}R_{7}})+1}{s^{2}(\frac{C_{2}C_{6}R_{1}R_{3}R_{5}R_{8}}{R_{4}(R_{5}+R_{8})}+s\frac{C_{2}R_{1}R_{3}R_{5}R_{8}}{R_{5}+R_{8}}(\frac{1}{R_{4}R_{7}}+\frac{1}{R_{4}R_{6}})+1}\label{eq:transferencia_generica}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se busca llevar a la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_generica"
+
+\end_inset
+
+) a la siguiente forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H'(s)_{generica}=G_{n}.\frac{\frac{s^{2}}{\omega_{z}^{2}}+\frac{s}{Q_{z}\omega_{z}}+1}{\frac{s^{2}}{\omega_{p}^{2}}+\frac{s}{Q_{p}\omega_{p}}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+obteniendo que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parámetro de Interés
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relación que lo caracteriza
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqrt{\frac{R_{4}R_{5}}{C_{2}C_{6}R_{1}R_{3}R_{8}(R_{4}+R_{5})}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqrt{\frac{R_{4}(R_{8}+R_{5})}{C_{2}C_{6}R_{1}R_{3}R_{5}R_{8}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $G_{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{4}+R_{5}}{R_{5}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{R_{5}R_{7}R_{6}R_{4}}{C_{2}R_{1}R_{3}(R_{4}R_{5}R_{7}-R_{4}R_{6}R_{8}-R_{5}R_{6}R_{8})\sqrt{\frac{R_{4}R_{5}}{C_{2}C_{6}R_{1}R_{3}R_{8}(R_{4}+R_{5})}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{8}+R_{5}}{C_{2}R_{1}R_{3}R_{5}R_{8}(\frac{1}{(R_{4}R_{7})}+\frac{1}{(R_{4}R_{6})})\sqrt{\frac{R_{4}(R_{8}+R_{5})}{(C_{2}C_{6}R_{1}R_{3}R_{8}R_{5})}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:parametros de interes circuito generico"
+
+\end_inset
+
+Parámetros de Interés del Circuito Genérico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además, se puede obtener la impedancia de entrada del circuito 
+\begin_inset Formula $Z_{inp}$
+\end_inset
+
+, la cual es, solucionando el sistema de ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sistema ecuaciones circuito"
+
+\end_inset
+
+) es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{inp_{generico}}=\frac{V_{in}}{I_{V_{in}}}=\frac{R_{7}(R_{5}+R_{8})}{R_{7}+R_{8}}\frac{s^{2}\frac{C_{2}C_{6}R_{1}R_{3}R_{5}R_{6}R_{8}}{R_{4}R_{6}(R_{5}+R_{8})}+s\frac{C_{2}R_{1}R_{3}R_{5}R_{8}(R_{6}+R_{7})}{R_{4}R_{6}R_{7}(R_{5}+R_{8})}+1}{s^{2}\frac{C_{2}C_{6}R_{1}R_{3}R_{5}R_{7}R_{8}}{R_{4}R_{6}(R_{7}+R_{8})}+s\frac{(C_{2}R_{1}R_{3}R_{5}(R_{7}+R_{8})+C_{6}R_{4}R_{6}R_{7}R_{8})}{R_{4}R_{6}(R_{7}+R_{8})}+1}\label{eq:impedancia_entrada_generica}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Volviendo al análisis de la transferencia, nótese que se obtienen dos polos
+ y dos ceros, singularidades esperadas para un filtro High Pass Notch.
+ Se procede hora a aislar los valores de interés comenzando por la expresión
+ de los polos y ceros según los componentes.
+ Para esto se normaliza el denominador y numerador para luego aplicar la
+ resolvente para funciones cuadráticas, obteniéndose las raíces del denominador
+ que son los polos del circuito y las raíces del numerador que son los ceros
+ del circuito:
+\end_layout
+
+\begin_layout Standard
+De dicha expresiones, obtenemos que los polos y los ceros de la función
+ transferencia son:
+\end_layout
+
+\begin_layout Standard
+
+\size tiny
+\begin_inset Formula 
+\begin{equation}
+z_{1,2_{generico}}=\frac{R_{1}R_{3}C_{2}((R_{5}R_{7}-R_{6}R_{8})R_{4}-R_{5}R_{6}R_{8})\pm\sqrt{(R_{1}R_{3}R_{4}C_{2}(R_{5}R_{7}-R_{6}R_{8})-R_{1}R_{3}R_{5}R_{6}R_{8}C_{2})^{2}-4.R_{1}R_{3}R_{4}R_{5}R{}_{6}^{2}R{}_{7}^{2}R_{8}C_{2}C_{6}(R_{4}+R_{5})}}{2.R_{1}R_{3}R_{6}R_{7}R_{8}C_{2}C_{6}(R_{4}+R_{5})}\label{eq: ceros_transferencia_generica}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\begin_inset Formula 
+\begin{equation}
+p_{1,2_{generico}}=\frac{-R_{1}R_{3}R_{5}R_{8}C_{2}(R_{6}+R_{7})\pm\sqrt{(R_{5}R_{1}R_{3}R_{5}R_{8}C_{2}(R_{6}+R_{7}))^{2}-4.R_{1}R_{3}R_{4}R{}_{6}^{2}R{}_{7}^{2}R_{8}C_{2}C_{6}(R_{8}+R_{5})}}{2.R_{1}R_{3}R_{5}R_{6}R_{7}R_{8}C_{2}C_{6}}\label{eq:polos_transferencia_generica}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Filtro High Pass Notch Genérico
+\end_layout
+
+\begin_layout Standard
+Para lograr que la función transferencia se comporte como un filtro High
+ Pass Notch, se deben hacer algunas consideraciones sobre los componentes
+ para llegar a la siguiente función transferencia que caracteriza a un filtro
+ High Pass Notch:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(s)_{HPN}=G_{n}.k^{2}\frac{(\frac{s}{\omega_{z}})^{2}+1}{(\frac{s}{\omega_{p}})^{2}+\frac{s}{Q_{circuito}.\omega_{p}}+1}\label{eq:modelo_transferencia_HPN}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k=\frac{\omega_{z}}{\omega_{p}}<1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+: frecuencia angular del Notch
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+: frecuencia angular a partir de cual la asíntota luego de la función transferen
+cia no tiene más pendiente
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Q_{circuito}:$
+\end_inset
+
+ factor de selectividad del Notch
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $G_{n}:$
+\end_inset
+
+ ganancia del circuito en altas frecuencias
+\end_layout
+
+\begin_layout Standard
+Visualizando las ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_generica"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:modelo_transferencia_HPN"
+
+\end_inset
+
+), podemos observar que la principal diferencia es que la ecuación de la
+ transferencia genérica del circuito estudiado, el coeficiente del termino
+ de grado 1 del numerador no es cero, la cual es una condición para obtener
+ un filtro High Pass Notch, por ende, la primera situación que se debe imponer
+ es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{R_{8}}{R_{5}R_{7}}-\frac{1}{R_{6}}+\frac{R_{8}}{R_{4}R_{7}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{6}=\frac{R_{4}R_{5}R_{7}}{R_{8}(R_{4}+R_{5})}\label{eq:condicion_HPN}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aplicando dicha condición, podemos obtener la siguiente transferencia:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(s)_{cond}=\frac{R_{4}+R_{5}}{R_{5}}\frac{\frac{C_{2}C_{6}R_{1}R_{3}R_{5}R_{8}}{R_{4}(R_{8}+R_{5})}}{\frac{C_{2}C_{6}R_{1}R_{3}R_{8}(R_{4}+R_{5})}{R_{4}R_{5}}}\frac{s^{2}\frac{C_{2}C_{6}R_{1}R_{3}R_{8}(R_{4}+R_{5})}{R_{4}R_{5}}+1}{s^{2}\frac{C_{2}C_{6}R_{1}R_{3}R_{5}R_{8}}{R_{4}(R_{8}+R_{5})}+s\frac{C_{2}R_{1}R_{3}R_{8}(R_{4}R_{5}+R_{4}R_{8}+R_{5}R_{8})}{R_{4}R_{7}(R_{8}+R_{5})}+1}\label{eq:trasnferencia_cond}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parámetro de Interés
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relación que lo caracteriza
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqrt{\frac{R_{4}R_{5}}{C_{2}C_{6}R_{1}R_{3}R_{8}(R_{4}+R_{5})}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqrt{\frac{R_{4}(R_{8}+R_{5})}{C_{2}C_{6}R_{1}R_{3}R_{5}R_{8}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $G_{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{4}+R_{5}}{R_{5}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{p}=Q_{circuito}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqrt{\frac{C_{6}R_{4}^{3}R_{5}R_{7}^{2}(R_{8}+R_{5})}{C_{2}R_{1}R_{3}R_{8}(R_{4}R_{5}+R_{4}R_{8}+R_{5}R_{8})^{2}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab: parametros de interes filtro HPN generico"
+
+\end_inset
+
+Parámetros de Interés del Filtro High Pass Notch Genérico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y si implementamos la condición (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:condicion_HPN"
+
+\end_inset
+
+) en la impedancia de entrada genérica del circuito (ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:impedancia_entrada_generica"
+
+\end_inset
+
+)), obtenemos que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{inp_{cond}}=\frac{R_{7}(R_{5}+R_{8})}{(R_{7}+R_{8})}.\frac{s^{2}\frac{C_{2}C_{6}R_{1}R_{3}R_{5}R_{8}}{R_{4}(R_{5}+R_{8})}+s\frac{C_{2}R_{1}R_{3}R_{8}(R_{4}R_{5}+R_{4}R_{8}+R_{5}R_{8})}{R_{4}^{2}R_{7}(R_{5}+R_{8})}+1}{(s\frac{C_{2}R_{1}R_{3}R_{8}(R_{5}+R_{4})}{R_{4}^{2}R_{7}}+1)(s\frac{C_{6}R_{7}R_{8}}{R_{7}+R_{8}}+1)}\label{eq:impedancia_entrada_cond}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además.
+ se puede aplicar la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:condicion_HPN"
+
+\end_inset
+
+) en las igualdades que determinan los polos y los ceros del circuito (ecuacione
+s (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: ceros_transferencia_generica"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:polos_transferencia_generica"
+
+\end_inset
+
+)):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+z_{1,2cond}=\pm j\sqrt{\frac{R_{4}R_{5}}{C_{2}C_{6}R_{1}R_{3}R_{8}(R_{4}+R_{5})}}\label{eq:ceros_condicion}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\begin_inset Formula 
+\begin{equation}
+p_{1,2_{cond}}=\frac{-((R_{4}+R_{5})R_{8}+R_{4}R_{5})R_{1}R_{3}R_{8}C_{2}\pm\sqrt{(((R_{4}+R_{5})R_{8}+R_{4}R_{5})R_{1}R_{3}R_{8}C_{2})^{2}-4.R_{1}R_{3}R{}_{4}^{3}R_{5}R{}_{7}^{2}R_{8}C_{2}C_{6}(R_{5}+R_{8})}}{C_{2}C_{6}R_{1}R_{3}R_{4}R_{5}R_{7}R_{8}}\label{eq:polos_condicion}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Filtro High Pass Notch Particular
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:circuito_HPN_particular"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observando las ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:trasnferencia_cond"
+
+\end_inset
+
+),(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:impedancia_entrada_cond"
+
+\end_inset
+
+),(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ceros_condicion"
+
+\end_inset
+
+) y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:polos_condicion"
+
+\end_inset
+
+), se puede llegar a la conclusión de que hay varias combinaciones para
+ poder obtener el filtro, ya que los grados de libertad que permiten los
+ componentes son varios.
+ Por ende, para el análisis particular de las magnitudes del circuito, se
+ elige por la combinación de resistencias y capacitores dado por la cátedra,
+ la cual es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $(\frac{2k^{2}}{1+k^{2}})R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\frac{2k^{2}}{1-k^{2}})R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(1+k^{2})Q.R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $(\frac{1+k^{2}}{k^{2}})Q.R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k=\frac{\omega_{z}}{\omega_{p}}\leq1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Ayuda valores"
+
+\end_inset
+
+Ayuda de la cátedra en la selección de los componentes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aplicando los valores de la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Ayuda valores"
+
+\end_inset
+
+ en la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_generica"
+
+\end_inset
+
+) o (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:trasnferencia_cond"
+
+\end_inset
+
+) se obtiene que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(s)=(\frac{2k^{2}}{k^{2}+1})\frac{s^{2}\frac{C^{2}R^{2}}{k^{2}}+1}{s^{2}C^{2}R^{2}+s(\frac{2CRk^{2}}{Q(k^{2}+1)})+1}\label{eq:transferencia_definitiva}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos comparar la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_definitiva"
+
+\end_inset
+
+) con el modelo de la ecuación transferencia de un filtro High Pass Notch
+ (igualdad (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:modelo_transferencia_HPN"
+
+\end_inset
+
+)) para determinar como quedan los parámetros de interés del filtro.
+ Los mismos tienen la siguiente forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parámetro de Interés
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relación que lo caracteriza
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{k}{RC}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{RC}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $G_{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{2k^{2}}{1+k^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{p}=Q_{circuito}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{Q(k^{2}+1)}{2k^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab: parametros de interes filtro HPN particular"
+
+\end_inset
+
+Parámetros de Interés del Filtro High Pass Notch Particular
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ademas, se puede aplicar las igualdades de la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Ayuda valores"
+
+\end_inset
+
+ en las ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: ceros_transferencia_generica"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:polos_transferencia_generica"
+
+\end_inset
+
+), o (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ceros_condicion"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:polos_condicion"
+
+\end_inset
+
+) logrando las siguientes relaciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+z_{1,2}=\pm j\frac{k}{RC}\label{eq:ceros_definitiva}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p_{1,2}=\frac{-2CRk^{2}\pm\sqrt{(2CRk^{2})^{2}-4C^{2}R^{2}Q^{2}(k^{2}+1)^{2}}}{2C^{2}R^{2}Q(k^{2}+1)}\label{eq:polos_definitiva}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ende, el diagrama de polos y ceros es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/diagrama_polos_ceros_generico.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Polos y Ceros de la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_definitiva"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+También, utilizando la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Ayuda valores"
+
+\end_inset
+
+, la impedancia de entrada del circuito, con los valores de los componentes
+ recomendados por la cátedra, es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{inp}=\frac{RQ(k^{2}+1)^{2}}{(Q(1-k^{4})+k^{2}-k^{4}))}\frac{s^{2}R^{2}C^{2}+sRC+1}{s^{2}\frac{C^{2}R^{2}(k^{2}+1)}{(Q(1-k^{4})+k^{2}-k^{4}))}+s\frac{CR((k^{2}+1)(Q^{2}+Q-Q^{2}k^{2})+k^{2})}{Q(Q(1-k^{4})+k^{2}-k^{4}))}+1}\label{eq:impedancia_entrada_definitiva}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Efectos de 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ en la función trasferencia del circuito
+\end_layout
+
+\begin_layout Standard
+Para dicho análisis se analiza como varían los parámetros de interés del
+ circuito (Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:parametros de interes circuito generico"
+
+\end_inset
+
+) según los casos limites que pueda tener el componente 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ o 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Formula $R_{6}\rightarrow\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/r6_infinito.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:zp_r6_inf"
+
+\end_inset
+
+Diagrama de Polos y Ceros a medida que 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ aumenta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observando la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:parametros de interes circuito generico"
+
+\end_inset
+
+, podemos determinar que el parámetro que más afecta 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ al aumentar es 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ y por ende a la posición de las singularidades de la función transferencia,
+ dicho efecto se puede visualizar en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:zp_r6_inf"
+
+\end_inset
+
+.Manteniendo los valores de los demás componentes, a medida que aumenta 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+, disminuye 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+, aumentando la profundidad del Notch (se explica con más detalle del tema
+ en la Subsección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Notch-Depth"
+
+\end_inset
+
+).
+ Además, al aumentar 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ se disminuye la distancia entre los polos y los ceros, implicando que se
+ aumenta la selectividad del Notch, parámetro que esta relacionado con 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En cuanto a la modificación de los polos y los ceros, a medida que aumenta
+ 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+, los polos y los ceros conjugados se acercan cada vez más al eje 
+\begin_inset Formula $j\omega$
+\end_inset
+
+ y aumentan su parte imaginaria.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Formula $R_{6}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/r6_cero.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:zp_r6_cero"
+
+\end_inset
+
+Diagrama de Polos y Ceros a medida que 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ disminuye
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observando la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:parametros de interes circuito generico"
+
+\end_inset
+
+, podemos determinar que el parámetros que más afecta 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ al disminuir es 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ y 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+, acercando a cero a medida que 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ lo hace.
+ Visualizando la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:zp_r6_cero"
+
+\end_inset
+
+, podemos que la posición de los polos y ceros, a medida que disminuye 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+, un polo se acerca al 
+\begin_inset Formula $-\infty$
+\end_inset
+
+ mientras que el otro polo se acerca al 0, y en cuanto a los ceros, un cero
+ se aproxima al 
+\begin_inset Formula $+\infty$
+\end_inset
+
+ mientras que el otro cero se aproxima al cero.
+ En el caso limite, la función transferencia se comportara como una constante
+ negativa (debido al -180°, producto de la fase del polo y cero en 
+\begin_inset Formula $\infty$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Formula $R_{8}\rightarrow\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La función trasferencia para el caso limite en que 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ tiende a 
+\begin_inset Formula $\infty$
+\end_inset
+
+ es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lim_{R_{8}\rightarrow\infty}H(s)_{generico}=\frac{R_{6}(R_{4}+R_{5})}{R_{5}(R_{6}+R_{7})}\frac{(sC_{6}R_{7}+1)}{s\frac{C_{6}R_{6}R_{7}}{R_{6}+R_{7}}+1}\label{eq:transferencia_r8_inf}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/r8_infinito.png
+	lyxscale 75
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:zp_r8_inf"
+
+\end_inset
+
+Diagrama de Polos y Ceros a medida que 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ aumenta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analizando la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_r8_inf"
+
+\end_inset
+
+) y la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:zp_r8_inf"
+
+\end_inset
+
+, podemos apreciar que la posición de los polos y de los ceros se acercan
+ cada vez más al eje real a medida que aumentamos 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ y por ende el angulo que tienen los mismos con respecto al origen, magnitud
+ que esta relacionado con el 
+\begin_inset Formula $Q$
+\end_inset
+
+, ya sea del cero o del polo, por ende el sobre-pico que tienen la función
+ transferencia es cada vez menor, y en el caso limite (ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_r8_inf"
+
+\end_inset
+
+) podemos observar que se obtiene un cero y un polo simple, que tiene un
+ comportamiento totalmente distinto a un Filtro High Pass Notch, por ende
+ se concluye que la resistencia 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ es muy importante para la obtención de un Filtro High Pass Notch .
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Formula $R_{8}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La transferencia que le corresponde al circuito en el caso de que 
+\begin_inset Formula $R_{8}=0$
+\end_inset
+
+ es
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lim_{R_{8}\rightarrow0}H(s)_{generico}=1-s\frac{C_{2}R_{1}R_{3}}{R_{6}}\label{eq:transferencia_r8_cero_generica}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/r8_cero.png
+	lyxscale 75
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:zp_r8_cero"
+
+\end_inset
+
+Diagrama de Polos y Ceros a medida que 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ disminuye
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analizando ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_r8_cero_generica"
+
+\end_inset
+
+) se puede que si 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ tiende a cero, tiene un cero nomas, implicando que el sistema no es BIBO
+ estable (ya que el grado del polinomio del numerador (el mismo es 1) es
+ mayor que el grado del polinomio del denominador (el cual es 0)), por ende,
+ podemos percibir a partir del caso limite, la importancia de que 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ tampoco puede ser un cable si es que se quiere tener un Filtro High Pass
+ Notch..
+ Además, observando la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:zp_r8_inf"
+
+\end_inset
+
+, podemos apreciar que la posición de los polos, a medida que disminuimos
+ 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+, se encuentra sobre el eje 
+\begin_inset Formula $j\omega$
+\end_inset
+
+ en frecuencias cada vez más grande (en el caso limite 
+\begin_inset Formula $R_{8}\rightarrow0,$
+\end_inset
+
+ se encuentran en el 
+\begin_inset Formula $\pm\infty$
+\end_inset
+
+) .
+\end_layout
+
+\begin_layout Subsubsection
+Análisis de sensibilidades: transferencia
+\end_layout
+
+\begin_layout Standard
+El análisis de sensibilidades de parámetros de interés provee información
+ útil a la hora de elegir la tolerancia y el valor de cada componente.
+ A partir de las sensibilidades se puede obtener la tolerancia de los parámetros
+ del circuito a partir de las tolerancias de los componentes utilizados
+ para poder elegir cuales de ellos deben tener mejor precisión.
+ A su vez nos permite elegir correctamente las dimensiones de los componentes
+ de tal manera de incurrir el menor error en los parámetros de interés y
+ por ultimo nos permite a la hora de diseñar saber que componente modificar
+ para ubicar los parámetros donde se los requiere por plantilla afectando
+ lo menos posible a los parámetros ya ubicados.
+\end_layout
+
+\begin_layout Standard
+Se define entonces la sensibilidad relativa de un parámetro con respecto
+ a un componente como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{x}^{f(x)}=\frac{\text{∂}f}{∂x}\Biggl|_{x=x_{o}}\frac{x}{f(x)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+siendo 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x):$
+\end_inset
+
+ el parámetro al cual se le calcula la sensibilidad
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x:$
+\end_inset
+
+ componente que se varía
+\end_layout
+
+\begin_layout Standard
+Los parámetros del filtro a los cuales se le va a producir un análisis de
+ sensibilidad son los siguientes:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+: frecuencia angular del Notch (idealmente es la frecuencia angular donde
+ se encuentra posicionado el Notch)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+: frecuencia angular a partir de cual la asíntota luego de la función transferen
+cia no tiene más pendiente
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $G_{n}:$
+\end_inset
+
+ ganancia del circuito en altas frecuencias
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+: idealmente en el filtro High Pass Notch es igual a 0 (cero) y tiene gran
+ importancia en la profundidad del Notch Real
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Q_{circuito}$
+\end_inset
+
+ o 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+: factor de selectividad del Notch
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Bigl|H(j\omega_{z})\Bigr|$
+\end_inset
+
+: profundidad del Notch
+\end_layout
+
+\begin_layout Standard
+siendo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\omega_{z}=\sqrt{\frac{R_{4}R_{5}}{C_{2}C_{6}R_{1}R_{3}R_{8}(R_{4}+R_{5})}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\omega_{p}=\sqrt{\frac{R_{4}(R_{8}+R_{5})}{C_{2}C_{6}R_{1}R_{3}R_{5}R_{8}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G_{n}=\frac{R_{4}+R_{5}}{R_{5}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{z}=-\frac{R_{5}R_{7}R_{6}R_{4}}{C_{2}R_{1}R_{3}(R_{4}R_{5}R_{7}-R_{4}R_{6}R_{8}-R_{5}R_{6}R_{8})\sqrt{\frac{R_{4}R_{5}}{C_{2}C_{6}R_{1}R_{3}R_{8}(R_{4}+R_{5})}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{p}=\frac{R_{8}+R_{5}}{C_{2}R_{1}R_{3}R_{5}R_{8}(\frac{1}{(R_{4}R_{7})}+\frac{1}{(R_{4}R_{6})})\sqrt{\frac{R_{4}(R_{8}+R_{5})}{(C_{2}C_{6}R_{1}R_{3}R_{8}R_{5})}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+se obtuvieron las siguientes sensibilidades relativas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{\omega_{z}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{5}}{2.(R_{4}+R_{5})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{4}}{2.(R_{4}+R_{5})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sensibilidades-omegaZ"
+
+\end_inset
+
+Sensibilidades Relativas de 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{\omega_{p}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{R_{8}}{2.(R_{8}+R_{5})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{R_{5}}{2.(R_{8}+R_{5})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensibilidades Relativas de 
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{G_{n}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{4}}{R_{4}+R_{5}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{R_{4}}{R_{4}+R_{5}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensibilidades Relativas de 
+\begin_inset Formula $G_{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{Q_{p}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{R_{8}}{2(R_{8}+R_{5})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{7}}{R_{6}+R_{7}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{6}}{R_{6}+R_{7}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{R_{5}}{2(R_{8}+R_{5})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensibilidades Relativas de 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{Q_{z}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{-R_{4}R{}_{5}^{2}R_{7}-R_{4}R_{5}R_{6}R_{8}-R{}_{5}^{2}R_{6}R_{8}}{2.(R_{4}^{2}R_{5}R_{7}-R{}_{4}^{2}R_{6}R_{8}+R_{4}R{}_{5}^{2}R_{7}-2.R_{4}R_{5}R_{6}R_{8}-R{}_{5}^{2}R_{6}R_{8})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{-R_{4}^{2}R_{5}R_{7}-R{}_{4}^{2}R_{6}R_{8}-R_{4}R_{5}R_{6}R_{8}}{2.(R_{4}^{2}R_{5}R_{7}-R{}_{4}^{2}R_{6}R_{8}+R_{4}R{}_{5}^{2}R_{7}-2.R_{4}R_{5}R_{6}R_{8}-R{}_{5}^{2}R_{6}R_{8})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{7}R_{5}R_{4}}{R_{4}R_{5}R_{7}-R_{4}R_{6}R_{8}-R_{5}R_{6}R_{8}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{-R_{4}R_{6}R_{8}-R_{5}R_{6}R_{8}}{R_{4}R_{5}R_{7}-R_{4}R_{6}R_{8}-R_{5}R_{6}R_{8}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{4}R_{5}R_{7}+R_{4}R_{6}R_{8}+R_{5}R_{6}R_{8}}{2.(R_{4}R_{5}R_{7}-R_{4}R_{6}R_{8}-R_{5}R_{6}R_{8})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensibilidades Relativas de 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sensibilidades-Relativas"
+
+\end_inset
+
+Sensibilidades Relativas de Parámetros representativos de la función transferenc
+ia de un High Pass Notch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede comprobar que para todos los casos se cumple que 
+\begin_inset Formula $\sum_{\forall i}R_{i}^{f(x)}-\sum_{\forall i}C_{i}^{f(x)}=0$
+\end_inset
+
+, donde 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ es el parámetro a analizar.
+\end_layout
+
+\begin_layout Standard
+Observando las tablas del Cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Sensibilidades-Relativas"
+
+\end_inset
+
+, podemos concluir que al momento de elegir los componentes para el diseño
+ del circuito tener las siguientes consideraciones:
+\end_layout
+
+\begin_layout Standard
+Para lograr que la profundidad del Notch (relacionado con 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+), hay que tener en cuenta la sensibilidad de los componentes de 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+,
+\begin_inset Formula $R_{5}$
+\end_inset
+
+,
+\begin_inset Formula $R_{6}$
+\end_inset
+
+,
+\begin_inset Formula $R_{7}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+, explicando porque es muy difícil conseguir un Notch con profundidad muy
+ elevada, ya que a la mínima variación de uno de estos componentes, me varia
+ notablemente la profundidad del Notch.
+\end_layout
+
+\begin_layout Standard
+Además, podemos notar que la variación en las resistencias de 
+\begin_inset Formula $R_{6}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{7}$
+\end_inset
+
+ no tienen efecto en la modificación de la de la ganancia en altas frecuencias
+ ni en la posición de los polos y ceros del circuito, ya que sus sensibilidad
+ relativa con respecto a dicho componentes son 0.
+\end_layout
+
+\begin_layout Standard
+Los componentes a partir del cual la ganancia en altas frecuencia es sensible
+ son 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+y 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ nomás y encima tienen la misma sensibilidad pero de signo contrario, las
+ variaciones se verán compensadas, por lo que la ganancia en altas frecuencias
+ serán compensadas, es decir, solo dependen del valor nominal que tengan
+ los componentes.
+ 
+\end_layout
+
+\begin_layout Standard
+Comparando las sensibilidades de 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ con las de 
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+, podemos notar que cada una de ellas tienen una variación en la sensibilidad
+ con dos componentes: 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ con 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+, y 
+\begin_inset Formula $\omega_{p}$
+\end_inset
+
+ con 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+.Por ende, al momento de diseñar, hay que tener en cuenta que alguna variación
+ en 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ puede realizar una variación conjunta en la posición de los ceros y los
+ polos.
+\end_layout
+
+\begin_layout Subsection
+Diseño del filtro: High Pass Notch
+\end_layout
+
+\begin_layout Standard
+En esta sección se definen los valores de los componentes a utilizar, analizándo
+se la recomendación de relación de componentes propuesta por la cátedra
+ (Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Ayuda valores"
+
+\end_inset
+
+).
+ Se busca obtener un filtro High Pass Notch que cumpla la plantilla de la
+ tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Especificaciones-de-diseño."
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{circuito}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left|H(\infty)\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13000
+\begin_inset Formula $\frac{rad}{s}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4dB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Especificaciones de diseño.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Especificaciones-de-diseño."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab: parametros de interes filtro HPN particular"
+
+\end_inset
+
+ y la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Especificaciones-de-diseño."
+
+\end_inset
+
+, podemos determinar las siguientes magnitudes del circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\omega_{z}=\frac{k}{RC}=13000\label{eq:relacion_omega}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q_{circuito}=\frac{Q(k^{2}+1)}{2.k^{2}}=2\label{eq:relacion_q}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir de la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_definitiva"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{s\rightarrow\infty}H(s)=(\frac{2}{k^{2}+1})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+el cual, por la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Especificaciones-de-diseño."
+
+\end_inset
+
+, tiene que ser:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{2}{k^{2}+1}=10^{\frac{4}{20}}\Longrightarrow k^{2}=\frac{2}{10^{\frac{4}{20}}}-1\label{eq:relacion_ganancia_infinito}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De las relaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relacion_omega"
+
+\end_inset
+
+),(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relacion_q"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relacion_ganancia_infinito"
+
+\end_inset
+
+).
+ obtenemos las siguientes condiciones que hay que implementar en el diseño
+ del circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+k_{teorico} & =0.511\\
+R_{teorico}C_{teorico} & =3.93.10^{-5}\\
+Q_{teorico} & =0.83
+\end{cases}\label{eq:parametros diseño a implementar}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ende, los componentes, referidos a 
+\begin_inset Formula $R$
+\end_inset
+
+ y 
+\begin_inset Formula $C$
+\end_inset
+
+, quedan de la siguiente forma
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $0,415.R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,709.R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2,095.R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $7,999.R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componentes de Diseño referidos a los valores R y C
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para la selección de los componentes, se busco la optimización en la utilización
+ de componentes para lograr el menor error en la relación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:condicion_HPN"
+
+\end_inset
+
+) para lograr que el filtro High Pass Notch tenga la mayor profundidad del
+ Notch posible, utilizando la menor cantidad de componentes, teniendo en
+ cuenta ademas la disponibilidad de componentes en el pañol (que posee una
+ tolerancia del 
+\begin_inset Formula $5\%$
+\end_inset
+
+).
+ Se buscó evitar capacitores de más de 1uF y resistencias de más de 
+\begin_inset Formula $1M\Omega$
+\end_inset
+
+para evitar ruido térmico y la posibilidad de que las resistencias del GIC
+ tengan impedancia comparable a la de las entradas de los operacionales.
+\end_layout
+
+\begin_layout Standard
+Por ende, se decidió por los siguientes valores:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{real}=10k\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C_{real}=3,939nF$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además, para lograr que la frecuencia del Notch sea lo más cercano al valor
+ de la plantilla, se visualizo en la tabla de sensibilidades de 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ (Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Sensibilidades-omegaZ"
+
+\end_inset
+
+) y determinar por cuales de los componentes es más sensible, para utilizar
+ un componente variable en dicho caso.
+ A partir de dicho análisis, se llego a la conclusión de que los componentes
+ de los cuales era más sensible 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ son 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+y 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+, optándose por 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ por una cuestión de que los componentes que se encontraban en el pañol
+ para lograr el paralelo o serie de 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ conllevaban un mayor error que realizar el paralelo o serie de 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Obteniendo los siguientes valores de los componentes en el circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error Relativo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Preset
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $18k\Omega//12k\Omega=7,2k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1,5\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $22k\Omega//470k\Omega\simeq21,06k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,52\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $47k\Omega+33k\Omega=80k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,01\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $10k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3,9nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,22\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3,9nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,22\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Componentes"
+
+\end_inset
+
+Componentes de Diseño utilizados y sus errores relativos con los valores
+ teóricos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Utilizando los valores de la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Componentes"
+
+\end_inset
+
+, se determino que el valor que debe tener 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ para cumplir la plantilla, con el menor error posible, es 
+\begin_inset Formula $3997\Omega$
+\end_inset
+
+.
+ Por ende, el preset que se utiliza para 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ tiene el rango de 
+\begin_inset Formula $0-5000\Omega$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En cuanto a los amplificadores operacionales, debían tener una ganancia
+ a lazo abierto muy alta, y lograr que la misma no deje de ser despreciable
+ en un rango alto de frecuencias, con lo cual se busco:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A_{vol}:$
+\end_inset
+
+ ganancia a lazo abierto pueda ser considerada infinita, ya que en el calculo
+ de la función transferencia, se realizo la suposición de que la tensión
+ entre los bornes del Op-Amp son iguales, lo cual es consecuencia de que
+ 
+\begin_inset Formula $A_{vol}$
+\end_inset
+
+ es muy grande.
+\end_layout
+
+\begin_layout Itemize
+GBWP alto: para asegurar que no afecte los polos dominantes en la zona de
+ trabajo (entorno de la frecuencias central, es decir, la frecuencia del
+ Notch)
+\end_layout
+
+\begin_layout Itemize
+Slew Rate alto: que permita mantener una tensión de entrada considerablemente
+ alta en altas frecuencias
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{in}$
+\end_inset
+
+ elevada: ya que en el calculo de la función transferencia, se realizo la
+ suposición de que la misma es 
+\begin_inset Formula $\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para reducir espacio, también se busco que los Op-Amp estuvieran en el mismo
+ integrado, sin necesidad de tener pines de compensación de ningún tipo.
+ Por ello se eligió el TL082, que cumple con todas las pautas elegidas con:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $GBWP$
+\end_inset
+
+: 4MHz
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A_{vol}$
+\end_inset
+
+ típico: 100000 veces
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Z_{in}:$
+\end_inset
+
+ 
+\begin_inset Formula $1T\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Slew Rate: 13 
+\begin_inset Formula $\frac{V}{\mu s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además.
+ cabe destacar que:
+\end_layout
+
+\begin_layout Itemize
+el operacional posee una mínima corriente de Bias y Offset por lo cual no
+ fueron necesarias considerarlas como limitaciones del circuito
+\end_layout
+
+\begin_layout Itemize
+el fabricante recomienda poner un capacitor de desacople con capacidad mayor
+ a 
+\begin_inset Formula $0,1\mu F$
+\end_inset
+
+ entre los pines de alimentación del integrado
+\end_layout
+
+\begin_layout Subsubsection
+Respuesta en frecuencia
+\end_layout
+
+\begin_layout Subsubsection*
+Teórica
+\end_layout
+
+\begin_layout Standard
+La función transferencia que se grafica es la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_generica"
+
+\end_inset
+
+), con los valores reemplazados de los componentes utilizados (Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Componentes"
+
+\end_inset
+
+ y considerando que 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ tiene el valor de 
+\begin_inset Formula $3997\Omega$
+\end_inset
+
+).
+ La función transferencia resultante es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(s)\simeq0,418.\frac{s^{2}.5,917.10^{-9}+s.4,48.10^{-7}+1}{s^{2}.1,58.10^{-9}+s.2,44.10^{-5}+1}\label{eq:transferencia_con_valores_teorica}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/diagrama_polos_ceros_teorico.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Polos y Ceros de la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:transferencia_con_valores_teorica"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La frecuencia central de trabajo, es decir, la frecuencia del Notch es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{notch_{real}}=\frac{1}{2.\pi}.\frac{1}{\sqrt{5,63.10^{-9}}}=2069,04Hz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+mientras que la frecuencia del Notch teórica es 
+\begin_inset Formula $f_{teorica}=\frac{13000}{2\pi}=2069,01Hz$
+\end_inset
+
+; por lo tanto el error relativo que se tiene es menor al 
+\begin_inset Formula $1\%$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/amplitud_bode_teorico.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Amplitud Diagrama de Bode Teorico "
+
+\end_inset
+
+Amplitud del Diagrama de Bode Teórico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fase_bode_teorico.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase del Diagrama de Bode Teórico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Simulada
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/esquematico_spice.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito Simulado en LTSpice
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\shape italic
+Aclaración: 
+\shape default
+Los bornes del amplificador que no se especifican en la figura significan
+ lo siguiente: (1) Borne Positivo, (2) Borne Negativo y (5) Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/bode_preset.PNG
+	lyxscale 30
+	scale 27
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode Simulado con 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ con un resistencia variable entre 
+\begin_inset Formula $3500-4500\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/amplitud_bode_simulado.png
+	lyxscale 60
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:amp_bode_sobrepico"
+
+\end_inset
+
+Amplitud del Diagrama de Bode Simulado con 
+\begin_inset Formula $R_{4}=3997\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fase_bode_simulado.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase del Diagrama de Bode Simulado con 
+\begin_inset Formula $R_{4}=3997\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de entrada
+\end_layout
+
+\begin_layout Subsubsection*
+Teórica
+\end_layout
+
+\begin_layout Standard
+La impedancia de entrada que se grafica es la ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:impedancia_entrada_generica"
+
+\end_inset
+
+), con los valores reemplazados de los componentes utilizados (Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Componentes"
+
+\end_inset
+
+).
+ La función transferencia resultante es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{inp}\simeq15288,88.\frac{s^{2}.1,59.10^{-9}-s.2,42.10^{-7}+1}{s^{2}.1,15.10^{-9}+s.8,09.10^{-5}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/amp_zinp_teorica.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Amplitud de la Impedancia de Entrada Teórica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fase_zinp_teorica.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase de la Impedancia de Entrada Teórica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Simulada
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/impedancia_entrada_preset.PNG
+	lyxscale 45
+	scale 27
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de Entrada Simulada con 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ con un resistencia variable entre 
+\begin_inset Formula $3500-4500\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/amp_zinp_simulado.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:amp_zinp_sim"
+
+\end_inset
+
+Amplitud de la Impedancia de Entrada Simulada con 
+\begin_inset Formula $R_{4}=3997\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fase_zinp_simulado.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase de la Impedancia de Entrada Simulada con 
+\begin_inset Formula $R_{4}=3997\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis de mediciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Placa_hecha.PNG
+	lyxscale 30
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCB que se diseñó y a la cual se le realizaron mediciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Respuesta en Frecuencia
+\end_layout
+
+\begin_layout Subsubsection*
+Medida
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/amplitud_bode_medido.png
+	lyxscale 60
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:diagrama_bode_amp_medido"
+
+\end_inset
+
+Amplitud del Diagrama de Bode Medido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fase_bode_medido.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase del Diagrama de Bode Medido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Comparación
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/amplitud_bode_comp.png
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Amplitud del Diagrama de Bode: Teórico vs.
+ Simulado (con 
+\begin_inset Formula $R_{4}=3997\Omega$
+\end_inset
+
+) vs.
+ Medido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fase_bode_comp.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase del Diagrama de Bode: Teórico vs.
+ Simulado (con 
+\begin_inset Formula $R_{4}=3997\Omega$
+\end_inset
+
+) vs.
+ Medido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las frecuencia real del Notch resulto ser 
+\begin_inset Formula $13200\frac{rad}{seg}$
+\end_inset
+
+, lo cual es un 
+\begin_inset Formula $1,5\%$
+\end_inset
+
+ de error con la plantilla.
+\end_layout
+
+\begin_layout Standard
+Se puede ver como el circuito real demostró funcionar acorde a lo esperado
+ con variaciones dentro de lo que se previa por las tolerancias de los component
+es y sensibilidades.
+ Esto es así hasta aproximadamente 
+\begin_inset Formula $1MHz$
+\end_inset
+
+ donde el circuito real empieza a mostrar las imperfecciones de los amplificador
+es operacionales.
+ 
+\end_layout
+
+\begin_layout Standard
+Además.
+ la ganancia real en frecuencias altas resulto ser 
+\begin_inset Formula $3,4dB$
+\end_inset
+
+, lo cual implica un 
+\begin_inset Formula $4,2\%$
+\end_inset
+
+ de error con la plantilla.
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de Entrada
+\end_layout
+
+\begin_layout Subsubsection*
+Medida
+\end_layout
+
+\begin_layout Standard
+Se conecta una resistencia entre el generador 
+\begin_inset Formula $V_{in}$
+\end_inset
+
+ y el circuito, y luego se mide la caída de tensión sobre dicha resistencia.
+ La misma debe ser suficientemente pequeña para no influir en el circuito,
+ pero lo suficientemente grande para poder medir con mayor precisión la
+ corriente que circula por ella.
+ Por lo tanto, se utiliza una resistencia de un orden de magnitud menor
+ de la impedancia de entrada del circuito sin la resistencia.
+ Visualizando la simulación realizada (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amp_zinp_sim"
+
+\end_inset
+
+), se determinó que dicha resistencia en las frecuencias entre 
+\begin_inset Formula $10-500000Hz$
+\end_inset
+
+ sea 
+\begin_inset Formula $10k\Omega,$
+\end_inset
+
+ya que la impedancia de entrada del circuito se encuentra entre 
+\begin_inset Formula $6-22k\Omega$
+\end_inset
+
+ y en las frecuencias que siguen (
+\begin_inset Formula $500-2000kHz$
+\end_inset
+
+) se utilizo una resistencia de 
+\begin_inset Formula $1k\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/amp_zinp_medida.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Amplitud de la Impedancia de Entrada Medida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fase_zinp_medido.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase de la Impedancia de Entrada Medida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Comparación
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/amp_zinp_comp.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Amplitud de la Impedancia de Entrada: Teórica vs.
+ Simulada (con 
+\begin_inset Formula $R_{4}=3997\Omega$
+\end_inset
+
+) vs.
+ Medida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fase_zinp_comp.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase de la Impedancia de Entrada: Teórica vs.
+ Simulada (con 
+\begin_inset Formula $R_{4}=3997\Omega$
+\end_inset
+
+) vs.
+ Medida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede ver por las mediciones que el circuito efectivamente se comporta
+ igual que la teoría predijo, excepto en algunas discrepancias entre el
+ simulado y el medido, pero esas discrepancias caen dentro de las tolerancias
+ de los componentes.
+\end_layout
+
+\begin_layout Standard
+La diferencia que se puede visualizar entre la impedancia de entrada simulada
+ y/o medida con la teórica se debe a que en la teórica se considero al amplifica
+dor operacional como ideal, y por ende no se tuvo en cuenta los efectos
+ del polo dominante, en el cual en las simulaciones y mediciones se puede
+ notar que no es así en realidad.
+\end_layout
+
+\begin_layout Subsubsection
+Limitaciones de circuito
+\end_layout
+
+\begin_layout Paragraph
+Limitación de Frecuencia
+\end_layout
+
+\begin_layout Standard
+Dado que el circuito esta conformado por amplificadores operacionales y
+ los mismos por fabricación poseen un polo dominante, el circuito está limitado
+ en un rango de frecuencias en el cual el polo dominante no afectara de
+ manera notable en el circuito.
+ Para calcular alrededor de que frecuencia el polo dominante empieza a tener
+ efecto, utilizamos el GBWP (Gain BandWidth Product).
+\end_layout
+
+\begin_layout Standard
+Como en el circuito se utiliza un TL082, y según la hoja de datos del mismo,
+ su GBWP típico es 
+\begin_inset Formula $3MHz$
+\end_inset
+
+ y la ganancia del circuito en altas frecuencias ,visualizando el Diagrama
+ de Bode en Amplitud Teórico del Circuito (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Amplitud Diagrama de Bode Teorico "
+
+\end_inset
+
+), es 
+\begin_inset Formula $3.4dB$
+\end_inset
+
+, la frecuencia donde el polo dominante empieza a tener impacto en el circuito
+ es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{p}=\frac{3MHz}{10^{\frac{3,4}{20}}}=2,02MHz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observando la amplitud del Diagrama de Bode Medido (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:diagrama_bode_amp_medido"
+
+\end_inset
+
+), podemos apreciar que la frecuencia alrededor sobre la cual el polo dominante
+ empieza alterar al circuito es 
+\begin_inset Formula $2MHz$
+\end_inset
+
+, lo cual verifica lo analizado.
+\end_layout
+
+\begin_layout Standard
+Analizamos dos tipos de limitaciones cuando se relacionan con tensión: la
+ tensión máxima y mínima con la cual puedo alimentar el circuito.
+\end_layout
+
+\begin_layout Paragraph
+Limitación de Tensión
+\end_layout
+
+\begin_layout Standard
+El limite de la tensión máxima va a estar dada para que el Op-Amp no sature.
+ Como estudiamos un Filtro High Pass Notch, para determinar ese limite de
+ tensión, analizamos cuando el filtro tiene la mayor ganancia.
+ Visualizando la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amp_bode_sobrepico"
+
+\end_inset
+
+, la mayor ganancia del circuito se encuentra en el sobre-pico que se produce
+ luego del Notch (dicha frecuencia se encuentra alrededor de los 
+\begin_inset Formula $4,7KHz$
+\end_inset
+
+).
+ Como dicha ganancia es aproximadamente 
+\begin_inset Formula $6.5dB$
+\end_inset
+
+, el Op-Amp se lo alimenta con 
+\begin_inset Formula $\pm15(V)$
+\end_inset
+
+ y el TL082 no es amplificador operacional rail to rail, suponiendo que
+ el amplificador sature con 
+\begin_inset Formula $1-1.2(V)$
+\end_inset
+
+ menos que la alimentación, la tensión máxima con la cual puedo alimentar
+ al circuito sin que sature el Op-Amp es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{in_{máx}}=13,9.10^{-\frac{6.5}{20}}(V)=6.57(V)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se midió en alrededor de dicha frecuencia, obteniendo lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/saturacion.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Saturacion"
+
+\end_inset
+
+Señales de Entradas y Salida del Circuito-Señales de Frecuencia de 
+\begin_inset Formula $4,75KHz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observando la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Saturacion"
+
+\end_inset
+
+, podemos observar se produce la saturación en la señal de salida como se
+ esperaba.
+\end_layout
+
+\begin_layout Standard
+Además, considerando que el nivel de piso de ruido es del orden de 
+\begin_inset Formula $20mV$
+\end_inset
+
+ y teniendo en cuenta que se quiere atenua un rango de frecuencias (las
+ que se encuentran en el entorno del Notch), se desea que la señal, en alguna
+ frecuencia (que no se encuentre cercana a la frecuencia del Notch), pueda
+ ser medida correctamente, por ende la misma no tiene que ser semejante
+ a la señal de ruido.
+ El rango de frecuencias donde se produce la mayor atenuación en un filtro
+ High Pass Notch, sin tener en cuenta el Notch y su entorno, son las frecuencias
+ previas al Notch.
+ Observando la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:diagrama_bode_amp_medido"
+
+\end_inset
+
+, podemos notar que dicha atenuación es del orden de los 
+\begin_inset Formula $-7,6dB$
+\end_inset
+
+, por ende la mínima tensión con la cual se puede alimentar al circuito
+ es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{in_{min}}=(20.10^{-3}).10^{\frac{7,6}{20}}(V)=0,0479(V)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Verificamos dicho análisis con mediciones, obteniendo lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ruid1.bmp
+	lyxscale 30
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señales de Entradas y Salida del Circuito-Señales de Frecuencia de 
+\begin_inset Formula $100Hz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Notch Depth
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Notch-Depth"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En los filtros rechaza-banda, como su nombre lo especifica, permite el paso
+ de todas las frecuencias (con o sin ganancia) salvo en un entorno de frecuencia
+s (frecuencias que se encuentran en el entorno del 'Notch') donde se desea
+ atenuar la señal.
+ La máxima atenuación que sufre la señal de salida con respecto a la señal
+ de entrada se la conoce como la profundidad del rechaza banda o Notch Depth.
+ Dicha característica esta relacionado con el factor de mérito del numerador
+ de la función transferencia.
+ La definición de la profundidad del rechaza banda es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{depth}=\frac{1}{Q_{z}}\label{eq:notch_depth}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Idealmente, un filtro rechaza banda o filtro trampa, no permiten el paso
+ de señales cuyas frecuencias se encuentran comprendidas entre las frecuencias
+ de corte superior e inferior, por ende la profundidad del rechaza banda
+ es (
+\begin_inset Formula $\infty$
+\end_inset
+
+) .
+\end_layout
+
+\begin_layout Standard
+Como se menciono previamente, la profundidad del rechaza banda esta relacionado
+ inversamente proporcional con el factor de calidad de los ceros de la función
+ transferencia, los cuales también se los conoce como ceros de transmisión.
+ 
+\end_layout
+
+\begin_layout Standard
+El valor 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ es el modifica el valor de profundidad del rechaza banda pero a su vez,
+ el 
+\begin_inset Formula $Q_{p}$
+\end_inset
+
+(factor de calidad de los polos de la función transferencia) altera el ancho
+ de banda para el cual se atenúa la señal.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/notch_depth_qz.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Profundidad de Notch según la Variación de 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Continuando con el análisis del filtro, el circuito realizado es un HP-Notch
+ (High Pass Notch) y se le midió la respuesta en frecuencia.
+ En el proceso de la medición se tomaron ciertas medidas para poder medir
+ con mayor precisión la franja de valores de mayor atenuación de manera
+ de obtener la frecuencia para la cual se tenia la mayor atenuación (y obtener
+ dicho valor máximo).
+ Visualizando la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:diagrama_bode_amp_medido"
+
+\end_inset
+
+, podemos notar que el valor de la máxima atenuación se dio para la frecuencia
+ 
+\begin_inset Formula $2101Hz$
+\end_inset
+
+ con una atenuación de la señal de entrada de 
+\begin_inset Formula $32,68dB$
+\end_inset
+
+.
+ Por ende, utilizando la relación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:notch_depth"
+
+\end_inset
+
+), podemos determinar 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+, obteniendo lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{z}=10^{\frac{32,8}{20}}=43.65
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La forma en la que se obtuvieron los datos para todo el rango de frecuencias
+ para el cual se realizo la respuesta en frecuencia no fue la misma.
+ Las amplitudes elegidos fueron las que variaron de manera de poder analizar
+ con mayor precisión el Notch-Depth.
+ Como fue explicado previamente, al implementar el circuito se escogieron
+ los componentes de manera que no se introduzcan problemas por culpa de
+ las restricciones de los Op-Amps por ende la amplitud que se eligió para
+ frecuencias que no pertenecen a la franja de atenuación fue 
+\begin_inset Formula $1-5Vpp$
+\end_inset
+
+.
+ Dentro del rango de frecuencias de atenuación del filtro rechaza banda,
+ se optó por la amplitud de la senoidal utilizada para la medición fuese
+ significativamente mayor( dicha amplitud fue de 
+\begin_inset Formula $10Vpp$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsection
+Conclusión
+\end_layout
+
+\begin_layout Standard
+En esta experiencia se pudo lograr principalmente lo siguiente:
+\end_layout
+
+\begin_layout Itemize
+Diseño y selección de componentes para implementar en el circuito: a partir
+ de una plantilla que nos brindo la cátedra, se tuvo que analizar las diferentes
+ posibilidades para lograr cumplir la misma en el circuito y el análisis
+ de para elegir un amplificador operacional, teniendo en cuenta los diferentes
+ parámetros que podían afectar o no de manera significativa en el circuito.
+\end_layout
+
+\begin_layout Itemize
+Uso y análisis de las sensibilidades relativas: facilidad que permiten los
+ mismos para conectar las discrepancias del circuito real y el teórico con
+ las tolerancias de los componentes o demostrar que los mismos no son el
+ principal efecto de esa discrepancia.
+\end_layout
+
+\begin_layout Itemize
+Observar que el GIC en bajas frecuencias tiene un comportamiento como el
+ circuito teórico (ideal) y en altas frecuencias, el uso de Op-Amps limita
+ severamente el ancho de banda para el cual el GIC funciona correctamente,
+ siendo limitado por el GBWP de los operacionales.
+\end_layout
+
+\begin_layout Itemize
+Reconocer los parámetros principales de un filtro rechaza banda (Notch)
+\end_layout
+
+\begin_layout Itemize
+Caracterizar los rangos de funcionamiento de un circuito
+\end_layout
+
+\end_body
+\end_document

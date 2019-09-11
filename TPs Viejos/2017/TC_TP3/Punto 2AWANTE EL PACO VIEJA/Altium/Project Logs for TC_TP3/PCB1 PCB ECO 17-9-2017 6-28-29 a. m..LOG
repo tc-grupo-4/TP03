@@ -1,0 +1,6 @@
+Added Component: Designator=ResRLC BP(6-0805_M)
+Added Pin To Net: NetName=NetCapRLC BP_2 Pin=ResRLC BP-2
+Added Pin To Net: NetName=NetResRLC BP_1 Pin=ResRLC BP-1
+Added Pin To Net: NetName=NetResRLC BP_1 Pin=Vin BP-1
+Added Net: Name=NetResRLC BP_1
+Added Member To Class: ClassName=PasaBanda(BP) Member=Component ResRLC BP Res3

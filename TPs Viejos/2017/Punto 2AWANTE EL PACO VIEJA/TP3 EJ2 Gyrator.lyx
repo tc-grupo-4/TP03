@@ -1,0 +1,2838 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introducción a Diseño de Filtros
+\end_layout
+
+\begin_layout Standard
+En la siguiente sección se llevó a cabo el diseño de cuatro filtros mediante
+ plantillas de diseño.
+ Los circuitos empleados son de segundo orden y limitados en ganancia a
+ 0dB, evitando de esta manera posibles oscilaciones de OpAmps.
+ Se realizarón los diseños mediante circuitos RLC, y una vez verificados
+ mediante simulación el cumplimiento de plantillas se reemplazó la bobina
+ por un Gyrator.
+\end_layout
+
+\begin_layout Subsection
+Filtros Diseñados Mediante RLC
+\end_layout
+
+\begin_layout Standard
+Se diseñó un filtro Pasa Bajos(LP), Pasa Altos(HP), Pasa Banda(BP), y Rechaza
+ Banda(BR).
+ Además del requisito de diseño de que los circuitos fuesen de segundo orden,
+ se debieron cumplir las especificaciones presentes en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Especificaciones-de-diseño"
+
+\end_inset
+
+.
+ Hubo también especificaciones extra para los casos LP y HP.
+ Se deseó que para el caso LP (o HP) la ganancia sea unitaria en continua
+ (o f → ∞).
+ Además, se pidió que la ganancia sea mayor que −3dB para frecuencias menores
+ (o mayores) a fp y menor que −10dB para frecuencias mayores (o menores)
+ a fa.
+ Por ultimo, la ganancia no debería superar nunca los 0dB.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo de Filtros
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{p}$
+\end_inset
+
+ [Hz]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{a}$
+\end_inset
+
+ [Hz]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ [Hz]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Especificaciones-de-diseño"
+
+\end_inset
+
+Especificaciones de diseño
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+BR: Rechaza Banda
+\end_layout
+
+\begin_layout Standard
+El circuito que se empleó para obtener un filtro rechaza banda(BR) fue un
+ RLC serie con 
+\begin_inset Formula $V_{out}$
+\end_inset
+
+ luego de la resistencia, el circuito se puede ver en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuito-Filtro-Rechaza"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Band-Reject_Filter.svg.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Circuito-Filtro-Rechaza"
+
+\end_inset
+
+Circuito Filtro Rechaza Banda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Realizando la transferencia para la figura obtendremos mediante divisor
+ resistivo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(S)=\frac{V_{out}}{V_{in}}=\frac{Z_{c}+Z_{L}}{Z_{C}+Z_{L}+R}=\frac{S^{2}LC+1}{S^{2}LC+RC+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La frecuencia de corte entonces será:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{c}=\frac{1}{2\pi\sqrt{LC}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La selectividad del Rechaza Banda se ve afectado por el 
+\begin_inset Formula $\xi$
+\end_inset
+
+ del Polo, se busco entonces un 
+\begin_inset Formula $\xi_{polo}$
+\end_inset
+
+ bajo tal que tenga alta selectividad.
+ La ecuación para 
+\begin_inset Formula $\xi_{polo}$
+\end_inset
+
+ de la transferencia es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\xi_{polo}=\frac{RCW_{c}}{2}=\frac{R}{2}\sqrt{\frac{C}{L}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teniendo estos factores en cuenta se decidió finalmente por los siguientes
+ valores:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R=R_{RLC}+R_{Fuente}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+L
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\xi_{polo}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $250+50=300$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25.3mH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1uF
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.94
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componentes Elegidos Para Filtro Rechaza Banda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+BP: Pasa Banda
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:BP:-Pasa-Banda"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El circuito que se empleó para obtener un filtro pasa banda(BR) se puede
+ ver en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuito-Filtro-PasaBand"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Band Pass.png
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Circuito-Filtro-PasaBand"
+
+\end_inset
+
+Circuito Filtro Pasa Banda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La función transferencia obtenida fue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(S)=\frac{V_{out}}{V_{in}}=\frac{SLR}{S^{2}LC+S\frac{L}{R}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Al igual que para el filtro rechaza banda, la ecuación de frecuencia de
+ corte será de:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{c}=\frac{1}{2\pi\sqrt{LC}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R=R_{RLC}+R_{Fuente}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000+50=1050$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.29mH$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componentes Elegidos Para Filtro Pasa Banda 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Filtros con Plantillas
+\end_layout
+
+\begin_layout Standard
+Tanto el HP como el LP se diseñaron mediante el uso de plantillas, para
+ esto se llevo a cabo la normalización de 
+\begin_inset Formula $W_{a}$
+\end_inset
+
+ y 
+\begin_inset Formula $W_{p}$
+\end_inset
+
+, obteniendo de esta forma 
+\begin_inset Formula $W_{aNormalizado}$
+\end_inset
+
+ y 
+\begin_inset Formula $W_{pNormalizado}$
+\end_inset
+
+.
+ Esta normalización lleva la plantilla del circuito a la de un paso bajos
+ en donde 
+\begin_inset Formula $W_{pN}=1$
+\end_inset
+
+, y 
+\begin_inset Formula $W_{aN}$
+\end_inset
+
+ dependerá del caso de la siguiente forma:
+\end_layout
+
+\begin_layout Itemize
+LP/Pasa bajos: 
+\begin_inset Formula $W_{aN}=\frac{W_{a}}{W_{p}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+HP/Pasa altos: 
+\begin_inset Formula $W_{aN}=\frac{W_{p}}{W_{a}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El gráfico de la plantilla normalizada, tanto para el HP como el LP se puede
+ ver en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Plantilla-Normalizado"
+
+\end_inset
+
+.
+ A partir de las restricciones de la plantilla, se comenzó a realizar pruebas
+ a partir de dos polos uno polo luego de 1, y el otro antes de 3.5.
+ Se fueron probando varias combinaciones de estos polos, haciendo que estén
+ más cerca o lejos hasta llegar finalmente a los presente en el gráfico.
+ Estos fueron 
+\begin_inset Formula $p_{1}=1.5$
+\end_inset
+
+ y 
+\begin_inset Formula $p_{2}=2.75$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Matlab/Normalizado.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Plantilla-Normalizado"
+
+\end_inset
+
+Plantilla Normalizado 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Función transferencia normalizada:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(S_{N})=\frac{1}{(S_{N}+1.5)(S_{N}+2.75)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego se lleva a cabo la desnormalización mediante el siguiente reemplazo
+ en la función transferencia:
+\end_layout
+
+\begin_layout Itemize
+LP/Pasa bajos: 
+\begin_inset Formula $S_{N}\rightarrow\frac{S}{W_{p}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+HP/Pasa altos: 
+\begin_inset Formula $S_{N}\rightarrow\frac{W_{P}}{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente se forzó a las funciones transferencia del HP y LP a contener
+ estos dos polos desnormalizados como base de partida de diseño, obteniendo
+ valores de componentes.
+ Luego, mediante simulación se ajustaron los valores hasta obtener los que
+ se encuentran a continuación.
+\end_layout
+
+\begin_layout Subsubsection
+HP: Pasa Altos
+\end_layout
+
+\begin_layout Standard
+El circuito que se empleó fue un RLC serie:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename High Pass.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito Filtro Pasa Altos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La función transferencia obtenida fue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(S)=\frac{V_{out}}{V_{in}}=\frac{S^{2}LC}{S^{2}LC+SRC+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R=R_{RLC}+R_{Fuente}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000+50=1050$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $50mH$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componentes Elegidos Para Filtro Pasa Altos 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+LP: Pasa Bajos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Low Pass.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito Filtro Pasa Bajos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La función transferencia obtenida fue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(S)=\frac{V_{out}}{V_{in}}=\frac{1}{S^{2}LC+SCR+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R=R_{RLC}+R_{Fuente}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1500+50=1050$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.67mH$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $15nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componentes Elegidos Para Filtro Pasa Bajos 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Implementación Teórica Del Gyrator
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Implementación-Teórica-DelGyrator"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El Gyrator nace como posible solucion a las problematicas que surgen de
+ la implementación física de inductores, entre ellas el volumen que ocupan,
+ la resistencia adicional equivalente que agregan al circuito, entre otras.
+\end_layout
+
+\begin_layout Standard
+El Gyrator fue propuesto en 1948 por Bernard D.
+ H.
+ Tellegen como posible quinto elemento linear luego del resistor, capacitor,
+ inductor y transformador ideal.
+ El simbolo para el Gyrator se puede ver en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Simbolo-del-Gyrator"
+
+\end_inset
+
+.
+ En donde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{1}=\text{−}\frac{1}{R}V_{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+I_{2}=\frac{1}{R}V_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 220px-Tellegen-gyrator-annotated.svg.png
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simbolo del 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Simbolo-del-Gyrator"
+
+\end_inset
+
+Gyrator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El circuito que se empleo en la practica en este trabajo se puede ver en
+ la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuito Gyrator"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gyrator Circuito.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Circuito Gyrator"
+
+\end_inset
+
+Circuito Empleado Gyrator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analizaremos entonces la impedancia de entrada, para esto calcularemos primero
+ las corrientes, despreciando las corrientes de bias(orden tipico del nA-uA)
+ obtendremos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{1}=\frac{V_{in}SC}{1+SCR_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{2}=\frac{V_{out}-V_{in}}{R_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Asumiendo Idealidad del OpAmp 
+\begin_inset Formula $V^{+}=V^{-}=V_{out}$
+\end_inset
+
+ , por lo que 
+\begin_inset Formula $V_{out}=V_{R_{1}}$
+\end_inset
+
+, aplicando un divisor resistivo se obtiene:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{out}=V_{in}\frac{R_{1}SC}{1+SCR_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo cual:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{2}=\frac{V_{out}-V_{in}}{R_{2}}=V_{in}(\frac{\frac{R_{1}SC}{1+SCR_{1}}-1}{R_{2}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{Total}=I_{1}-I_{2}=V_{in}(\frac{SC}{1+SCR_{1}}+\frac{1}{(1+SCR_{1})R_{2}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{Total}=V_{in}\frac{(SCR_{2}+1)}{(1+SCR_{1})R_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calculando finalmente la impedancia de entrada obtendremos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{in}=\frac{V_{in}}{I_{Total}}=\frac{(1+SCR_{1})R_{2}}{(1+SCR_{2})}\label{eq:Zin gyrator}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay ciertos recaudo a tener en cuenta para la implementación.
+ Primero, para funcionar como inductor (con resistencia en serie ) se requiere
+ que 
+\begin_inset Formula $SCR_{2}\ll1$
+\end_inset
+
+ , obteniendo de esta manera 
+\begin_inset Formula $Z_{in}=R_{2}+SCR_{1}R_{2}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $L=CR_{1}R_{2}$
+\end_inset
+
+.En segundo lugar, este diseño siempre debe estar referido a tierra no existe
+ la posibilidad de implementar este modelo de Gyrator flotante.
+\end_layout
+
+\begin_layout Standard
+A partir de la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Zin gyrator"
+
+\end_inset
+
+, se puede ver que el Gyrator se comportara como un inductor(con 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ en serie) hasta una década antes de la frecuencia de corte del polo, en
+ donde la misma comienza tener efecto.
+ Sin embargo, en la practica(y simulaciones) muchos veces será evidente
+ la aparición de un polo adicional.
+ Esto se debe a que no se ha tenido en cuenta el polo dominante del OpAmp
+ empleando, lo cual será realizado a continuación.
+\end_layout
+
+\begin_layout Standard
+Se sabe que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{out}=V^{-}=A_{vol}(V^{+}-V^{-})\label{eq:Vout polo dominante}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{out}=\frac{A_{vol}}{1+A_{Vol}}(V^{+})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aplicando divisor resistivo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V^{+}=V_{in}\frac{R_{1}SR_{1}C}{1+SCR_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reemplazando en (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Vout polo dominante"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{out}=V_{in}\frac{A_{vol}}{1+A_{Vol}}(\frac{R_{1}SR_{1}C}{1+SCR_{1}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Planteando corrientes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{1}=\frac{V_{in}SC}{1+SCR_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{2}=\frac{V_{out}-V_{in}}{R_{2}}=V_{in}(\frac{\frac{A_{vol}}{1+A_{Vol}}(\frac{R_{1}SR_{1}C}{1+SCR_{1}})-1}{R_{2}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{Total}=V_{in}(\frac{SC}{1+SCR_{1}}-(\frac{\frac{A_{vol}}{1+A_{Vol}}(\frac{R_{1}SR_{1}C}{1+SCR_{1}})-1}{R_{2}}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{in}=\frac{(1+SCR_{1})R_{2}(1+A_{Vol})}{S(A_{Vol}R_{2}+R_{2}+R_{1})C+A_{Vol}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{vol}=\frac{A}{1+\frac{S}{W_{polo}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conversión a Gyrtaor y Resultados Obtenidos
+\end_layout
+
+\begin_layout Subsubsection
+Elección de OpAmp (TL084)
+\end_layout
+
+\begin_layout Standard
+Para todo circuito en el que se empleen OpAmps es importante la elección
+ del tipo de operacional, buscando de este forma el que mejor se ajuste
+ a las necesidades del diseño.
+ 
+\end_layout
+
+\begin_layout Standard
+En este caso, el OpAmp elegido fue el TL084 debido a:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A_{vol}$
+\end_inset
+
+ típico de 200000
+\end_layout
+
+\begin_layout Itemize
+GBW típico de 3MHz.
+ Debido a que los filtros diseñados en esta practica trabajan siempre por
+ debajo de ganancia unitaria, el polo dominante debería aparecer en frecuencias
+ considerablemente altas.
+\end_layout
+
+\begin_layout Itemize
+Slewrate alto de 
+\begin_inset Formula $\frac{13V}{\mu s}$
+\end_inset
+
+, lo cual permite trabajar a frecuencias relativamente altas sin la necesidad
+ de disminuir considerablemente la amplitud de la señal de entrada (para
+ evitar distorsión y conservar linealidad).
+\end_layout
+
+\begin_layout Itemize
+Impedancia de entrada muy alta y una baja corriente de polarización(30 pA
+ típico), debido a tecnología JFET en la etapa de entrada.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Componentes Elegidos
+\end_layout
+
+\begin_layout Standard
+Al momento de realizar los diseños se busco minimizar la diferencia entre
+ el Gyrator y el inductor ideal.
+ Para lograr eso, se realizaron varias simulaciones en las cuales se modificaron
+, siempre manteniendo la relación, los valores de 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ Para los filtros BR y BP se busco minimizar la resistencia en serie que
+ agregaba el Gyrator para que el circuito no perdiera selectividad.
+ En cambio, en los filtros HP y LP se busco atrasar lo máximo posible los
+ efectos agregados del Gyrator, entre ellos los dos polos que se agregan
+ como resultado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+L
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25.3mH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $30KΩ$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\text{\Omega}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+82nF
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.29mH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $30KΩ$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\text{\Omega}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.3nF(Paralelo 3.3nF y 1nF)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50mH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $30KΩ$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $300\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.6nF
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.67mH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $30KΩ$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.7nF
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componentes Elegidos Para Gyrator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+BR: Rechaza Bandas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Matlab/BRG.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Matlab/BRF.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Filtro-Rechaza-Banda"
+
+\end_inset
+
+Filtro Rechaza Banda Gráficos de Bode, Frecuencia de Corte Medida 1100Hz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede ver en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Filtro-Rechaza-Banda"
+
+\end_inset
+
+, comienza a surgir una diferencia entre el caso con bobina y, el medido
+ y el simulado.
+ Esto se da en modulo cercano a los 50KHz, casi una década y media después
+ de la frecuencia de corte, esto se debe a que comienzan a surgir los efectos
+ de los polos agregados por el Gyrator causando la caída donde idealmente
+ debería mantenerse en ganancia unitaria.
+ En fase se puede ver un efecto similar, se ve como en cambio de mantenerse
+ constante en cero(luego de los 50KHz) sigue bajando hasta que aparece el
+ efecto de los cero que compensa y finalmente llevan la fase a cero grados.
+\end_layout
+
+\begin_layout Subsubsection
+BP: Pasa Bandas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Matlab/BPG.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Matlab/BPF.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Filtro-Pasa-Banda"
+
+\end_inset
+
+Filtro Pasa Banda Gráficos de Bodes, Frecuencia de Corte Medida 13300Hz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resulta llamativo la diferencia del caso que contiene la bobina con los
+ demás.
+ Sin embargo, si miramos la función transferencia (subsección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuito-Filtro-PasaBand"
+
+\end_inset
+
+) veremos que contiene un cero en 
+\begin_inset Formula $W_{C}=\frac{1}{RL}$
+\end_inset
+
+, por lo cual 
+\begin_inset Formula $f=\frac{1}{2\pi RL}=117.5mHz$
+\end_inset
+
+.
+ Mirando la simulación extendida para frecuencias más bajas en la figura
+ , veremos que el polo comienza muy cerca de esta frecuencia calculada,
+ confirmando de esta manera el motivo de la diferencia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Pasabanda cero.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación Pasa Banda, Primer Cero
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+HP: Pasa altos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Matlab/HPG.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Matlab/HPF.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Filtro Pasa Altos Gráficos de Bodes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similar a lo sucedido con el filtro rechaza banda, comienzan a surgir los
+ efectos de los polos agregados por el Gyrator causando la caída donde idealment
+e debería mantenerse en ganancia unitaria.
+ En fase se puede ver un efecto similar, se ve como en cambio de mantenerse
+ constante en cero sigue bajando hasta que aparece el efecto de los cero
+ que compensa y finalmente llevan la fase a cero grados.
+\end_layout
+
+\begin_layout Subsubsection
+LP: Pasa Bajos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Matlab/LPG.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Matlab/LPF.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Filtro-Pasa-Bajos"
+
+\end_inset
+
+Filtro Pasa Bajos Gráficos de Bodes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El pasa bajos fue una de los filtros que resulto más dificultoso al momento
+ de medir.
+ Esto se debe a que el Gyrator debía estar referenciado a tierra, forzando
+ de esta forma una salida diferencia sobre el capacitor.
+ Idealmente se debería medir mediante puntas diferenciales, pero debido
+ a que el laboratorio no presenta las mismas se debió realizar una medición
+ sobre cada extremo del capacitor y realizar la resta vectorial.
+ 
+\end_layout
+
+\begin_layout Standard
+Se observa en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Filtro-Pasa-Bajos"
+
+\end_inset
+
+ un fenómeno llamativo rondando los 80KHz, aparece un efecto notch.
+ Los notch se deben a polos de segundo orden, en este caso se debe justamente
+ a los dos polos agregados por el Gyrator mencionados en la subsección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Implementación-Teórica-DelGyrator"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Resultados De Plantillas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo de Filtros
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{p}$
+\end_inset
+
+ [Hz]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{a}$
+\end_inset
+
+ [Hz]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ [Hz]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8150
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20300
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2750
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1220
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13300
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Especificaciones-de-diseño-1"
+
+\end_inset
+
+Resultados Medidos, fp y fa corresponde a las frecuencias en que se cumplió
+ el mínimo de diseño
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tanto el LP como el HP se ajustaron correctamente a la plantilla de diseño.
+ Sin embargo, se debió verificar si el corrimiento en frecuencias de corte
+ del BP y BR se entraran dentro del rango esperado debido a la tolerancia
+ de los componentes.
+ Para esto se realizaron los gráficos de Montecarlo correspondiente en la
+ figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Gráfico-de-Montecarlo BR"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Gráfico-de-Montecarlo BP"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Montecarlo BR.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Gráfico-de-Montecarlo BR"
+
+\end_inset
+
+Gráfico de Montecarlo de BR 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Montecarlo BP.png
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Gráfico-de-Montecarlo BP"
+
+\end_inset
+
+Gráfico de Montecarlo de BP 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mediante los gráficos de Montecarlo se logro verificar que las discrepancias
+ de la frecuencia de corte se encontraba dentro del rango de variación debido
+ a la tolerancia de los componentes.
+ Además se realizaron todas las simulaciones teniendo en cuenta la resistencia
+ de la fuente, otro factor que puede producir discrepancias.
+\end_layout
+
+\begin_layout Subsection
+Conclusión
+\end_layout
+
+\begin_layout Standard
+El Gyrator es un elemento que se debe tener mucho cuidado con las limitaciones
+ al momento de emplearlo.
+ En primer lugar, debe encontrarse referido a tierra lo cual puede ser problemát
+ico en circuitos que requieran una bobina en un punto medio del circuito.
+ Además, se encuentra la problemática de la degradación de la idealidad
+ del OpAmp al aumentar la frecuencia, la cual agregue polos al circuito.
+ Haciendo analisis con polo dominante, el Gyrator agrega dos polos y dos
+ ceros al circuito, los cuales pueden traer comportamiento no deseados.
+\end_layout
+
+\begin_layout Standard
+A pesar de estos factores, tiene su ventaja, no tener que emplear una bobina.
+ Lo cual puede ser muy útil si se desea reducir peso y volumen ocupado por
+ el circuito.
+ Una posible aplicación sería en circuitos de audio, donde siempre se trabaja
+ a relativamente bajas frecuencias(rango audible 20Hz a 20KHz).
+\end_layout
+
+\begin_layout Standard
+Por último, es critico el OpAmp que se elija para minimizar los efectos
+ no deseados del Gyrator.
+\end_layout
+
+\begin_layout Standard
+Todos estos factores son de suma importancia al momento de diseñar mediante
+ el uso de Gyrtor, y es crucial encontrar una relación de compromiso entre
+ todos estos factores que permita un adecuado funcionamiento del circuito.
+\end_layout
+
+\end_body
+\end_document

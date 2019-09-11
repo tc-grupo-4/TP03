@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=ResRLC BP NewDesignator=ResRLC BP gfdsa
+Change Net Name : Old Net Name=NetResRLC BP_1 New Net Name=NetResRLC BP gfdsa_1
+Added Member To Class: ClassName=PasaBanda(BP) Member=Component GND BP  Socket
+Added Member To Class: ClassName=RechazaBanda(BR) Member=Component GND BR  Socket
+Added Member To Class: ClassName=PasaAltos(HP) Member=Component GND HP  Socket
+Added Room: Name=PasaAltos(HP)
+Added Room: Name=PasaBajo(LP)
+Added Room: Name=PasaBanda(BP)
+Added Room: Name=RechazaBanda(BR)
+Added Room: Name=TopSheet

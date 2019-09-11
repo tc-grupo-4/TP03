@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=NetCapRLC BP_2 Pin=ResRLC BP gfdsa-2
+Removed Member From Class: ClassName=PasaBanda(BP) Member=ResRLC BP gfdsa
+Added Room: Name=PasaAltos(HP)
+Added Room: Name=PasaBajo(LP)
+Added Room: Name=PasaBanda(BP)
+Added Room: Name=RechazaBanda(BR)
+Added Room: Name=TopSheet

@@ -1,0 +1,274 @@
+Circuit: * C:\Users\ignac\Desktop\TC_TP3\spice\esquematico_spice_montecarlo.asc
+
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 5.5165
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 5.48432
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+Semiconductor Device Operating Points:
+                        --- Diodes ---
+Name:    d:a2:p      d:a2:ln     d:a2:lp     d:a2:e      d:a2:c
+Model:    a2:dx       a2:dx       a2:dx       a2:dx       a2:dx
+Id:     -3.00e-11   -2.50e-11   -2.50e-11   -1.28e-11   -1.28e-11
+Vd:     -3.00e+01   -2.50e+01   -2.50e+01   -1.28e+01   -1.28e+01
+Req:     1.00e+12    1.00e+12    1.00e+12    1.00e+12    1.00e+12
+CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+Name:    d:a1:p      d:a1:ln     d:a1:lp     d:a1:e      d:a1:c
+Model:    a1:dx       a1:dx       a1:dx       a1:dx       a1:dx
+Id:     -3.00e-11   -2.50e-11   -2.50e-11   -1.28e-11   -1.28e-11
+Vd:     -3.00e+01   -2.50e+01   -2.50e+01   -1.28e+01   -1.28e+01
+Req:     1.00e+12    1.00e+12    1.00e+12    1.00e+12    1.00e+12
+CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+                        --- JFET Transistors ---
+Name:    j:a2:2      j:a2:1      j:a1:2      j:a1:1
+Model:    a2:jx       a2:jx       a1:jx       a1:jx
+Id:     -9.77e-05   -9.77e-05   -9.77e-05   -9.77e-05
+Vgs:     3.99e-01    3.99e-01    3.99e-01    3.99e-01
+Vds:    -1.43e+01   -1.43e+01   -1.43e+01   -1.43e+01
+Gm:      3.25e-04    3.25e-04    3.25e-04    3.25e-04
+Gds:     0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cgs:     0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cgd:     0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+
+.step run=10
+.step run=15
+.step run=20
+.step run=25
+.step run=30
+.step run=35
+.step run=40
+.step run=45
+.step run=50
+.step run=55
+.step run=60
+.step run=65
+.step run=70
+.step run=75
+.step run=80
+.step run=85
+.step run=90
+.step run=95
+.step run=100
+.step run=105
+.step run=110
+.step run=115
+.step run=120
+.step run=125
+.step run=130
+.step run=135
+.step run=140
+.step run=145
+.step run=150
+.step run=155
+.step run=160
+.step run=165
+.step run=170
+.step run=175
+.step run=180
+.step run=185
+.step run=190
+.step run=195
+.step run=200
+.step run=205
+.step run=210
+.step run=215
+.step run=220
+.step run=225
+.step run=230
+.step run=235
+.step run=240
+.step run=245
+.step run=250
+.step run=255
+.step run=260
+.step run=265
+.step run=270
+.step run=275
+.step run=280
+.step run=285
+.step run=290
+.step run=295
+.step run=300
+.step run=305
+.step run=310
+.step run=315
+.step run=320
+.step run=325
+.step run=330
+.step run=335
+.step run=340
+.step run=345
+.step run=350
+.step run=355
+.step run=360
+.step run=365
+.step run=370
+.step run=375
+.step run=380
+.step run=385
+.step run=390
+.step run=395
+.step run=400
+.step run=405
+.step run=410
+.step run=415
+.step run=420
+.step run=425
+.step run=430
+.step run=435
+.step run=440
+.step run=445
+.step run=450
+.step run=455
+.step run=460
+.step run=465
+.step run=470
+.step run=475
+.step run=480
+.step run=485
+.step run=490
+.step run=495
+.step run=500
+.step run=505
+.step run=510
+.step run=515
+.step run=520
+.step run=525
+.step run=530
+.step run=535
+.step run=540
+.step run=545
+.step run=550
+.step run=555
+.step run=560
+.step run=565
+.step run=570
+.step run=575
+.step run=580
+.step run=585
+.step run=590
+.step run=595
+.step run=600
+.step run=605
+.step run=610
+.step run=615
+.step run=620
+.step run=625
+.step run=630
+.step run=635
+.step run=640
+.step run=645
+.step run=650
+.step run=655
+.step run=660
+.step run=665
+.step run=670
+.step run=675
+.step run=680
+.step run=685
+.step run=690
+.step run=695
+.step run=700
+.step run=705
+.step run=710
+.step run=715
+.step run=720
+.step run=725
+.step run=730
+.step run=735
+.step run=740
+.step run=745
+.step run=750
+.step run=755
+.step run=760
+.step run=765
+.step run=770
+.step run=775
+.step run=780
+.step run=785
+.step run=790
+.step run=795
+.step run=800
+.step run=805
+.step run=810
+.step run=815
+.step run=820
+.step run=825
+.step run=830
+.step run=835
+.step run=840
+.step run=845
+.step run=850
+.step run=855
+.step run=860
+.step run=865
+.step run=870
+.step run=875
+.step run=880
+.step run=885
+.step run=890
+.step run=895
+.step run=900
+.step run=905
+.step run=910
+.step run=915
+.step run=920
+.step run=925
+.step run=930
+.step run=935
+.step run=940
+.step run=945
+.step run=950
+.step run=955
+.step run=960
+.step run=965
+.step run=970
+.step run=975
+.step run=980
+.step run=985
+.step run=990
+.step run=995
+.step run=1000
+
+Date: Wed Sep 20 03:00:16 2017
+Total elapsed time: 30.184 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 1633
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 54
+fillins = 201
+solver = Normal
+Matrix Compiler1:     840 opcodes
+Matrix Compiler2: 8.21 KB object code size  2.5/3.1/[1.4]
+

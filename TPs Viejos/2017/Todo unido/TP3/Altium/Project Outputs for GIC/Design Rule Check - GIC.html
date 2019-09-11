@@ -1,0 +1,564 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body {
+			font-family : verdana;
+		}
+		td, th {
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;
+		}
+		th {
+			background-color : #A6CAF0;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+		}
+		
+		.DRC_summary_header {							
+			padding-bottom : 0.1em;
+			border : 0px solid black;							
+			width: 100%;
+                        align: right;
+                        
+		}
+
+		.DRC_summary_header_col1, 
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3
+		{
+			color : black;
+			font-size:150%;
+                        padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2: 0em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top;
+			font-weight: bold;				
+		}
+		
+		.DRC_summary_header_col1 	
+		{		                       
+			text-align: right;
+                        width: auto;	
+		}
+
+		.DRC_summary_header_col2 	
+		{		
+			text-align: center;	
+		}
+
+		.DRC_summary_header_col3 	
+		{		
+			text-align: left;	
+		}
+
+
+		
+		.header_holder
+		{
+		Width = 100%;
+		border = 0px solid green;
+		padding = 0;
+		}
+		
+		
+		
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+			left:0;
+			top:0;
+			padding-top : 0.1em;			
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top
+
+		}
+		.front_matter {	
+			
+			margin-top: 5px;
+ 			margin-left: 0px;					 			
+ 			horizontal-align: left;
+		}
+				
+		
+		.front_matter_column1 {
+			width : 10em;	
+			text-align  : right;
+			padding-right:0.1em;
+			
+		}
+		
+		.front_matter_column2 {
+                        width: 0.1em;
+			align: center;
+			text-align : center;
+			margin-right  : 0.1em;	
+			margin-left   : 0.1em;
+		}
+		.front_matter_column3 {
+			width         : auto;  
+			text-align    : left;	
+			margin-right  : 0.5em;				
+		}
+		
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD 10\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td Style="width:70%">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">9/18/2017</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">12:43:21 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc" class="file"><acronym title="C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc">C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td Style="Width:30%">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3" style="color : red">57</td></tr>
+</table>
+</td>
+</table>
+<hr><a name="IDLVKUC24EAPRPMZEUKYJI2SI40CT120ZJGTZHGXKCU52ERYAI1ZGC"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1BRUISZSBRX1OQZ0AIZ33CHUJMSLYB3MZ1HCUCB0H1LVJARHX3BE">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5HQTN3MGAUQPBQ5NROPWRCXNPHJWPVESW1RSQWCI23WUEIOC2ARP">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID102XLPJN1WSYI4CP2M0PK20DDED3U2LS0WXACGEFOSEA2RDC5YHI">Silkscreen Over Component Pads (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">57</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDR3OTRRX0GS5IKFYA0NUNOK2FFFDRYAVUGA4SMODW3FKLMWUE3XOO">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0S2X5L21OEQANCNAKH1VF0FEAL24FCK04V4ASHFOVDAAIW4VJBUG">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVVGJ4D0D4LQ3MUW5XKB3YBDDVHLY3ORRUPSQUWM13W1J5I53NRL">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZV4DE3FDAALVFHQAY0FXNE3O5KASYIPEFNBXANMO2DQKT4TZ0LNM">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIYFSE5EEQQHBKLORTBVWPXAXPJNSCKOS5T05QZDCJCXI3BPGEXL">Width Constraint (Min=1mm) (Max=1mm) (Preferred=1mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJH0AIVYNXIYBNTOG0DYONDF5GLJPWAQMZGWIPSCSEEFPJDKOLYCH">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLOCB0P3FS5TAHJ14Q5AV5ASMEPVGIEDUQ4RLCVD5KKR4EZ0WCPDH">Clearance Constraint (Gap=0.5mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDV2GYW10P42C2BLWWTRRGHOHJ3DALU0STQ0LP41M1QCZDNQ0VCKH">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1PB0XH0MUX1RLLXMWWK3B4PNXEUFOJQU53IYKWK55YVVCOPJ5CM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">57</td>
+</tr>
+</table><br><hr><a name="ID102XLPJN1WSYI4CP2M0PK20DDED3U2LS0WXACGEFOSEA2RDC5YHI"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silkscreen Over Component Pads (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.063mil|Location2.X=4668.937mil|Location1.Y=3376.063mil|Location2.Y=3383.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.063mil|Location2.X=4668.937mil|Location1.Y=3376.063mil|Location2.Y=3383.937mil|Absolute=True">Track (29.718mm,10.541mm)(30.734mm,10.541mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4541.63mil|Location2.X=4628.37mil|Location1.Y=3336.63mil|Location2.Y=3423.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4541.63mil|Location2.X=4628.37mil|Location1.Y=3336.63mil|Location2.Y=3423.37mil|Absolute=True">Pad R6_1-1(28.702mm,10.541mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4901.063mil|Location2.X=4948.937mil|Location1.Y=3376.063mil|Location2.Y=3383.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4901.063mil|Location2.X=4948.937mil|Location1.Y=3376.063mil|Location2.Y=3383.937mil|Absolute=True">Track (36.83mm,10.541mm)(37.846mm,10.541mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4941.63mil|Location2.X=5028.37mil|Location1.Y=3336.63mil|Location2.Y=3423.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4941.63mil|Location2.X=5028.37mil|Location1.Y=3336.63mil|Location2.Y=3423.37mil|Absolute=True">Pad R6_1-2(38.862mm,10.541mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.063mil|Location2.X=4668.937mil|Location1.Y=3261.063mil|Location2.Y=3268.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4621.063mil|Location2.X=4668.937mil|Location1.Y=3261.063mil|Location2.Y=3268.937mil|Absolute=True">Track (29.718mm,7.62mm)(30.734mm,7.62mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4541.63mil|Location2.X=4628.37mil|Location1.Y=3221.63mil|Location2.Y=3308.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4541.63mil|Location2.X=4628.37mil|Location1.Y=3221.63mil|Location2.Y=3308.37mil|Absolute=True">Pad R6_2-1(28.702mm,7.62mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4901.063mil|Location2.X=4948.937mil|Location1.Y=3261.063mil|Location2.Y=3268.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4901.063mil|Location2.X=4948.937mil|Location1.Y=3261.063mil|Location2.Y=3268.937mil|Absolute=True">Track (36.83mm,7.62mm)(37.846mm,7.62mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4941.63mil|Location2.X=5028.37mil|Location1.Y=3221.63mil|Location2.Y=3308.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4941.63mil|Location2.X=5028.37mil|Location1.Y=3221.63mil|Location2.Y=3308.37mil|Absolute=True">Pad R6_2-2(38.862mm,7.62mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5071.063mil|Location2.X=5078.937mil|Location1.Y=4066.063mil|Location2.Y=4113.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5071.063mil|Location2.X=5078.937mil|Location1.Y=4066.063mil|Location2.Y=4113.937mil|Absolute=True">Track (41.148mm,28.067mm)(41.148mm,29.083mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5031.63mil|Location2.X=5118.37mil|Location1.Y=3986.63mil|Location2.Y=4073.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5031.63mil|Location2.X=5118.37mil|Location1.Y=3986.63mil|Location2.Y=4073.37mil|Absolute=True">Pad R3-1(41.148mm,27.051mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5071.063mil|Location2.X=5078.937mil|Location1.Y=4346.063mil|Location2.Y=4393.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5071.063mil|Location2.X=5078.937mil|Location1.Y=4346.063mil|Location2.Y=4393.937mil|Absolute=True">Track (41.148mm,35.179mm)(41.148mm,36.195mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5031.63mil|Location2.X=5118.37mil|Location1.Y=4386.63mil|Location2.Y=4473.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5031.63mil|Location2.X=5118.37mil|Location1.Y=4386.63mil|Location2.Y=4473.37mil|Absolute=True">Pad R3-2(41.148mm,37.211mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4760.394mil|Location2.X=4768.268mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4760.394mil|Location2.X=4768.268mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True">Track (33.257mm,24.822mm)(33.257mm,35.122mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.63mil|Location2.X=4853.37mil|Location1.Y=3951.63mil|Location2.Y=4038.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.63mil|Location2.X=4853.37mil|Location1.Y=3951.63mil|Location2.Y=4038.37mil|Absolute=True">Pad U1-5(34.417mm,26.162mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4760.394mil|Location2.X=4768.268mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4760.394mil|Location2.X=4768.268mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True">Track (33.257mm,24.822mm)(33.257mm,35.122mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.63mil|Location2.X=4853.37mil|Location1.Y=4051.63mil|Location2.Y=4138.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.63mil|Location2.X=4853.37mil|Location1.Y=4051.63mil|Location2.Y=4138.37mil|Absolute=True">Pad U1-6(34.417mm,28.702mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4760.394mil|Location2.X=4768.268mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4760.394mil|Location2.X=4768.268mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True">Track (33.257mm,24.822mm)(33.257mm,35.122mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.63mil|Location2.X=4853.37mil|Location1.Y=4151.63mil|Location2.Y=4238.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.63mil|Location2.X=4853.37mil|Location1.Y=4151.63mil|Location2.Y=4238.37mil|Absolute=True">Pad U1-7(34.417mm,31.242mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4760.394mil|Location2.X=4768.268mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4760.394mil|Location2.X=4768.268mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True">Track (33.257mm,24.822mm)(33.257mm,35.122mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.63mil|Location2.X=4853.37mil|Location1.Y=4251.63mil|Location2.Y=4338.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4766.63mil|Location2.X=4853.37mil|Location1.Y=4251.63mil|Location2.Y=4338.37mil|Absolute=True">Pad U1-8(34.417mm,33.782mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.732mil|Location2.X=4559.606mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.732mil|Location2.X=4559.606mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True">Track (27.957mm,24.822mm)(27.957mm,35.122mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4466.63mil|Location2.X=4553.37mil|Location1.Y=3951.63mil|Location2.Y=4038.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4466.63mil|Location2.X=4553.37mil|Location1.Y=3951.63mil|Location2.Y=4038.37mil|Absolute=True">Pad U1-4(26.797mm,26.162mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.732mil|Location2.X=4559.606mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.732mil|Location2.X=4559.606mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True">Track (27.957mm,24.822mm)(27.957mm,35.122mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4466.63mil|Location2.X=4553.37mil|Location1.Y=4051.63mil|Location2.Y=4138.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4466.63mil|Location2.X=4553.37mil|Location1.Y=4051.63mil|Location2.Y=4138.37mil|Absolute=True">Pad U1-3(26.797mm,28.702mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.732mil|Location2.X=4559.606mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.732mil|Location2.X=4559.606mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True">Track (27.957mm,24.822mm)(27.957mm,35.122mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4466.63mil|Location2.X=4553.37mil|Location1.Y=4151.63mil|Location2.Y=4238.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4466.63mil|Location2.X=4553.37mil|Location1.Y=4151.63mil|Location2.Y=4238.37mil|Absolute=True">Pad U1-2(26.797mm,31.242mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.732mil|Location2.X=4559.606mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.732mil|Location2.X=4559.606mil|Location1.Y=3938.307mil|Location2.Y=4351.693mil|Absolute=True">Track (27.957mm,24.822mm)(27.957mm,35.122mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4466.63mil|Location2.X=4553.37mil|Location1.Y=4251.63mil|Location2.Y=4338.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4466.63mil|Location2.X=4553.37mil|Location1.Y=4251.63mil|Location2.Y=4338.37mil|Absolute=True">Pad U1-1(26.797mm,33.782mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4751.063mil|Location2.X=4758.937mil|Location1.Y=4426.063mil|Location2.Y=4533.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4751.063mil|Location2.X=4758.937mil|Location1.Y=4426.063mil|Location2.Y=4533.937mil|Absolute=True">Track (33.02mm,37.211mm)(33.02mm,39.751mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4661.63mil|Location2.X=4748.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4661.63mil|Location2.X=4748.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True">Pad C_comp-1(31.75mm,38.481mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4758.937mil|Location1.Y=4426.063mil|Location2.Y=4433.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4758.937mil|Location1.Y=4426.063mil|Location2.Y=4433.937mil|Absolute=True">Track (27.94mm,37.211mm)(33.02mm,37.211mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4661.63mil|Location2.X=4748.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4661.63mil|Location2.X=4748.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True">Pad C_comp-1(31.75mm,38.481mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4758.937mil|Location1.Y=4526.063mil|Location2.Y=4533.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4758.937mil|Location1.Y=4526.063mil|Location2.Y=4533.937mil|Absolute=True">Track (27.94mm,39.751mm)(33.02mm,39.751mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4661.63mil|Location2.X=4748.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4661.63mil|Location2.X=4748.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True">Pad C_comp-1(31.75mm,38.481mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4558.937mil|Location1.Y=4426.063mil|Location2.Y=4533.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4558.937mil|Location1.Y=4426.063mil|Location2.Y=4533.937mil|Absolute=True">Track (27.94mm,37.211mm)(27.94mm,39.751mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561.63mil|Location2.X=4648.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561.63mil|Location2.X=4648.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True">Pad C_comp-2(29.21mm,38.481mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4758.937mil|Location1.Y=4426.063mil|Location2.Y=4433.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4758.937mil|Location1.Y=4426.063mil|Location2.Y=4433.937mil|Absolute=True">Track (27.94mm,37.211mm)(33.02mm,37.211mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561.63mil|Location2.X=4648.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561.63mil|Location2.X=4648.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True">Pad C_comp-2(29.21mm,38.481mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4758.937mil|Location1.Y=4526.063mil|Location2.Y=4533.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4551.063mil|Location2.X=4758.937mil|Location1.Y=4526.063mil|Location2.Y=4533.937mil|Absolute=True">Track (27.94mm,39.751mm)(33.02mm,39.751mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561.63mil|Location2.X=4648.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561.63mil|Location2.X=4648.37mil|Location1.Y=4436.63mil|Location2.Y=4523.37mil|Absolute=True">Pad C_comp-2(29.21mm,38.481mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4761.063mil|Location2.X=4808.937mil|Location1.Y=4586.063mil|Location2.Y=4593.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4761.063mil|Location2.X=4808.937mil|Location1.Y=4586.063mil|Location2.Y=4593.937mil|Absolute=True">Track (33.274mm,41.275mm)(34.29mm,41.275mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4801.63mil|Location2.X=4888.37mil|Location1.Y=4546.63mil|Location2.Y=4633.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4801.63mil|Location2.X=4888.37mil|Location1.Y=4546.63mil|Location2.Y=4633.37mil|Absolute=True">Pad R1-1(35.306mm,41.275mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4481.063mil|Location2.X=4528.937mil|Location1.Y=4586.063mil|Location2.Y=4593.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4481.063mil|Location2.X=4528.937mil|Location1.Y=4586.063mil|Location2.Y=4593.937mil|Absolute=True">Track (26.162mm,41.275mm)(27.178mm,41.275mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4401.63mil|Location2.X=4488.37mil|Location1.Y=4546.63mil|Location2.Y=4633.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4401.63mil|Location2.X=4488.37mil|Location1.Y=4546.63mil|Location2.Y=4633.37mil|Absolute=True">Pad R1-2(25.146mm,41.275mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=3943.937mil|Location1.Y=4216.063mil|Location2.Y=4423.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=3943.937mil|Location1.Y=4216.063mil|Location2.Y=4423.937mil|Absolute=True">Track (12.319mm,31.877mm)(12.319mm,36.957mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4326.63mil|Location2.Y=4413.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4326.63mil|Location2.Y=4413.37mil|Absolute=True">Pad C2-1(13.589mm,35.687mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4036.063mil|Location2.X=4043.937mil|Location1.Y=4216.063mil|Location2.Y=4423.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4036.063mil|Location2.X=4043.937mil|Location1.Y=4216.063mil|Location2.Y=4423.937mil|Absolute=True">Track (14.859mm,31.877mm)(14.859mm,36.957mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4326.63mil|Location2.Y=4413.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4326.63mil|Location2.Y=4413.37mil|Absolute=True">Pad C2-1(13.589mm,35.687mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=4043.937mil|Location1.Y=4416.063mil|Location2.Y=4423.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=4043.937mil|Location1.Y=4416.063mil|Location2.Y=4423.937mil|Absolute=True">Track (12.319mm,36.957mm)(14.859mm,36.957mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4326.63mil|Location2.Y=4413.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4326.63mil|Location2.Y=4413.37mil|Absolute=True">Pad C2-1(13.589mm,35.687mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=3943.937mil|Location1.Y=4216.063mil|Location2.Y=4423.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=3943.937mil|Location1.Y=4216.063mil|Location2.Y=4423.937mil|Absolute=True">Track (12.319mm,31.877mm)(12.319mm,36.957mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4226.63mil|Location2.Y=4313.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4226.63mil|Location2.Y=4313.37mil|Absolute=True">Pad C2-2(13.589mm,33.147mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4036.063mil|Location2.X=4043.937mil|Location1.Y=4216.063mil|Location2.Y=4423.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4036.063mil|Location2.X=4043.937mil|Location1.Y=4216.063mil|Location2.Y=4423.937mil|Absolute=True">Track (14.859mm,31.877mm)(14.859mm,36.957mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4226.63mil|Location2.Y=4313.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4226.63mil|Location2.Y=4313.37mil|Absolute=True">Pad C2-2(13.589mm,33.147mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=4043.937mil|Location1.Y=4216.063mil|Location2.Y=4223.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=4043.937mil|Location1.Y=4216.063mil|Location2.Y=4223.937mil|Absolute=True">Track (12.319mm,31.877mm)(14.859mm,31.877mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4226.63mil|Location2.Y=4313.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3946.63mil|Location2.X=4033.37mil|Location1.Y=4226.63mil|Location2.Y=4313.37mil|Absolute=True">Pad C2-2(13.589mm,33.147mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3701.063mil|Location2.X=3708.937mil|Location1.Y=4091.063mil|Location2.Y=4138.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3701.063mil|Location2.X=3708.937mil|Location1.Y=4091.063mil|Location2.Y=4138.937mil|Absolute=True">Track (6.35mm,28.702mm)(6.35mm,29.718mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.63mil|Location2.X=3748.37mil|Location1.Y=4011.63mil|Location2.Y=4098.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.63mil|Location2.X=3748.37mil|Location1.Y=4011.63mil|Location2.Y=4098.37mil|Absolute=True">Pad R7_2-1(6.35mm,27.686mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3701.063mil|Location2.X=3708.937mil|Location1.Y=4371.063mil|Location2.Y=4418.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3701.063mil|Location2.X=3708.937mil|Location1.Y=4371.063mil|Location2.Y=4418.937mil|Absolute=True">Track (6.35mm,35.814mm)(6.35mm,36.83mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.63mil|Location2.X=3748.37mil|Location1.Y=4411.63mil|Location2.Y=4498.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.63mil|Location2.X=3748.37mil|Location1.Y=4411.63mil|Location2.Y=4498.37mil|Absolute=True">Pad R7_2-2(6.35mm,37.846mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3706.063mil|Location2.X=3713.937mil|Location1.Y=3451.063mil|Location2.Y=3498.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3706.063mil|Location2.X=3713.937mil|Location1.Y=3451.063mil|Location2.Y=3498.937mil|Absolute=True">Track (6.477mm,12.446mm)(6.477mm,13.462mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3666.63mil|Location2.X=3753.37mil|Location1.Y=3371.63mil|Location2.Y=3458.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3666.63mil|Location2.X=3753.37mil|Location1.Y=3371.63mil|Location2.Y=3458.37mil|Absolute=True">Pad R7_1-1(6.477mm,11.43mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3706.063mil|Location2.X=3713.937mil|Location1.Y=3731.063mil|Location2.Y=3778.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3706.063mil|Location2.X=3713.937mil|Location1.Y=3731.063mil|Location2.Y=3778.937mil|Absolute=True">Track (6.477mm,19.558mm)(6.477mm,20.574mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3666.63mil|Location2.X=3753.37mil|Location1.Y=3771.63mil|Location2.Y=3858.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3666.63mil|Location2.X=3753.37mil|Location1.Y=3771.63mil|Location2.Y=3858.37mil|Absolute=True">Pad R7_1-2(6.477mm,21.59mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=3943.937mil|Location1.Y=3746.063mil|Location2.Y=3793.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=3943.937mil|Location1.Y=3746.063mil|Location2.Y=3793.937mil|Absolute=True">Track (12.319mm,19.939mm)(12.319mm,20.955mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3896.63mil|Location2.X=3983.37mil|Location1.Y=3786.63mil|Location2.Y=3873.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3896.63mil|Location2.X=3983.37mil|Location1.Y=3786.63mil|Location2.Y=3873.37mil|Absolute=True">Pad R5_1-1(12.319mm,21.971mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=3943.937mil|Location1.Y=3466.063mil|Location2.Y=3513.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3936.063mil|Location2.X=3943.937mil|Location1.Y=3466.063mil|Location2.Y=3513.937mil|Absolute=True">Track (12.319mm,12.827mm)(12.319mm,13.843mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3896.63mil|Location2.X=3983.37mil|Location1.Y=3386.63mil|Location2.Y=3473.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3896.63mil|Location2.X=3983.37mil|Location1.Y=3386.63mil|Location2.Y=3473.37mil|Absolute=True">Pad R5_1-2(12.319mm,11.811mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4106.063mil|Location2.X=4113.937mil|Location1.Y=3751.063mil|Location2.Y=3798.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4106.063mil|Location2.X=4113.937mil|Location1.Y=3751.063mil|Location2.Y=3798.937mil|Absolute=True">Track (16.637mm,20.066mm)(16.637mm,21.082mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4066.63mil|Location2.X=4153.37mil|Location1.Y=3791.63mil|Location2.Y=3878.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4066.63mil|Location2.X=4153.37mil|Location1.Y=3791.63mil|Location2.Y=3878.37mil|Absolute=True">Pad R5_2-1(16.637mm,22.098mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3945mil|Location2.X=4164.935mil|Location1.Y=3880.003mil|Location2.Y=3969.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3945mil|Location2.X=4164.935mil|Location1.Y=3880.003mil|Location2.Y=3969.981mil|Absolute=True">Text "R5_1" (12.7mm,23.749mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4066.63mil|Location2.X=4153.37mil|Location1.Y=3791.63mil|Location2.Y=3878.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4066.63mil|Location2.X=4153.37mil|Location1.Y=3791.63mil|Location2.Y=3878.37mil|Absolute=True">Pad R5_2-1(16.637mm,22.098mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4106.063mil|Location2.X=4113.937mil|Location1.Y=3471.063mil|Location2.Y=3518.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4106.063mil|Location2.X=4113.937mil|Location1.Y=3471.063mil|Location2.Y=3518.937mil|Absolute=True">Track (16.637mm,12.954mm)(16.637mm,13.97mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4066.63mil|Location2.X=4153.37mil|Location1.Y=3391.63mil|Location2.Y=3478.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4066.63mil|Location2.X=4153.37mil|Location1.Y=3391.63mil|Location2.Y=3478.37mil|Absolute=True">Pad R5_2-2(16.637mm,11.938mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4311.063mil|Location2.X=4318.937mil|Location1.Y=3476.063mil|Location2.Y=3523.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4311.063mil|Location2.X=4318.937mil|Location1.Y=3476.063mil|Location2.Y=3523.937mil|Absolute=True">Track (21.844mm,13.081mm)(21.844mm,14.097mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3396.63mil|Location2.Y=3483.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3396.63mil|Location2.Y=3483.37mil|Absolute=True">Pad R4_1-1(21.844mm,12.065mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4311.063mil|Location2.X=4318.937mil|Location1.Y=3756.063mil|Location2.Y=3803.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4311.063mil|Location2.X=4318.937mil|Location1.Y=3756.063mil|Location2.Y=3803.937mil|Absolute=True">Track (21.844mm,20.193mm)(21.844mm,21.209mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3796.63mil|Location2.Y=3883.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3796.63mil|Location2.Y=3883.37mil|Absolute=True">Pad R4_1-2(21.844mm,22.225mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4426.063mil|Location2.X=4433.937mil|Location1.Y=3481.063mil|Location2.Y=3528.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4426.063mil|Location2.X=4433.937mil|Location1.Y=3481.063mil|Location2.Y=3528.937mil|Absolute=True">Track (24.765mm,13.208mm)(24.765mm,14.224mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386.63mil|Location2.X=4473.37mil|Location1.Y=3401.63mil|Location2.Y=3488.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386.63mil|Location2.X=4473.37mil|Location1.Y=3401.63mil|Location2.Y=3488.37mil|Absolute=True">Pad R4_2-1(24.765mm,12.192mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4426.063mil|Location2.X=4433.937mil|Location1.Y=3761.063mil|Location2.Y=3808.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4426.063mil|Location2.X=4433.937mil|Location1.Y=3761.063mil|Location2.Y=3808.937mil|Absolute=True">Track (24.765mm,20.32mm)(24.765mm,21.336mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386.63mil|Location2.X=4473.37mil|Location1.Y=3801.63mil|Location2.Y=3888.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386.63mil|Location2.X=4473.37mil|Location1.Y=3801.63mil|Location2.Y=3888.37mil|Absolute=True">Pad R4_2-2(24.765mm,22.352mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4461.063mil|Location2.X=4468.937mil|Location1.Y=3111.063mil|Location2.Y=3218.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4461.063mil|Location2.X=4468.937mil|Location1.Y=3111.063mil|Location2.Y=3218.937mil|Absolute=True">Track (25.654mm,3.81mm)(25.654mm,6.35mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4371.63mil|Location2.X=4458.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4371.63mil|Location2.X=4458.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True">Pad C6-1(24.384mm,5.08mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4468.937mil|Location1.Y=3111.063mil|Location2.Y=3118.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4468.937mil|Location1.Y=3111.063mil|Location2.Y=3118.937mil|Absolute=True">Track (20.574mm,3.81mm)(25.654mm,3.81mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4371.63mil|Location2.X=4458.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4371.63mil|Location2.X=4458.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True">Pad C6-1(24.384mm,5.08mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4468.937mil|Location1.Y=3211.063mil|Location2.Y=3218.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4468.937mil|Location1.Y=3211.063mil|Location2.Y=3218.937mil|Absolute=True">Track (20.574mm,6.35mm)(25.654mm,6.35mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4371.63mil|Location2.X=4458.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4371.63mil|Location2.X=4458.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True">Pad C6-1(24.384mm,5.08mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4268.937mil|Location1.Y=3111.063mil|Location2.Y=3218.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4268.937mil|Location1.Y=3111.063mil|Location2.Y=3218.937mil|Absolute=True">Track (20.574mm,3.81mm)(20.574mm,6.35mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True">Pad C6-2(21.844mm,5.08mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4468.937mil|Location1.Y=3111.063mil|Location2.Y=3118.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4468.937mil|Location1.Y=3111.063mil|Location2.Y=3118.937mil|Absolute=True">Track (20.574mm,3.81mm)(25.654mm,3.81mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True">Pad C6-2(21.844mm,5.08mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4468.937mil|Location1.Y=3211.063mil|Location2.Y=3218.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4261.063mil|Location2.X=4468.937mil|Location1.Y=3211.063mil|Location2.Y=3218.937mil|Absolute=True">Track (20.574mm,6.35mm)(25.654mm,6.35mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.63mil|Location2.X=4358.37mil|Location1.Y=3121.63mil|Location2.Y=3208.37mil|Absolute=True">Pad C6-2(21.844mm,5.08mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3961.063mil|Location2.X=3968.937mil|Location1.Y=4611.063mil|Location2.Y=4718.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3961.063mil|Location2.X=3968.937mil|Location1.Y=4611.063mil|Location2.Y=4718.937mil|Absolute=True">Track (12.954mm,41.91mm)(12.954mm,44.45mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.63mil|Location2.X=3958.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.63mil|Location2.X=3958.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True">Pad P?-1(11.684mm,43.18mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4611.063mil|Location2.Y=4618.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4611.063mil|Location2.Y=4618.937mil|Absolute=True">Track (5.334mm,41.91mm)(12.954mm,41.91mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.63mil|Location2.X=3958.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.63mil|Location2.X=3958.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True">Pad P?-1(11.684mm,43.18mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4711.063mil|Location2.Y=4718.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4711.063mil|Location2.Y=4718.937mil|Absolute=True">Track (5.334mm,44.45mm)(12.954mm,44.45mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.63mil|Location2.X=3958.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.63mil|Location2.X=3958.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True">Pad P?-1(11.684mm,43.18mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4611.063mil|Location2.Y=4618.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4611.063mil|Location2.Y=4618.937mil|Absolute=True">Track (5.334mm,41.91mm)(12.954mm,41.91mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3771.63mil|Location2.X=3858.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3771.63mil|Location2.X=3858.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True">Pad P?-2(9.144mm,43.18mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4711.063mil|Location2.Y=4718.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4711.063mil|Location2.Y=4718.937mil|Absolute=True">Track (5.334mm,44.45mm)(12.954mm,44.45mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3771.63mil|Location2.X=3858.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3771.63mil|Location2.X=3858.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True">Pad P?-2(9.144mm,43.18mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3668.937mil|Location1.Y=4611.063mil|Location2.Y=4718.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3668.937mil|Location1.Y=4611.063mil|Location2.Y=4718.937mil|Absolute=True">Track (5.334mm,41.91mm)(5.334mm,44.45mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3671.63mil|Location2.X=3758.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3671.63mil|Location2.X=3758.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True">Pad P?-3(6.604mm,43.18mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4611.063mil|Location2.Y=4618.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4611.063mil|Location2.Y=4618.937mil|Absolute=True">Track (5.334mm,41.91mm)(12.954mm,41.91mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3671.63mil|Location2.X=3758.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3671.63mil|Location2.X=3758.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True">Pad P?-3(6.604mm,43.18mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4711.063mil|Location2.Y=4718.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3661.063mil|Location2.X=3968.937mil|Location1.Y=4711.063mil|Location2.Y=4718.937mil|Absolute=True">Track (5.334mm,44.45mm)(12.954mm,44.45mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3671.63mil|Location2.X=3758.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3671.63mil|Location2.X=3758.37mil|Location1.Y=4621.63mil|Location2.Y=4708.37mil|Absolute=True">Pad P?-3(6.604mm,43.18mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5166.063mil|Location2.X=5173.937mil|Location1.Y=3426.063mil|Location2.Y=3473.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5166.063mil|Location2.X=5173.937mil|Location1.Y=3426.063mil|Location2.Y=3473.937mil|Absolute=True">Track (43.561mm,11.811mm)(43.561mm,12.827mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5126.63mil|Location2.X=5213.37mil|Location1.Y=3466.63mil|Location2.Y=3553.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5126.63mil|Location2.X=5213.37mil|Location1.Y=3466.63mil|Location2.Y=3553.37mil|Absolute=True">Pad R8-1(43.561mm,13.843mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5166.063mil|Location2.X=5173.937mil|Location1.Y=3146.063mil|Location2.Y=3193.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5166.063mil|Location2.X=5173.937mil|Location1.Y=3146.063mil|Location2.Y=3193.937mil|Absolute=True">Track (43.561mm,4.699mm)(43.561mm,5.715mm)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5126.63mil|Location2.X=5213.37mil|Location1.Y=3066.63mil|Location2.Y=3153.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ignac\Desktop\TC_TP3\Altium\GIC.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5126.63mil|Location2.X=5213.37mil|Location1.Y=3066.63mil|Location2.Y=3153.37mil|Absolute=True">Pad R8-2(43.561mm,3.683mm)  Multi-Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>

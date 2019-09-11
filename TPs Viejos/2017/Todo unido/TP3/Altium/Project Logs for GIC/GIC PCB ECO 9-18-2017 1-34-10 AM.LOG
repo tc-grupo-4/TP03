@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=C2 Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Footprint: Designator=C6 Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Footprint: Designator=C_+vcc_GND Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Footprint: Designator=C_GND_-vcc Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Added Pin To Net: NetName=GND Pin=C_+vcc_GND-1
+Added Pin To Net: NetName=GND Pin=C_GND_-vcc-2
+Added Room: Name=GIC

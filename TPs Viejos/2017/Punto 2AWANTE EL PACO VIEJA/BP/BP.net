@@ -1,0 +1,21 @@
+* C:\Users\R2D2\Desktop\TC\TP3\BP\BP.asc
+V1 Vin 0 AC 1
+C1 Vout 0 {mc(100nF,tola)}
+R1 Vout N003 {mc(1k,tolb)}
+RG N002 N001 {mc(10,tola)}
+CG N004 N001 {mc(3.3nF,tola)}
+R3 N004 0 {mc(30K,tolb)}
+XU2 N004 N002 VCC+ VCC- N002 TL082
+V2 VCC+ 0 10
+V3 0 VCC- 10
+RFuente N003 Vin 50
+C2 N004 N001 {mc(1nF,tola)}
+L1 Vout 0 1.29mH
+;dc dec V1 0 100k 1000
+.ac dec 1000 0.01 10000k
+.lib TL082.lib
+.param tolb=0.01
+;step param run 1 100 1
+.param tola=0.05
+.backanno
+.end

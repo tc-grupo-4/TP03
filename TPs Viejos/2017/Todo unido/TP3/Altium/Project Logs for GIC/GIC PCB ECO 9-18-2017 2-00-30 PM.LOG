@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=C2 Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Footprint: Designator=C_+VCC Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Designator: OldDesignator=P? NewDesignator=Alimentacion
+Added Room: Name=GIC

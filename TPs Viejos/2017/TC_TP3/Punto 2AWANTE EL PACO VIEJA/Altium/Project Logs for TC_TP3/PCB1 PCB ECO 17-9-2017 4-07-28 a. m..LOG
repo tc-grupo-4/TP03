@@ -1,0 +1,151 @@
+Added Component: Designator=BufferGyrator(J014)
+Added Component: Designator=CapDesAcop VCC+(C0805)
+Added Component: Designator=CapDesAcop VCC-(C0805)
+Added Component: Designator=CapRLC BP(C0805)
+Added Component: Designator=CapRLC BR(C0805)
+Added Component: Designator=CapRLC HP(C0805)
+Added Component: Designator=CapRLC  LP(C0805)
+Added Component: Designator=CGyrator1 BP(C0805)
+Added Component: Designator=CGyrator1(C0805)
+Added Component: Designator=CGyrator2 BP(C0805)
+Added Component: Designator=CGyrator HP(C0805)
+Added Component: Designator=CGyrator LP(C0805)
+Added Component: Designator=GND BP (PIN1)
+Added Component: Designator=GND BP(PIN1)
+Added Component: Designator=GND BR (PIN1)
+Added Component: Designator=GND BR(PIN1)
+Added Component: Designator=GND HP (PIN1)
+Added Component: Designator=GND HP(PIN1)
+Added Component: Designator=GND  LP(PIN1)
+Added Component: Designator=J?(BORNERA3)
+Added Component: Designator=ResRLC BP(6-0805_M)
+Added Component: Designator=ResRLC BR(6-0805_M)
+Added Component: Designator=ResRLC HP(6-0805_M)
+Added Component: Designator=ResRLC  LP(6-0805_M)
+Added Component: Designator=RGyrator BP(6-0805_M)
+Added Component: Designator=RGyrator BR(6-0805_M)
+Added Component: Designator=RGyrator HP(6-0805_M)
+Added Component: Designator=RGyratorInput BP(6-0805_M)
+Added Component: Designator=RGyratorInput BR(6-0805_M)
+Added Component: Designator=RGyratorInput HP(6-0805_M)
+Added Component: Designator=RGyratorInput LP(6-0805_M)
+Added Component: Designator=RGyrator LP(6-0805_M)
+Added Component: Designator=Vin BP(PIN1)
+Added Component: Designator=Vin BR(PIN1)
+Added Component: Designator=Vin  HP(PIN1)
+Added Component: Designator=Vin  LP(PIN1)
+Added Component: Designator=Vout BP(PIN1)
+Added Component: Designator=Vout  BR(PIN1)
+Added Component: Designator=VoutC+  LP(PIN1)
+Added Component: Designator=VoutC-  LP(PIN1)
+Added Component: Designator=Vout HP(PIN1)
+Added Pin To Net: NetName=GND Pin=CapDesAcop VCC+-1
+Added Pin To Net: NetName=GND Pin=CapDesAcop VCC--1
+Added Pin To Net: NetName=GND Pin=CapRLC BP-1
+Added Pin To Net: NetName=GND Pin=CapRLC BR-1
+Added Pin To Net: NetName=GND Pin=GND BP -1
+Added Pin To Net: NetName=GND Pin=GND BP-1
+Added Pin To Net: NetName=GND Pin=GND BR -1
+Added Pin To Net: NetName=GND Pin=GND BR-1
+Added Pin To Net: NetName=GND Pin=GND HP -1
+Added Pin To Net: NetName=GND Pin=GND HP-1
+Added Pin To Net: NetName=GND Pin=GND  LP-1
+Added Pin To Net: NetName=GND Pin=J?-3
+Added Pin To Net: NetName=GND Pin=RGyrator BP-2
+Added Pin To Net: NetName=GND Pin=RGyrator BR-2
+Added Pin To Net: NetName=GND Pin=RGyrator HP-2
+Added Pin To Net: NetName=GND Pin=RGyrator LP-2
+Added Net: Name=GND
+Added Pin To Net: NetName=NetBufferGyrator_1 Pin=BufferGyrator-1
+Added Pin To Net: NetName=NetBufferGyrator_1 Pin=BufferGyrator-2
+Added Pin To Net: NetName=NetBufferGyrator_1 Pin=RGyratorInput BP-1
+Added Net: Name=NetBufferGyrator_1
+Added Pin To Net: NetName=NetBufferGyrator_3 Pin=BufferGyrator-3
+Added Pin To Net: NetName=NetBufferGyrator_3 Pin=CGyrator1 BP-1
+Added Pin To Net: NetName=NetBufferGyrator_3 Pin=CGyrator2 BP-1
+Added Pin To Net: NetName=NetBufferGyrator_3 Pin=RGyrator BP-1
+Added Net: Name=NetBufferGyrator_3
+Added Pin To Net: NetName=NetBufferGyrator_5 Pin=BufferGyrator-5
+Added Pin To Net: NetName=NetBufferGyrator_5 Pin=CGyrator1-1
+Added Pin To Net: NetName=NetBufferGyrator_5 Pin=RGyrator BR-1
+Added Net: Name=NetBufferGyrator_5
+Added Pin To Net: NetName=NetBufferGyrator_6 Pin=BufferGyrator-6
+Added Pin To Net: NetName=NetBufferGyrator_6 Pin=BufferGyrator-7
+Added Pin To Net: NetName=NetBufferGyrator_6 Pin=RGyratorInput BR-1
+Added Net: Name=NetBufferGyrator_6
+Added Pin To Net: NetName=NetBufferGyrator_8 Pin=BufferGyrator-8
+Added Pin To Net: NetName=NetBufferGyrator_8 Pin=BufferGyrator-9
+Added Pin To Net: NetName=NetBufferGyrator_8 Pin=RGyratorInput LP-1
+Added Net: Name=NetBufferGyrator_8
+Added Pin To Net: NetName=NetBufferGyrator_10 Pin=BufferGyrator-10
+Added Pin To Net: NetName=NetBufferGyrator_10 Pin=CGyrator LP-1
+Added Pin To Net: NetName=NetBufferGyrator_10 Pin=RGyrator LP-1
+Added Net: Name=NetBufferGyrator_10
+Added Pin To Net: NetName=NetBufferGyrator_12 Pin=BufferGyrator-12
+Added Pin To Net: NetName=NetBufferGyrator_12 Pin=CGyrator HP-1
+Added Pin To Net: NetName=NetBufferGyrator_12 Pin=RGyrator HP-1
+Added Net: Name=NetBufferGyrator_12
+Added Pin To Net: NetName=NetBufferGyrator_13 Pin=BufferGyrator-13
+Added Pin To Net: NetName=NetBufferGyrator_13 Pin=BufferGyrator-14
+Added Pin To Net: NetName=NetBufferGyrator_13 Pin=RGyratorInput HP-1
+Added Net: Name=NetBufferGyrator_13
+Added Pin To Net: NetName=NetCapRLC BP_2 Pin=CapRLC BP-2
+Added Pin To Net: NetName=NetCapRLC BP_2 Pin=CGyrator1 BP-2
+Added Pin To Net: NetName=NetCapRLC BP_2 Pin=CGyrator2 BP-2
+Added Pin To Net: NetName=NetCapRLC BP_2 Pin=ResRLC BP-2
+Added Pin To Net: NetName=NetCapRLC BP_2 Pin=RGyratorInput BP-2
+Added Pin To Net: NetName=NetCapRLC BP_2 Pin=Vout BP-1
+Added Net: Name=NetCapRLC BP_2
+Added Pin To Net: NetName=NetCapRLC BR_2 Pin=CapRLC BR-2
+Added Pin To Net: NetName=NetCapRLC BR_2 Pin=CGyrator1-2
+Added Pin To Net: NetName=NetCapRLC BR_2 Pin=ResRLC BR-2
+Added Pin To Net: NetName=NetCapRLC BR_2 Pin=RGyratorInput BR-2
+Added Pin To Net: NetName=NetCapRLC BR_2 Pin=Vout  BR-1
+Added Net: Name=NetCapRLC BR_2
+Added Pin To Net: NetName=NetCapRLC HP_1 Pin=CapRLC HP-1
+Added Pin To Net: NetName=NetCapRLC HP_1 Pin=CGyrator HP-2
+Added Pin To Net: NetName=NetCapRLC HP_1 Pin=RGyratorInput HP-2
+Added Pin To Net: NetName=NetCapRLC HP_1 Pin=Vout HP-1
+Added Net: Name=NetCapRLC HP_1
+Added Pin To Net: NetName=NetCapRLC HP_2 Pin=CapRLC HP-2
+Added Pin To Net: NetName=NetCapRLC HP_2 Pin=ResRLC HP-2
+Added Net: Name=NetCapRLC HP_2
+Added Pin To Net: NetName=NetCapRLC  LP_1 Pin=CapRLC  LP-1
+Added Pin To Net: NetName=NetCapRLC  LP_1 Pin=CGyrator LP-2
+Added Pin To Net: NetName=NetCapRLC  LP_1 Pin=RGyratorInput LP-2
+Added Pin To Net: NetName=NetCapRLC  LP_1 Pin=VoutC-  LP-1
+Added Net: Name=NetCapRLC  LP_1
+Added Pin To Net: NetName=NetCapRLC  LP_2 Pin=CapRLC  LP-2
+Added Pin To Net: NetName=NetCapRLC  LP_2 Pin=ResRLC  LP-2
+Added Pin To Net: NetName=NetCapRLC  LP_2 Pin=VoutC+  LP-1
+Added Net: Name=NetCapRLC  LP_2
+Added Pin To Net: NetName=NetResRLC BP_1 Pin=ResRLC BP-1
+Added Pin To Net: NetName=NetResRLC BP_1 Pin=Vin BP-1
+Added Net: Name=NetResRLC BP_1
+Added Pin To Net: NetName=NetResRLC BR_1 Pin=ResRLC BR-1
+Added Pin To Net: NetName=NetResRLC BR_1 Pin=Vin BR-1
+Added Net: Name=NetResRLC BR_1
+Added Pin To Net: NetName=NetResRLC HP_1 Pin=ResRLC HP-1
+Added Pin To Net: NetName=NetResRLC HP_1 Pin=Vin  HP-1
+Added Net: Name=NetResRLC HP_1
+Added Pin To Net: NetName=NetResRLC  LP_1 Pin=ResRLC  LP-1
+Added Pin To Net: NetName=NetResRLC  LP_1 Pin=Vin  LP-1
+Added Net: Name=NetResRLC  LP_1
+Added Pin To Net: NetName=VCC+ Pin=BufferGyrator-4
+Added Pin To Net: NetName=VCC+ Pin=CapDesAcop VCC+-2
+Added Pin To Net: NetName=VCC+ Pin=J?-2
+Added Net: Name=VCC+
+Added Pin To Net: NetName=VCC- Pin=BufferGyrator-11
+Added Pin To Net: NetName=VCC- Pin=CapDesAcop VCC--2
+Added Pin To Net: NetName=VCC- Pin=J?-1
+Added Net: Name=VCC-
+Added Class: Name=PasaAltos(HP)
+Added Class: Name=PasaBajo(LP)
+Added Class: Name=PasaBanda(BP)
+Added Class: Name=RechazaBanda(BR)
+Added Class: Name=TopSheet
+Added Room: Name=PasaAltos(HP)
+Added Room: Name=PasaBajo(LP)
+Added Room: Name=PasaBanda(BP)
+Added Room: Name=RechazaBanda(BR)
+Added Room: Name=TopSheet

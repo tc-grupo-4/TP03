@@ -1,0 +1,27 @@
+zeros=root(sym2poly(C2*C6*R1*R3*R4*R6*R7*R8*x^2+C2*C6*R1*R3*R5*R6*R7*R8*x^2-C2*R1*R3*R4*R5*R7*x+C2*R1*R3*R4*R6*R8*x+C2*R1*R3*R5*R6*R8*s+R4*R5*R6*R7));
+polos=root(sym2poly(C2*C6*R1*R3*R5*R6*R7*R8*x^2+C2*R1*R3*R5*R6*R8*x+C2*R1*R3*R5*R7*R8*x+R4*R5*R6*R7+R4*R6*R7*R8));
+
+
+s=tf('s');
+
+R6=40e3;
+R8=20e3;
+R1=R8;
+R3=R8;
+R4=R8;
+
+
+
+R7=16e3;
+R5=1600;
+
+C=10e-9;
+C2=C;
+C6=C2;
+
+
+vo = (C2*C6*R1*R3*R4*R6*R7*R8*s^2+C2*C6*R1*R3*R5*R6*R7*R8*s^2-C2*R1*R3*R4*R5*R7*s+C2*R1*R3*R4*R6*R8*s+C2*R1*R3*R5*R6*R8*s+R4*R5*R6*R7)/(C2*C6*R1*R3*R5*R6*R7*R8*s^2+C2*R1*R3*R5*R6*R8*s+C2*R1*R3*R5*R7*R8*s+R4*R5*R6*R7+R4*R6*R7*R8);
+
+bode(vo);
+
+

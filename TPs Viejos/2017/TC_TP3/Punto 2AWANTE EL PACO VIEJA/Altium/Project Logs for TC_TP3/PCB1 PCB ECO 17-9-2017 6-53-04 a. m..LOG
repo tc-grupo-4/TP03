@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=NetBufferGyrator_3 Pin=CGyrator2 BP-1
+Removed Pin From Net: NetName=NetCapRLC BP_2 Pin=CGyrator2 BP-2
+Change Component Designator: OldDesignator=ResRLC BP gfdsa NewDesignator=ResRLC BP
+Change Net Name : Old Net Name=NetResRLC BP gfdsa_1 New Net Name=NetResRLC BP_1
+Added Member To Class: ClassName=PasaBanda(BP) Member=Component GND BP  Socket
+Added Member To Class: ClassName=PasaBanda(BP) Member=Component ResRLC BP Res3
+Added Room: Name=PasaAltos(HP)
+Added Room: Name=PasaBajo(LP)
+Added Room: Name=PasaBanda(BP)
+Added Room: Name=RechazaBanda(BR)
+Added Room: Name=TopSheet

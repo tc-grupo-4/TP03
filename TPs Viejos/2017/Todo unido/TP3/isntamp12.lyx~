@@ -1,0 +1,3356 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Amplificadores de Instrumentación
+\end_layout
+
+\begin_layout Standard
+Un amplificador de Instrumentación es un dispositivo que amplifica una señal
+ diferencial aplicada entre sus entradas de forma precisa, con el objetivo
+ de realizar mediciones de precisión sobre pequeñas señales.
+ Así también, una señal común aplicada en sus terminales es fuertemente
+ amortiguada, es decir, tiene un valor alto de CMRR, por lo que es fuertemente
+ inmune al ruido, en particular al ruido de linea (
+\begin_inset Formula $50Hz$
+\end_inset
+
+, que por su longitud de onda, mucho mayor al tamaño del circuito, afecta
+ de forma aproximadamente igual a ambas entradas del dispositivo - señal
+ común).
+ Para estudiar este tipo de dispositivos se analizará el amplificador diferencia
+l dado por el esquema de la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "circ1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename instamp.PNG
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "circ1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema de Amplificador de Instrumentación a estudiar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Descripción Matemática del Comportamiento del Circuito
+\end_layout
+
+\begin_layout Standard
+Se analizó el comportamiento de este circuito, considerando que los OpAmps
+ utilizados son Ideales y Reales.
+ El estudio de este circuito se realizó separando este en dos partes, de
+ acuerdo a la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "circ2"
+
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Aparece Figura 1.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename instamp2.PNG
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "circ2"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito a estudiar, separado en 2 etapas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La forma matemática de realizar la conexión entre ambas partes es mediante
+ el circuito equivalente de Thevenin en los nodos indicados con las tensiones
+ 
+\begin_inset Formula $V_{A}$
+\end_inset
+
+ y 
+\begin_inset Formula $V_{B}.$
+\end_inset
+
+ Notar que si se considera que la impedancia de salida de U1 es 0, entonces
+ la impedancia vista desde 
+\begin_inset Formula $V_{A}$
+\end_inset
+
+ a tierra es 0, por lo tanto 
+\begin_inset Formula $Z_{Th,A}=0$
+\end_inset
+
+, y también se tiene que 
+\begin_inset Formula $V_{Th,A}=V_{A}.$
+\end_inset
+
+ Considerando que la impedancia de entrada de U4 es infinita, entonces no
+ circula corriente por 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{9},$
+\end_inset
+
+ con lo que se tiene que 
+\begin_inset Formula $V_{Th,B}=V_{Out,2}.$
+\end_inset
+
+ Considerando que la impedancia de entrada de U3 es infinita, el valor de
+ 
+\begin_inset Formula $Z_{Th,B}$
+\end_inset
+
+ no es necesario calcularlo, pues no circulará corriente a través de 
+\begin_inset Formula $Z_{Th,B}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Por lo analizado entonces, resulta de interés conseguir las expresiones
+ para 
+\begin_inset Formula $V_{A}$
+\end_inset
+
+ y 
+\begin_inset Formula $V_{B}$
+\end_inset
+
+.
+ Se realizará primero el estudio de la parte 2, ya que presenta una menor
+ complejidad matemática.
+\end_layout
+
+\begin_layout Subsubsection
+Análisis de Parte 2 del circuito
+\end_layout
+
+\begin_layout Standard
+Si se considera el circuito con amplificación finita, impedancia de entrada
+ infinita e impedancia de salida nula, se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+\frac{V_{A}-V^{-}}{R_{1}}=I\\
+-R_{2}\cdot I=V_{Out}\\
+V_{Out}=A\cdot(V_{B}-V_{A})
+\end{cases}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resolviendo el sistema, y llamando 
+\begin_inset Formula $\Delta V_{AB}=V_{A}-V_{B}$
+\end_inset
+
+ se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{Real}=\frac{V_{Out,Real}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\cdot\frac{R_{1}\cdot A}{R_{1}\cdot A+R_{2}}\label{eq:part1real}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con lo que, si se cumple que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A\ggg R_{2}/R_{1}\label{cond1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+se puede aproximar la ganancia del circuito con el límite ideal 
+\begin_inset Formula $A\rightarrow\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{Ideal}=\frac{V_{Out,Ideal}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\label{eq:part1ideal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y, considerando el polo dominante, es decir, 
+\begin_inset Formula $A=\frac{A_{0}\omega_{P}}{s+\omega_{P}}$
+\end_inset
+
+ se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{Real,PD}=\frac{V_{Out,Ideal,PD}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\cdot\frac{A_{0}\cdot R_{1}\cdot\omega_{P}}{R_{2}\cdot s+R_{2}\cdot\omega_{P}+A_{0}\cdot R_{1}\cdot\omega_{P}}\label{eq:part1realpd}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analizando los resultados obtenidos, la función de esta parte del circuito
+ es obtener la diferencia de tensión 
+\begin_inset Formula $\Delta V_{AB}$
+\end_inset
+
+ y amplificarla.
+\end_layout
+
+\begin_layout Subsubsection
+Análisis de Parte 1 del circuito
+\end_layout
+
+\begin_layout Standard
+Considerando amplificadores con ganancia finita, y si se cumple que
+\end_layout
+
+\begin_layout Itemize
+La impedancia de entrada de los OpAmps es infinita
+\end_layout
+
+\begin_layout Itemize
+La impedancia de salida de los OpAmps es nula
+\end_layout
+
+\begin_layout Itemize
+Los 4 OpAmps utilizados son iguales, y por lo tanto tienen la misma ganancia
+\end_layout
+
+\begin_layout Standard
+Se llega al siguiente sistema de ecuaciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+V_{Out,1}=V_{A}=A\cdot\left(V_{1}^{+}-V_{1}^{-}\right) & \text{Ecuación OpAmp 1 (U1)}\\
+V_{Out,2}=A\cdot\left(V_{2}^{+}-V_{2}^{-}\right) & \text{Ecuación OpAmp 2 (U2)}\\
+V_{Out,3}=A\cdot V_{3}^{+} & \text{Ecuación OpAmp 3 (U4)}\\
+\frac{V_{Out,1}-V_{1}^{-}}{R_{3}}+\frac{\widetilde{V}-V_{1}^{-}}{R_{4}}=0 & \text{Ecuación Nodo \ensuremath{V_{1}^{-}}}\\
+\frac{V_{Out,3}-\widetilde{V}}{R_{5}}+\frac{V_{1}^{-}-\widetilde{V}}{R_{4}}+\frac{V_{2}^{-}-\widetilde{V}}{R_{6}}=0 & \text{Ecuación Nodo \ensuremath{\widetilde{V}}}\\
+\frac{\widetilde{V}-V_{2}^{-}}{R_{6}}+\frac{V_{Out,2}-V_{2}^{-}}{R_{7}}=0 & \text{Ecuación Nodo \ensuremath{V_{2}^{-}}}\\
+V_{Out,2}=V_{B}=V_{3}^{+} & \text{Pues no circula corriente por \ensuremath{R_{8}} y \ensuremath{R_{9}}}
+\end{cases}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es notable la complejidad matemática en la resolución de este sistema de
+ ecuaciones.
+ El sistema se resolvió utilizando software matemático, y resulta conveniente
+ introducir las siguientes expresiones para simplificar la notación de los
+ resultados, y hacer que los mismos sean fácilmente manipulables.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+\mathrm{\alpha=R_{3}\cdot R_{5}+R_{3}\cdot R_{6}+R_{3}\cdot R_{7}+R_{4}\cdot R_{5}+R_{4}\cdot R_{6}+R_{4}\cdot R_{7}+R_{5}\cdot R_{6}+R_{5}\cdot R_{7}}\\
+\mathrm{\beta=R_{3}\cdot R_{5}+R_{3}\cdot R_{6}+R_{4}\cdot R_{5}+R_{4}\cdot R_{6}+R_{5}\cdot R_{6}}\\
+\mathrm{\gamma=R_{3}\cdot R_{7}+R_{4}\cdot R_{7}}\\
+\mathrm{\theta=R_{3}\cdot R_{5}}\\
+\mathrm{\phi=R_{3}\cdot R_{6}+R_{3}\cdot R_{7}}\\
+\mathrm{\lambda=R_{4}\cdot R_{5}+R_{4}\cdot R_{6}+R_{4}\cdot R_{7}+R_{5}\cdot R_{6}+R_{5}\cdot R_{7}}\\
+\mathrm{\upsilon=R_{5}\cdot R_{7}}\\
+\mathrm{\epsilon=R_{3}\cdot R_{5}+R_{3}\cdot R_{6}+2\cdot R_{4}\cdot R_{5}+2\cdot R_{4}\cdot R_{6}+R_{4}\cdot R_{7}+2\cdot R_{5}\cdot R_{6}+R_{5}\cdot R_{7}}\\
+\mathrm{\zeta=R_{3}\cdot R_{7}+R_{4}\cdot R_{5}+R_{4}\cdot R_{6}+R_{4}\cdot R_{7}+R_{5}\cdot R_{6}}\\
+\mathrm{\eta=R_{4}\cdot R_{7}}
+\end{cases}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces, resolviendo el sistema se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{A,Real}=\frac{V_{1}\cdot(A\cdot\alpha+A^{2}\cdot\beta+A^{3}\cdot\gamma)-V_{2}\cdot(A^{2}\cdot\theta+A^{3}\cdot\phi)}{\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{B,Real}=\frac{V_{2}\cdot(A\cdot\alpha+A^{2}\cdot\lambda)-V_{1}\cdot(A^{2}\cdot\upsilon)}{\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con estos resultados, se puede calcular la ganancia en modo común del sistema
+ en sus dos salidas, utilizando 
+\begin_inset Formula $V_{1}=V_{2}=V_{C}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{A,Real}}{V_{C}}=G_{C,A,Real}=\frac{A\cdot\alpha+A^{2}\cdot(\beta-\theta)+A^{3}\cdot(\gamma-\phi)}{\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{B,Real}}{V_{C}}=G_{C,B,Real}=\frac{A\cdot\alpha+A^{2}\cdot(\lambda-\upsilon)}{\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Análogamente, se puede calcular la ganancia en modo diferencial del sistema
+ en sus dos salidas, utilizando 
+\begin_inset Formula $V_{1}=-V_{2}=V_{D}/2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{A,Real}}{V_{D}}=G_{D,A,Real}=\frac{A\cdot\alpha+A^{2}\cdot(\beta+\theta)+A^{3}\cdot(\gamma+\phi)}{2\cdot(\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{B,Real}}{V_{D}}=G_{D,B,Real}=\frac{A\cdot\alpha+A^{2}\cdot(\lambda+\upsilon)}{2\cdot(\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Véase también que si se cumple que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{k},\,k\in[3,7]\text{ Son de Ordenes de magnitud similares y A\ggg1 }\label{cond2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede aproximar estas ecuaciones con el caso ideal 
+\begin_inset Formula $A\rightarrow\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{A,Ideal}=\frac{V_{1}\gamma-V_{2}\phi}{\eta}=\frac{V_{1}\cdot(R_{3}\cdot R_{7}+R_{4}\cdot R_{7})-V_{2}\cdot(R_{3}\cdot R_{6}+R_{3}\cdot R_{7})}{R_{4}\cdot R_{7}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{B,Ideal}=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notar que el hecho de que 
+\begin_inset Formula $V_{B,Ideal}=0$
+\end_inset
+
+ implica que 
+\begin_inset Formula $V_{3,Ideal}^{+}=0$
+\end_inset
+
+ (Tierra Virtual).
+ Dado que 
+\begin_inset Formula $V_{B,Ideal}=0$
+\end_inset
+
+, únicamente es de interés la ganancia en la salida A.
+ Las ganancias en modo común y diferencial están dadas por las siguientes
+ expresiones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{A,Ideal}}{V_{C}}=G_{C,Ideal}=\frac{\gamma-\phi}{\eta}=\frac{R_{4}\cdot R_{7}-R_{3}\cdot R_{6}}{R_{4}\cdot R_{7}}\label{eq:gcideal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{A,Ideal}}{V_{D}}=G_{D,Ideal}=\frac{\gamma+\phi}{2\cdot\eta}=\frac{2\cdot R_{3}\cdot R_{7}+R_{4}\cdot R_{7}+R_{3}\cdot R_{6}}{2\cdot R_{4}\cdot R_{7}}\label{eq:gdideal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir de estos datos, con el objetivo de conectar las expresiones de
+ la parte 1 y 2 del circuito, se calculan los siguientes valores, con ayuda
+ de software matemático
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta V_{AB,C,Real}=\frac{A^{2}\cdot(\beta+\upsilon-\theta-\lambda)+A^{3}\cdot(\gamma-\phi)}{\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta}\cdot V_{C}\label{eq:part2creal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta V_{AB,D,Real}=\frac{2\cdot A\cdot\alpha+A^{2}\cdot(\beta+\theta+\lambda+\upsilon)+A^{3}\cdot(\gamma+\phi)}{2\cdot(\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta)}\cdot V_{D}\label{eq:part2dreal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta V_{AB,C,Ideal}=\frac{\gamma-\phi}{\eta}\cdot V_{C}\label{eq:part2cideal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta V_{AB,D,Ideal}=\frac{(\gamma+\phi)}{2\cdot\eta}\cdot V_{D}\label{part2dideal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta V_{AB,C,Real,PD}=\frac{A_{0}^{3}\cdot\omega_{P}^{3}\cdot(\gamma-\phi)+A_{0}^{2}\cdot\omega_{P}^{2}\cdot(\beta+\upsilon-\lambda-\theta)\cdot(s+\omega_{P})}{\alpha\cdot(s+\omega_{P})^{3}+A_{0}^{3}\cdot\eta\cdot\omega_{P}^{3}+A_{0}\cdot\epsilon\cdot\omega_{P}\cdot(s+\omega_{P})^{2}+A_{0}^{2}\cdot\omega_{P}^{2}\cdot\zeta\cdot(s+\omega_{P})}\cdot V_{C}\label{eq:part2crealpd}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta V_{AB,D,Real,PD}=\frac{A_{0}^{3}\cdot\omega_{P}^{3}\cdot(\gamma+\phi)+2\cdot A_{0}\cdot\alpha\cdot\omega_{P}\cdot(s+\omega_{P})^{2}+A_{0}^{2}\cdot\omega_{P}^{2}\cdot(\beta+\upsilon+\lambda+\theta)\cdot(s+\omega_{P})}{2\cdot(\alpha\cdot(s+\omega_{P})^{3}+A_{0}^{3}\cdot\eta\cdot\omega_{P}^{3}+A_{0}\cdot\epsilon\cdot\omega_{P}\cdot(s+\omega_{P})^{2}+A_{0}^{2}\cdot\omega_{P}^{2}\cdot\zeta\cdot(s+\omega_{P}))}\cdot V_{D}\label{eq:part2drealpd}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analizando los resultados obtenidos, la función de esta parte del circuito
+ es convertir la tensión diferencial a una tensión referida a tierra, proporcion
+al a la entrada diferencial del circuito, así como también eliminar la parte
+ común de la señal (esto se estudiará más adelante).
+\end_layout
+
+\begin_layout Standard
+En búsqueda de resultados con menor complejidad matemática, se estudiará
+ el circuito agregando como condición adicional que el OpAmp U4 es ideal,
+ y se compararan los resultados con el obtenido anteriormente y con las
+ simulaciones realizadas.
+ Los resultados previamente obtenidos permiten justificar la tierra virtual
+ en el OpAmp U4.
+\end_layout
+
+\begin_layout Standard
+Introduciendo esta condición, el sistema de ecuaciones que modela el circuito
+ es el siguiente
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+V_{Out,1}=V_{A}=A\cdot\left(V_{1}^{+}-V_{1}^{-}\right) & \text{Ecuación OpAmp 1 (U1)}\\
+V_{Out,2}=A\cdot\left(V_{2}^{+}-V_{2}^{-}\right) & \text{Ecuación OpAmp 2 (U2)}\\
+\frac{V_{Out,1}-V_{1}^{-}}{R_{3}}+\frac{\widetilde{V}-V_{1}^{-}}{R_{4}}=0 & \text{Ecuación Nodo \ensuremath{V_{1}^{-}}}\\
+\frac{V_{Out,3}-\widetilde{V}}{R_{5}}+\frac{V_{1}^{-}-\widetilde{V}}{R_{4}}+\frac{V_{2}^{-}-\widetilde{V}}{R_{6}}=0 & \text{Ecuación Nodo \ensuremath{\widetilde{V}}}\\
+\frac{\widetilde{V}-V_{2}^{-}}{R_{6}}+\frac{V_{Out,2}-V_{2}^{-}}{R_{7}}=0 & \text{Ecuación Nodo \ensuremath{V_{2}^{-}}}\\
+V_{Out,2}=V_{B}=0 & \text{Tierra Virtual}
+\end{cases}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resolviendo el sistema se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{A,Real,U4Ideal}=\frac{A\cdot\left[\left(R_{3}\cdot R_{7}+R_{4}\cdot R_{7}\right)\cdot V_{1}-\left(R_{3}\cdot R_{6}+R_{3}\cdot R_{7}\right)\cdot V_{2}\right]}{R_{7}\cdot(R_{3}+R_{4}+A\cdot R_{4})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con lo que, análogamente con lo analizado anteriormente
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G_{C,A,Real,U4Ideal}=\frac{A\cdot\left[R_{4}\cdot R_{7}-R_{3}\cdot R_{6}\right]}{R_{7}\cdot(R_{3}+R_{4}+A\cdot R_{4})}\Rightarrow\Delta V_{AB,C,Real,U4Ideal}=G_{C,A,Real,U4Ideal}\cdot V_{C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G_{D,A,Real,U4Ideal}=\frac{A\cdot\left[2\cdot R_{3}\cdot R_{7}+R_{4}\cdot R_{7}+R_{3}\cdot R_{6}\right]}{2\cdot R_{7}\cdot(R_{3}+R_{4}+A\cdot R_{4})}\Rightarrow\Delta V_{AB,D,Real,U4Ideal}=G_{D,A,Real,U4Ideal}\cdot V_{D}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, considerando polo dominante
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{C,A,Real,PD,U4Ideal}=\frac{A_{0}\cdot\left[R_{4}\cdot R_{7}-R_{3}\cdot R_{6}\right]}{R_{7}\cdot\left(\frac{s}{\mathrm{wp}}\left(R_{3}+R_{4}\right)+R_{3}+R_{4}\cdot\left(A_{0}+1\right)\right)}\label{eq:part2crealpdu4ideal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Rightarrow\Delta V_{AB,C,Real,PD,U3Ideal}=G_{C,A,Real,PD,U4Ideal}\cdot V_{C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{D,A,Real,PD,U4Ideal}=\frac{A_{0}\cdot\left[2\cdot R_{3}\cdot R_{7}+R_{4}\cdot R_{7}+R_{3}\cdot R_{6}\right]}{2\cdot R_{7}\cdot\left(\frac{s}{\mathrm{wp}}\left(R_{3}+R_{4}\right)+R_{3}+R_{4}\cdot\left(A_{0}+1\right)\right)}\label{eq:part2drealpdu4ideal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Rightarrow\Delta V_{AB,D,Real,PD,U3Ideal}=G_{D,A,Real,PD,U4Ideal}\cdot V_{C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Unión de resultados, elección de componentes y obtención de ganancia del
+ sistema
+\end_layout
+
+\begin_layout Standard
+Se procederá a obtener las expresiones finales del circuito.
+\end_layout
+
+\begin_layout Standard
+Considerando el caso ideal, según las Ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part1ideal"
+
+\end_inset
+
+), (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part2cideal"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "part2dideal"
+
+\end_inset
+
+) se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{C,Ideal}=\frac{V_{Out,Ideal}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\cdot\frac{\gamma-\phi}{\eta}=-\frac{R_{2}}{R_{1}}\cdot\frac{R_{4}\cdot R_{7}-R_{3}\cdot R_{6}}{R_{4}\cdot R_{7}}\label{eq:gidealc}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{D,Ideal}=\frac{V_{Out,Ideal}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\cdot\frac{(\gamma+\phi)}{2\cdot\eta}=-\frac{R_{2}}{R_{1}}\cdot\frac{2\cdot R_{3}\cdot R_{7}+R_{4}\cdot R_{7}+R_{3}\cdot R_{6}}{2\cdot R_{4}\cdot R_{7}}\label{gideald}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si se considera que los OpAmps son reales, según las Ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part1real"
+
+\end_inset
+
+), (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part2creal"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part2dreal"
+
+\end_inset
+
+) se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{C,Real}=\frac{V_{Out,Real}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\cdot\frac{R_{1}\cdot A}{R_{1}\cdot A+R_{2}}\cdot\frac{A^{2}\cdot(\beta+\upsilon-\theta-\lambda)+A^{3}\cdot(\gamma-\phi)}{\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta}\label{eq:grealc-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{D,Real}=\frac{V_{Out,Real}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\cdot\frac{R_{1}\cdot A}{R_{1}\cdot A+R_{2}}\cdot\frac{A^{2}\cdot(\beta+\upsilon-\theta-\lambda)+A^{3}\cdot(\gamma-\phi)}{2\cdot(\alpha+A\cdot\epsilon+A^{2}\cdot\zeta+A^{3}\cdot\eta)}\label{greald-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si se consideran los polos dominantes, según las Ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part1realpd"
+
+\end_inset
+
+), (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part2crealpd"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part2drealpd"
+
+\end_inset
+
+) se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G_{C,Real,PD}=\frac{V_{Out,Real,PD}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\cdot\frac{A_{0}\cdot R_{1}\cdot\omega_{P}}{R_{2}\cdot s+R_{2}\cdot\omega_{P}+A_{0}\cdot R_{1}\cdot\omega_{P}}\cdot
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\cdot\frac{A_{0}^{3}\cdot\omega_{P}^{3}\cdot(\gamma-\phi)+A_{0}^{2}\cdot\omega_{P}^{2}\cdot(\beta+\upsilon-\lambda-\theta)\cdot(s+\omega_{P})}{\alpha\cdot(s+\omega_{P})^{3}+A_{0}^{3}\cdot\eta\cdot\omega_{P}^{3}+A_{0}\cdot\epsilon\cdot\omega_{P}\cdot(s+\omega_{P})^{2}+A_{0}^{2}\cdot\omega_{P}^{2}\cdot\zeta\cdot(s+\omega_{P})}\label{eq:grealpdc}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G_{D,Real,PD}=\frac{V_{Out,Real,PD}}{\Delta V_{AB}}=-\frac{R_{2}}{R_{1}}\cdot\frac{A_{0}\cdot R_{1}\cdot\omega_{P}}{R_{2}\cdot(s+\omega_{P})+A_{0}\cdot R_{1}\cdot\omega_{P}}\cdot
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\cdot\frac{A_{0}^{3}\cdot\omega_{P}^{3}\cdot(\gamma+\phi)+2\cdot A_{0}\cdot\alpha\cdot\omega_{P}\cdot(s+\omega_{P})^{2}+A_{0}^{2}\cdot\omega_{P}^{2}\cdot(\beta+\upsilon+\lambda+\theta)\cdot(s+\omega_{P})}{2\cdot(\alpha\cdot(s+\omega_{P})^{3}+A_{0}^{3}\cdot\eta\cdot\omega_{P}^{3}+A_{0}\cdot\epsilon\cdot\omega_{P}\cdot(s+\omega_{P})^{2}+A_{0}^{2}\cdot\omega_{P}^{2}\cdot\zeta\cdot(s+\omega_{P}))}\label{grealpdd}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estas últimas expresiones serán las utilizadas para obtener la respuesta
+ en frecuencia del dispositivo.
+ Notar que, siendo todos los coeficientes del denominador positivos, siguiendo
+ la regla de los signos de Descartes las raíces son negativas, por lo que
+ el sistema es, en principio, BIBO-Estable.
+ 
+\end_layout
+
+\begin_layout Standard
+Considerando el caso en el que el OpAmp U4 es ideal, y se considera polo
+ dominante, según las Ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part1realpd"
+
+\end_inset
+
+), (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part2crealpdu4ideal"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part2drealpdu4ideal"
+
+\end_inset
+
+) se tiene que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{C,Real,PD,U4Ideal}=-\frac{R_{2}}{R_{1}}\cdot\frac{A_{0}\cdot R_{1}\cdot\omega_{P}}{R_{2}\cdot(s+\omega_{P})+A_{0}\cdot R_{1}\cdot\omega_{P}}\cdot\frac{A_{0}\cdot\left[R_{4}\cdot R_{7}-R_{3}\cdot R_{6}\right]}{R_{7}\cdot\left(\frac{s}{\mathrm{wp}}\left(R_{3}+R_{4}\right)+R_{3}+R_{4}\cdot\left(A_{0}+1\right)\right)}\label{grealpdu4ic}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{D,Real,PD,U4Ideal}=-\frac{R_{2}}{R_{1}}\cdot\frac{A_{0}\cdot R_{1}\cdot\omega_{P}}{R_{2}\cdot(s+\omega_{P})+A_{0}\cdot R_{1}\cdot\omega_{P}}\cdot\frac{A_{0}\cdot\left[2\cdot R_{3}\cdot R_{7}+R_{4}\cdot R_{7}+R_{3}\cdot R_{6}\right]}{2\cdot R_{7}\cdot\left(\frac{s}{\mathrm{wp}}\left(R_{3}+R_{4}\right)+R_{3}+R_{4}\cdot\left(A_{0}+1\right)\right)}\label{grealpdu4id}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para los 4 OpAmps, se utilizará el integrado TL084.
+ Las razones en la elección de este integrado son las siguientes:
+\end_layout
+
+\begin_layout Itemize
+Este integrado tiene 4 canales, es decir, tiene 4 OpAmps integrados, lo
+ que minimiza la cantidad de integrados a utilizar y, al estar estos OpAmps
+ en un mismo integrado, sus valores son altamente similares, lo que refuerza
+ la validez de la hipótesis utilizada de que todos los OpAmps tienen la
+ misma ganancia (
+\begin_inset Formula $A_{0}=200K$
+\end_inset
+
+ típico), así como también tendrán valores de polo dominante altamente similares
+ (
+\begin_inset Formula $GBP=3MHz$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $f_{P}=\omega_{p}/(2\cdot\pi)=15Hz$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+La impedancia de entrada de estos integrados es alta (JFET-input Operational
+ Amplifiers), del orden de los 
+\begin_inset Formula $T\Omega,$
+\end_inset
+
+ reforzando la validez de la aproximación de impedancia de entrada infinita
+\end_layout
+
+\begin_layout Itemize
+El valor de Slew Rate de estos integrados es alto (
+\begin_inset Formula $13V/\mu s$
+\end_inset
+
+ típico, 
+\begin_inset Formula $8V/\mu s$
+\end_inset
+
+ mínimo), lo que evitará problemas al tener que medir la respuesta en frecuencia
+ del circuito.
+ Recordar que se trabaja con señales pequeñas, y tener que disminuir aun
+ más la amplitud de excitación por el Slew Rate puede complicar el proceso
+ de medición.
+\end_layout
+
+\begin_layout Standard
+Adicionalmente, siguiendo las recomendaciones del fabricante, se decidió
+ implementar capacitores de desacople entre 
+\begin_inset Formula $+V_{CC}$
+\end_inset
+
+ y 
+\begin_inset Formula $Gnd$
+\end_inset
+
+, y 
+\begin_inset Formula $-V_{CC}$
+\end_inset
+
+ y 
+\begin_inset Formula $Gnd$
+\end_inset
+
+.
+ Citando el datasheet: ''Place 0.1-μF bypass capacitors close to the power-supply
+ pins to reduce errors coupling in from noisy or high impedance power supplies.''
+\end_layout
+
+\begin_layout Standard
+Para determinar valores para los resistores con el objetivo de obtener una
+ cierta ganancia diferencial y una ganancia común nula, se utilizan resultados
+ obtenidos considerando los componentes como ideales.
+ A partir de las ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gcideal"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gdideal"
+
+\end_inset
+
+) se tiene que se deben cumplir las siguientes condiciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{D,Ideal}=-\frac{R_{2}}{R_{1}}\cdot\frac{2\cdot R_{3}\cdot R_{7}+R_{4}\cdot R_{7}+R_{3}\cdot R_{6}}{2\cdot R_{4}\cdot R_{7}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{4}\cdot R_{7}=R_{3}\cdot R_{6}\label{eq:nocommoneq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vease que la condición dada por la Ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:nocommoneq"
+
+\end_inset
+
+) implica que 
+\begin_inset Formula $\gamma=\phi$
+\end_inset
+
+ y 
+\begin_inset Formula $\beta+\upsilon=\lambda+\theta$
+\end_inset
+
+, por lo que, de acuerdo a la Ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:part2crealpd"
+
+\end_inset
+
+) la ganancia común real con polo dominante teórica también sería nula,
+ por lo que, en cualquiera de los régimenes estudiados, se cumple, teóricamente,
+ que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+CMRR_{Teórico}=20\cdot log_{10}\left(\frac{G_{D}}{G_{C}}\right)=\left[\frac{2\cdot R_{3}\cdot R_{7}+R_{4}\cdot R_{7}+R_{3}\cdot R_{6}}{2\cdot\left(R_{4}\cdot R_{7}-R_{3}\cdot R_{6}\right)}\right]_{dB}\rightarrow\infty
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces, considerando las restricciones obtenidas en las Ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond1"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond2"
+
+\end_inset
+
+) para que la aproximación de ganancia infinita sea válida, y con el objetivo
+ de lograr una ganancia de 
+\begin_inset Formula $\left|G_{D,Ideal}\right|=130$
+\end_inset
+
+ veces, se determinaron los siguientes valores, cumpliendo con las ecuaciones
+ anteriores
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+R_{3}=R_{7}=2.4K\Omega\\
+R_{4}=R_{6}=1.5K\Omega\\
+R_{2}=10K\Omega\\
+R_{1}=200\Omega
+\end{cases}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se optó por utilizar resistencias del orden de los 
+\begin_inset Formula $K\Omega$
+\end_inset
+
+, debido a que valores más pequeños, por ej 
+\begin_inset Formula $\sim100\Omega$
+\end_inset
+
+, son comparables con la impedancia de salida de los operacionales, invalidando
+ la aproximación de que la impedancia de salida de estos operacionales es
+ nula.
+ De utilizar valores más altos, como por ej 
+\begin_inset Formula $\sim100K\Omega\sim M\Omega$
+\end_inset
+
+, estos resistores introducirán ruido térmico al circuito, e introducirán
+ ruido de linea, debido a que si se modela el ruido con su circuito equivalente
+ de Thevenin, se tiene que ingresa al circuito a través de una fuente y
+ una impedancia de alto valor, y si los resistores utilizados son de valores
+ muy altos, se formará un divisor resistivo con la impedancia de Thevenin
+ del ruido, afectando el circuito, cuyo objetivo es justamente atenuar el
+ ruido de linea.
+\end_layout
+
+\begin_layout Standard
+Queda pendiente asignar valores para los resistores 
+\begin_inset Formula $R_{5},$
+\end_inset
+
+ 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{9}$
+\end_inset
+
+, siendo que la única condición que se determinó que estos valores deben
+ cumplir es que el 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ debe ser de un orden de magnitud similar al de 
+\begin_inset Formula $R_{k}$
+\end_inset
+
+, 
+\begin_inset Formula $k\in[3,7]$
+\end_inset
+
+, según la Ecuación (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond2"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+En cuanto a los resistores 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{9}$
+\end_inset
+
+, no se les determinó una función, ya que por dichos resistores la corriente
+ que circula es despreciable, por lo que no son utilizados para regular
+ corriente.
+ Tanto en el análisis real, ideal y real con polo dominante no se pudo determina
+r la función de estos componentes, por lo que se tomarán los valores 
+\begin_inset Formula $R_{8}=R_{9}=0\Omega$
+\end_inset
+
+, y se implementará el PCB dejando abierta la posibilidad de incorporar
+ estos resistores.
+\end_layout
+
+\begin_layout Standard
+En cuanto al valor de 
+\begin_inset Formula $R_{5},$
+\end_inset
+
+ se hace necesario hacer un análisis de condiciones de estabilidad del circuito,
+ que no aparecieron en el análisis teórico realizado.
+ En la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "circ1"
+
+\end_inset
+
+, se puede observar que el resistor 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ forma parte de un lazo de realimentación, y se determinó que existen valores
+ de 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ que generan que el circuito no sea estable, esto es, valores que provocan
+ que la realimentación de U4 sea positiva, generando oscilaciones en la
+ salida del circuito.
+ Utilizando las simulaciones, se observa que un valor de 
+\begin_inset Formula $R_{5}=2K\Omega$
+\end_inset
+
+ permite que el circuito sea estable, mientras que, por ejemplo, un valor
+ de 
+\begin_inset Formula $R_{5}=200\Omega$
+\end_inset
+
+ provocaría que el circuito sea inestable, según se ve en la Figura 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fb_2k.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fb_200.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulaciones de Transferencia 
+\begin_inset Formula $V_{3}^{+}/V_{D},$
+\end_inset
+
+ con 
+\begin_inset Formula $R_{5}=2K\Omega$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{5}=200\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notar que la realimentación del OpAmp U4 se realiza a través del terminal
+ no inversor, por lo que para que el circuito sea estable, la fase no debe
+ superar 
+\begin_inset Formula $0\text{°}$
+\end_inset
+
+ o caer por debajo de
+\begin_inset Formula $-360\text{°}$
+\end_inset
+
+ y, de hacerlo, la ganancia tiene que ser menor que 
+\begin_inset Formula $0dB$
+\end_inset
+
+, para que esta realimentación positiva sea atenuada.
+\end_layout
+
+\begin_layout Standard
+Según los gráficos presentados, utilizando un resistor de 
+\begin_inset Formula $2K\Omega$
+\end_inset
+
+, cuando la transferencia supera 
+\begin_inset Formula $0dB$
+\end_inset
+
+ la fase se mantiene en un entorno que permite que el sistema sea estable.
+ En cambio, utilizando un resistor de 
+\begin_inset Formula $200\Omega$
+\end_inset
+
+, se observa que cuando la transferencia supera 
+\begin_inset Formula $0dB$
+\end_inset
+
+ la fase supera 
+\begin_inset Formula $0\text{°}$
+\end_inset
+
+, lo que produce que el sistema sea inestable y oscile, con una oscilación
+ de frecuencia en el orden de los 
+\begin_inset Formula $MHz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+También se buscó determinar si este resistor también cumplía la función
+ de limitar corriente para no superar la corriente nominal que el OpAmp
+ U4 puede entregar, pero al realizar el análisis correspondiente, se llegó
+ a que, considerando los operaciones ideales, la corriente que circula por
+ 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ es independiente de 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ y, omitiendo los cálculos intermedios, está dada por la siguiente Ecuación
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I_{R_{5}}=\frac{\left(R_{4}+R_{6}+R_{7}\right)\cdot V_{2}-R_{7}\cdot V_{1}}{R_{4}\cdot R_{7}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis de sensibilidad - Tolerancia de componentes
+\end_layout
+
+\begin_layout Standard
+Siendo el circuito a implementar un dispositivo de precisión, resulta necesario
+ realizar un análisis sobre el impacto que la tolerancia de los componentes
+ utilizados tiene sobre el comportamiento del circuito.
+ Con este fin, se calcula la sensibilidad de la Ganancia diferencial y la
+ Ganancia Común.
+ Para esto, se utilizan las siguientes ecuaciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+S_{x}^{y}=\frac{\delta y}{\delta x}\rfloor_{x=x_{0}}\cdot\frac{x_{0}}{y_{0}} & \text{Sensibilidad Relativa}\\
+\widehat{S_{x}^{y}}=\frac{\delta y}{\delta x}\rfloor_{x=x_{0}}\cdot x_{0} & \text{Sensibilidad Absoluta}
+\end{cases}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aplicando estas ecuaciones a la Ganancia Diferencial y Ganancia Común, se
+ tienen los resultados dados por la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tablasensibilidad"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{R}^{G_{D}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.81
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.81
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.19
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\widehat{S_{R}^{G_{D}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-130
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-105
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+105
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\widehat{S_{R}^{G_{C}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-50
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tablasensibilidad"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensibilidades asociadas a los componentes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considerando resistores al 1% se tienen los resultados dados por la Tabla
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\%(R_{1})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\%(R_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\%(R_{3})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\%(R_{4})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\%(R_{6})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\%(R_{7})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{R}^{G_{D}}\cdot\%(R)\rightarrow\%G_{D}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.81\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.81\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.19\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.19\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\widehat{S_{R}^{G_{D}}}\cdot\cdot\%(R)\rightarrow\Delta G_{D}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1.05$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.05$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.25$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.25$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\widehat{S_{R}^{G_{C}}}\rightarrow\Delta G_{C}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sensibimpacto"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impacto de sensibilidad de los componentes sobre comportamiento del circuito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estos resultados indican que, con los niveles de tolerancia utilizados,
+ las variaciones relativas en la ganancia diferencial son pequeñas, pero
+ hay que considerar que la ganancia en modo común puede aumentar su valor
+ hasta aproximadamente 
+\begin_inset Formula $G_{C}=0.5$
+\end_inset
+
+.
+ Con este resultado, la señal común sigue siendo atenuada, mientras que
+ la señal diferencial es fuertemente amplificada.
+ Pero, debido a la relación entre la señal común y la señal diferencial
+ (en las aplicaciones de este circuito, la señal común es mayor que la señal
+ diferencial), esto puede traer inconvenientes al implementar el circuito.
+ Recordar que las sensibilidades sirven como aproximación a los efectos
+ que las tolerancias pueden tener sobre el circuito.
+\end_layout
+
+\begin_layout Subsection
+Modificaciones implementadas para obtener tensión de salida montada sobre
+ un nivel de DC
+\end_layout
+
+\begin_layout Standard
+Para montar la tensión de salida sobre un nivel de DC, se propone el siguiente
+ cambio a la parte 1 del circuito:
+\end_layout
+
+\begin_layout Standard
+Siendo que la salida del circuito es una tensión que está referida a tierra,
+ si se cambia la conexión a tierra en la entrada inversora de U4 por una
+ tensión 
+\begin_inset Formula $V_{Offset},$
+\end_inset
+
+ como la diferencia entre las entradas del circuito no se ven afectadas
+ por este cambio (las tensiones de entrada con referencia a tierra son,
+ lógicamente, independientes de la configuración del circuito), y como ésta
+ es la única conexión directa a tierra del circuito, el efecto neto de esta
+ tensión es que la tensión de salida del circuito se verá incrementada en
+ un valor 
+\begin_inset Formula $V_{Offset}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Considerando esto, se propone agregar un trimmer de 
+\begin_inset Formula $10K\Omega$
+\end_inset
+
+, conectando sus extremos a 
+\begin_inset Formula $+V_{CC}$
+\end_inset
+
+ y 
+\begin_inset Formula $-V_{CC}$
+\end_inset
+
+, y el cursor del preset en la entrada inversora de U4, para que este funcione
+ de divisor resistivo, y se puedan lograr Offset positivos y negativos.
+ 
+\end_layout
+
+\begin_layout Standard
+Notar que el rango 
+\begin_inset Formula $+V_{CC}$
+\end_inset
+
+ a 
+\begin_inset Formula $-V_{CC}$
+\end_inset
+
+ es muy amplio, ya que permite configuraciones en las cuales el sistema
+ funciona en saturación, pero esto no se considera un problema ya que este
+ valor es configurable.
+\end_layout
+
+\begin_layout Standard
+Este cambio se ilustra en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "offsetmodif"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dcmodif.PNG
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "offsetmodif"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cambios a implementar sobre el circuito para permitir montar la señal de
+ salida sobre un nivel de DC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diseño final del circuito
+\end_layout
+
+\begin_layout Standard
+Finalmente, se optó por implementar el circuito siguiendo el esquema dado
+ por la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "finaldesign"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename circuit2.PNG
+	scale 70
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pcb.PNG
+	scale 50
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "finaldesign"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemático final del circuito a implementar, y PCB diseñado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Respuesta en Frecuencia, simulaciones y mediciones
+\end_layout
+
+\begin_layout Standard
+Antes de realizar las mediciones, se graficó la respuesta en frecuencia
+ obtenida analíticamente, según las Ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "grealpdd"
+
+\end_inset
+
+) y (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "grealpdu4id"
+
+\end_inset
+
+), y se realizaron simulaciones de Montecarlo para determinar cómo puede
+ afectar la tolerancia de los componentes a la respuesta en frecuencia.
+ Luego, se realizó la medición de la respuesta en frecuencia del sistema,
+ tanto en modo diferencial como común, y se superpusieron los resultados
+ obtenidos con los resultados analíticos y las simulaciones realizadas.
+ Notar que las ganancias en modo común, según las Ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:grealpdc"
+
+\end_inset
+
+), (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "grealpdu4ic"
+
+\end_inset
+
+) y los valores determinados para las resistencias, valen cero, por lo que
+ no se realiza una superposición con los resultados analíticos en estos
+ casos.
+ Los modelos con los 4 operacionales reales y con los 3 operacionales reales
+ serán denominados Modelo 1 y Modelo 2 respectivamente.
+ Los resultados obtenidos se pueden observar en las Figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mcc"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mcd"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "frc"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "frd"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename montecarlo_comun.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "mcc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Análisis de Montecarlo de Ganancia en Modo Común, con resistores al 1%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename montecarlo_diferencial.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "mcd"
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Análisis de Montecarlo de Ganancia en Modo Diferencial, con resistores al
+ 1%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename resp_frec_com.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename resp_frec_com_phase.png
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "frc"
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta en Frecuencia - Modo Común - Simulada vs Medida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename resp_frec_dif.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename resp_frec_dif_phase.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "frd"
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta en Frecuencia - Modo Diferencial - Calculada vs Simulada vs Medida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede observar que, en el caso del modo diferencial, los resultados analítico
+s y las simulaciones se ajustan a los datos medidos.
+ Sin embargo, en el modo común, hay una gran diferencia entre los datos
+ medidos y los datos simulados (y también, con los calculados, ya que la
+ ganancia común teórica es 0).
+ Estas diferencias se deben a las tolerancias de los componentes, según
+ se puede apreciar en el Montecarlo realizado, ya que las mediciones siguen
+ la forma de algunas de las curvas del Montecarlo.
+ 
+\end_layout
+
+\begin_layout Standard
+Cabe notar que, según el Montecarlo realizado, se podría haber obtenido
+ ganancias mayores de 0dB con los valores de resistencia utilizados, por
+ lo que el ruido, en vez de ser amortiguado, sería amplificado.
+ Este no fue el caso de esta implementación en particular.
+\end_layout
+
+\begin_layout Standard
+También es importante mencionar que al medir el circuito sin entrada, la
+ tensión de salida no resultó 0, sino una tensión de alrededor de 
+\begin_inset Formula $24mV$
+\end_inset
+
+.
+ Esta desviación se adjudicó a las tensiones de offset de los operacionales.
+ Notar que la tensión de offset típica es de 
+\begin_inset Formula $3mV$
+\end_inset
+
+, y teniendo varios amplificadores, estas tensiones pueden tener distinto
+ signo en cada uno de estos, y la combinación dar como resultado esta diferencia
+ de tensión a la salida.
+ Para obtener las mediciones realizadas, se utilizó el preset implementado
+ para montar la señal sobre un nivel de DC para calibrar el dispositivo.
+\end_layout
+
+\begin_layout Standard
+Notar que, a altas frecuencias, los modelos matemáticos difieren de la simulació
+n y de la medición (sin embargo, la medición sigue la tendencia de la simulación
+).
+ Esto se debe a capacidades parásitas dentro de los OpAmps, que agregan
+ polos en el sistema que no fueron considerados en el análisis matemático,
+ así como también a las impedancias de entrada y salida, que fueron consideradas
+ ideales en el desarrollo matemático.
+\end_layout
+
+\begin_layout Standard
+Excitando el circuito con una sinusoidal de 
+\begin_inset Formula $f=10Hz$
+\end_inset
+
+ de amplitud promedio de 
+\begin_inset Formula $20mV_{PP},$
+\end_inset
+
+ se determinó que la salida resultó ser de 
+\begin_inset Formula $2.59V_{PP},$
+\end_inset
+
+ lo que implica una ganancia en modo diferencial de 
+\begin_inset Formula $129.5$
+\end_inset
+
+ veces, es decir, un error de aproximadamente 
+\begin_inset Formula $4\%$
+\end_inset
+
+ (tener en cuenta que se trabajó con una precisión de 2 dígitos, y el resultado
+ teórico es de 
+\begin_inset Formula $2.60V_{PP}$
+\end_inset
+
+).
+ Habiendo determinado que la ganancia en modo común medida a bajas frecuencias
+ es de 
+\begin_inset Formula $0.2426$
+\end_inset
+
+, se tiene que el 
+\begin_inset Formula $CMRR_{Medido}=20\cdot log_{10}\left(\frac{129.5}{0.2426}\right)=54.55dB$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vease que ambos modelos matemáticos utilizados se ajustan adecuadamente
+ a los datos medidos, y la diferencia entre ellos es mínima, por lo que
+ se puede utilizar el Modelo 2, que tiene menos complejidad matemática,
+ para analizar el circuito.
+\end_layout
+
+\begin_layout Standard
+Nota: Según la transferencia obtenida, se puede observar que es más práctico
+ utilizar el circuito invirtiendo las entradas, para que a bajas frecuencias
+ se conserve la fase de la entrada.
+ A pesar de esto, las mediciones fueron realizadas sin invertir las entradas,
+ para ser coherente con el análisis matemático previamente realizado.
+ 
+\end_layout
+
+\begin_layout Subsection
+Caso de señales no referidas a tierra
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Esto y lo del puente va junto???
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si el circuito es excitado con una señal no referida a tierra, debido a
+ que la tensión de la señal está flotando con respecto a la referencia del
+ circuito, y que existe una diferencia de tensión entre el circuito y la
+ señal de excitación, esta diferencia podrá tomar valores grandes, por lo
+ que el circuito saturará en modo común (notar que, a pesar de que el valor
+ teórico de la ganancia en modo común es 0, al implementar este circuito
+ no se llega a conseguir esta condición ideal, por lo que habrá una cierta
+ ganancia en modo común y esto, sumado al gran valor de la tensión común
+ entre las entradas, provocará la saturación del dispositivo).
+\end_layout
+
+\begin_layout Subsection
+Efectos de no-idealidades y diferencias entre OpAmps
+\end_layout
+
+\begin_layout Standard
+Basta ver ejemplos de dispositivos como el AD624, un Amplificador Instrumental
+ Comercial, para notar que en la práctica es importante que las características
+ de los OpAmps utilizados sean lo mas similares posibles, en particular
+ los OpAmps utilizados en las entradas.
+ Citando del Datasheet del AD624: ''Monolithic construction and laser-wafer-trim
+ming allow the tight matching and tracking of circuit components and the
+ high level of performance that this circuit architecture is capable of.''.
+ De existir diferencias entre los Operacionales, el rechazo en modo común
+ se ve seriamente afectado.
+ También, las no idealidades afectan en el desempeño de este circuito.
+ En la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "frc"
+
+\end_inset
+
+, se puede observar que la simulación realizada con los valores calculados,
+ utilizando un modelo del TL084, a pesar de haber sido realizado con los
+ valores exactos necesarios para conseguir una ganancia común teórica nula,
+ tiene una ganancia del orden de los 
+\begin_inset Formula $-100dB$
+\end_inset
+
+.
+ Este modelo considera algunas de las no-idealidades de los OpAmps, y es
+ una clara muestra de como estas pueden afectar al circuito.
+ Esta necesidad de que las no idealidades del circuito tengan el menor efecto
+ negativo posible sobre el circuito, que las resistencias sean lo más precisas
+ posibles y que los operacionales resulten ser lo más idénticos posibles
+ se traducen en el costo relativamente alto de estos circuitos comerciales.
+\end_layout
+
+\end_body
+\end_document

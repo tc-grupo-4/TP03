@@ -1,0 +1,4 @@
+Added Component: Designator=CGyrator2 BP(C0805)
+Added Pin To Net: NetName=NetBufferGyrator_3 Pin=CGyrator2 BP-1
+Added Pin To Net: NetName=NetCapRLC BP_2 Pin=CGyrator2 BP-2
+Added Member To Class: ClassName=PasaBanda(BP) Member=Component CGyrator2 BP Cap Semi

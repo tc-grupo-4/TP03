@@ -1,0 +1,242 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\R2D2\Desktop\TC\TP3\Altium\PCB1.PcbDoc
+Date     : 17/9/2017
+Time     : 7:20:36 a. m.
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.8mm) (Max=1mm) (Preferred=0.9mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+   Violation between Pad CapDesAcop VCC--2(50.915mm,35.941mm)  Bottom Layer and 
+                     Pad CapDesAcop VCC--1(49.415mm,35.941mm)  Bottom Layer
+   Violation between Pad CGyrator2 BP-1(37.592mm,57.162mm)  Bottom Layer and 
+                     Pad CGyrator2 BP-2(37.592mm,58.662mm)  Bottom Layer
+   Violation between Pad CGyrator1 BP-2(34.29mm,58.662mm)  Bottom Layer and 
+                     Pad CGyrator1 BP-1(34.29mm,57.162mm)  Bottom Layer
+   Violation between Pad CapRLC BP-2(26.289mm,68.441mm)  Bottom Layer and 
+                     Pad CapRLC BP-1(26.289mm,66.941mm)  Bottom Layer
+   Violation between Pad CapDesAcop VCC+-2(38.227mm,47.486mm)  Bottom Layer and 
+                     Pad CapDesAcop VCC+-1(38.227mm,45.986mm)  Bottom Layer
+   Violation between Pad CGyrator LP-2(64.262mm,22.745mm)  Bottom Layer and 
+                     Pad CGyrator LP-1(64.262mm,24.245mm)  Bottom Layer
+   Violation between Pad CGyrator1-2(31.635mm,15.113mm)  Bottom Layer and 
+                     Pad CGyrator1-1(33.135mm,15.113mm)  Bottom Layer
+   Violation between Pad CapRLC  LP-2(71.501mm,14.49mm)  Bottom Layer and 
+                     Pad CapRLC  LP-1(71.501mm,15.99mm)  Bottom Layer
+   Violation between Pad CapRLC BR-2(25.92mm,10.414mm)  Bottom Layer and 
+                     Pad CapRLC BR-1(27.42mm,10.414mm)  Bottom Layer
+   Violation between Pad CGyrator HP-2(64.262mm,72.898mm)  Bottom Layer and 
+                     Pad CGyrator HP-1(64.262mm,71.398mm)  Bottom Layer
+   Violation between Pad CapRLC HP-2(71.882mm,72.148mm)  Bottom Layer and 
+                     Pad CapRLC HP-1(71.882mm,73.648mm)  Bottom Layer
+Rule Violations :11
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+   Violation between Track (47.388mm,37.398mm)(47.388mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-1(46.228mm,55.118mm)  Multi-Layer
+   Violation between Track (47.388mm,37.398mm)(47.388mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-2(46.228mm,52.578mm)  Multi-Layer
+   Violation between Track (47.388mm,37.398mm)(47.388mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-3(46.228mm,50.038mm)  Multi-Layer
+   Violation between Track (47.388mm,37.398mm)(47.388mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-4(46.228mm,47.498mm)  Multi-Layer
+   Violation between Track (47.388mm,37.398mm)(47.388mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-5(46.228mm,44.958mm)  Multi-Layer
+   Violation between Track (47.388mm,37.398mm)(47.388mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-6(46.228mm,42.418mm)  Multi-Layer
+   Violation between Track (47.388mm,37.398mm)(47.388mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-7(46.228mm,39.878mm)  Multi-Layer
+   Violation between Text "CapDesAcop VCC-" (51.359mm,38.049mm)  Bottom Overlay and 
+                     Pad BufferGyrator-7(46.228mm,39.878mm)  Multi-Layer
+   Violation between Track (52.688mm,37.398mm)(52.688mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-14(53.848mm,55.118mm)  Multi-Layer
+   Violation between Track (52.688mm,37.398mm)(52.688mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-13(53.848mm,52.578mm)  Multi-Layer
+   Violation between Track (52.688mm,37.398mm)(52.688mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-12(53.848mm,50.038mm)  Multi-Layer
+   Violation between Track (52.688mm,37.398mm)(52.688mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-11(53.848mm,47.498mm)  Multi-Layer
+   Violation between Track (52.688mm,37.398mm)(52.688mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-10(53.848mm,44.958mm)  Multi-Layer
+   Violation between Track (52.688mm,37.398mm)(52.688mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-9(53.848mm,42.418mm)  Multi-Layer
+   Violation between Track (52.688mm,37.398mm)(52.688mm,57.598mm)  Top Overlay and 
+                     Pad BufferGyrator-8(53.848mm,39.878mm)  Multi-Layer
+   Violation between Text "Vin  HP" (88.633mm,70.599mm)  Top Overlay and 
+                     Pad GND HP-1(90.678mm,73.279mm)  Multi-Layer
+   Violation between Text "GND HP " (88.633mm,82.664mm)  Top Overlay and 
+                     Pad Vout HP-1(90.678mm,85.217mm)  Multi-Layer
+   Violation between Text "GND BP " (5.448mm,83.299mm)  Top Overlay and 
+                     Pad Vout BP-1(7.493mm,85.852mm)  Multi-Layer
+   Violation between Track (35.306mm,67.803mm)(35.306mm,69.103mm)  Bottom Overlay and 
+                     Pad RGyratorInput BP-2(34.306mm,68.453mm)  Bottom Layer
+   Violation between Track (35.306mm,67.803mm)(35.306mm,69.103mm)  Bottom Overlay and 
+                     Pad RGyratorInput BP-1(36.306mm,68.453mm)  Bottom Layer
+   Violation between Track (27.305mm,56.5mm)(27.305mm,57.8mm)  Bottom Overlay and 
+                     Pad RGyrator BP-2(26.305mm,57.15mm)  Bottom Layer
+   Violation between Track (27.305mm,56.5mm)(27.305mm,57.8mm)  Bottom Overlay and 
+                     Pad RGyrator BP-1(28.305mm,57.15mm)  Bottom Layer
+   Violation between Track (59.294mm,72.098mm)(60.594mm,72.098mm)  Bottom Overlay and 
+                     Pad RGyratorInput HP-2(59.944mm,73.098mm)  Bottom Layer
+   Violation between Text "CGyrator HP" (60.833mm,73.037mm)  Bottom Overlay and 
+                     Pad RGyratorInput HP-2(59.944mm,73.098mm)  Bottom Layer
+   Violation between Track (59.294mm,72.098mm)(60.594mm,72.098mm)  Bottom Overlay and 
+                     Pad RGyratorInput HP-1(59.944mm,71.098mm)  Bottom Layer
+   Violation between Track (16.51mm,67.803mm)(16.51mm,69.103mm)  Bottom Overlay and 
+                     Pad ResRLC BP-2(17.51mm,68.453mm)  Bottom Layer
+   Violation between Track (16.51mm,67.803mm)(16.51mm,69.103mm)  Bottom Overlay and 
+                     Pad ResRLC BP-1(15.51mm,68.453mm)  Bottom Layer
+   Violation between Track (79.248mm,44.308mm)(79.248mm,45.608mm)  Bottom Overlay and 
+                     Pad RGyrator LP-2(80.248mm,44.958mm)  Bottom Layer
+   Violation between Track (79.248mm,44.308mm)(79.248mm,45.608mm)  Bottom Overlay and 
+                     Pad RGyrator LP-1(78.248mm,44.958mm)  Bottom Layer
+   Violation between Track (32.385mm,9.764mm)(32.385mm,11.064mm)  Bottom Overlay and 
+                     Pad RGyratorInput BR-2(31.385mm,10.414mm)  Bottom Layer
+   Violation between Track (32.385mm,9.764mm)(32.385mm,11.064mm)  Bottom Overlay and 
+                     Pad RGyratorInput BR-1(33.385mm,10.414mm)  Bottom Layer
+   Violation between Track (27.432mm,38.085mm)(27.432mm,39.385mm)  Bottom Overlay and 
+                     Pad RGyrator BR-2(26.432mm,38.735mm)  Bottom Layer
+   Violation between Track (27.432mm,38.085mm)(27.432mm,39.385mm)  Bottom Overlay and 
+                     Pad RGyrator BR-1(28.432mm,38.735mm)  Bottom Layer
+   Violation between Text "CapDesAcop VCC-" (51.359mm,38.049mm)  Bottom Overlay and 
+                     Pad RGyrator BR-1(28.432mm,38.735mm)  Bottom Layer
+   Violation between Text "RGyratorInput BR" (34.392mm,12.979mm)  Bottom Overlay and 
+                     Pad CGyrator1-1(33.135mm,15.113mm)  Bottom Layer
+   Violation between Text "RGyratorInput BR" (34.392mm,12.979mm)  Bottom Overlay and 
+                     Pad CGyrator1-2(31.635mm,15.113mm)  Bottom Layer
+   Violation between Track (16.51mm,9.764mm)(16.51mm,11.064mm)  Bottom Overlay and 
+                     Pad ResRLC BR-2(17.51mm,10.414mm)  Bottom Layer
+   Violation between Track (16.51mm,9.764mm)(16.51mm,11.064mm)  Bottom Overlay and 
+                     Pad ResRLC BR-1(15.51mm,10.414mm)  Bottom Layer
+   Violation between Track (79.375mm,10.018mm)(79.375mm,11.318mm)  Bottom Overlay and 
+                     Pad ResRLC  LP-2(78.375mm,10.668mm)  Bottom Layer
+   Violation between Track (79.375mm,10.018mm)(79.375mm,11.318mm)  Bottom Overlay and 
+                     Pad ResRLC  LP-1(80.375mm,10.668mm)  Bottom Layer
+   Violation between Track (59.294mm,23.622mm)(60.594mm,23.622mm)  Bottom Overlay and 
+                     Pad RGyratorInput LP-2(59.944mm,22.622mm)  Bottom Layer
+   Violation between Track (59.294mm,23.622mm)(60.594mm,23.622mm)  Bottom Overlay and 
+                     Pad RGyratorInput LP-1(59.944mm,24.622mm)  Bottom Layer
+   Violation between Track (79.248mm,54.468mm)(79.248mm,55.768mm)  Bottom Overlay and 
+                     Pad RGyrator HP-2(80.248mm,55.118mm)  Bottom Layer
+   Violation between Track (79.248mm,54.468mm)(79.248mm,55.768mm)  Bottom Overlay and 
+                     Pad RGyrator HP-1(78.248mm,55.118mm)  Bottom Layer
+   Violation between Text "ResRLC HP" (77.851mm,74.295mm)  Bottom Overlay and 
+                     Pad CapRLC HP-1(71.882mm,73.648mm)  Bottom Layer
+   Violation between Track (79.248mm,67.676mm)(79.248mm,68.976mm)  Bottom Overlay and 
+                     Pad ResRLC HP-2(78.248mm,68.326mm)  Bottom Layer
+   Violation between Track (79.248mm,67.676mm)(79.248mm,68.976mm)  Bottom Overlay and 
+                     Pad ResRLC HP-1(80.248mm,68.326mm)  Bottom Layer
+Rule Violations :47
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+   Violation between Text "Vin  HP" (88.633mm,70.599mm)  Top Overlay and 
+                     Track (89.278mm,71.879mm)(89.278mm,74.679mm)  Top Overlay
+   Violation between Text "Vin  HP" (88.633mm,70.599mm)  Top Overlay and 
+                     Track (92.078mm,71.879mm)(92.078mm,74.679mm)  Top Overlay
+   Violation between Text "Vin  HP" (88.633mm,70.599mm)  Top Overlay and 
+                     Track (89.278mm,71.879mm)(92.078mm,71.879mm)  Top Overlay
+   Violation between Text "GND HP " (88.633mm,82.664mm)  Top Overlay and 
+                     Track (89.278mm,83.817mm)(89.278mm,86.617mm)  Top Overlay
+   Violation between Text "GND HP " (88.633mm,82.664mm)  Top Overlay and 
+                     Track (92.078mm,83.817mm)(92.078mm,86.617mm)  Top Overlay
+   Violation between Text "GND HP " (88.633mm,82.664mm)  Top Overlay and 
+                     Track (89.278mm,83.817mm)(92.078mm,83.817mm)  Top Overlay
+   Violation between Text "Vin BP" (5.448mm,70.726mm)  Top Overlay and 
+                     Track (6.093mm,72.514mm)(6.093mm,75.314mm)  Top Overlay
+   Violation between Text "Vin BP" (5.448mm,70.726mm)  Top Overlay and 
+                     Track (6.093mm,72.514mm)(8.893mm,72.514mm)  Top Overlay
+   Violation between Text "GND BP " (5.448mm,83.299mm)  Top Overlay and 
+                     Track (6.093mm,84.452mm)(6.093mm,87.252mm)  Top Overlay
+   Violation between Text "GND BP " (5.448mm,83.299mm)  Top Overlay and 
+                     Track (8.893mm,84.452mm)(8.893mm,87.252mm)  Top Overlay
+   Violation between Text "GND BP " (5.448mm,83.299mm)  Top Overlay and 
+                     Track (6.093mm,84.452mm)(8.893mm,84.452mm)  Top Overlay
+   Violation between Text "GND BR" (1.778mm,12.192mm)  Top Overlay and 
+                     Track (9.02mm,13.967mm)(9.02mm,16.767mm)  Top Overlay
+   Violation between Text "GND BR" (1.778mm,12.192mm)  Top Overlay and 
+                     Track (6.22mm,13.967mm)(9.02mm,13.967mm)  Top Overlay
+   Violation between Text "GND BR" (1.778mm,12.192mm)  Top Overlay and 
+                     Track (6.22mm,11.814mm)(9.02mm,11.814mm)  Top Overlay
+   Violation between Text "Vin BR" (1.778mm,7.112mm)  Top Overlay and 
+                     Track (9.02mm,9.014mm)(9.02mm,11.814mm)  Top Overlay
+   Violation between Text "Vin BR" (1.778mm,7.112mm)  Top Overlay and 
+                     Track (6.22mm,9.014mm)(9.02mm,9.014mm)  Top Overlay
+   Violation between Text "GND BR " (1.778mm,19.304mm)  Top Overlay and 
+                     Track (6.22mm,21.206mm)(9.02mm,21.206mm)  Top Overlay
+   Violation between Text "Vout  BR" (1.778mm,24.892mm)  Top Overlay and 
+                     Track (6.093mm,26.286mm)(6.093mm,29.086mm)  Top Overlay
+   Violation between Text "Vout  BR" (1.778mm,24.892mm)  Top Overlay and 
+                     Track (6.093mm,26.286mm)(8.893mm,26.286mm)  Top Overlay
+   Violation between Text "GND  LP" (89.281mm,12.319mm)  Top Overlay and 
+                     Track (89.278mm,9.268mm)(89.278mm,12.068mm)  Top Overlay
+   Violation between Text "GND  LP" (89.281mm,12.319mm)  Top Overlay and 
+                     Track (89.278mm,12.068mm)(92.078mm,12.068mm)  Top Overlay
+   Violation between Text "GND  LP" (89.281mm,12.319mm)  Top Overlay and 
+                     Track (92.078mm,9.268mm)(92.078mm,12.068mm)  Top Overlay
+   Violation between Text "GND  LP" (89.281mm,12.319mm)  Top Overlay and 
+                     Track (89.278mm,14.221mm)(89.278mm,17.021mm)  Top Overlay
+   Violation between Text "GND  LP" (89.281mm,12.319mm)  Top Overlay and 
+                     Track (92.078mm,14.221mm)(92.078mm,17.021mm)  Top Overlay
+   Violation between Text "GND  LP" (89.281mm,12.319mm)  Top Overlay and 
+                     Track (89.278mm,14.221mm)(92.078mm,14.221mm)  Top Overlay
+   Violation between Text "VoutC+  LP" (88.519mm,24.511mm)  Top Overlay and 
+                     Track (89.278mm,21.333mm)(89.278mm,24.133mm)  Top Overlay
+   Violation between Text "VoutC+  LP" (88.519mm,24.511mm)  Top Overlay and 
+                     Track (89.278mm,24.133mm)(92.078mm,24.133mm)  Top Overlay
+   Violation between Text "VoutC+  LP" (88.519mm,24.511mm)  Top Overlay and 
+                     Track (92.078mm,21.333mm)(92.078mm,24.133mm)  Top Overlay
+   Violation between Text "VoutC+  LP" (88.519mm,24.511mm)  Top Overlay and 
+                     Track (89.278mm,26.159mm)(89.278mm,28.959mm)  Top Overlay
+   Violation between Text "VoutC+  LP" (88.519mm,24.511mm)  Top Overlay and 
+                     Track (89.278mm,26.159mm)(92.078mm,26.159mm)  Top Overlay
+   Violation between Text "RGyrator BP" (29.337mm,58.801mm)  Bottom Overlay and 
+                     Text "CGyrator2 BP" (38.176mm,60.63mm)  Bottom Overlay
+   Violation between Text "CGyrator1 BP" (35.687mm,60.833mm)  Bottom Overlay and 
+                     Text "CGyrator2 BP" (38.176mm,60.63mm)  Bottom Overlay
+   Violation between Text "RGyrator BP" (29.337mm,58.801mm)  Bottom Overlay and 
+                     Text "CGyrator1 BP" (35.687mm,60.833mm)  Bottom Overlay
+   Violation between Text "RGyratorInput BP" (45.974mm,71.882mm)  Bottom Overlay and 
+                     Text "CapRLC BP" (27.559mm,70.104mm)  Bottom Overlay
+   Violation between Text "ResRLC BP" (18.517mm,70.51mm)  Bottom Overlay and 
+                     Text "CapRLC BP" (27.559mm,70.104mm)  Bottom Overlay
+   Violation between Text "CGyrator HP" (60.833mm,73.037mm)  Bottom Overlay and 
+                     Text "RGyratorInput BP" (45.974mm,71.882mm)  Bottom Overlay
+   Violation between Text "RGyratorInput BR" (34.392mm,12.979mm)  Bottom Overlay and 
+                     Text "CapRLC BR" (30.607mm,12.573mm)  Bottom Overlay
+   Violation between Text "RGyratorInput LP" (60.985mm,27.153mm)  Bottom Overlay and 
+                     Text "CGyrator LP" (64.846mm,26.213mm)  Bottom Overlay
+Rule Violations :38
+
+Processing Rule : Silk primitive without silk layer
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Rule
+Rule Violations :0
+
+
+Violations Detected : 96
+Time Elapsed        : 00:00:01

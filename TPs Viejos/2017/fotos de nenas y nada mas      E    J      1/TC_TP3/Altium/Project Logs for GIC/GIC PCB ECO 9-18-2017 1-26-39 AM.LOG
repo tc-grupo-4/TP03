@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=+VCC Pin=C_comp-1
+Removed Pin From Net: NetName=-VCC Pin=C_comp-2
+Removed Member From Class: ClassName=GIC Member=C_comp
+Change Component Footprint: Designator=C2 Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Change Component Footprint: Designator=C6 Old Footprint=RAD-0.1 New Footprint=RAD-0.3
+Added Component: Designator=C_+vcc_GND(RAD-0.3)
+Added Component: Designator=C_GND_-vcc(RAD-0.3)
+Added Pin To Net: NetName=+VCC Pin=C_+vcc_GND-2
+Added Pin To Net: NetName=-VCC Pin=C_GND_-vcc-1
+Added Pin To Net: NetName=NetC_+vcc_GND_1 Pin=C_+vcc_GND-1
+Added Pin To Net: NetName=NetC_+vcc_GND_1 Pin=C_GND_-vcc-2
+Added Net: Name=NetC_+vcc_GND_1
+Added Member To Class: ClassName=GIC Member=Component C_+vcc_GND Cap
+Added Member To Class: ClassName=GIC Member=Component C_GND_-vcc Cap
+Added Room: Name=GIC
