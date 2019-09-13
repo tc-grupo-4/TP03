@@ -87,9 +87,9 @@ Por lo tanto;
 \frac{1}{\omega_{0}^{2}}=\frac{A}{C}
 \]
 
-\[
-\Rightarrow\omega_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{10C_{2}R_{2}}\Longrightarrow f_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{20\pi C_{2}R_{2}}
-\]
+\begin{equation}
+\Rightarrow\omega_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{10C_{2}R_{2}}\Longrightarrow f_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{20\pi C_{2}R_{2}}\label{eq:5_6}
+\end{equation}
 
 \section{Análisis paramétrico}
 
@@ -114,13 +114,13 @@ Q_{p}=-\frac{10C_{2}\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{-C_{2}K^{2}R_{2}^{2}+1
 por lo tanto, la ganancia para la frecuencia central del filtro quedará
 dada por:
 
-\[
-A=\frac{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{R_{1}\left(R_{1}+31R_{2}\right)}\approx\frac{3R_{1}+R_{2}}{3R_{1}}\,K=0
-\]
+\begin{equation}
+A=\frac{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{R_{1}\left(R_{1}+31R_{2}\right)}\approx\frac{3R_{1}+R_{2}}{3R_{1}}\,K=0\label{eq:5_4}
+\end{equation}
 
-\[
-A=\frac{R_{1}\left(R_{1}+31R_{2}\right)}{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}\approx\frac{3R_{1}}{R_{2}+3R_{1}}\,K=1
-\]
+\begin{equation}
+A=\frac{R_{1}\left(R_{1}+31R_{2}\right)}{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}\approx\frac{3R_{1}}{R_{2}+3R_{1}}\,K=1\label{eq:5_5}
+\end{equation}
 
 \[
 A=\frac{-K^{2}R_{2}^{2}-9KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{-K^{2}R_{2}^{2}+11KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}}\,\,\,Expresado\,Parametricamente\,en\,K
@@ -363,9 +363,56 @@ ve algo de precencia de frecuancias medias sobre esa banda y que no
 se pretendía que ambos filtros se superpongan. Por ultimo, para poder
 controlar las frecuencias agudas, se eligió el tercer filtro con una
 frecuencia central de 2 (kHz), que es el ultimo intervalo donde se
-pueden apreciar frecuencias significativas dentro de la canción.
+pueden apreciar frecuencias significativas dentro de la canción. Por
+lo tanto las frecuencias centrales de cada filtro serán las que se
+muestran en la tabla \ref{5t_2}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+Frecuencia central Filtro 1 & Frecuencia central Filtro 2 & Frecuencia central Filtro 3\tabularnewline
+\hline 
+\hline 
+100 (Hz) & 700 (Hz) & 2 (kHz)\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Frecuencias centrales}
+\label{5t_2}
+\end{table}
 
 \subsection{Elección de la ganancia de los filtros}
 
+Teniendo en cuenta que la salida de un \emph{Line-Out }de un dispositivo
+de audio de consumo general tiene valores nominals de tensiones de
+entre 0.3 a 2 Volts aproximadamente, se elije una ganancia maxima
+y ateniancion máxima de 6 (dB), esto es porque no se quiere llegar
+a la saturacion del amplificador operacional, y porque no se quiere
+souperar por mucho los valores nominales de los dispositivos electrónicos.
+Utilizando los intervalos dado por las ecuaciones (\ref{eq:5_4})
+y (\ref{eq:5_5}), y la ecuación (\ref{eq:5_6}), tenemos que, para
+cada filtro los valores de los componentes serán los que se especifican
+en la tabla \ref{5t_3}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewline
+\hline 
+\hline 
+1 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $680\,nF$ & $68\,nF$ & 108 (Hz)\tabularnewline
+\hline 
+2 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $100\,nF$ & $10\,nF$ & 740 (Hz)\tabularnewline
+\hline 
+3 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $39\,nF$ & $3.9\,nF$ & 1.896 (kHz)\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Valores de los componentes para cada filtro}
+MALL CREO\label{5t_3}
+
+\end{table}
 
 \end{document}
