@@ -603,32 +603,7 @@ reference "5_4"
 \end_inset
 
 , los polos y los ceros se superponen a partir de cierto valor de K.
- Graficando los polos y los ceros con K variando entre 
-\begin_inset Formula $0<K<0.5$
-\end_inset
-
- , se obtienen todos los ceros reales, copmo se puede observar en la Figura
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "5_5"
-
-\end_inset
-
-.
- Por otro lado, si se varía K entre 
-\begin_inset Formula $0.5<K<1$
-\end_inset
-
-, se puede observar que todos los polos son reales, como se observa en la
- Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "5_6"
-
-\end_inset
-
-.
+ Se pudo notar que a partir de K=0.5, los polos 
 \end_layout
 
 \begin_layout Standard
@@ -655,13 +630,6 @@ status open
 \begin_layout Plain Layout
 Diagrama paramétrico de polos y ceros con K variando de 0 a 0.5
 \end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "5_5"
 
 \end_inset
 
@@ -701,13 +669,6 @@ status open
 \begin_layout Plain Layout
 Diagrama paramétrico de polos y ceros con K variando de 0.5 a 1
 \end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "5_6"
 
 \end_inset
 

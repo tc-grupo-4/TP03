@@ -40,16 +40,14 @@ impedancias, y llamando a $R_{2}=R_{21}+R_{22}$, el calculo de la
 transferencia se expresa como la ecuación (\ref{eq:5_1}).
 
 \[
-H(s)=-\frac{C_{2}R_{3}s\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)\left(C_{1}R_{2}s+1\right)+C_{2}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)+\left(-KR_{2}-2R_{1}\left(C_{1}R_{2}s+1\right)+R_{2}\left(K-1\right)\right)\left(C_{1}C_{2}KR_{2}^{2}s^{2}\left(K-1\right)-C_{1}R_{2}s-1\right)}{C_{2}R_{3}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(C_{1}R_{2}s+1\right)+C_{2}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)+\left(-KR_{2}-2R_{1}\left(C_{1}R_{2}s+1\right)+R_{2}\left(K-1\right)\right)\left(C_{1}C_{2}KR_{2}^{2}s^{2}\left(K-1\right)-C_{1}R_{2}s-1\right)}
-\]
-
-\[
 H(s)=-\frac{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s+9C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-10C_{2}R_{2}^{2}s-2R_{1}-R_{2}}{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s-11C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-2R_{1}-R_{2}}
 \]
 
-\[
-H(s)=-\frac{As^{2}+Bs+C}{Ds^{2}+Es+F}
-\]
+Si reacomodamos de la siguiente manera:
+
+\begin{equation}
+H(s)=\frac{As^{2}+Bs+C}{As^{2}+Es+C}\label{eq:5_1}
+\end{equation}
 
 \[
 A=20C_{2}^{2}K^{2}R_{1}R_{2}^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}-10C_{2}^{2}R_{1}^{2}R_{2}-100C_{2}^{2}R_{1}R_{2}^{2}\approx-100C_{2}^{2}R_{1}R_{2}^{2}
@@ -64,20 +62,19 @@ C=-2R_{1}-R_{2}
 \]
 
 \[
-D=20C_{2}^{2}K^{2}R_{1}R_{2}^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}-10C_{2}^{2}R_{1}^{2}R_{2}-100C_{2}^{2}R_{1}R_{2}^{2}=A
-\]
-
-\[
 E=C_{2}K^{2}R_{2}^{2}-11C_{2}KR_{2}^{2}-C_{2}R_{1}^{2}-31C_{2}R_{1}R_{2}
 \]
 
-\[
-F=-2R_{1}-R_{2}=C
-\]
+\section{Análisis de frecuancia central}
 
-\[
-\Rightarrow H(s)=-\frac{As^{2}+Bs+C}{As^{2}+Ds+C}
-\]
+Para obtener la frecuencia central, basta con llevar a la ecuación
+de transferencia de la siguiente manera
+
+\begin{equation}
+H(s)=\frac{\left(\frac{s}{\omega_{0}}\right)^{2}+\frac{s}{Q_{z}\omega_{0}}+1}{\left(\frac{s}{\omega_{0}}\right)^{2}+\frac{s}{Q_{p}\omega_{0}}+1}\label{eq:5_2}
+\end{equation}
+
+Por lo tanto;
 
 \[
 \frac{1}{\omega_{0}^{2}}=\frac{A}{C}
@@ -86,6 +83,10 @@ F=-2R_{1}-R_{2}=C
 \[
 \Rightarrow\omega_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{10C_{2}R_{2}}\Longrightarrow f_{0}=\frac{\sqrt{2+\frac{R_{2}}{R_{1}}}}{20\pi C_{2}R_{2}}
 \]
+
+\section{Análisis paramétrico}
+
+Si se analiza los factores de calidad correspondientes se obtiene:
 
 \[
 Q_{z}=\frac{C}{B\omega_{0}}
@@ -103,6 +104,9 @@ Q_{p}=\frac{C}{E\omega_{0}}
 Q_{p}=-\frac{10C_{2}\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{-C_{2}K^{2}R_{2}^{2}+11C_{2}KR_{2}^{2}+C_{2}R_{1}^{2}+31C_{2}R_{1}R_{2}}
 \]
 
+por lo tanto, la ganancia para la frecuencia central del filtro quedará
+dada por:
+
 \[
 A=\frac{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{R_{1}\left(R_{1}+31R_{2}\right)}\approx\frac{3R_{1}+R_{2}}{3R_{1}}\,K=0
 \]
@@ -111,10 +115,13 @@ A=\frac{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{R_{1}\left(R_{1}+31R_{2}\right)}\app
 A=\frac{R_{1}\left(R_{1}+31R_{2}\right)}{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}\approx\frac{3R_{1}}{R_{2}+3R_{1}}\,K=1
 \]
 
+\[
+A=\frac{-K^{2}R_{2}^{2}-9KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{-K^{2}R_{2}^{2}+11KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}}\,\,\,Expresado\,Parametricamente\,en\,K
+\]
+
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/DiagramaParametrico}tomando
-R1=330 ohms
+\includegraphics[scale=0.5]{Resources/DiagramaParametrico}
 \par\end{centering}
 \caption{Diagrama paramétrico}
 
@@ -122,11 +129,77 @@ R1=330 ohms
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics{Resources/RtaEnFrecuanciaParametrica}tomando R1=330
-OHMS
+\includegraphics{Resources/RtaEnFrecuanciaParametrica}
 \par\end{centering}
-\caption{Respuesta en frecuencia paramétrica}
+\caption{Respuesta en frecuencia paramétrica para una frecuencia dada}
+\label{5_3}
 
+\end{figure}
+
+\section{Análisis de singularidades}
+
+\subsection{Análisis de Ceros\label{subsec:5_4_1}}
+
+Si resolvemos la ecuacion cuadrática para el nominador expresado en
+la ecuación (\ref{eq:5_2}), obtenemos que la expresión para econtrar
+los ceros de nuestro circuito, esta dada por:
+
+\[
+C_{1,2}=\frac{-\frac{1}{Q_{z}\omega_{0}}\pm\sqrt{\left(\frac{1}{Q_{z}\omega_{0}}\right)^{2}-4\frac{1}{\omega_{0}^{2}}}}{2\frac{1}{\omega_{0}^{2}}}
+\]
+
+\[
+\Rightarrow C_{1,2}=-\frac{\omega_{0}}{2Q_{z}}\pm\frac{\omega_{0}}{2}\sqrt{\frac{1}{Q_{z}^{2}}-4}
+\]
+
+\subsection{Análisis de polos}
+
+De la misma manera que se procedió para encontrar los ceros en la
+subseccion \ref{subsec:5_4_1}, los polos quedan determinados por:
+
+\[
+\Rightarrow P_{1,2}=-\frac{\omega_{0}}{2Q_{P}}\pm\frac{\omega_{0}}{2}\sqrt{\frac{1}{Q_{P}^{2}}-4}
+\]
+
+\subsection{Análisis de singularidades paramétricas}
+
+Si tenemos en cuenta, las expresiones para los pollos y los ceros
+obtenidas anteriormente, y una frecuencia central determinada, como
+por ejemplo la propuesta en la Figura \ref{5_3}, se podra hacer una
+analisis parametrico graficando como varían los polos y los ceros
+en un diagrama Imaginario/Real segun la variación de la resistencia
+$R_{2}$.
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosCompleto}
+\par\end{centering}
+\caption{Diagrama paramétrico de polos y ceros}
+\label{5_4}
+\end{figure}
+
+Como se puede observar en la Figura \ref{5_4}, los polos y los ceros
+se superponen a partir de cierto valor de K. Graficando los polos
+y los ceros con K variando entre $0<K<0.5$ , se obtienen todos los
+ceros reales, copmo se puede observar en la Figura \ref{5_5}. Por
+otro lado, si se varía K entre $0.5<K<1$, se puede observar que todos
+los polos son reales, como se observa en la Figura \ref{5_6}.
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosHasta05}
+\par\end{centering}
+\caption{Diagrama paramétrico de polos y ceros con K variando de 0 a 0.5}
+\label{5_5}
+
+\end{figure}
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosDesde05}
+\par\end{centering}
+\caption{Diagrama paramétrico de polos y ceros con K variando de 0.5 a 1}
+\label{5_6}
 \end{figure}
 
 \end{document}

@@ -166,17 +166,6 @@ reference "eq:5_1"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-H(s)=-\frac{C_{2}R_{3}s\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)\left(C_{1}R_{2}s+1\right)+C_{2}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)+\left(-KR_{2}-2R_{1}\left(C_{1}R_{2}s+1\right)+R_{2}\left(K-1\right)\right)\left(C_{1}C_{2}KR_{2}^{2}s^{2}\left(K-1\right)-C_{1}R_{2}s-1\right)}{C_{2}R_{3}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(C_{1}R_{2}s+1\right)+C_{2}s\left(KR_{2}+R_{1}\left(C_{1}R_{2}s+1\right)\right)\left(R_{1}\left(C_{1}R_{2}s+1\right)-R_{2}\left(K-1\right)\right)+\left(-KR_{2}-2R_{1}\left(C_{1}R_{2}s+1\right)+R_{2}\left(K-1\right)\right)\left(C_{1}C_{2}KR_{2}^{2}s^{2}\left(K-1\right)-C_{1}R_{2}s-1\right)}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
 H(s)=-\frac{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s+9C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-10C_{2}R_{2}^{2}s-2R_{1}-R_{2}}{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s-11C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-2R_{1}-R_{2}}
 \]
 
@@ -186,10 +175,14 @@ H(s)=-\frac{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-
 \end_layout
 
 \begin_layout Standard
+Si reacomodamos de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\[
-H(s)=-\frac{As^{2}+Bs+C}{Ds^{2}+Es+F}
-\]
+\begin{equation}
+H(s)=\frac{As^{2}+Bs+C}{As^{2}+Es+C}\label{eq:5_1}
+\end{equation}
 
 \end_inset
 
@@ -232,40 +225,7 @@ C=-2R_{1}-R_{2}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D=20C_{2}^{2}K^{2}R_{1}R_{2}^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}-10C_{2}^{2}R_{1}^{2}R_{2}-100C_{2}^{2}R_{1}R_{2}^{2}=A
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
 E=C_{2}K^{2}R_{2}^{2}-11C_{2}KR_{2}^{2}-C_{2}R_{1}^{2}-31C_{2}R_{1}R_{2}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-F=-2R_{1}-R_{2}=C
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\Rightarrow H(s)=-\frac{As^{2}+Bs+C}{As^{2}+Ds+C}
 \]
 
 \end_inset
@@ -275,6 +235,26 @@ F=-2R_{1}-R_{2}=C
 
 \begin_layout Section
 Análisis de frecuancia central
+\end_layout
+
+\begin_layout Standard
+Para obtener la frecuencia central, basta con llevar a la ecuación de transferen
+cia de la siguiente manera
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(s)=\frac{\left(\frac{s}{\omega_{0}}\right)^{2}+\frac{s}{Q_{z}\omega_{0}}+1}{\left(\frac{s}{\omega_{0}}\right)^{2}+\frac{s}{Q_{p}\omega_{0}}+1}\label{eq:5_2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto;
 \end_layout
 
 \begin_layout Standard
@@ -301,6 +281,10 @@ Análisis de frecuancia central
 
 \begin_layout Section
 Análisis paramétrico
+\end_layout
+
+\begin_layout Standard
+Si se analiza los factores de calidad correspondientes se obtiene:
 \end_layout
 
 \begin_layout Standard
@@ -345,6 +329,11 @@ Q_{p}=-\frac{10C_{2}\sqrt{R_{1}}R_{2}\sqrt{2R_{1}+R_{2}}}{-C_{2}K^{2}R_{2}^{2}+1
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+por lo tanto, la ganancia para la frecuencia central del filtro quedará
+ dada por:
 \end_layout
 
 \begin_layout Standard
@@ -395,7 +384,7 @@ status open
 
 \end_inset
 
-tomando R1=330 ohms
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -432,14 +421,195 @@ status open
 
 \end_inset
 
-tomando R1=330 OHMS
+
 \end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Respuesta en frecuencia paramétrica
+Respuesta en frecuencia paramétrica para una frecuencia dada
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Análisis de singularidades
+\end_layout
+
+\begin_layout Subsection
+Análisis de Ceros
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:5_4_1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si resolvemos la ecuacion cuadrática para el nominador expresado en la ecuación
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:5_2"
+
+\end_inset
+
+), obtenemos que la expresión para econtrar los ceros de nuestro circuito,
+ esta dada por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{1,2}=\frac{-\frac{1}{Q_{z}\omega_{0}}\pm\sqrt{\left(\frac{1}{Q_{z}\omega_{0}}\right)^{2}-4\frac{1}{\omega_{0}^{2}}}}{2\frac{1}{\omega_{0}^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Rightarrow C_{1,2}=-\frac{\omega_{0}}{2Q_{z}}\pm\frac{\omega_{0}}{2}\sqrt{\frac{1}{Q_{z}^{2}}-4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis de polos
+\end_layout
+
+\begin_layout Standard
+De la misma manera que se procedió para encontrar los ceros en la subseccion
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:5_4_1"
+
+\end_inset
+
+, los polos quedan determinados por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Rightarrow P_{1,2}=-\frac{\omega_{0}}{2Q_{P}}\pm\frac{\omega_{0}}{2}\sqrt{\frac{1}{Q_{P}^{2}}-4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis de singularidades paramétricas
+\end_layout
+
+\begin_layout Standard
+Si tenemos en cuenta, las expresiones para los pollos y los ceros obtenidas
+ anteriormente, y una frecuencia central determinada, como por ejemplo la
+ propuesta en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_3"
+
+\end_inset
+
+, se podra hacer una analisis parametrico graficando como varían los polos
+ y los ceros en un diagrama Imaginario/Real segun la variación de la resistencia
+ 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/DiagramaDePolosYCerosCompleto.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama paramétrico de polos y ceros
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/DiagramaDePolosYCerosHasta05.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama paramétrico de polos y ceros con K variando de 0 a 0.5
 \end_layout
 
 \end_inset
@@ -448,6 +618,41 @@ Respuesta en frecuencia paramétrica
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/DiagramaDePolosYCerosDesde05.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama paramétrico de polos y ceros con K variando de 0.5 a 1
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
