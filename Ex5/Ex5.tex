@@ -6,9 +6,16 @@
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm}
 \setlength{\parindent}{0bp}
+\usepackage{float}
+\usepackage{textcomp}
 \usepackage{graphicx}
 
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{amsmath}
 
@@ -24,7 +31,7 @@
 A lo largo de esta parte, se pondra foco en el circuito mostrado en
 la Figura \ref{5_1}, que se trata de un circuito de control de tonos.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/Circuito}
 \par\end{centering}
@@ -65,7 +72,7 @@ C=-2R_{1}-R_{2}
 E=C_{2}K^{2}R_{2}^{2}-11C_{2}KR_{2}^{2}-C_{2}R_{1}^{2}-31C_{2}R_{1}R_{2}
 \]
 
-\section{Análisis de frecuancia central}
+\section{Análisis de frecuencia central}
 
 Para obtener la frecuencia central, basta con llevar a la ecuación
 de transferencia de la siguiente manera
@@ -119,7 +126,7 @@ A=\frac{R_{1}\left(R_{1}+31R_{2}\right)}{R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}\app
 A=\frac{-K^{2}R_{2}^{2}-9KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{-K^{2}R_{2}^{2}+11KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}}\,\,\,Expresado\,Parametricamente\,en\,K
 \]
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/DiagramaParametrico}
 \par\end{centering}
@@ -127,7 +134,7 @@ A=\frac{-K^{2}R_{2}^{2}-9KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{-K^{2}R_
 
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
 \includegraphics{Resources/RtaEnFrecuanciaParametrica}
 \par\end{centering}
@@ -170,7 +177,7 @@ analisis parametrico graficando como varían los polos y los ceros
 en un diagrama Imaginario/Real segun la variación de la resistencia
 $R_{2}$.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosCompleto}
 \par\end{centering}
@@ -185,7 +192,7 @@ ceros reales, copmo se puede observar en la Figura \ref{5_5}. Por
 otro lado, si se varía K entre $0.5<K<1$, se puede observar que todos
 los polos son reales, como se observa en la Figura \ref{5_6}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosHasta05}
 \par\end{centering}
@@ -194,12 +201,171 @@ los polos son reales, como se observa en la Figura \ref{5_6}.
 
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosDesde05}
 \par\end{centering}
 \caption{Diagrama paramétrico de polos y ceros con K variando de 0.5 a 1}
 \label{5_6}
 \end{figure}
+
+\subsection{Sistema de fase mínima}
+
+Un sistema de fase mínima se define como aquel sistema que cumple
+que los polos y los ceros se encuentren en el semiplano izquierdo
+del diagrama de polos y ceros, es decir, que su parte real sea negativa.
+Como se observa en la Figura \ref{5_4}, todos los polos y todos los
+ceros tienen parte real negativa, por lo tanto, el circuito de la
+Figura \ref{5_1}, es un sistema de fase mínima.
+
+\subsubsection{Ecualizador de fase}
+
+Para transformar nuestro circuito en un sistema de fase no minima,
+se propuso utilizar un circuito ecualizador de fase, es decir, un
+circuito que modifique la fase de salida de el circuito de la Figura
+\ref{5_1}, pero que no modifique la magnitud. Para lograr este objetivo
+se propuso un circuito como el de la Figura \ref{5_7}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.7]{\string"Resources/Ecualizador de fase\string".png}
+\par\end{centering}
+\caption{Circuito ecualizador de fase}
+\label{5_7}
+
+\end{figure}
+
+Si calculamos el paralelo entre el capacitor y el inductor:
+
+\[
+Z_{p}=\left(sC+\frac{1}{sL}\right)^{-1}=\frac{sL}{s^{2}CL+1}
+\]
+
+Por lo tanto, la transferencia queda determinada por
+
+\begin{equation}
+H(s)=\frac{\frac{sL}{s^{2}CL+1}}{\frac{sL}{s^{2}CL+1}+R}=\frac{sL}{s^{2}CLR+sL+R}\label{eq:5_3}
+\end{equation}
+
+Como se observa de la ecuación (\ref{eq:5_3}), para el nominador,
+tenemos un cero en el origen, por lo tanto, ya deja de ser un sistema
+de fase mínima. Por otro lado, calculando los polos a partir del denominador
+se obtiene:
+
+\[
+P_{1,2}=\frac{-L\pm\sqrt{L^{2}-4CLR^{2}}}{2CLR}
+\]
+
+Donde se puede ver que para valores razonables de R,L y C, obtenemos
+que la parte real de los polos son negativas, por lo tanto el circuito
+permanecerá estable. Al simular el ecualizador de fase, el resultado
+es el que se muestra en la Figura \ref{5_8}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.6]{Resources/SimulacionEqFase}
+\par\end{centering}
+\caption{Simulación del circuito ecualizador de fase}
+\label{5_8}
+
+\end{figure}
+
+Como se puede observar, la variacion en magnitud es a fines practicos
+nula, sin emabrgo, se puede ver que el circuito tiene una caída en
+magnitud de 6(dB), por lo tanto, la señal de entrada se vera atenuada.
+Por otro lado, la variacion en fase es de 360\textdegree , con lo
+que concluyentemente el circuito propuesto cumple su cometido. Si
+se quiere agregar el ecualizador de fase al circuito de la Figura
+\ref{5_1}, se deberá conectar en cascada el circuito de la Figura
+\ref{5_7}. De esta manera, la transeferencia total del circuito resultante
+será la multiplicacion entre las 2 transferencias.
+
+\section{Diseño de un ecualizador de 3 bandas}
+
+\subsection{Análisis del espectro audible}
+
+Segun cada ser humano, el espectro audible varía dependiendo de la
+salud y la edad de la persona, una aproximación bastante fiel al esprectro
+audible es de 20 a 20000 (Hz), donde reside el 100\% del sonido que
+el ser humano escucha. El espectro audible suele dividirse en varias
+capas, las frecuancias graves, medias y agudas. estas frecuencias
+se encuentran en la tabla \ref{5t_1}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+Graves & Medios & Agudos\tabularnewline
+\hline 
+\hline 
+<250(Hz) & Entre 250 (Hz) y 2 (kHz) & Entre2 (kHz) y 20 (kHz) \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Espectro audibe del ser humano}
+\label{5t_1}
+
+\end{table}
+
+Si bien en principio para el diseño del filtro sería correcto diseñar
+3 ecualizadores de bandas con frecuencias centrales dentro de los
+rangos dicho anteriormente, durante la siguiente sección nos propondremos
+realizar un análisis mas detallado de que frecuencias son mas convenientes
+ecualizar para lograr que una canción pueda tener cambios significativos.
+
+\subsection{Análisis del espectro de la musica}
+
+Si bien el humano escucha en un rango de frecuancias determinado,
+no siempre este rango resulta utilizado para la musica en general.
+Es por esto que se tomo como referencia la canción \emph{Bohemian
+Rhapsody }de la banda británica \emph{Queen}. Para poder analizar
+una pieza como esta, primero que nada debemos tener en cuenta, que
+cualquier canción varía en el tiempo, y no es una señal constante,
+por lo cual, el espectro en frecuancias de la cancion analizada variará
+en el tiempo. Esto significa que para poder ver como varía el espectro
+para cada instante de la canción debemos disponer de un grafico en
+tres dimensiones, siendo estas la frecuancia, el tiempo y la amplitud
+de la onda. Estos graficos en 3 dimensiones se los llaman comunmente
+espectrogramas, uno de estos se puede observar en la Figura \ref{5_9}.
+Los espectrogramas se deben leer de la siguiente manera: El eje orizontal
+es el tiempo, el eje vertical son las frecuencias, y la coloracion
+de color es la amplitud, es decir, cuanto mas rojo se encuentre un
+punto en el grafico, mas amplitud tendrá la canción en esa frecuencia
+en ese instante de tiempo.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/SpectogramBohemiamRhapsody}
+\par\end{centering}
+\caption{Espectrograma de \emph{Bohemian Rhapsody}}
+\label{5_9}
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/OsciloscopeBohemiamRhapsody}
+\par\end{centering}
+\caption{Vista de osciloscopio de \emph{Bohemian Rhapsody }a lo largo de la
+canción entera}
+
+\end{figure}
+
+Como se puede ver a simple vista, la mayor parte de la canción se
+encuentra por debajo de 1 (kHz) y hay poca información por sobre 1(kHz).
+A su vez, por debajo de 200 (Hz) hay demasiada amplitud en promedio,
+por lo cual, podemos asumir que el intervalo entre 0 y 200 (Hz) es
+bastante importante. Aprovechando el ancho de banda del filtro explicado
+de la Figura \ref{5_1}, lo mas conveniente será elegir como frecuencia
+central a los 100(Hz). Por otro lado, será conveniente elegir para
+el 2do filtro una frecuencia central entre 200 (Hz) y 1 (kHz), arbitrariamente,
+se eligió una frecuencia central de 700 (Hz), esto se debe a que se
+ve algo de precencia de frecuancias medias sobre esa banda y que no
+se pretendía que ambos filtros se superpongan. Por ultimo, para poder
+controlar las frecuencias agudas, se eligió el tercer filtro con una
+frecuencia central de 2 (kHz), que es el ultimo intervalo donde se
+pueden apreciar frecuencias significativas dentro de la canción.
+
+\subsection{Elección de la ganancia de los filtros}
+
 
 \end{document}
