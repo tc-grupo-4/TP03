@@ -610,27 +610,20 @@ se muestra en la Figura \ref{5_16}.
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/InterconexionEnParaleloSimulación}
 \par\end{centering}
-\caption{Simulación de interconexion en paralelo para caso de máxima ganancia}
+\caption{Simulación de interconexion en paralelo para caso de máxima y mínima
+ganancia}
 \label{5_22}
 \end{figure}
 
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[scale=0.5]{Resources/InterconexionEnParaleloSimulaciónMínima}
-\par\end{centering}
-\caption{Simulación de interconexion en paralelo para caso de mínima ganancia}
-\label{5_23}
-\end{figure}
-
-Como se puede ver en las figuras \ref{5_22} y \ref{5_23}, el ancho
-de los filtros para la máxima atenuación produce una superposicion
-de filtros no deseada, en cambio en el caso de la máxima ganancia,
-el ancho de los filtros permanecen demasiado pequeños, por lo que
-el control sobre la banda de frecuencias intermedias no será el deseado.
-Sumado a esto, se debe tener en cuenta que utilizar un diagrama en
-cascada agrega un amplificado operacional extra para poder realizar
-la suma de las 3 señales, por lo cual, esto significará un costo adicional
-a la implementación del ecualizador de tonos.
+Como se puede ver en la Figuras \ref{5_22}, el ancho de los filtros
+para la máxima atenuación produce una superposicion de filtros no
+deseada, en cambio en el caso de la máxima ganancia, el ancho de los
+filtros permanecen demasiado pequeños, por lo que el control sobre
+la banda de frecuencias intermedias no será el deseado. Sumado a esto,
+se debe tener en cuenta que utilizar un diagrama en cascada agrega
+un amplificado operacional extra para poder realizar la suma de las
+3 señales, por lo cual, esto significará un costo adicional a la implementación
+del ecualizador de tonos.
 
 \subsubsection{Interconexion en cascada}
 \begin{flushleft}
@@ -638,7 +631,7 @@ La otra opción para conectar los filtros entre sí es la interconexion
 en cascada, un diagrama básico de esta conexion se muestra en la Figura
 \ref{5_24}. Al conectar los filtros de esta manera y simular la transferencia
 del ecualizador para la máxima y la mínima ganancia se obtienen los
-resultados que se observan en las figuras \ref{5_25} y \ref{5_26}.
+resultados que se observan en la Figura \ref{5_25}. 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/DiagramaCascada}
@@ -650,19 +643,12 @@ resultados que se observan en las figuras \ref{5_25} y \ref{5_26}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/InterconexionEnCascadaSimulación}
+\includegraphics[scale=0.5]{Resources/InterconexionEnCascadaSimulaciónSinCorregir}
 \par\end{centering}
-\caption{Simulación de interconexion en cascada para caso de máxima ganancia}
+\caption{Simulación de interconexion en cascada para caso de máxima y mínima
+ganancia}
 \label{5_25}
 
-\end{figure}
-
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[scale=0.5]{Resources/InterconexionEnCascadaSimulaciónMinima}
-\par\end{centering}
-\caption{Simulación de interconexion en cascada para caso de mínima ganancia}
-\label{5_26}
 \end{figure}
 
 Como se puede observar, la interconexión en cascada provee mas robustes
@@ -703,24 +689,15 @@ Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewlin
 
 \end{table}
 
-Por lo tanto, simulando ahora el nuevo ecualizadror, se puede ver
-en las figuras \ref{5_27} y \ref{5_28}, que la ganancia no supera
-un valor maximo razonable, por lo tanto, no dañará a nuestros equipos.
+Por lo tanto, simulando ahora el nuevo ecualizador, se puede ver en
+la Figuray \ref{5_28}, que la ganancia no supera un valor maximo
+razonable, por lo tanto, no dañará a nuestros equipos.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{\string"Resources/Simulación ecualizador Máxima Ganancia\string".png}
+\includegraphics[scale=0.5]{Resources/InterconexionEnCascadaSimulación}
 \par\end{centering}
-\caption{Simulación del ecualizador para la máxima ganancia}
-\label{5_27}
-
-\end{figure}
-
-\begin{figure}[H]
-\begin{centering}
-\includegraphics[scale=0.5]{\string"Resources/Simulación ecualizador Mínima Ganancia\string".png}
-\par\end{centering}
-\caption{Simulación del ecualizador para la mínima ganancia}
+\caption{Simulación del ecualizador para la máxima y mínima ganancia}
 \label{5_28}
 
 \end{figure}

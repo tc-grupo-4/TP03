@@ -150,7 +150,7 @@ Transferencia
 \begin_layout Standard
 Al calcular la transferencia genericamente para cualquier valor de impedancias,
  y llamando a 
-\begin_inset Formula $R_{2}=R_{21}+R_{22}$
+\begin_inset Formula $R_{21}=R_{2}K\,\,,\,\,R_{22}=R_{2}(1-K)$
 \end_inset
 
 , el calculo de la transferencia se expresa como la ecuación (
@@ -161,21 +161,6 @@ reference "eq:5_1"
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-H(s)=-\frac{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s+9C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-10C_{2}R_{2}^{2}s-2R_{1}-R_{2}}{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s-11C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-2R_{1}-R_{2}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Si reacomodamos de la siguiente manera:
 \end_layout
 
 \begin_layout Standard
@@ -2627,7 +2612,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulación de interconexion en paralelo para caso de máxima ganancia
+Simulación de interconexion en paralelo para caso de máxima y mínima ganancia
 \end_layout
 
 \end_inset
@@ -2648,59 +2633,10 @@ name "5_22"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Resources/InterconexionEnParaleloSimulaciónMínima.png
-	lyxscale 10
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Simulación de interconexion en paralelo para caso de mínima ganancia
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "5_23"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Como se puede ver en las figuras 
+Como se puede ver en la Figuras 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "5_22"
-
-\end_inset
-
- y 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "5_23"
 
 \end_inset
 
@@ -2731,17 +2667,10 @@ reference "5_24"
 .
  Al conectar los filtros de esta manera y simular la transferencia del ecualizad
 or para la máxima y la mínima ganancia se obtienen los resultados que se
- observan en las figuras 
+ observan en la Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "5_25"
-
-\end_inset
-
- y 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "5_26"
 
 \end_inset
 
@@ -2810,7 +2739,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulación de interconexion en cascada para caso de máxima ganancia
+Simulación de interconexion en cascada para caso de máxima y mínima ganancia
 \end_layout
 
 \end_inset
@@ -2826,48 +2755,6 @@ name "5_25"
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Resources/InterconexionEnCascadaSimulaciónMinima.png
-	lyxscale 10
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Simulación de interconexion en cascada para caso de mínima ganancia
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "5_26"
-
-\end_inset
-
 
 \end_layout
 
@@ -3285,15 +3172,8 @@ name "5t_5"
 \end_layout
 
 \begin_layout Standard
-Por lo tanto, simulando ahora el nuevo ecualizadror, se puede ver en las
- figuras 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "5_27"
-
-\end_inset
-
- y 
+Por lo tanto, simulando ahora el nuevo ecualizador, se puede ver en la Figuray
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "5_28"
@@ -3313,7 +3193,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Resources/Simulación ecualizador Máxima Ganancia.png
+	filename Resources/InterconexionEnCascadaSimulación.png
 	lyxscale 10
 	scale 50
 
@@ -3326,53 +3206,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulación del ecualizador para la máxima ganancia
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "5_27"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Resources/Simulación ecualizador Mínima Ganancia.png
-	lyxscale 10
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Simulación del ecualizador para la mínima ganancia
+Simulación del ecualizador para la máxima y mínima ganancia
 \end_layout
 
 \end_inset
