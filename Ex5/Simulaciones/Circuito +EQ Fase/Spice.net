@@ -1,0 +1,24 @@
+* C:\Users\Ian Diaz\Desktop\TP03\Ex5\Simulaciones\Circuito +EQ Fase\Spice.asc
+R1 N001 N005 330
+R2 N003 N002 330
+R3 N006 N001 {hola}
+R4 N002 N006 {2001-hola}
+R5 N007 N005 20k
+R6 N003 N007 20k
+C1 N002 N001 100n
+C2 N007 N006 10n
+V1 N005 0 AC 1
+V2 vcc 0 15
+V3 0 vee 15
+XU1 0 N007 vcc vee N003 TL082
+XU2 0 N003 vcc vee N003 TL082
+R7 N004 N003 1k
+R8 N008 N003 1k
+R9 0 N008 1k
+C3 N004 0 100n
+L1 N004 0 10m
+.ac dec 100 10 1meg
+.step param hola 0.1 2k 500
+.lib C:\Users\Ian Diaz\Documents\LTspiceXVII\lib\TL082.mod
+.backanno
+.end

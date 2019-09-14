@@ -278,7 +278,31 @@ que concluyentemente el circuito propuesto cumple su cometido. Si
 se quiere agregar el ecualizador de fase al circuito de la Figura
 \ref{5_1}, se deberá conectar en cascada el circuito de la Figura
 \ref{5_7}. De esta manera, la transeferencia total del circuito resultante
-será la multiplicacion entre las 2 transferencias.
+será la multiplicacion entre las 2 transferencias. Al simular el circuito
+resultante que se muestra en la Figura \ref{5_9_b}, se obtuvieron
+los resultados de la Figura \ref{5_9c}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/CircuitoConEqFase}
+\par\end{centering}
+\caption{Circuito resultante con ecualizador de fase}
+\label{5_9_b}
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/SimulacionDeCambioConEqDeFase}
+\par\end{centering}
+\caption{Simulación de la magnitud del circuito resultante con y sin ecualizador
+de fase}
+\label{5_9c}
+
+\end{figure}
+
+Como se puede observar, la magintud no varía en forma, sin embargo,
+se puede detectar una atenuación por parte del filtro de ecualizacion
+de fase.
 
 \section{Diseño de un ecualizador de 3 bandas}
 
@@ -356,16 +380,17 @@ A su vez, por debajo de 200 (Hz) hay demasiada amplitud en promedio,
 por lo cual, podemos asumir que el intervalo entre 0 y 200 (Hz) es
 bastante importante. Aprovechando el ancho de banda del filtro explicado
 de la Figura \ref{5_1}, lo mas conveniente será elegir como frecuencia
-central a los 100(Hz). Por otro lado, será conveniente elegir para
-el 2do filtro una frecuencia central entre 200 (Hz) y 1 (kHz), arbitrariamente,
-se eligió una frecuencia central de 700 (Hz), esto se debe a que se
-ve algo de precencia de frecuancias medias sobre esa banda y que no
-se pretendía que ambos filtros se superpongan. Por ultimo, para poder
-controlar las frecuencias agudas, se eligió el tercer filtro con una
-frecuencia central de 2 (kHz), que es el ultimo intervalo donde se
-pueden apreciar frecuencias significativas dentro de la canción. Por
-lo tanto las frecuencias centrales de cada filtro serán las que se
-muestran en la tabla \ref{5t_2}.
+de referencia central para el primer filtro a 100(Hz). Por otro lado,
+será conveniente elegir para el 2do filtro una frecuencia central
+entre 200 (Hz) y 1 (kHz), arbitrariamente, se eligió una frecuencia
+central de referencia de 700 (Hz), esto se debe a que se ve algo de
+precencia de frecuancias medias sobre esa banda y que no se pretendía
+que ambos filtros se superpongan. Por ultimo, para poder controlar
+las frecuencias agudas, se eligió el tercer filtro con una frecuencia
+central de referencia de 2 (kHz), que es el ultimo intervalo donde
+se pueden apreciar frecuencias significativas dentro de la canción.
+Por lo tanto las frecuencias centrales de referencia de cada filtro
+serán las que se muestran en la tabla \ref{5t_2}.
 
 \begin{table}[H]
 \begin{centering}
@@ -378,8 +403,36 @@ Frecuencia central Filtro 1 & Frecuencia central Filtro 2 & Frecuencia central F
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption{Frecuencias centrales}
+\caption{Frecuencias centrales de referencia.}
 \label{5t_2}
+\end{table}
+
+Junto con esto se debe tener en cuenta la disposición logaritmica
+del comportamiento del filtro, por lo tanto, se buscará que las frecuencias
+no se encuentren muy cercanas entre sí ya que se podrian ver superpuestos
+los filtros. Teniendo en cuenta las frecuencias centrales de referencia
+y lo dicho anteriormente, se decidió utilizar frecuencias que sigan
+la ecuación (\ref{eq:5_7}).
+
+\begin{equation}
+f_{n+1}\approx f_{n}10^{1}\label{eq:5_7}
+\end{equation}
+
+Por lo tanto las frecuencias utilizadas serán:
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+Frecuencia central Filtro 1 & Frecuencia central Filtro 2 & Frecuencia central Filtro 3\tabularnewline
+\hline 
+\hline 
+90 (Hz) & 800 (Hz) & 2 (kHz)\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Frecuencias centrales propuestas}
+\label{5t_4}
 \end{table}
 
 \subsection{Elección de la ganancia de los filtros}
@@ -402,16 +455,16 @@ en la tabla \ref{5t_3}.
 Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewline
 \hline 
 \hline 
-1 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $680\,nF$ & $68\,nF$ & 108 (Hz)\tabularnewline
+1 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $820\,nF$ & $82\,nF$ & 108 (Hz)\tabularnewline
 \hline 
-2 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $100\,nF$ & $10\,nF$ & 740 (Hz)\tabularnewline
+2 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $82\,nF$ & $8.2\,nF$ & 740 (Hz)\tabularnewline
 \hline 
 3 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $39\,nF$ & $3.9\,nF$ & 1.896 (kHz)\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
 \caption{Valores de los componentes para cada filtro}
-MALL CREO\label{5t_3}
+\label{5t_3}
 
 \end{table}
 
