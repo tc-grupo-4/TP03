@@ -427,7 +427,7 @@ Por lo tanto las frecuencias utilizadas serán:
 Frecuencia central Filtro 1 & Frecuencia central Filtro 2 & Frecuencia central Filtro 3\tabularnewline
 \hline 
 \hline 
-90 (Hz) & 800 (Hz) & 2 (kHz)\tabularnewline
+90 (Hz) & 800 (Hz) & 4 (kHz)\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -455,11 +455,11 @@ en la tabla \ref{5t_3}.
 Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewline
 \hline 
 \hline 
-1 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $820\,nF$ & $82\,nF$ & 108 (Hz)\tabularnewline
+1 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $820\,nF$ & $82\,nF$ & 90 (Hz)\tabularnewline
 \hline 
-2 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $82\,nF$ & $8.2\,nF$ & 740 (Hz)\tabularnewline
+2 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $150\,nF$ & $15\,nF$ & 500 (Hz)\tabularnewline
 \hline 
-3 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $39\,nF$ & $3.9\,nF$ & 1.896 (kHz)\tabularnewline
+3 & $510\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $18\,nF$ & $1.8\,nF$ & 4.11 (kHz)\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -468,4 +468,72 @@ Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewlin
 
 \end{table}
 
+\subsection{Simulacion de cada filtro}
+
+Consecuentemente, se procederá a simular y observar los resultados
+de cada filtro por separado, verificando que cada uno se comporte
+como se espera.
+
+\subsubsection{Filtro para tonos graves}
+
+Como se demostró previamente, los tonos graves son los que mas potencia
+entregan en la mayoría de las piezas musicales, por ende, deberá ser
+prudente que el filtro de los tonos graves funcione adecuadamente.
+Si simulamos el circuito con los valores dichos en la tabla \ref{5t_3},
+obtenemos lo que se puede ver en la Figura \ref{5_13}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/FiltroGraves}
+\par\end{centering}
+\caption{Transferencia del ecualizador de tonos graves}
+\label{5_13}
+
+\end{figure}
+
+Como se puede observar, nuestro filtro se comporta como lo esperado
+en magnitud, sin embargo, ya se puede preveer, que debido al ancho
+de banda del filtro, en la etapa de combinacion de filtros, estos
+se van a superponer.
+
+\subsubsection{Filtro para tonos medios}
+
+Por otro lado, si graficamos el modulo de la transferencia del circuito
+para los tonos medios, obtenemos la Figura \ref{5_14}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/FiltroMedios}
+\par\end{centering}
+\caption{Transferencia del ecualizador de tonos medios}
+\label{5_14}
+
+\end{figure}
+
+\subsubsection{Filtro para tonos agudos}
+
+Por ultimo, al graficar la transferencia para el filtro de tonos agudos,
+se obtiene la Figura \ref{5_15}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/FiltroAgudos}
+\par\end{centering}
+\caption{Transferencia del ecualizador para tonos agudos}
+\label{5_15}
+
+\end{figure}
+
+\subsubsection{Conclusión}
+
+Si bien podemos observar que los filtros se van a superponer, es inevitable
+que esto suceda. Esto se debe a las limitaciónes del filtro propuesto,
+ya que el ancho de banda logrado, no es lo suficientemente pequeño
+como para aislarse completamente un filtro de otro. Para evitar que
+estas superposiciones nos afecten demasiado en nuestro circuito, se
+deberá tener en cuenta como se conectan entre si cada filtro para
+que afecten se interfieran entre sí lo menos posible. Esto sera detallado
+posteriormente.
+
+\subsection{Interconexión de filtros}
 \end{document}

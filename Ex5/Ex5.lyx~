@@ -1564,7 +1564,7 @@ Frecuencia central Filtro 3
 \begin_inset Text
 
 \begin_layout Plain Layout
-2 (kHz)
+4 (kHz)
 \end_layout
 
 \end_inset
@@ -1822,7 +1822,7 @@ Filtro
 \begin_inset Text
 
 \begin_layout Plain Layout
-108 (Hz)
+90 (Hz)
 \end_layout
 
 \end_inset
@@ -1902,7 +1902,7 @@ Filtro
 \begin_inset Text
 
 \begin_layout Plain Layout
-740 (Hz)
+902 (Hz)
 \end_layout
 
 \end_inset
@@ -1958,7 +1958,7 @@ Filtro
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $39\,nF$
+\begin_inset Formula $18\,nF$
 \end_inset
 
 
@@ -1970,7 +1970,7 @@ Filtro
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $3.9\,nF$
+\begin_inset Formula $1.8\,nF$
 \end_inset
 
 
@@ -1982,7 +1982,7 @@ Filtro
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.896 (kHz)
+4.11 (kHz)
 \end_layout
 
 \end_inset
@@ -2004,7 +2004,7 @@ Valores de los componentes para cada filtro
 
 \end_inset
 
-MALL CREO
+
 \begin_inset CommandInset label
 LatexCommand label
 name "5t_3"
@@ -2021,6 +2021,236 @@ name "5t_3"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Simulacion de cada filtro
+\end_layout
+
+\begin_layout Standard
+Consecuentemente, se procederá a simular y observar los resultados de cada
+ filtro por separado, verificando que cada uno se comporte como se espera.
+\end_layout
+
+\begin_layout Subsubsection
+Filtro para tonos graves
+\end_layout
+
+\begin_layout Standard
+Como se demostró previamente, los tonos graves son los que mas potencia
+ entregan en la mayoría de las piezas musicales, por ende, deberá ser prudente
+ que el filtro de los tonos graves funcione adecuadamente.
+ Si simulamos el circuito con los valores dichos en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5t_3"
+
+\end_inset
+
+, obtenemos lo que se puede ver en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_13"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/FiltroGraves.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transferencia del ecualizador de tonos graves
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_13"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede observar, nuestro filtro se comporta como lo esperado en magnitud,
+ sin embargo, ya se puede preveer, que debido al ancho de banda del filtro,
+ en la etapa de combinacion de filtros, estos se van a superponer.
+\end_layout
+
+\begin_layout Subsubsection
+Filtro para tonos medios
+\end_layout
+
+\begin_layout Standard
+Por otro lado, si graficamos el modulo de la transferencia del circuito
+ para los tonos medios, obtenemos la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_14"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/FiltroMedios.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transferencia del ecualizador de tonos medios
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_14"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Filtro para tonos agudos
+\end_layout
+
+\begin_layout Standard
+Por ultimo, al graficar la transferencia para el filtro de tonos agudos,
+ se obtiene la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_15"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/FiltroAgudos.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transferencia del ecualizador para tonos agudos
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_15"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Si bien podemos observar que los filtros se van a superponer, es inevitable
+ que esto suceda.
+ Esto se debe a las limitaciónes del filtro propuesto, ya que el ancho de
+ banda logrado, no es lo suficientemente pequeño como para aislarse completament
+e un filtro de otro.
+ Para evitar que estas superposiciones nos afecten demasiado en nuestro
+ circuito, se deberá tener en cuenta como se conectan entre si cada filtro
+ para que afecten se interfieran entre sí lo menos posible.
+ Esto sera detallado posteriormente.
+\end_layout
+
+\begin_layout Subsection
+Interconexión de filtros
 \end_layout
 
 \end_body
