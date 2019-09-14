@@ -1331,6 +1331,149 @@ a lo largo de la canción entera
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma de 
+\emph on
+Bohemian Rhapsody 
+\emph default
+solo Voz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma de 
+\emph on
+Bohemian Rhapsody 
+\emph default
+solo Guitarra
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma de 
+\emph on
+Bohemian Rhapsody 
+\emph default
+solo Bajos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma de 
+\emph on
+Bohemian Rhapsody 
+\emph default
+solo Piano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma de 
+\emph on
+Bohemian Rhapsody 
+\emph default
+solo Batería
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Como se puede ver a simple vista, la mayor parte de la canción se encuentra
  por debajo de 1 (kHz) y hay poca información por sobre 1(kHz).
  A su vez, por debajo de 200 (Hz) hay demasiada amplitud en promedio, por
@@ -2394,6 +2537,45 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de conexiones en cascada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulación.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación de interconexion en cascada para caso de máxima ganancia
 \end_layout
 
 \end_inset
