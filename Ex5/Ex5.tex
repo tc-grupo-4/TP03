@@ -43,14 +43,8 @@ la Figura \ref{5_1}, que se trata de un circuito de control de tonos.
 \section{Transferencia}
 
 Al calcular la transferencia genericamente para cualquier valor de
-impedancias, y llamando a $R_{2}=R_{21}+R_{22}$, el calculo de la
-transferencia se expresa como la ecuación (\ref{eq:5_1}).
-
-\[
-H(s)=-\frac{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s+9C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-10C_{2}R_{2}^{2}s-2R_{1}-R_{2}}{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s-11C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-2R_{1}-R_{2}}
-\]
-
-Si reacomodamos de la siguiente manera:
+impedancias, y llamando a $R_{21}=R_{2}K\,\,,\,\,R_{22}=R_{2}(1-K)$,
+el calculo de la transferencia se expresa como la ecuación (\ref{eq:5_1}).
 
 \begin{equation}
 H(s)=\frac{As^{2}+Bs+C}{As^{2}+Es+C}\label{eq:5_1}
@@ -732,6 +726,77 @@ un valor maximo razonable, por lo tanto, no dañará a nuestros equipos.
 \end{figure}
 
 \section{Implementación}
+
+Para la implementación del ecualizador dicho previamente, se eligió
+el amplificador operacional LM833, debido a su particular enfasis
+en la performance de equipos de audio. Segun su datasheet, cada integrado
+del LM833 cuenta con 2 amplificadores operacionales, por eso fue que
+se decidió utilizar un ecualizador de 4 bandas en lugar de uno de
+3 bandas, para asi, no desperdiciar el amplificador restante. Esto
+significa que, a partir de ahora, nuestro circuito consistirá en 4
+etapas de filtros, siendo la ultima, el filtro de alta frecuencia.
+Por lo tanto, los valores de los componentes finales del PCB son los
+descriptos en la tabla \ref{5t_6}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewline
+\hline 
+\hline 
+1 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $390\,nF$ & $39\,nF$ & 97.4 (Hz)\tabularnewline
+\hline 
+2 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $68\,nF$ & $6.8\,nF$ & 558,9 (Hz)\tabularnewline
+\hline 
+3 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $10\,nF$ & $1\,nF$ & 3.8 (kHz)\tabularnewline
+\hline 
+4 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $2.7\,nF$ & $270\,pF$ & 14 (kHz)\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Valores de los componentes para la implementación en PCB}
+\label{5t_6}
+\end{table}
+
+Por lo tanto las simulaciones para la máxima y minima ganancia del
+ecualizador es la que se muestra en la Figura \ref{5_29}. Como se
+puede observar, si bien los filtros de frecuencias altas se superponen,
+esto significa un alto control sobre esas frecuencias, sumado a esto,
+suele ser normal que las frecuencias por arriba de 10 (kHz) molesten
+al oido humano sibilantes, por lo tanto, tener control sobre esas
+frecuencias y atenuarlas adecuadamente a gusto, es una ventaja frente
+a un ecualizador de 3 bandas.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{\string"Resources/Ecualizador Simulacion\string".png}
+\par\end{centering}
+\caption{Máxima y mínima ganancia del ecualizador}
+\label{5_29}
+
+\end{figure}
+
+Para implementar este ecualizador se utilizó el esquemático y el PCB
+que se muestran en la figuras \ref{5_30} y \ref{5_31}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.4]{Resources/Esquemático}
+\par\end{centering}
+\caption{Esquemático}
+\label{5_30}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.3]{Resources/PCB}
+\par\end{centering}
+\caption{PCB}
+\label{5_31}
+
+\end{figure}
 
 \subsection{Mediciones}
 
