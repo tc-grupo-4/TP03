@@ -353,7 +353,7 @@ de la onda. Estos graficos en 3 dimensiones se los llaman comunmente
 espectrogramas, uno de estos se puede observar en la Figura \ref{5_9}.
 Los espectrogramas se deben leer de la siguiente manera: El eje orizontal
 es el tiempo, el eje vertical son las frecuencias, y la coloracion
-de color es la amplitud, es decir, cuanto mas rojo se encuentre un
+de color es la amplitud, es decir, cuanto mas color se encuentre un
 punto en el grafico, mas amplitud tendrá la canción en esa frecuencia
 en ese instante de tiempo.
 
@@ -378,7 +378,9 @@ canción entera}
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/SpectogramBohemiamRhapsodySoloVoz}
 \par\end{centering}
-\caption{Espectrograma de \emph{Bohemian Rhapsody }solo Voz}
+\caption{Espectrograma de la voz de Freddy Mercury en la primera estrofa de
+\emph{Bohemian Rhapsody}}
+\label{5_13m}
 
 \end{figure}
 
@@ -386,45 +388,58 @@ canción entera}
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/SpectogramBohemiamRhapsodySoloPiano}
 \par\end{centering}
-\caption{Espectrograma de \emph{Bohemian Rhapsody }solo Piano}
+\caption{Espectrograma del piano en la primera estrofa \emph{Bohemian Rhapsody}}
+\label{5_14m}
 \end{figure}
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/SpectogramBohemiamRhapsodySoloGuitarra}
 \par\end{centering}
-\caption{Espectrograma de \emph{Bohemian Rhapsody }solo Guitarra}
+\caption{Espectrograma del solo de guitarra de \emph{Bohemian Rhapsody}}
+\label{5_15M}
 \end{figure}
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/SpectogramBohemiamRhapsodySoloBajo}
 \par\end{centering}
-\caption{Espectrograma de \emph{Bohemian Rhapsody }solo Bajos}
+\caption{Espectrograma del bajo en la primera estrofa de \emph{Bohemian Rhapsody}}
+\label{5_16m}
 \end{figure}
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/SpectogramBohemiamRhapsodySoloBateria}
 \par\end{centering}
-\caption{Espectrograma de \emph{Bohemian Rhapsody }solo Batería}
+\caption{Espectrograma de la batería en la primera estrofa de \emph{Bohemian
+Rhapsody}}
+\label{5_17m}
 \end{figure}
 
-Como se puede ver a simple vista, la mayor parte de la canción se
-encuentra por debajo de 1 (kHz) y hay poca información por sobre 1(kHz).
-A su vez, por debajo de 200 (Hz) hay demasiada amplitud en promedio,
-por lo cual, podemos asumir que el intervalo entre 0 y 200 (Hz) es
-bastante importante. Aprovechando el ancho de banda del filtro explicado
-de la Figura \ref{5_1}, lo mas conveniente será elegir como frecuencia
-de referencia central para el primer filtro a 100(Hz). Por otro lado,
-será conveniente elegir para el 2do filtro una frecuencia central
-entre 200 (Hz) y 1 (kHz), arbitrariamente, se eligió una frecuencia
-central de referencia de 700 (Hz), esto se debe a que se ve algo de
-precencia de frecuancias medias sobre esa banda y que no se pretendía
-que ambos filtros se superpongan. Por ultimo, para poder controlar
-las frecuencias agudas, se eligió el tercer filtro con una frecuencia
-central de referencia de 2 (kHz), que es el ultimo intervalo donde
-se pueden apreciar frecuencias significativas dentro de la canción.
+Como se puede ver a simple vista de la Figura \ref{5_9}, la mayor
+parte de la canción se encuentra por debajo de 1 (kHz) y hay poca
+información por sobre 1(kHz). A su vez, por debajo de 200 (Hz) hay
+demasiada amplitud en promedio, por lo cual, podemos asumir que el
+intervalo entre 0 y 200 (Hz) es bastante importante. A su vez, se
+puede observar en las figuras\ref{5_16m} y \ref{5_17m} una alta
+presencia de notas graves al rededor de los 100(Hz). Aprovechando
+el ancho de banda del filtro explicado de la Figura \ref{5_1}, lo
+mas conveniente será elegir como frecuencia de referencia central
+para el primer filtro a 100(Hz) como controladora de frecuencias graves.
+Por otro lado, será conveniente elegir para el 2do filtro una frecuencia
+central entre 200 (Hz) y 1 (kHz), teniendo en cuenta las figuras \ref{5_13m}
+y \ref{5_15M}, donde se encuentran principalmente las voces masculinas
+y gran parte del espectro de la guitarra, se eligió una frecuencia
+central de referencia de 700 (Hz). Esta frecuencia de referencia fue
+tomada teniendo en cuenta el espectro de frecuencias medias de la
+cancion y el ancho de el filtro de tonos graves junto al ancho de
+banda del filtro de tonos medios, para poder lograr un control adecuado
+sobre esa banda de frecuencias, que es donde reposa la mayor parte
+de la pieza musical. Por ultimo, para poder controlar las frecuencias
+agudas, se eligió el tercer filtro con una frecuencia central de referencia
+de 2 (kHz), que es el ultimo intervalo donde se pueden apreciar frecuencias
+significativas dentro de la canción en las figuras \ref{5_9} y \ref{5_14m}.
 Por lo tanto las frecuencias centrales de referencia de cada filtro
 serán las que se muestran en la tabla \ref{5t_2}.
 
@@ -471,6 +486,11 @@ Frecuencia central Filtro 1 & Frecuencia central Filtro 2 & Frecuencia central F
 \label{5t_4}
 \end{table}
 
+De esta manera aseguramos un control sobre las 3 bandas de frecuencias
+más importantes a lo largo de la pieza musical, teniendo en cuenta
+el espectrograma de cada instrumento y voz, y considerando los rangos
+de movimientos de cada uno.
+
 \subsection{Elección de la ganancia de los filtros}
 
 Teniendo en cuenta que la salida de un \emph{Line-Out }de un dispositivo
@@ -501,7 +521,6 @@ Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewlin
 \par\end{centering}
 \caption{Valores de los componentes para cada filtro}
 \label{5t_3}
-
 \end{table}
 
 \subsection{Simulacion de cada filtro}
@@ -582,11 +601,7 @@ a utilizar en este caso.
 \subsubsection{Interconexion en paralelo}
 
 Un diagrama básco de como prdría ser una interconexion en paralelo
-se muestra en la Figura \ref{5_16}. Las ventajas de este tipo de
-conexiones son que provee robustes frente a posibles defasajes entre
-filtros ya que el sumador hace un promedio entre los 3 filtros. Las
-desventajas pueden ser que es menos sensible frente a grande cambios
-entre un filtro en epecifico.
+se muestra en la Figura \ref{5_16}.
 
 \begin{figure}[H]
 \begin{centering}
@@ -602,6 +617,7 @@ entre un filtro en epecifico.
 \includegraphics[scale=0.5]{Resources/InterconexionEnParaleloSimulación}
 \par\end{centering}
 \caption{Simulación de interconexion en paralelo para caso de máxima ganancia}
+\label{5_22}
 \end{figure}
 
 \begin{figure}[H]
@@ -609,23 +625,41 @@ entre un filtro en epecifico.
 \includegraphics[scale=0.5]{Resources/InterconexionEnParaleloSimulaciónMínima}
 \par\end{centering}
 \caption{Simulación de interconexion en paralelo para caso de mínima ganancia}
+\label{5_23}
 \end{figure}
 
-\subsubsection{Interconexion en cascada}
+Como se puede ver en las figuras \ref{5_22} y \ref{5_23}, el ancho
+de los filtros para la máxima atenuación produce una superposicion
+de filtros no deseada, en cambio en el caso de la máxima ganancia,
+el ancho de los filtros permanecen demasiado pequeños, por lo que
+el control sobre la banda de frecuencias intermedias no será el deseado.
+Sumado a esto, se debe tener en cuenta que utilizar un diagrama en
+cascada agrega un amplificado operacional extra para poder realizar
+la suma de las 3 señales, por lo cual, esto significará un costo adicional
+a la implementación del ecualizador de tonos.
 
+\subsubsection{Interconexion en cascada}
+\begin{flushleft}
+La otra opción para conectar los filtros entre sí es la interconexion
+en cascada, un diagrama básico de esta conexion se muestra en la Figura
+\ref{5_24}. Al conectar los filtros de esta manera y simular la transferencia
+del ecualizador para la máxima y la mínima ganancia se obtienen los
+resultados que se observan en las figuras \ref{5_25} y \ref{5_26}.
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/DiagramaCascada}
 \par\end{centering}
 \caption{Diagrama de conexiones en cascada}
-
+\label{5_24}
 \end{figure}
+\par\end{flushleft}
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[scale=0.5]{Resources/InterconexionEnCascadaSimulación}
 \par\end{centering}
 \caption{Simulación de interconexion en cascada para caso de máxima ganancia}
+\label{5_25}
 
 \end{figure}
 
@@ -634,9 +668,68 @@ entre un filtro en epecifico.
 \includegraphics[scale=0.5]{Resources/InterconexionEnCascadaSimulaciónMinima}
 \par\end{centering}
 \caption{Simulación de interconexion en cascada para caso de mínima ganancia}
+\label{5_26}
 \end{figure}
 
-\subsection{Detalles a tener en cuenta}
+Como se puede observar, la interconexión en cascada provee mas robustes
+frente a la variación de los anchos de banda de cada filtro, manteniendolos
+a fines practicos, constantes. De esta manera, el ecualizador se comportará
+practicamente simétrico frente a ganancia y atenuación, y de esta
+manera se obtendrá mayor control sobre las bandas deseadas de la pieza
+musical.
+
+\subsection{Conclusión}
+
+Debido a los inconvenientes mencionado para la interconexion en paralelo,
+se decidió utilizar una conexion en cascada, sin embargo, es necesario
+aclarar que debido a la alta ganancia y atenuación (aproximadamente
+20 (dB)) que posee el ecualizador, se deberán cambiar los valores
+de los componentes, o agregar un atenuador a la salida del ecualizador
+para poder controlar esta alta ganancia y que no dañe los equipos
+utilizados para reproducir sonido. Para lograr esto, se decidieron
+cambiar los componentes a los que se observan el la tabla \ref{5t_5}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewline
+\hline 
+\hline 
+1 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $390\,nF$ & $39\,nF$ & 97.4 (Hz)\tabularnewline
+\hline 
+2 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $68\,nF$ & $6.8\,nF$ & 558,9 (Hz)\tabularnewline
+\hline 
+3 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $10\,nF$ & $1\,nF$ & 3.8 (kHz)\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Componentes para cada filtro}
+\label{5t_5}
+
+\end{table}
+
+Por lo tanto, simulando ahora el nuevo ecualizadror, se puede ver
+en las figuras \ref{5_27} y \ref{5_28}, que la ganancia no supera
+un valor maximo razonable, por lo tanto, no dañará a nuestros equipos.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{\string"Resources/Simulación ecualizador Máxima Ganancia\string".png}
+\par\end{centering}
+\caption{Simulación del ecualizador para la máxima ganancia}
+\label{5_27}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{\string"Resources/Simulación ecualizador Mínima Ganancia\string".png}
+\par\end{centering}
+\caption{Simulación del ecualizador para la mínima ganancia}
+\label{5_28}
+
+\end{figure}
 
 \section{Implementación}
 
