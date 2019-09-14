@@ -536,4 +536,62 @@ que afecten se interfieran entre sí lo menos posible. Esto sera detallado
 posteriormente.
 
 \subsection{Interconexión de filtros}
+
+Como es posible imaginar, los 3 filtros pueden interconectarse principalmente
+de 2 maneras, en paralelo o en cascada, a lo largo de esta subseccion
+se procederá a analizar los beneficios y deficiencias de cada una
+de estas interconexiones, y se detallara cual es la mas conveniente
+a utilizar en este caso.
+
+\subsubsection{Interconexion en paralelo}
+
+Un diagrama básco de como prdría ser una interconexion en paralelo
+se muestra en la Figura \ref{5_16}. Las ventajas de este tipo de
+conexiones son que provee robustes frente a posibles defasajes entre
+filtros ya que el sumador hace un promedio entre los 3 filtros. Las
+desventajas pueden ser que es menos sensible frente a grande cambios
+entre un filtro en epecifico.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/DiagramaParalelo}
+\par\end{centering}
+\caption{Diagrama de conexiones en paralelo}
+\label{5_16}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/InterconexionEnParaleloSimulación}
+\par\end{centering}
+\caption{Simulación de interconexion en paralelo para caso de máxima ganancia}
+
+\end{figure}
+
+\subsubsection{Interconexion en cascada}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/DiagramaCascada}
+\par\end{centering}
+\caption{Diagrama de conexiones en cascada}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{Resources/InterconexionEnCascadaSimulación}
+\par\end{centering}
+\caption{Simulación de interconexion en cascada para caso de máxima ganancia}
+
+\end{figure}
+
+\subsection{Detalles a tener en cuenta}
+
+\section{Implementación}
+
+\subsection{Mediciones}
+
+\section{Conclusión}
 \end{document}

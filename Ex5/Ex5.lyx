@@ -2253,5 +2253,217 @@ e un filtro de otro.
 Interconexión de filtros
 \end_layout
 
+\begin_layout Standard
+Como es posible imaginar, los 3 filtros pueden interconectarse principalmente
+ de 2 maneras, en paralelo o en cascada, a lo largo de esta subseccion se
+ procederá a analizar los beneficios y deficiencias de cada una de estas
+ interconexiones, y se detallara cual es la mas conveniente a utilizar en
+ este caso.
+\end_layout
+
+\begin_layout Subsubsection
+Interconexion en paralelo
+\end_layout
+
+\begin_layout Standard
+Un diagrama básco de como prdría ser una interconexion en paralelo se muestra
+ en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_16"
+
+\end_inset
+
+.
+ Las ventajas de este tipo de conexiones son que provee robustes frente
+ a posibles defasajes entre filtros ya que el sumador hace un promedio entre
+ los 3 filtros.
+ Las desventajas pueden ser que es menos sensible frente a grande cambios
+ entre un filtro en epecifico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/DiagramaParalelo.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de conexiones en paralelo
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_16"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/InterconexionEnParaleloSimulación.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación de interconexion en paralelo para caso de máxima ganancia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Interconexion en cascada
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/DiagramaCascada.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de conexiones en cascada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulación.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación de interconexion en cascada para caso de máxima ganancia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Detalles a tener en cuenta
+\end_layout
+
+\begin_layout Section
+Implementación
+\end_layout
+
+\begin_layout Subsection
+Mediciones
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
 \end_body
 \end_document
