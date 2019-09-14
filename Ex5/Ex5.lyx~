@@ -1337,6 +1337,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloVoz.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
 
 \end_layout
 
@@ -1372,6 +1380,57 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloPiano.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma de 
+\emph on
+Bohemian Rhapsody 
+\emph default
+solo Piano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloGuitarra.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1397,6 +1456,18 @@ solo Guitarra
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloBajo.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1426,31 +1497,16 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Espectrograma de 
-\emph on
-Bohemian Rhapsody 
-\emph default
-solo Piano
-\end_layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloBateria.png
+	lyxscale 50
+	scale 50
 
 \end_inset
 
 
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2501,10 +2557,6 @@ Simulación de interconexion en paralelo para caso de máxima ganancia
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2584,6 +2636,41 @@ Simulación de interconexion en cascada para caso de máxima ganancia
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónMinima.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación de interconexion en cascada para caso de mínima ganancia
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

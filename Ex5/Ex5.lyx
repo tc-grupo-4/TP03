@@ -2557,7 +2557,38 @@ Simulación de interconexion en paralelo para caso de máxima ganancia
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/InterconexionEnParaleloSimulaciónMínima.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación de interconexion en paralelo para caso de mínima ganancia
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -2640,6 +2671,41 @@ Simulación de interconexion en cascada para caso de máxima ganancia
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónMinima.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación de interconexion en cascada para caso de mínima ganancia
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
