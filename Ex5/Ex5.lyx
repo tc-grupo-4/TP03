@@ -2341,7 +2341,15 @@ status open
 
 \end_inset
 
-FALTA POTEAR FASE
+
+\begin_inset Graphics
+	filename Resources/FiltroGravesFase.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2409,7 +2417,15 @@ status open
 
 \end_inset
 
-FALTA POTEAR FASE
+
+\begin_inset Graphics
+	filename Resources/FiltroMediosFase.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2471,7 +2487,15 @@ status open
 
 \end_inset
 
-FALTA POTEAR FASE
+
+\begin_inset Graphics
+	filename Resources/FiltroAgudosFase.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2742,7 +2766,15 @@ status open
 
 \end_inset
 
-FALTA PLOTEAR FASE Y CAMBIAR COLORES
+
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónSinCorregirFase.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3209,7 +3241,15 @@ status open
 
 \end_inset
 
-FALTA PLOTEAR FASE
+
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónFase.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
