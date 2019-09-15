@@ -403,6 +403,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/RtaEnFrecuanciaParametrica.png
+	lyxscale 60
+	scale 60
 
 \end_inset
 
@@ -2339,7 +2341,7 @@ status open
 
 \end_inset
 
-
+FALTA POTEAR FASE
 \end_layout
 
 \begin_layout Plain Layout
@@ -2407,7 +2409,7 @@ status open
 
 \end_inset
 
-
+FALTA POTEAR FASE
 \end_layout
 
 \begin_layout Plain Layout
@@ -2469,7 +2471,7 @@ status open
 
 \end_inset
 
-
+FALTA POTEAR FASE
 \end_layout
 
 \begin_layout Plain Layout
@@ -2606,6 +2608,14 @@ status open
 \end_inset
 
 
+\begin_inset Graphics
+	filename Resources/InterconexionEnParaleloSimulaciónFase.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2732,7 +2742,7 @@ status open
 
 \end_inset
 
-
+FALTA PLOTEAR FASE Y CAMBIAR COLORES
 \end_layout
 
 \begin_layout Plain Layout
@@ -3199,7 +3209,7 @@ status open
 
 \end_inset
 
-
+FALTA PLOTEAR FASE
 \end_layout
 
 \begin_layout Plain Layout
@@ -3747,7 +3757,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Máxima y mínima ganancia del ecualizador
+Magnitud de la transferencia con máxima y mínima ganancia del ecualizador
 \end_layout
 
 \end_inset
@@ -3756,6 +3766,45 @@ Máxima y mínima ganancia del ecualizador
 \begin_inset CommandInset label
 LatexCommand label
 name "5_29"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/Ecualizador Simulacion Fase.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase de la transferencia con máxima y mínima ganancia
+\end_layout
 
 \end_inset
 
