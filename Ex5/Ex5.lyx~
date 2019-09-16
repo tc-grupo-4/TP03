@@ -882,8 +882,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/SimulacionEqFase.png
-	lyxscale 60
-	scale 60
+	lyxscale 50
+	scale 50
 
 \end_inset
 
@@ -1010,7 +1010,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/SimulacionDeCambioConEqDeFase.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -2336,12 +2336,20 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/FiltroGraves.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
 
-FALTA POTEAR FASE
+
+\begin_inset Graphics
+	filename Resources/FiltroGravesFase.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2404,12 +2412,20 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/FiltroMedios.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
 
-FALTA POTEAR FASE
+
+\begin_inset Graphics
+	filename Resources/FiltroMediosFase.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2466,12 +2482,20 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/FiltroAgudos.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
 
-FALTA POTEAR FASE
+
+\begin_inset Graphics
+	filename Resources/FiltroAgudosFase.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2602,7 +2626,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/InterconexionEnParaleloSimulación.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -2610,7 +2634,7 @@ status open
 
 \begin_inset Graphics
 	filename Resources/InterconexionEnParaleloSimulaciónFase.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -2737,12 +2761,20 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/InterconexionEnCascadaSimulaciónSinCorregir.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
 
-FALTA PLOTEAR FASE Y CAMBIAR COLORES
+
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónSinCorregirFase.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3204,12 +3236,20 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/InterconexionEnCascadaSimulación.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
 
-FALTA PLOTEAR FASE
+
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónFase.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3745,7 +3785,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/Ecualizador Simulacion.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -3791,7 +3831,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/Ecualizador Simulacion Fase.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
