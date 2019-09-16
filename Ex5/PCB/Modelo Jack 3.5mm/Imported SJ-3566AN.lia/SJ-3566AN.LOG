@@ -1,0 +1,31 @@
+PCAD Importer Log
+Project : SJ-3566AN.LibPkg
+
+Section : C:\Users\Ian Diaz\Desktop\ITBA\TC\TP03\Ex5\PCB\Modelo Jack 3.5mm\SJ-3566AN.lia
+    Section : PCB Library - SJ-3566AN.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token SJ-3566AN On Line 181
+            Warning - 1 : Skipping Token attachedSymbol On Line 309
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - SJ-3566AN.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token padStyleDef On Line 21
+            Warning - 1 : Skipping Token padStyleDef On Line 33
+            Warning - 1 : Skipping Token multiLayer On Line 107
+            Warning - 1 : Skipping Token layerContents On Line 122
+            Warning - 1 : Skipping Token layerContents On Line 133
+            Warning - 1 : Skipping Token layerContents On Line 147
+            Warning - 1 : Skipping Token layerContents On Line 160
+            Warning - 1 : Skipping Token layerContents On Line 173
+        EndSection
+
+        Section : Generating SCH Library - SJ-3566AN.SchLib
+        EndSection
+    EndSection
+EndSection

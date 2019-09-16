@@ -1,0 +1,47 @@
+Removed Pin From Net: NetName=VCC Pin=J3-1
+Removed Pin From Net: NetName=GND Pin=J3-2
+Removed Pin From Net: NetName=VEE Pin=J3-3
+Removed Member From Class: ClassName=Esquemático Member=J3
+Change Component Designator: OldDesignator= NewDesignator=TP4
+Change Component Designator: OldDesignator= NewDesignator=TP6
+Change Component Designator: OldDesignator=GND NewDesignator=TP3
+Change Component Designator: OldDesignator=GND NewDesignator=TP5
+Change Component Designator: OldDesignator=IN NewDesignator=TP2
+Change Component Designator: OldDesignator=OUT NewDesignator=TP1
+Added Component: Designator=POWER(KLD-0202)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://domino.kycon.com/internet/Products.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetDocument"; Value = "09-May-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "17-Dec-2003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=R17(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R18(PRESET H)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VEE Pin=POWER-1A
+Added Pin To Net: NetName=VEE Pin=POWER-1B
+Added Pin To Net: NetName=VEE Pin=POWER-1
+Added Pin To Net: NetName=VCC Pin=POWER-2A
+Added Pin To Net: NetName=VCC Pin=POWER-2B
+Added Pin To Net: NetName=VCC Pin=POWER-2
+Added Pin To Net: NetName=GND Pin=R17-1
+Added Pin To Net: NetName=VCC Pin=R17-2
+Added Pin To Net: NetName=VEE Pin=R18-2
+Added Pin To Net: NetName=VEE Pin=R18-2
+Added Pin To Net: NetName=GND Pin=R18-3
+Added Pin To Net: NetName=GND Pin=R18-3
+Added Pin To Net: NetName=NetPOWER_3 Pin=POWER-3
+Added Pin To Net: NetName=NetPOWER_3 Pin=POWER-3A
+Added Pin To Net: NetName=NetPOWER_3 Pin=POWER-3B
+Added Net: Name=NetPOWER_3
+Added Member To Class: ClassName=Esquemático Member=Component POWER PWR2.5
+Added Member To Class: ClassName=Esquemático Member=Component R17 RES
+Added Member To Class: ClassName=Esquemático Member=Component R18 PRESET
+Added Member To Class: ClassName=Esquemático Member=Component TP1 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP2 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP3 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP4 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP5 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP6 TP
+Added Room: Name=Esquemático
