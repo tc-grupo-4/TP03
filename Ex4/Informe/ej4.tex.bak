@@ -1,0 +1,79 @@
+\chapter{Medidor de Presión}
+Utilizando un sensor de presión $MDX2010DP$ se diseñó e implementó en PCB un circuito un medidor de presión utilizando un amplificador de instrumentación que cumpla con las especificaciones de la Tabla \ref{e4:tab_specs}, alimentado por una única fuente de tensión.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{||c|c||c|c|c||}
+\hline
+Característica				&Símbolo	&Min	&Máx	&Unidades \\
+\hline
+Tensión de salida mínima	&$V_{min}$	&0		&0		&$V$ \\
+Tensión de salida máxima	&$V_{max}$	&3.1	&3.3	&$V$ \\
+Tensión de alimentación		&$V_{DC}$	&10		&15		&$V$ \\
+\hline
+\end{tabular}
+\caption{Especificaciones para el diseño del Medidor de Presión}
+\label{e4:tab_specs}
+\end{center}
+\end{table}
+
+\section{Diseño}
+\subsection{Sensor de Presión}
+A partir de la hoja de datos del MPX2010DP, se tomó en cuenta la información en la Tabla \ref{e4:tab_sensor_specs} para el diseño del medidor de presión.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{||c|c||c|c|c|c||}
+\hline
+Característica				&Símbolo	&Min	&Typ	&Máx	&Unidades \\
+\hline
+Rango de Presión			&$P_{OP}$	&0		&-		&10		&$V$ \\
+Tensión de alimentación		&$V_{DC}$	&0		&10		&16		&$V$ \\
+Tope de Escala				&$V_{FSS}$	&24		&25		&26		&$mV$ \\
+Sensibilidad				&$\Delta V / \Delta P$ &-&2.5	&-	&$mV/kPa$\\
+\hline
+\end{tabular}
+\caption{Especificaciones del Sensor de Presión}
+\label{e4:tab_sensor_specs}
+\end{center}
+\end{table}
+
+\subsection{Amplificador de Instrumentación}
+Para el Amplificador de Instrumentación (A.I.) se utilizó el diseño de dos amplificadores operacionales ilustrado en la Figura \ref{e4:fig_amp_inst}.
+
+\begin{figure}[ht]
+\begin{center}
+\input{amp_inst.tex}
+\label{e4:fig_amp_inst}
+\end{center}
+\end{figure}
+
+Se puede calcular la ganancia del circuito completo observando que el primer bloque del A.I. se trata de un circuito amplificador no inversor, por lo que su ganancia estará dada por la expresión (\ref{e4:eq_A1}) donde $a_1$ es la ganancia a lazo abierto del amplificador operacional U1 y $v_o'$ es su tensión de salida.
+
+\begin{equation}
+\mathlarger{A_1 = \frac{v_o'}{V_1} = \left(1+ \frac{R_2}{R_1}\right) \cdot \frac{1}{1 + \frac{1+R_2/R_1}{a_1}}}
+\label{e4:eq_A1}
+\end{equation}
+
+Por otro lado, en la segunda sección del A.I. la salida del amplificador operacional U2 puede calcularse aplicando el principio de superposición entre la tensión $v_o'$ y $V_2$:
+
+\begin{equation}
+\mathlarger{ v_{out} = V_2 \cdot \left(1 + \frac{R_4}{R_3}\right) \cdot \frac{1}{1 + \frac{1+R_4/R_3}{a_2}} + v_o' \cdot \left(- \frac{R_4}{R_3}\right) \cdot \frac{1}{1 + \frac{1+R_4/R_3}{a_2}}}
+\label{e4:eq_v_out}
+\end{equation}
+
+Operando con las expresiones (\ref{e4:eq_A1}) y (\ref{e4:eq_v_out}) se obtiene para la tensión de salida del A.I.
+
+\begin{equation}
+\mathlarger{ v_{out} = \left(1 + \frac{R_4}{R_3}\right) \cdot \frac{1}{1 + \frac{1+R_4/R_3}{a_2}} \cdot \left[ V_2 - V_1 \cdot \frac{1+ R_2/R_1}{1+R_3/R_4} \cdot \frac{1}{1 + \frac{1+R_4/R_3}{a_1}} \right] }
+\label{e4:eq_v_out_a_fin}
+\end{equation}
+
+Finalmente, considerando que los amplificadores operacionales tienen una ganancia infinita ($a_1 \cap a_2 \rightarrow \infty$) se obtiene la expresión simplificada 
+
+\begin{equation}
+\mathlarger{ v_{out} = \left(1 + \frac{R_4}{R_3}\right) \cdot \left[ V_2 - V_1 \cdot \frac{1+ R_2/R_1}{1+R_3/R_4} \right] }
+\label{e4:eq_v_out_a_inf}
+\end{equation}
+
+A partir de la expresión (\ref{e4:eq_v_out_a_inf}
