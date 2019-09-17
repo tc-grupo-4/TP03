@@ -3979,6 +3979,51 @@ name "5_31"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/IMG_20190916_164017.jpg
+	scale 70
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/IMG_20190916_164023.jpg
+	scale 62
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCB Finalizado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Mediciones
 \end_layout
