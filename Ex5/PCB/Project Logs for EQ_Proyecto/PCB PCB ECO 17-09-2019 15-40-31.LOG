@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=VCC Pin=J3-1
+Removed Pin From Net: NetName=VEE Pin=J3-2
+Removed Pin From Net: NetName=GND Pin=R17-1
+Removed Pin From Net: NetName=VCC Pin=R17-2
+Removed Pin From Net: NetName=VEE Pin=R18-2
+Removed Pin From Net: NetName=GND Pin=R18-3
+Removed Member From Class: ClassName=Esquemático Member=R17
+Removed Member From Class: ClassName=Esquemático Member=R18
+Change Component Footprint: Designator=J3 Old Footprint=BORNERA2 New Footprint=MOLEX3
+Change Component Comment : Designator=J3 Old Comment=BORNERA 2 New Comment=MOLEX3
+Change Component Designator: OldDesignator=TP1 NewDesignator=OUT
+Change Component Designator: OldDesignator=TP2 NewDesignator=IN
+Change Component Designator: OldDesignator=TP3 NewDesignator=GND
+Change Component Designator: OldDesignator=TP5 NewDesignator=GND2
+Added Pin To Net: NetName=VEE Pin=J3-1
+Added Pin To Net: NetName=GND Pin=J3-2
+Added Pin To Net: NetName=VCC Pin=J3-3
+Added Room: Name=Esquemático
