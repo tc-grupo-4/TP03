@@ -1,0 +1,5 @@
+\input{preamble.tex}
+
+\begin{document}
+	\input{ej4.tex}
+\end{document}

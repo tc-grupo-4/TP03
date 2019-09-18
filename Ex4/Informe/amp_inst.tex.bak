@@ -1,0 +1,13 @@
+\begin{circuitikz}[american voltages]
+\draw
+(0,0) node[op amp] (opamp1) {U1}
+(6,-0.5) node[op amp] (opamp2) {U2}
+(opamp1.-) to[R=$R_1$,*-] ++(-3,0) to ++(0,-2) node[ground]{GND}
+(opamp1.+) to[sinusoidal voltage source=$V_1$] ++(0,-3) node[ground]{GND}
+(opamp1.-) to ++(0,1) to[R=$R_2$] ++(3,0) to[short,-*] ++(0,-1.5)
+(opamp1.out)to[R=$R_3$,-*] (opamp2.-)
+(opamp2.+) to[sinusoidal voltage source=$V_2$] ++(0,-2.5) node[ground]{GND}
+(opamp2.-) to ++(0,1) to[R=$R_4$] ++(3,0) to[short] ++(0,-1.5) node[right]{$v_{out}$} to (opamp2.out)
+;
+\end{circuitikz}
+\caption{Amplificador de Instrumentación}
