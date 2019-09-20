@@ -101,8 +101,8 @@ Circuit: * C:\Users\ohvic\Documents\ITBA\TP03\Ex4\Simulacion\IA_DM.asc
 .step run=99
 .step run=100
 
-Date: Fri Sep 20 03:03:41 2019
-Total elapsed time: 3.689 seconds.
+Date: Fri Sep 20 13:29:59 2019
+Total elapsed time: 8.574 seconds.
 
 tnom = 27
 temp = 27
