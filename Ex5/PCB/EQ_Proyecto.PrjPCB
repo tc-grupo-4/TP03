@@ -75,6 +75,10 @@ DocumentUniqueId=TVPFJSOL
 DocumentPath=Project Outputs for EQ_Proyecto\Design Rule Check - PCB.html
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=Project Outputs for EQ_Proyecto\Net Status - PCB.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
