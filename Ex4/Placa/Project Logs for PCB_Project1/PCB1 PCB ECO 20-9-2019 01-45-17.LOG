@@ -1,0 +1,39 @@
+Removed Pin From Net: NetName=GND Pin=R1-1
+Removed Pin From Net: NetName=Vout Pin=R4-2
+Removed Pin From Net: NetName=GND Pin=U1-4
+Change Component DesignItemId : Designator=J1 Old DesignItemId=BORNERA 2 New DesignItemId=BORNERA 3
+Change Component Footprint: Designator=J1 Old Footprint=BORNERA2 New Footprint=BORNERA3
+Change Component Footprint: Designator=R1 Old Footprint=RES400 New Footprint=1206
+Change Component Footprint: Designator=R2 Old Footprint=RES400 New Footprint=1206
+Change Component Footprint: Designator=R3 Old Footprint=RES400 New Footprint=1206
+Change Component Footprint: Designator=R4 Old Footprint=RES400 New Footprint=1206
+Change Component Comment : Designator=J1 Old Comment=BORNERA 2 New Comment=BORNERA 3
+Change Component Comment : Designator=R1 Old Comment=RES New Comment=1.5M
+Change Component Comment : Designator=R4 Old Comment=RES New Comment=1.5M
+Change Component Comment : Designator=R2 Old Comment=RES New Comment=12k
+Change Component Comment : Designator=R3 Old Comment=RES New Comment=12k
+Change Component Designator: OldDesignator=R1 NewDesignator=R1a
+Change Component Designator: OldDesignator=R4 NewDesignator=R4a
+Added Component: Designator=C2(CAP100)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1b(1206)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R4b(1206)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=R1b-1
+Added Pin To Net: NetName=Vout Pin=R4b-2
+Change Net Name : Old Net Name=NetR1_2 New Net Name=NetR1a_2
+Added Pin To Net: NetName=-VCC Pin=C2-1
+Added Pin To Net: NetName=-VCC Pin=J1-3
+Added Pin To Net: NetName=-VCC Pin=U1-4
+Added Net: Name=-VCC
+Added Pin To Net: NetName=NetR1a_1 Pin=R1a-1
+Added Pin To Net: NetName=NetR1a_1 Pin=R1b-2
+Added Net: Name=NetR1a_1
+Added Pin To Net: NetName=NetR4a_2 Pin=R4a-2
+Added Pin To Net: NetName=NetR4a_2 Pin=R4b-1
+Added Net: Name=NetR4a_2
+Added Member To Class: ClassName=Sheet1 Member=Component C2 100 nF
+Added Member To Class: ClassName=Sheet1 Member=Component R1b 22k
+Added Member To Class: ClassName=Sheet1 Member=Component R4b 22k
