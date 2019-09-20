@@ -4151,8 +4151,78 @@ Sin ganancia ni atenuación
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de salida de un sistema
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_34"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Conclusión
+\end_layout
+
+\begin_layout Standard
+Como se pudo observar en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_34"
+
+\end_inset
+
+, la impedancia de salida del sistema no es lo suficientemente baja, por
+ lo tanto, se generará un divisor resistivo a la salida del sistema conectada
+ con parlantes convencionales, lo que generará una caida en potencia entregada
+ al parlante, por lo cual, el sonido resultante ecualizado será de menor
+ potencia que el original.
+ Sin embargo, esto es facilmente solucionable simplemente inyectando un
+ buffer a la salida del sistema.
+ Hay 2 formas de hacerlo, soldando un integrado extra de amplificadores
+ operacionales (lo cual requeriría un costo extra en la produccion del ecualizad
+or), o simplementecambiando las 2 ultimas bandas de tonos agudos del ecualizador
+, por una sola banda de un tono intermedio entre esas 2 banda, asi liberando
+ el cuarto amplificador, se lo puede utilizar como buffer.
+ Una ultima solucion posible, es cambiar los componentes pasivos del sistema,
+ de manera tal que la amplificacion (o atenuación) de cada banda sea lo
+ suficientemente grande como para que la salida del sistema, incluyendo
+ el divisor resistivo a la entrada de los parlantes, supere la potencia
+ entregada inicialmente por el reproductor musical utilizado.
+ En este ultimo caso, sin embargo, se debe considerar que el amplificador
+ operacional no sature en el proceso de amplificación, ya que se podrían
+ generar distorsiones a la salida, que son efectos no deseados.
+\end_layout
+
+\begin_layout Standard
+Finalmente, se conluye que siempre que se trabaje con el espectro del sonido,
+ se debe tener especial cuidado en las bandas de ecualización que se elijan,
+ ya que al no haber demasiado ancho de banda, los filtros elegidos pueden
+ superponerse y crear efectos no deseados.
+ A su vez, es necesario recalcar, que si bien con una etapa sola, podemos
+ amplificar o atenuar una banda deseada, la fase tambien cambiará lo cual,
+ a fines practicos, generará una pequeña distorsion a la señal de salida.
 \end_layout
 
 \end_body

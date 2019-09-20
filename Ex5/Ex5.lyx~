@@ -3986,7 +3986,7 @@ status open
 \begin_inset Graphics
 	filename Resources/IMG_20190916_164017.jpg
 	lyxscale 25
-	scale 25
+	scale 15
 
 \end_inset
 
@@ -4153,6 +4153,10 @@ Sin ganancia ni atenuación
 
 \begin_layout Section
 Conclusión
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
