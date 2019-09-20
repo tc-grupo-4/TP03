@@ -85,10 +85,60 @@ v_{out} = \left(1 + \frac{R_4}{R_3}\right) \cdot \left[ V_2 - V_1 \cdot \frac{1+
 
 A partir de la expresión (\ref{e4:eq_v_out_a_inf}) se oberva que el A.I. se encuentra balanceado cuando se cumple la condición
 
-\begin{equation*}
+\begin{equation}
 \mathlarger{
 1+\frac{R_2}{R_1} = 1+\frac{R_3}{R_4} \Rightarrow \frac{R_2}{R_1} = \frac{R_3}{R_4}
 }
-\end{equation*}
+\label{e4:eq_cond_bal}
+\end{equation}
+
+Tomando la expresión \eqref{e4:eq_v_out_a_inf} se pueden calcular las ganancias a modo común ($A_{CM}$) y a modo diferencial ($A_{DM}$)
+
+\begin{equation}
+\mathlarger{
+A_{CM} = 1 - \frac{R_4}{R_3} \cdot \frac{R_2}{R_1}
+}
+\label{e4:eq_A_cm}
+\end{equation}
+
+\begin{equation}
+\mathlarger{
+A_{DM} = \frac{R_4}{R_3} + \frac{1}{2} \cdot \left(1+ \frac{R_4}{R_3} \cdot \frac{R_2}{R_1}\right)
+}
+\label{e4:eq_A_dm}
+\end{equation}
+
+Cuando se cumple la condición de balance descripta en \eqref{e4:eq_cond_bal} se obtiene que idealmente $A_{CM_B} = 0$ y $A_{DM_B} = 1+R_4/R_3$.
+
+\begin{equation}
+\mathlarger{
+CMRR=20\log\left(\frac{A_{DM}}{A_{CM}}\right)
+}
+\end{equation}
 
 \subsection{Selección de Componentes}
+Tomando en cuenta los datos de las Tablas \ref{e4:tab_specs} y \ref{e4:tab_sensor_specs}, se busca que $A_{DM_B}$ esté típicamente dada por la expresión \eqref{e4:eq_r4_r3}. Además, se buscó que se cumpla la condición de balance del A.I. y por lo tanto se tomaron $R_1=R_4$ y $R_3 = R_2$.
+
+\begin{equation}
+\mathlarger{
+1+ \frac{R_4}{R_3}=\frac{\SI{3.2}{\volt}}{\SI{25}{\milli\volt}}= 128 \Rightarrow R_4=127 R_3
+}
+\label{e4:eq_r4_r3}
+\end{equation}
+ Por último, como se busca limitar la corriente al orden de los $\si{\milli\ampere}$ las resistencias más bajas se escogieron en el orden de los $\si{\kilo\ohm}$.
+ 
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{||c|c||}
+\hline
+Resistencia	&	Valor($\si{\kilo\ohm}$) \\
+\hline	
+$R_1$	&	$152.2$	\\
+$R_2$	&	$1.2$		\\
+$R_3$	&	$1.2$		\\
+$R_4$	&	$152.2$	\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Valores de las resistencias}
+\end{table}

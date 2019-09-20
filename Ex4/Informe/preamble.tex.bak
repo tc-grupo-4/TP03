@@ -12,4 +12,6 @@
 \usepackage[american,oldvoltagedirection]{circuitikz}
 \usepackage{amsmath}
 
+\usepackage{siunitx}
+
 \usepackage{relsize}
