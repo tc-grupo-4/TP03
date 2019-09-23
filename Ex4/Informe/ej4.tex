@@ -112,7 +112,7 @@ Cuando se cumple la condición de balance descripta en \eqref{e4:eq_cond_bal} se
 
 \begin{equation}
 \mathlarger{
-CMRR=20\log\left(\frac{A_{DM}}{A_{CM}}\right)
+CMRR=10\log\left(\frac{A_{DM}}{A_{CM}}\right)
 }
 \end{equation}
 
@@ -125,20 +125,124 @@ Tomando en cuenta los datos de las Tablas \ref{e4:tab_specs} y \ref{e4:tab_senso
 }
 \label{e4:eq_r4_r3}
 \end{equation}
- Por último, como se busca limitar la corriente al orden de los $\si{\milli\ampere}$ las resistencias más bajas se escogieron en el orden de los $\si{\kilo\ohm}$.
  
 \begin{table}[ht]
 \begin{center}
-\begin{tabular}{||c|c||}
+\begin{tabular}{||c|c|c||}
 \hline
-Resistencia	&	Valor($\si{\kilo\ohm}$) \\
+Resistencia	&	Valor &	Tolerancia\\
 \hline	
-$R_1$	&	$152.2$	\\
-$R_2$	&	$1.2$		\\
-$R_3$	&	$1.2$		\\
-$R_4$	&	$152.2$	\\
+$R_1$	&	$1.5\si{\mega\ohm} + 22\si{\kilo\ohm}$	&	$5\%$\\
+$R_2$	&	$12\si{\kilo\ohm}$	&	$5\%$\\
+$R_3$	&	$12\si{\kilo\ohm}$	&	$1\%$\\
+$R_4$	&	$1.5\si{\mega\ohm} + 22\si{\kilo\ohm}$	&	$1\%$\\
 \hline
 \end{tabular}
 \end{center}
 \caption{Valores de las resistencias}
+\label{e4:tab_res_vals}
 \end{table}
+
+Las tolerancias fueron seleccionadas por motivos analizados más adelante.
+
+Además, como amplificador operacional se utilizó el \textit{LM833} dado que contiene dos amplificadores operacionales dentro del mismo circuito integrado. Esto permite asumir que ambos \textit{opamps} tienen los mismos parámetros de operación: una impedancia de entrada extremadamente alta, ganancia de tensión iguales en ambos, etc.
+
+\section{Simulación}
+
+Con los componentes seleccionados en la Tabla \ref{e4:tab_res_vals} se construyó el circuito en \textit{LTspice XVII} de modo que se puedan simular por separado las ganancias en modo común y en modo diferencial como se ilustra en las Figuras \ref{e4:fig_spice_cm_ac}, \ref{e4:fig_spice_cm_dc}, \ref{e4:fig_spice_dm_ac} y \ref{e4:fig_spice_dm_dc}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_cm_ac_sch.png}
+\caption{Esquemático de la simulación en Modo Común en CA}
+\label{e4:fig_spice_cm_ac}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_cm_dc_sch.png}
+\caption{Esquemático de la simulación en Modo Común en CC}
+\label{e4:fig_spice_cm_dc}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_dm_ac_sch.png}
+\caption{Esquemático de la simulación en Modo Diferencial en CA}
+\label{e4:fig_spice_dm_ac}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_dm_dc_sch.png}
+\caption{Esquemático de la simulación en Modo Diferencial en CC}
+\label{e4:fig_spice_dm_dc}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_cm_dc.png}
+\caption{Resultado de la simulación en Modo Común en CC}
+\label{e4:fig_spice_cm_dc_res}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_cm_dc_mc.png}
+\caption{Resultado del Análisis de Montecarlo en Modo Común en CC}
+\label{e4:fig_spice_cm_dc_mc}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_dm_dc.png}
+\caption{Resultado de la simulación en Modo Diferencial en CC}
+\label{e4:fig_spice_dm_dc_res}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_dm_dc_mc.png}
+\caption{Resultado del Análisis de Montecarlo en Modo Diferencial en CC}
+\label{e4:fig_spice_dm_dc_mc}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_cm_ac_bode.png}
+\caption{Resultado de la simulación en Modo Común en AC}
+\label{e4:fig_spice_cm_ac_res}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_cm_ac_bode_mc.png}
+\caption{Resultado del Análisis de Montecarlo en Modo Común en AC}
+\label{e4:fig_spice_cm_ac_mc}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_dm_ac_bode.png}
+\caption{Resultado de la simulación en Modo Diferencial en AC}
+\label{e4:fig_spice_dm_ac_res}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{res/spice/spice_dm_ac_bode_mc.png}
+\caption{Resultado del Análisis de Montecarlo en Modo Diferencial en AC}
+\label{e4:fig_spice_dm_ac_mc}
+\end{center}
+\end{figure}
