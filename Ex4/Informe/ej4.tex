@@ -147,9 +147,12 @@ Las tolerancias fueron seleccionadas por motivos analizados más adelante.
 
 Además, como amplificador operacional se utilizó el \textit{LM833} dado que contiene dos amplificadores operacionales dentro del mismo circuito integrado. Esto permite asumir que ambos \textit{opamps} tienen los mismos parámetros de operación: una impedancia de entrada extremadamente alta, ganancia de tensión iguales en ambos, etc.
 
+\newpage
 \section{Simulación}
 
 Con los componentes seleccionados en la Tabla \ref{e4:tab_res_vals} se construyó el circuito en \textit{LTspice XVII} de modo que se puedan simular por separado las ganancias en modo común y en modo diferencial como se ilustra en las Figuras \ref{e4:fig_spice_cm_ac}, \ref{e4:fig_spice_cm_dc}, \ref{e4:fig_spice_dm_ac} y \ref{e4:fig_spice_dm_dc}.
+
+Se observa en los resultados del análisis de Montecarlo en las Figuras \ref{e4:fig_spice_cm_dc_mc} y \ref{e4:fig_spice_dm_dc_mc} que la tensión de salida del Modo Común no excede en módulo los $30 \si{\milli\volt}$ y la tensión de salida del Modo Diferencial se encuentra dentro del rango de tensiones de salida buscadas.
 
 \begin{figure}[ht]
 \begin{center}
@@ -246,3 +249,26 @@ Con los componentes seleccionados en la Tabla \ref{e4:tab_res_vals} se construy�
 \label{e4:fig_spice_dm_ac_mc}
 \end{center}
 \end{figure}
+
+\newpage
+
+\section{Construcción del PCB}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[height=10cm]{res/altium/sch.png}
+\caption{Esquemático del Amplificador de Instrumentación}
+\label{e4:fig_pcb_sch}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[height=10cm]{res/altium/pcb.png}
+\caption{Routeado del PCB del Amplificador de Instrumentación}
+\label{e4:fig_pcb_route}
+\end{center}
+\end{figure}
+
+\section{Mediciones}
+Se utilizaron generadores de onda para medir la ganancia del Amplificador de Instrumentación en modo diferencial y en modo común. A partir de estas mediciones se calculó el rechazo a modo común.
