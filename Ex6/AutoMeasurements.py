@@ -82,7 +82,7 @@ def getPoint(freq, chanIn, chanOut, tEst=0.001, noiseTolerance=0.1):
     return run
     
         
-def bode(startfreq=10, stopfreq=100000, samp=200, signal="sine", mode="normal", vpp=1, tEst=0.001, cIn=1, cOut=3, noiseTolerance=0.1, autoStep=False, plot=True, livePlot=False, dumpToFile=True):
+def bode(startfreq=10, stopfreq=10000000, samp=200, signal="sine", mode="normal", vpp=2, tEst=0.001, cIn=1, cOut=3, noiseTolerance=0.1, autoStep=False, plot=True, livePlot=False, dumpToFile=True):
     
     # Get settings from instance
     vClearance=thisInstance.settings["sampling"]["vClearance"]

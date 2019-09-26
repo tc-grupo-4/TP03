@@ -1,0 +1,44 @@
+* C:\Users\Ian Diaz\Desktop\ITBA\TC\TP03\Ex5\Simulaciones\Ecualizador\Spice.asc
+R1 N003 vin 2.7k
+R2 vo1 N004 2.7k
+R3 N006 N003 5k
+R4 N004 N006 5k
+R5 N007 vin 100k
+R6 vo1 N007 100k
+C1 N004 N003 390n
+C2 N007 N006 39n
+V1 vin 0 AC 1
+V2 vcc 0 15
+V3 0 vee 15
+XU1 0 N007 vcc vee vo1 TL082
+R7 N001 vo1 2.7k
+R8 N005 N001 5k
+R9 N002 N005 5k
+R10 vo2 N002 2.7k
+R11 N008 vo1 100k
+R12 vo2 N008 100k
+C3 N005 N008 6.8n
+C4 N002 N001 68n
+XU2 0 N008 vcc vee vo2 TL082
+R13 N009 vo2 2.7k
+R14 N013 N009 5k
+R15 N010 N013 5k
+R16 vo3 N010 2.7k
+R17 N015 vo2 100k
+R18 vo3 N015 100k
+C5 N010 N009 10n
+C6 N013 N015 1n
+XU3 0 N015 vcc vee vo3 TL082
+R19 N011 vo3 2.7k
+R20 N014 N011 5k
+R21 N012 N014 5k
+R22 vo4 N012 2.7k
+R23 N016 vo3 100k
+R24 vo4 N016 100k
+C7 N012 N011 2.7n
+C8 N014 N016 270p
+XU4 0 N016 vcc vee vo4 TL082
+.ac dec 100 1 1meg
+.lib C:\Users\Ian Diaz\Documents\LTspiceXVII\lib\TL082.mod
+.backanno
+.end
