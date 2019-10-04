@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=GND Pin=R18-1
+Removed Pin From Net: NetName=VEE Pin=R18-3
+Change Component Footprint: Designator=R18 Old Footprint=VR5 New Footprint=PRESET H
+Change Component Comment : Designator=R18 Old Comment=RPot New Comment=PRESET
+Change component parameters: Designator = "R18"; Footprint = "PRESET H"; UniqueID = "\YJJWAJGL"
+Change component parameters. Clean all parameters for all variants
+Added Pin To Net: NetName=VEE Pin=R18-2
+Added Pin To Net: NetName=VEE Pin=R18-2
+Added Pin To Net: NetName=GND Pin=R18-3
+Added Pin To Net: NetName=GND Pin=R18-3
+Added Room: Name=Esquemático

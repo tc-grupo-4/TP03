@@ -82,7 +82,7 @@
 \begin_body
 
 \begin_layout Part
-Control de tonos y ecualizador de fase
+Ecualizador basado en Bohemian Rhapsody
 \end_layout
 
 \begin_layout Standard
@@ -150,7 +150,7 @@ Transferencia
 \begin_layout Standard
 Al calcular la transferencia genericamente para cualquier valor de impedancias,
  y llamando a 
-\begin_inset Formula $R_{2}=R_{21}+R_{22}$
+\begin_inset Formula $R_{21}=R_{2}K\,\,,\,\,R_{22}=R_{2}(1-K)$
 \end_inset
 
 , el calculo de la transferencia se expresa como la ecuación (
@@ -161,21 +161,6 @@ reference "eq:5_1"
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-H(s)=-\frac{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s+9C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-10C_{2}R_{2}^{2}s-2R_{1}-R_{2}}{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s-11C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-2R_{1}-R_{2}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Si reacomodamos de la siguiente manera:
 \end_layout
 
 \begin_layout Standard
@@ -418,6 +403,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/RtaEnFrecuanciaParametrica.png
+	lyxscale 60
+	scale 60
 
 \end_inset
 
@@ -895,8 +882,16 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/SimulacionEqFase.png
-	lyxscale 60
-	scale 60
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/SimulacionEqFase_Fase.png
+	lyxscale 50
+	scale 50
 
 \end_inset
 
@@ -1023,7 +1018,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/SimulacionDeCambioConEqDeFase.png
-	lyxscale 10
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -1239,8 +1234,9 @@ reference "5_9"
 .
  Los espectrogramas se deben leer de la siguiente manera: El eje orizontal
  es el tiempo, el eje vertical son las frecuencias, y la coloracion de color
- es la amplitud, es decir, cuanto mas rojo se encuentre un punto en el grafico,
- mas amplitud tendrá la canción en esa frecuencia en ese instante de tiempo.
+ es la amplitud, es decir, cuanto mas color se encuentre un punto en el
+ grafico, mas amplitud tendrá la canción en esa frecuencia en ese instante
+ de tiempo.
 \end_layout
 
 \begin_layout Standard
@@ -1319,6 +1315,13 @@ a lo largo de la canción entera
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "5_12"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1331,11 +1334,257 @@ a lo largo de la canción entera
 \end_layout
 
 \begin_layout Standard
-Como se puede ver a simple vista, la mayor parte de la canción se encuentra
- por debajo de 1 (kHz) y hay poca información por sobre 1(kHz).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloVoz.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma de la voz de Freddy Mercury en la primera estrofa de 
+\emph on
+Bohemian Rhapsody
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_13m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloPiano.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma del piano en la primera estrofa 
+\emph on
+Bohemian Rhapsody
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_14m"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloGuitarra.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma del solo de guitarra de 
+\emph on
+Bohemian Rhapsody
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_15M"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloBajo.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma del bajo en la primera estrofa de 
+\emph on
+Bohemian Rhapsody
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_16m"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/SpectogramBohemiamRhapsodySoloBateria.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectrograma de la batería en la primera estrofa de 
+\emph on
+Bohemian Rhapsody
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_17m"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede ver a simple vista de la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_9"
+
+\end_inset
+
+, la mayor parte de la canción se encuentra por debajo de 1 (kHz) y hay
+ poca información por sobre 1(kHz).
  A su vez, por debajo de 200 (Hz) hay demasiada amplitud en promedio, por
  lo cual, podemos asumir que el intervalo entre 0 y 200 (Hz) es bastante
  importante.
+ A su vez, se puede observar en las figuras
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_16m"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_17m"
+
+\end_inset
+
+ una alta presencia de notas graves al rededor de los 100(Hz).
  Aprovechando el ancho de banda del filtro explicado de la Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1344,16 +1593,48 @@ reference "5_1"
 \end_inset
 
 , lo mas conveniente será elegir como frecuencia de referencia central para
- el primer filtro a 100(Hz).
+ el primer filtro a 100(Hz) como controladora de frecuencias graves.
  Por otro lado, será conveniente elegir para el 2do filtro una frecuencia
- central entre 200 (Hz) y 1 (kHz), arbitrariamente, se eligió una frecuencia
- central de referencia de 700 (Hz), esto se debe a que se ve algo de precencia
- de frecuancias medias sobre esa banda y que no se pretendía que ambos filtros
- se superpongan.
+ central entre 200 (Hz) y 1 (kHz), teniendo en cuenta las figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_13m"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_15M"
+
+\end_inset
+
+, donde se encuentran principalmente las voces masculinas y gran parte del
+ espectro de la guitarra, se eligió una frecuencia central de referencia
+ de 700 (Hz).
+ Esta frecuencia de referencia fue tomada teniendo en cuenta el espectro
+ de frecuencias medias de la cancion y el ancho de el filtro de tonos graves
+ junto al ancho de banda del filtro de tonos medios, para poder lograr un
+ control adecuado sobre esa banda de frecuencias, que es donde reposa la
+ mayor parte de la pieza musical.
  Por ultimo, para poder controlar las frecuencias agudas, se eligió el tercer
  filtro con una frecuencia central de referencia de 2 (kHz), que es el ultimo
  intervalo donde se pueden apreciar frecuencias significativas dentro de
- la canción.
+ la canción en las figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_9"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_14m"
+
+\end_inset
+
+.
  Por lo tanto las frecuencias centrales de referencia de cada filtro serán
  las que se muestran en la tabla 
 \begin_inset CommandInset ref
@@ -1363,6 +1644,20 @@ reference "5t_2"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+A su vez, se puede observar en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_12"
+
+\end_inset
+
+, que las tensiones máximas de salida de la canción no supera los 0(dB),
+ es decir, la tensión de salida del reproductor musical no supera 1(Vpp)
+ de salida, esto es de vital importancia a la hora de definir los valores
+ de amplificación y atenuación del ecualizador.
 \end_layout
 
 \begin_layout Standard
@@ -1599,6 +1894,13 @@ name "5t_4"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+De esta manera aseguramos un control sobre las 3 bandas de frecuencias más
+ importantes a lo largo de la pieza musical, teniendo en cuenta el espectrograma
+ de cada instrumento y voz, y considerando los rangos de movimientos de
+ cada uno.
 \end_layout
 
 \begin_layout Subsection
@@ -2014,10 +2316,6 @@ name "5t_3"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2067,7 +2365,15 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/FiltroGraves.png
-	lyxscale 10
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/FiltroGravesFase.png
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -2135,7 +2441,15 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/FiltroMedios.png
-	lyxscale 10
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/FiltroMediosFase.png
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -2197,7 +2511,15 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/FiltroAgudos.png
-	lyxscale 10
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/FiltroAgudosFase.png
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -2275,11 +2597,6 @@ reference "5_16"
 \end_inset
 
 .
- Las ventajas de este tipo de conexiones son que provee robustes frente
- a posibles defasajes entre filtros ya que el sumador hace un promedio entre
- los 3 filtros.
- Las desventajas pueden ser que es menos sensible frente a grande cambios
- entre un filtro en epecifico.
 \end_layout
 
 \begin_layout Standard
@@ -2338,7 +2655,15 @@ status open
 \align center
 \begin_inset Graphics
 	filename Resources/InterconexionEnParaleloSimulación.png
-	lyxscale 10
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/InterconexionEnParaleloSimulaciónFase.png
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -2350,7 +2675,19 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulación de interconexion en paralelo para caso de máxima ganancia
+Simulación de interconexion en paralelo para caso de máxima y mínima ganancia
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_22"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2358,13 +2695,22 @@ Simulación de interconexion en paralelo para caso de máxima ganancia
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
+\begin_layout Standard
+Como se puede ver en la Figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_22"
 
 \end_inset
 
-
+, el ancho de los filtros para la máxima atenuación produce una superposicion
+ de filtros no deseada, en cambio en el caso de la máxima ganancia, el ancho
+ de los filtros permanecen demasiado pequeños, por lo que el control sobre
+ la banda de frecuencias intermedias no será el deseado.
+ Sumado a esto, se debe tener en cuenta que utilizar un diagrama en cascada
+ agrega un amplificado operacional extra para poder realizar la suma de
+ las 3 señales, por lo cual, esto significará un costo adicional a la implementa
+ción del ecualizador de tonos.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2372,6 +2718,27 @@ Interconexion en cascada
 \end_layout
 
 \begin_layout Standard
+\align left
+La otra opción para conectar los filtros entre sí es la interconexion en
+ cascada, un diagrama básico de esta conexion se muestra en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_24"
+
+\end_inset
+
+.
+ Al conectar los filtros de esta manera y simular la transferencia del ecualizad
+or para la máxima y la mínima ganancia se obtienen los resultados que se
+ observan en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_25"
+
+\end_inset
+
+.
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -2399,6 +2766,1079 @@ Diagrama de conexiones en cascada
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "5_24"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónSinCorregir.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónSinCorregirFase.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación de interconexion en cascada para caso de máxima y mínima ganancia
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_25"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede observar, la interconexión en cascada provee mas robustes
+ frente a la variación de los anchos de banda de cada filtro, manteniendolos
+ a fines practicos, constantes.
+ De esta manera, el ecualizador se comportará practicamente simétrico frente
+ a ganancia y atenuación, y de esta manera se obtendrá mayor control sobre
+ las bandas deseadas de la pieza musical.
+\end_layout
+
+\begin_layout Subsection
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Debido a los inconvenientes mencionado para la interconexion en paralelo,
+ se decidió utilizar una conexion en cascada, sin embargo, es necesario
+ aclarar que debido a la alta ganancia y atenuación (aproximadamente 20
+ (dB)) que posee el ecualizador, se deberán cambiar los valores de los component
+es, o agregar un atenuador a la salida del ecualizador para poder controlar
+ esta alta ganancia y que no dañe los equipos utilizados para reproducir
+ sonido.
+ Para lograr esto, se decidieron cambiar los componentes a los que se observan
+ el la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5t_5"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Filtro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.5\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $390\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $39\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+97.4 (Hz)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.5\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $68\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.8\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+558,9 (Hz)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.5\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.8 (kHz)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componentes para cada filtro
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5t_5"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, simulando ahora el nuevo ecualizador, se puede ver en la Figuray
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_28"
+
+\end_inset
+
+, que la ganancia no supera un valor maximo razonable, por lo tanto, no
+ dañará a nuestros equipos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulación.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/InterconexionEnCascadaSimulaciónFase.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación del ecualizador para la máxima y mínima ganancia
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_28"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Implementación
+\end_layout
+
+\begin_layout Standard
+Para la implementación del ecualizador dicho previamente, se eligió el amplifica
+dor operacional LM833, debido a su particular enfasis en la performance
+ de equipos de audio.
+ Segun su datasheet, cada integrado del LM833 cuenta con 2 amplificadores
+ operacionales, por eso fue que se decidió utilizar un ecualizador de 4
+ bandas en lugar de uno de 3 bandas, para asi, no desperdiciar el amplificador
+ restante.
+ Esto significa que, a partir de ahora, nuestro circuito consistirá en 4
+ etapas de filtros, siendo la ultima, el filtro de alta frecuencia.
+ Por lo tanto, los valores de los componentes finales del PCB son los descriptos
+ en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5t_6"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Filtro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.5\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $390\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $39\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+97.4 (Hz)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.5\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $68\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.8\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+558,9 (Hz)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.5\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.8 (kHz)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.5\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.7\,nF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $270\,pF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14 (kHz)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores de los componentes para la implementación en PCB
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5t_6"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto las simulaciones para la máxima y minima ganancia del ecualizador
+ es la que se muestra en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_29"
+
+\end_inset
+
+.
+ Como se puede observar, si bien los filtros de frecuencias altas se superponen,
+ esto significa un alto control sobre esas frecuencias, sumado a esto, suele
+ ser normal que las frecuencias por arriba de 10 (kHz) molesten al oido
+ humano sibilantes, por lo tanto, tener control sobre esas frecuencias y
+ atenuarlas adecuadamente a gusto, es una ventaja frente a un ecualizador
+ de 3 bandas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/Ecualizador Simulacion.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Magnitud de la transferencia con máxima y mínima ganancia del ecualizador
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_29"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2419,8 +3859,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Resources/InterconexionEnCascadaSimulación.png
-	lyxscale 10
+	filename Resources/Ecualizador Simulacion Fase.png
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -2432,7 +3872,161 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulación de interconexion en cascada para caso de máxima ganancia
+Fase de la transferencia con máxima y mínima ganancia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para implementar este ecualizador se utilizó el esquemático y el PCB que
+ se muestran en la figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_30"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_31"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/Esquemático.pdf
+	lyxscale 30
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemático
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_30"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/PCB.pdf
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCB
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_31"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/IMG_20190928_115414.jpg
+	lyxscale 10
+	scale 10
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/IMG_20190928_115428.jpg
+	lyxscale 10
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCB Finalizado
 \end_layout
 
 \end_inset
@@ -2450,19 +4044,336 @@ Simulación de interconexion en cascada para caso de máxima ganancia
 \end_layout
 
 \begin_layout Subsection
-Detalles a tener en cuenta
+Mediciones
 \end_layout
 
-\begin_layout Section
-Implementación
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/MAX.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/mediciones/MAX_PHASE.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Máxima ganancia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/MIN.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/mediciones/MIN_PHASE.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mínima ganancia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/BUFF.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/mediciones/BUFF_PHASE.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sin ganancia ni atenuación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Mediciones
+Impedancias
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/Impedancia de entrada eq.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de entrada al ecualizador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/Impedancia de salida eq.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de salida del ecualizador
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_34"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/impedancia entrada parlantes.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de entrada a los parlantes
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_36"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede ver, la diferencia entre la impedancia de salida del ecualizador
+ y la impedancia de entrada al parlante es lo suficientemente grande (aproximada
+mente 20 (dB)), por lo cual, no es necesario agregar un buffer a la salida
+ del ecualizador ya que la mayor parte de la tensión del ecualizador caerá
+ en los parlantes.
 \end_layout
 
 \begin_layout Section
 Conclusión
+\end_layout
+
+\begin_layout Standard
+Como se pudo observar en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_34"
+
+\end_inset
+
+, la impedancia de salida del sistema no es lo suficientemente baja, por
+ lo tanto, si en lugar de conectar un parlante con la impedancia de entrada
+ vista en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_36"
+
+\end_inset
+
+, se conecta un auricular convencional, que generalmente sus impedancias
+ de entrada rondan las decenas de Ohms, se generará un divisor resistivo
+ a la salida del sistema, lo que generará una caida en potencia entregada
+ al parlante, por lo cual, el sonido resultante ecualizado será de menor
+ potencia que el original.
+ Sin embargo, esto es facilmente solucionable simplemente inyectando un
+ buffer a la salida del sistema.
+ Hay 2 formas de hacerlo, soldando un integrado extra de amplificadores
+ operacionales (lo cual requeriría un costo extra en la produccion del ecualizad
+or), o simplemente cambiando las 2 ultimas bandas de tonos agudos del ecualizado
+r, por una sola banda de un tono intermedio entre esas 2 banda, asi liberando
+ el cuarto amplificador y se lo puede utilizar como buffer.
+ Una ultima solucion posible, es cambiar los componentes pasivos del sistema,
+ de manera tal que la amplificacion (o atenuación) de cada banda sea lo
+ suficientemente grande como para que la salida del sistema, incluyendo
+ el divisor resistivo a la entrada de los parlantes, supere la potencia
+ entregada inicialmente por el reproductor musical utilizado.
+ En este ultimo caso, sin embargo, se debe considerar que el amplificador
+ operacional no sature en el proceso de amplificación, ya que se podrían
+ generar distorsiones a la salida, que son efectos no deseados.
+\end_layout
+
+\begin_layout Standard
+Finalmente, se conluye que siempre que se trabaje con el espectro del sonido,
+ se debe tener especial cuidado en las bandas de ecualización que se elijan,
+ ya que al no haber demasiado ancho de banda, los filtros elegidos pueden
+ superponerse y crear efectos no deseados.
+ A su vez, es necesario recalcar, que si bien con una etapa sola, podemos
+ amplificar o atenuar una banda deseada, la fase tambien cambiará lo cual,
+ a fines practicos, generará una pequeña distorsion a la señal de salida.
 \end_layout
 
 \end_body

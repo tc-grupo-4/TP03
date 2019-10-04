@@ -1,0 +1,32 @@
+Net Status Report
+Filename     : C:\Users\Ian Diaz\Desktop\ITBA\TC\TP03\Ex5\PCB\PCB.PcbDoc
+Date         : 18/09/2019
+Time         : 17:06:28
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    GND, Signal Layers Only, 187.6018mm
+    Input1, Signal Layers Only, 87.2288mm
+    NetC11_1, Signal Layers Only, 20.9814mm
+    NetC11_2, Signal Layers Only, 45.5285mm
+    NetC1_1, Signal Layers Only, 24.6742mm
+    NetC1_2, Signal Layers Only, 19.1245mm
+    NetC2_1, Signal Layers Only, 39.3168mm
+    NetC2_2, Signal Layers Only, 42.8698mm
+    NetC3_1, Signal Layers Only, 19.4671mm
+    NetC3_2, Signal Layers Only, 49.3987mm
+    NetC4_1, Signal Layers Only, 36.0179mm
+    NetC4_2, Signal Layers Only, 67.0302mm
+    NetC5_1, Signal Layers Only, 29.3776mm
+    NetC5_2, Signal Layers Only, 54.1861mm
+    NetC6_1, Signal Layers Only, 34.0346mm
+    NetC6_2, Signal Layers Only, 45.3395mm
+    NetC8_1, Signal Layers Only, 30.9472mm
+    NetC8_2, Signal Layers Only, 35.7237mm
+    NetR2_2, Signal Layers Only, 74.06mm
+    NetR4_2, Signal Layers Only, 38.1221mm
+    Out, Signal Layers Only, 95.5878mm
+    VCC, Signal Layers Only, 61.8329mm
+    VEE, Signal Layers Only, 45.6579mm
+    ult, Signal Layers Only, 55.7428mm
+count : 24

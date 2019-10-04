@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=Out Pin=R14-2
+Removed Pin From Net: NetName=Out Pin=R16-2
+Removed Pin From Net: NetName=Out Pin=U2-7
+Change Component Designator: OldDesignator= NewDesignator=TP4
+Change Component Designator: OldDesignator= NewDesignator=TP6
+Change Component Designator: OldDesignator=GND NewDesignator=GND2
+Added Component: Designator=C?(CAP200)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=Out Pin=C?-2
+Added Pin To Net: NetName=NetC?_1 Pin=C?-1
+Added Pin To Net: NetName=NetC?_1 Pin=R14-2
+Added Pin To Net: NetName=NetC?_1 Pin=R16-2
+Added Pin To Net: NetName=NetC?_1 Pin=U2-7
+Added Net: Name=NetC?_1
+Added Member To Class: ClassName=Esquemático Member=Component C? CAP
+Added Member To Class: ClassName=Esquemático Member=Component GND2 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP4 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP6 TP
+Added Room: Name=Esquemático

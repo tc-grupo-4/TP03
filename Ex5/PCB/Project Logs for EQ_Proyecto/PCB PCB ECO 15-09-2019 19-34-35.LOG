@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=VEE Pin=POWER-1A
+Removed Pin From Net: NetName=VEE Pin=POWER-1B
+Removed Pin From Net: NetName=VEE Pin=POWER-1
+Removed Pin From Net: NetName=VCC Pin=POWER-2A
+Removed Pin From Net: NetName=VCC Pin=POWER-2B
+Removed Pin From Net: NetName=VCC Pin=POWER-2
+Removed Member From Class: ClassName=Esquemático Member=POWER
+Added Component: Designator=J3(JACKDC)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VEE Pin=J3-1
+Added Pin To Net: NetName=VCC Pin=J3-2
+Added Pin To Net: NetName=VCC Pin=J3-3
+Added Member To Class: ClassName=Esquemático Member=Component J3 JACKDC
+Added Room: Name=Esquemático

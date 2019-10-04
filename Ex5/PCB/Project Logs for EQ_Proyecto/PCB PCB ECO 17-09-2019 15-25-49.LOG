@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=GND Pin=U1-2
+Removed Pin From Net: NetName=NetC4_2 Pin=U1-3
+Removed Pin From Net: NetName=NetC5_2 Pin=U1-5
+Removed Pin From Net: NetName=GND Pin=U1-6
+Removed Pin From Net: NetName=GND Pin=U2-2
+Removed Pin From Net: NetName=NetC6_2 Pin=U2-3
+Removed Pin From Net: NetName=NetC11_2 Pin=U2-5
+Removed Pin From Net: NetName=GND Pin=U2-6
+Change Component Designator: OldDesignator= NewDesignator=TP4
+Change Component Designator: OldDesignator= NewDesignator=TP6
+Change Component Designator: OldDesignator=GND NewDesignator=TP3
+Change Component Designator: OldDesignator=GND NewDesignator=TP5
+Change Component Designator: OldDesignator=IN NewDesignator=TP2
+Added Pin To Net: NetName=NetC4_2 Pin=U1-2
+Added Pin To Net: NetName=GND Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U1-5
+Added Pin To Net: NetName=NetC5_2 Pin=U1-6
+Added Pin To Net: NetName=NetC6_2 Pin=U2-2
+Added Pin To Net: NetName=GND Pin=U2-3
+Added Pin To Net: NetName=GND Pin=U2-5
+Added Pin To Net: NetName=NetC11_2 Pin=U2-6
+Added Member To Class: ClassName=Esquemático Member=Component TP2 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP3 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP4 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP5 TP
+Added Member To Class: ClassName=Esquemático Member=Component TP6 TP
+Added Room: Name=Esquemático

@@ -1,39 +1,11 @@
-%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
-\documentclass[spanish]{article}
-\usepackage[T1]{fontenc}
-\usepackage[latin9]{luainputenc}
-\usepackage{geometry}
-\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm}
-\setlength{\parindent}{0bp}
-\usepackage{float}
-\usepackage{textcomp}
-\usepackage{graphicx}
-
-\makeatletter
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-%% Because html converters don't know tabularnewline
-\providecommand{\tabularnewline}{\\}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-\usepackage{amsmath}
-
-\makeatother
-
-\usepackage{babel}
-\addto\shorthandsspanish{\spanishdeactivate{~<>}}
-
-\begin{document}
-
-\part{Control de tonos y ecualizador de fase}
+\part{Ecualizador basado en Bohemian Rhapsody}
 
 A lo largo de esta parte, se pondra foco en el circuito mostrado en
 la Figura \ref{5_1}, que se trata de un circuito de control de tonos.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/Circuito}
+\includegraphics[scale=0.5]{../Ex5/Resources/Circuito}
 \par\end{centering}
 \caption{Circuito de Control de Tonos}
 \label{5_1}
@@ -43,14 +15,8 @@ la Figura \ref{5_1}, que se trata de un circuito de control de tonos.
 \section{Transferencia}
 
 Al calcular la transferencia genericamente para cualquier valor de
-impedancias, y llamando a $R_{2}=R_{21}+R_{22}$, el calculo de la
-transferencia se expresa como la ecuación (\ref{eq:5_1}).
-
-\[
-H(s)=-\frac{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s+9C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-10C_{2}R_{2}^{2}s-2R_{1}-R_{2}}{20C_{2}^{2}K^{2}R_{1}R_{2}^{2}s^{2}-20C_{2}^{2}KR_{1}R_{2}^{2}s^{2}-10C_{2}^{2}R_{1}^{2}R_{2}s^{2}-100C_{2}^{2}R_{1}R_{2}^{2}s^{2}+C_{2}K^{2}R_{2}^{2}s-11C_{2}KR_{2}^{2}s-C_{2}R_{1}^{2}s-31C_{2}R_{1}R_{2}s-2R_{1}-R_{2}}
-\]
-
-Si reacomodamos de la siguiente manera:
+impedancias, y llamando a $R_{21}=R_{2}K\,\,,\,\,R_{22}=R_{2}(1-K)$,
+el calculo de la transferencia se expresa como la ecuación (\ref{eq:5_1}).
 
 \begin{equation}
 H(s)=\frac{As^{2}+Bs+C}{As^{2}+Es+C}\label{eq:5_1}
@@ -128,7 +94,7 @@ A=\frac{-K^{2}R_{2}^{2}-9KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{-K^{2}R_
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/DiagramaParametrico}
+\includegraphics[scale=0.5]{../Ex5/Resources/DiagramaParametrico}
 \par\end{centering}
 \caption{Diagrama paramétrico}
 
@@ -136,7 +102,7 @@ A=\frac{-K^{2}R_{2}^{2}-9KR_{2}^{2}+R_{1}^{2}+31R_{1}R_{2}+10R_{2}^{2}}{-K^{2}R_
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics{Resources/RtaEnFrecuanciaParametrica}
+\includegraphics[scale=0.6]{../Ex5/Resources/RtaEnFrecuanciaParametrica}
 \par\end{centering}
 \caption{Respuesta en frecuencia paramétrica para una frecuencia dada}
 \label{5_3}
@@ -179,7 +145,7 @@ $R_{2}$.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosCompleto}
+\includegraphics[scale=0.7]{../Ex5/Resources/DiagramaDePolosYCerosCompleto}
 \par\end{centering}
 \caption{Diagrama paramétrico de polos y ceros}
 \label{5_4}
@@ -194,7 +160,7 @@ los polos son reales, como se observa en la Figura \ref{5_6}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosHasta05}
+\includegraphics[scale=0.7]{../Ex5/Resources/DiagramaDePolosYCerosHasta05}
 \par\end{centering}
 \caption{Diagrama paramétrico de polos y ceros con K variando de 0 a 0.5}
 \label{5_5}
@@ -203,7 +169,7 @@ los polos son reales, como se observa en la Figura \ref{5_6}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.7]{Resources/DiagramaDePolosYCerosDesde05}
+\includegraphics[scale=0.7]{../Ex5/Resources/DiagramaDePolosYCerosDesde05}
 \par\end{centering}
 \caption{Diagrama paramétrico de polos y ceros con K variando de 0.5 a 1}
 \label{5_6}
@@ -228,7 +194,7 @@ se propuso un circuito como el de la Figura \ref{5_7}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.7]{\string"Resources/Ecualizador de fase\string".png}
+\includegraphics[scale=0.7]{\string"../Ex5/Resources/Ecualizador de fase\string".png}
 \par\end{centering}
 \caption{Circuito ecualizador de fase}
 \label{5_7}
@@ -263,7 +229,7 @@ es el que se muestra en la Figura \ref{5_8}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.6]{Resources/SimulacionEqFase}
+\includegraphics[scale=0.5]{../Ex5/Resources/SimulacionEqFase}\includegraphics[scale=0.5]{../Ex5/Resources/SimulacionEqFase_Fase}
 \par\end{centering}
 \caption{Simulación del circuito ecualizador de fase}
 \label{5_8}
@@ -284,7 +250,7 @@ los resultados de la Figura \ref{5_9c}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/CircuitoConEqFase}
+\includegraphics[scale=0.5]{../Ex5/Resources/CircuitoConEqFase}
 \par\end{centering}
 \caption{Circuito resultante con ecualizador de fase}
 \label{5_9_b}
@@ -292,7 +258,7 @@ los resultados de la Figura \ref{5_9c}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/SimulacionDeCambioConEqDeFase}
+\includegraphics[scale=0.5]{../Ex5/Resources/SimulacionDeCambioConEqDeFase}
 \par\end{centering}
 \caption{Simulación de la magnitud del circuito resultante con y sin ecualizador
 de fase}
@@ -353,13 +319,13 @@ de la onda. Estos graficos en 3 dimensiones se los llaman comunmente
 espectrogramas, uno de estos se puede observar en la Figura \ref{5_9}.
 Los espectrogramas se deben leer de la siguiente manera: El eje orizontal
 es el tiempo, el eje vertical son las frecuencias, y la coloracion
-de color es la amplitud, es decir, cuanto mas rojo se encuentre un
+de color es la amplitud, es decir, cuanto mas color se encuentre un
 punto en el grafico, mas amplitud tendrá la canción en esa frecuencia
 en ese instante de tiempo.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/SpectogramBohemiamRhapsody}
+\includegraphics[scale=0.5]{../Ex5/Resources/SpectogramBohemiamRhapsody}
 \par\end{centering}
 \caption{Espectrograma de \emph{Bohemian Rhapsody}}
 \label{5_9}
@@ -367,30 +333,88 @@ en ese instante de tiempo.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/OsciloscopeBohemiamRhapsody}
+\includegraphics[scale=0.5]{../Ex5/Resources/OsciloscopeBohemiamRhapsody}
 \par\end{centering}
 \caption{Vista de osciloscopio de \emph{Bohemian Rhapsody }a lo largo de la
 canción entera}
+\label{5_12}
 
 \end{figure}
 
-Como se puede ver a simple vista, la mayor parte de la canción se
-encuentra por debajo de 1 (kHz) y hay poca información por sobre 1(kHz).
-A su vez, por debajo de 200 (Hz) hay demasiada amplitud en promedio,
-por lo cual, podemos asumir que el intervalo entre 0 y 200 (Hz) es
-bastante importante. Aprovechando el ancho de banda del filtro explicado
-de la Figura \ref{5_1}, lo mas conveniente será elegir como frecuencia
-de referencia central para el primer filtro a 100(Hz). Por otro lado,
-será conveniente elegir para el 2do filtro una frecuencia central
-entre 200 (Hz) y 1 (kHz), arbitrariamente, se eligió una frecuencia
-central de referencia de 700 (Hz), esto se debe a que se ve algo de
-precencia de frecuancias medias sobre esa banda y que no se pretendía
-que ambos filtros se superpongan. Por ultimo, para poder controlar
-las frecuencias agudas, se eligió el tercer filtro con una frecuencia
-central de referencia de 2 (kHz), que es el ultimo intervalo donde
-se pueden apreciar frecuencias significativas dentro de la canción.
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/SpectogramBohemiamRhapsodySoloVoz}
+\par\end{centering}
+\caption{Espectrograma de la voz de Freddy Mercury en la primera estrofa de
+\emph{Bohemian Rhapsody}}
+\label{5_13m}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/SpectogramBohemiamRhapsodySoloPiano}
+\par\end{centering}
+\caption{Espectrograma del piano en la primera estrofa \emph{Bohemian Rhapsody}}
+\label{5_14m}
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/SpectogramBohemiamRhapsodySoloGuitarra}
+\par\end{centering}
+\caption{Espectrograma del solo de guitarra de \emph{Bohemian Rhapsody}}
+\label{5_15M}
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/SpectogramBohemiamRhapsodySoloBajo}
+\par\end{centering}
+\caption{Espectrograma del bajo en la primera estrofa de \emph{Bohemian Rhapsody}}
+\label{5_16m}
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/SpectogramBohemiamRhapsodySoloBateria}
+\par\end{centering}
+\caption{Espectrograma de la batería en la primera estrofa de \emph{Bohemian
+Rhapsody}}
+\label{5_17m}
+\end{figure}
+
+Como se puede ver a simple vista de la Figura \ref{5_9}, la mayor
+parte de la canción se encuentra por debajo de 1 (kHz) y hay poca
+información por sobre 1(kHz). A su vez, por debajo de 200 (Hz) hay
+demasiada amplitud en promedio, por lo cual, podemos asumir que el
+intervalo entre 0 y 200 (Hz) es bastante importante. A su vez, se
+puede observar en las figuras\ref{5_16m} y \ref{5_17m} una alta
+presencia de notas graves al rededor de los 100(Hz). Aprovechando
+el ancho de banda del filtro explicado de la Figura \ref{5_1}, lo
+mas conveniente será elegir como frecuencia de referencia central
+para el primer filtro a 100(Hz) como controladora de frecuencias graves.
+Por otro lado, será conveniente elegir para el 2do filtro una frecuencia
+central entre 200 (Hz) y 1 (kHz), teniendo en cuenta las figuras \ref{5_13m}
+y \ref{5_15M}, donde se encuentran principalmente las voces masculinas
+y gran parte del espectro de la guitarra, se eligió una frecuencia
+central de referencia de 700 (Hz). Esta frecuencia de referencia fue
+tomada teniendo en cuenta el espectro de frecuencias medias de la
+cancion y el ancho de el filtro de tonos graves junto al ancho de
+banda del filtro de tonos medios, para poder lograr un control adecuado
+sobre esa banda de frecuencias, que es donde reposa la mayor parte
+de la pieza musical. Por ultimo, para poder controlar las frecuencias
+agudas, se eligió el tercer filtro con una frecuencia central de referencia
+de 2 (kHz), que es el ultimo intervalo donde se pueden apreciar frecuencias
+significativas dentro de la canción en las figuras \ref{5_9} y \ref{5_14m}.
 Por lo tanto las frecuencias centrales de referencia de cada filtro
 serán las que se muestran en la tabla \ref{5t_2}.
+
+A su vez, se puede observar en la Figura \ref{5_12}, que las tensiones
+máximas de salida de la canción no supera los 0(dB), es decir, la
+tensión de salida del reproductor musical no supera 1(Vpp) de salida,
+esto es de vital importancia a la hora de definir los valores de amplificación
+y atenuación del ecualizador.
 
 \begin{table}[H]
 \begin{centering}
@@ -435,6 +459,11 @@ Frecuencia central Filtro 1 & Frecuencia central Filtro 2 & Frecuencia central F
 \label{5t_4}
 \end{table}
 
+De esta manera aseguramos un control sobre las 3 bandas de frecuencias
+más importantes a lo largo de la pieza musical, teniendo en cuenta
+el espectrograma de cada instrumento y voz, y considerando los rangos
+de movimientos de cada uno.
+
 \subsection{Elección de la ganancia de los filtros}
 
 Teniendo en cuenta que la salida de un \emph{Line-Out }de un dispositivo
@@ -465,7 +494,6 @@ Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewlin
 \par\end{centering}
 \caption{Valores de los componentes para cada filtro}
 \label{5t_3}
-
 \end{table}
 
 \subsection{Simulacion de cada filtro}
@@ -484,7 +512,7 @@ obtenemos lo que se puede ver en la Figura \ref{5_13}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/FiltroGraves}
+\includegraphics[scale=0.5]{../Ex5/Resources/FiltroGraves}\includegraphics[scale=0.5]{../Ex5/Resources/FiltroGravesFase}
 \par\end{centering}
 \caption{Transferencia del ecualizador de tonos graves}
 \label{5_13}
@@ -503,7 +531,7 @@ para los tonos medios, obtenemos la Figura \ref{5_14}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/FiltroMedios}
+\includegraphics[scale=0.5]{../Ex5/Resources/FiltroMedios}\includegraphics[scale=0.5]{../Ex5/Resources/FiltroMediosFase}
 \par\end{centering}
 \caption{Transferencia del ecualizador de tonos medios}
 \label{5_14}
@@ -517,7 +545,7 @@ se obtiene la Figura \ref{5_15}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/FiltroAgudos}
+\includegraphics[scale=0.5]{../Ex5/Resources/FiltroAgudos}\includegraphics[scale=0.5]{../Ex5/Resources/FiltroAgudosFase}
 \par\end{centering}
 \caption{Transferencia del ecualizador para tonos agudos}
 \label{5_15}
@@ -546,15 +574,11 @@ a utilizar en este caso.
 \subsubsection{Interconexion en paralelo}
 
 Un diagrama básco de como prdría ser una interconexion en paralelo
-se muestra en la Figura \ref{5_16}. Las ventajas de este tipo de
-conexiones son que provee robustes frente a posibles defasajes entre
-filtros ya que el sumador hace un promedio entre los 3 filtros. Las
-desventajas pueden ser que es menos sensible frente a grande cambios
-entre un filtro en epecifico.
+se muestra en la Figura \ref{5_16}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/DiagramaParalelo}
+\includegraphics[scale=0.5]{../Ex5/Resources/DiagramaParalelo}
 \par\end{centering}
 \caption{Diagrama de conexiones en paralelo}
 \label{5_16}
@@ -563,35 +587,276 @@ entre un filtro en epecifico.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/InterconexionEnParaleloSimulación}
+\includegraphics[scale=0.5]{../Ex5/Resources/InterconexionEnParaleloSimulación}\includegraphics[scale=0.5]{../Ex5/Resources/InterconexionEnParaleloSimulaciónFase}
 \par\end{centering}
-\caption{Simulación de interconexion en paralelo para caso de máxima ganancia}
-
+\caption{Simulación de interconexion en paralelo para caso de máxima y mínima
+ganancia}
+\label{5_22}
 \end{figure}
+
+Como se puede ver en la Figuras \ref{5_22}, el ancho de los filtros
+para la máxima atenuación produce una superposicion de filtros no
+deseada, en cambio en el caso de la máxima ganancia, el ancho de los
+filtros permanecen demasiado pequeños, por lo que el control sobre
+la banda de frecuencias intermedias no será el deseado. Sumado a esto,
+se debe tener en cuenta que utilizar un diagrama en cascada agrega
+un amplificado operacional extra para poder realizar la suma de las
+3 señales, por lo cual, esto significará un costo adicional a la implementación
+del ecualizador de tonos.
 
 \subsubsection{Interconexion en cascada}
-
+\begin{flushleft}
+La otra opción para conectar los filtros entre sí es la interconexion
+en cascada, un diagrama básico de esta conexion se muestra en la Figura
+\ref{5_24}. Al conectar los filtros de esta manera y simular la transferencia
+del ecualizador para la máxima y la mínima ganancia se obtienen los
+resultados que se observan en la Figura \ref{5_25}. 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/DiagramaCascada}
+\includegraphics[scale=0.5]{../Ex5/Resources/DiagramaCascada}
 \par\end{centering}
 \caption{Diagrama de conexiones en cascada}
-
+\label{5_24}
 \end{figure}
+\par\end{flushleft}
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{Resources/InterconexionEnCascadaSimulación}
+\includegraphics[scale=0.5]{../Ex5/Resources/InterconexionEnCascadaSimulaciónSinCorregir}\includegraphics[scale=0.5]{../Ex5/Resources/InterconexionEnCascadaSimulaciónSinCorregirFase}
 \par\end{centering}
-\caption{Simulación de interconexion en cascada para caso de máxima ganancia}
+\caption{Simulación de interconexion en cascada para caso de máxima y mínima
+ganancia}
+\label{5_25}
 
 \end{figure}
 
-\subsection{Detalles a tener en cuenta}
+Como se puede observar, la interconexión en cascada provee mas robustes
+frente a la variación de los anchos de banda de cada filtro, manteniendolos
+a fines practicos, constantes. De esta manera, el ecualizador se comportará
+practicamente simétrico frente a ganancia y atenuación, y de esta
+manera se obtendrá mayor control sobre las bandas deseadas de la pieza
+musical.
+
+\subsection{Conclusión}
+
+Debido a los inconvenientes mencionado para la interconexion en paralelo,
+se decidió utilizar una conexion en cascada, sin embargo, es necesario
+aclarar que debido a la alta ganancia y atenuación (aproximadamente
+20 (dB)) que posee el ecualizador, se deberán cambiar los valores
+de los componentes, o agregar un atenuador a la salida del ecualizador
+para poder controlar esta alta ganancia y que no dañe los equipos
+utilizados para reproducir sonido. Para lograr esto, se decidieron
+cambiar los componentes a los que se observan el la tabla \ref{5t_5}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewline
+\hline 
+\hline 
+1 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $390\,nF$ & $39\,nF$ & 97.4 (Hz)\tabularnewline
+\hline 
+2 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $68\,nF$ & $6.8\,nF$ & 558,9 (Hz)\tabularnewline
+\hline 
+3 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $10\,nF$ & $1\,nF$ & 3.8 (kHz)\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Componentes para cada filtro}
+\label{5t_5}
+
+\end{table}
+
+Por lo tanto, simulando ahora el nuevo ecualizador, se puede ver en
+la Figuray \ref{5_28}, que la ganancia no supera un valor maximo
+razonable, por lo tanto, no dañará a nuestros equipos.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/InterconexionEnCascadaSimulación}\includegraphics[scale=0.5]{../Ex5/Resources/InterconexionEnCascadaSimulaciónFase}
+\par\end{centering}
+\caption{Simulación del ecualizador para la máxima y mínima ganancia}
+\label{5_28}
+
+\end{figure}
 
 \section{Implementación}
 
+Para la implementación del ecualizador dicho previamente, se eligió
+el amplificador operacional LM833, debido a su particular enfasis
+en la performance de equipos de audio. Segun su datasheet, cada integrado
+del LM833 cuenta con 2 amplificadores operacionales, por eso fue que
+se decidió utilizar un ecualizador de 4 bandas en lugar de uno de
+3 bandas, para asi, no desperdiciar el amplificador restante. Esto
+significa que, a partir de ahora, nuestro circuito consistirá en 4
+etapas de filtros, siendo la ultima, el filtro de alta frecuencia.
+Por lo tanto, los valores de los componentes finales del PCB son los
+descriptos en la tabla \ref{5t_6}.
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Filtro & $R_{1}$ & $R_{2}$ & $R_{3}$ & $C_{1}$ & $C_{2}$ & $f_{0}$\tabularnewline
+\hline 
+\hline 
+1 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $390\,nF$ & $39\,nF$ & 97.4 (Hz)\tabularnewline
+\hline 
+2 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $68\,nF$ & $6.8\,nF$ & 558,9 (Hz)\tabularnewline
+\hline 
+3 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $10\,nF$ & $1\,nF$ & 3.8 (kHz)\tabularnewline
+\hline 
+4 & $2.5\,k\Omega$ & $10\,k\Omega$ & $100\,k\Omega$ & $2.7\,nF$ & $270\,pF$ & 14 (kHz)\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Valores de los componentes para la implementación en PCB}
+\label{5t_6}
+\end{table}
+
+Por lo tanto las simulaciones para la máxima y minima ganancia del
+ecualizador es la que se muestra en la Figura \ref{5_29}. Como se
+puede observar, si bien los filtros de frecuencias altas se superponen,
+esto significa un alto control sobre esas frecuencias, sumado a esto,
+suele ser normal que las frecuencias por arriba de 10 (kHz) molesten
+al oido humano sibilantes, por lo tanto, tener control sobre esas
+frecuencias y atenuarlas adecuadamente a gusto, es una ventaja frente
+a un ecualizador de 3 bandas.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{\string"../Ex5/Resources/Ecualizador Simulacion\string".png}
+\par\end{centering}
+\caption{Magnitud de la transferencia con máxima y mínima ganancia del ecualizador}
+\label{5_29}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{\string"../Ex5/Resources/Ecualizador Simulacion Fase\string".png}
+\par\end{centering}
+\caption{Fase de la transferencia con máxima y mínima ganancia}
+
+\end{figure}
+
+Para implementar este ecualizador se utilizó el esquemático y el PCB
+que se muestran en la figuras \ref{5_30} y \ref{5_31}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.4]{../Ex5/Resources/Esquemático}
+\par\end{centering}
+\caption{Esquemático}
+\label{5_30}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.3]{../Ex5/Resources/PCB}
+\par\end{centering}
+\caption{PCB}
+\label{5_31}
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.1]{../Ex5/Resources/IMG_20190928_115414}\includegraphics[scale=0.1]{../Ex5/Resources/IMG_20190928_115428}
+\par\end{centering}
+\caption{PCB Finalizado}
+
+\end{figure}
+
 \subsection{Mediciones}
 
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/mediciones/MAX}\includegraphics[scale=0.5]{../Ex5/Resources/mediciones/MAX_PHASE}
+\par\end{centering}
+\caption{Máxima ganancia}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/mediciones/MIN}\includegraphics[scale=0.5]{../Ex5/Resources/mediciones/MIN_PHASE}
+\par\end{centering}
+\caption{Mínima ganancia}
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{../Ex5/Resources/mediciones/BUFF}\includegraphics[scale=0.5]{../Ex5/Resources/mediciones/BUFF_PHASE}
+\par\end{centering}
+\caption{Sin ganancia ni atenuación}
+\end{figure}
+
+\subsection{Impedancias}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{\string"../Ex5/Resources/mediciones/Impedancia de entrada eq\string".png}
+\par\end{centering}
+\caption{Impedancia de entrada al ecualizador}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{\string"../Ex5/Resources/mediciones/Impedancia de salida eq\string".png}
+\par\end{centering}
+\caption{Impedancia de salida del ecualizador}
+\label{5_34}
+
+\end{figure}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{\string"../Ex5/Resources/mediciones/impedancia entrada parlantes\string".png}
+\par\end{centering}
+\caption{Impedancia de entrada a los parlantes}
+\label{5_36}
+
+\end{figure}
+
+Como se puede ver, la diferencia entre la impedancia de salida del
+ecualizador y la impedancia de entrada al parlante es lo suficientemente
+grande (aproximadamente 20 (dB)), por lo cual, no es necesario agregar
+un buffer a la salida del ecualizador ya que la mayor parte de la
+tensión del ecualizador caerá en los parlantes.
+
 \section{Conclusión}
-\end{document}
+
+Como se pudo observar en la figura \ref{5_34}, la impedancia de salida
+del sistema no es lo suficientemente baja, por lo tanto, si en lugar
+de conectar un parlante con la impedancia de entrada vista en la figura
+\ref{5_36}, se conecta un auricular convencional, que generalmente
+sus impedancias de entrada rondan las decenas de Ohms, se generará
+un divisor resistivo a la salida del sistema, lo que generará una
+caida en potencia entregada al parlante, por lo cual, el sonido resultante
+ecualizado será de menor potencia que el original. Sin embargo, esto
+es facilmente solucionable simplemente inyectando un buffer a la salida
+del sistema. Hay 2 formas de hacerlo, soldando un integrado extra
+de amplificadores operacionales (lo cual requeriría un costo extra
+en la produccion del ecualizador), o simplemente cambiando las 2 ultimas
+bandas de tonos agudos del ecualizador, por una sola banda de un tono
+intermedio entre esas 2 banda, asi liberando el cuarto amplificador
+y se lo puede utilizar como buffer. Una ultima solucion posible, es
+cambiar los componentes pasivos del sistema, de manera tal que la
+amplificacion (o atenuación) de cada banda sea lo suficientemente
+grande como para que la salida del sistema, incluyendo el divisor
+resistivo a la entrada de los parlantes, supere la potencia entregada
+inicialmente por el reproductor musical utilizado. En este ultimo
+caso, sin embargo, se debe considerar que el amplificador operacional
+no sature en el proceso de amplificación, ya que se podrían generar
+distorsiones a la salida, que son efectos no deseados.
+
+Finalmente, se conluye que siempre que se trabaje con el espectro
+del sonido, se debe tener especial cuidado en las bandas de ecualización
+que se elijan, ya que al no haber demasiado ancho de banda, los filtros
+elegidos pueden superponerse y crear efectos no deseados. A su vez,
+es necesario recalcar, que si bien con una etapa sola, podemos amplificar
+o atenuar una banda deseada, la fase tambien cambiará lo cual, a fines
+practicos, generará una pequeña distorsion a la señal de salida.

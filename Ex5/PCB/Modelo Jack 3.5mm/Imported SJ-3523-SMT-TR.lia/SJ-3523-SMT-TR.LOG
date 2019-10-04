@@ -1,0 +1,30 @@
+PCAD Importer Log
+Project : SJ-3523-SMT-TR.LibPkg
+
+Section : C:\Users\Ian Diaz\Desktop\TP03\Ex5\PCB\Modelo Jack 3.5mm\SJ-3523-SMT-TR.lia
+    Section : PCB Library - SJ-3523-SMT-TR.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token SJ-3523-SMT-TR On Line 165
+            Warning - 1 : Skipping Token attachedSymbol On Line 239
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - SJ-3523-SMT-TR.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token padStyleDef On Line 20
+            Warning - 1 : Skipping Token padStyleDef On Line 32
+            Warning - 1 : Skipping Token multiLayer On Line 107
+            Warning - 1 : Skipping Token layerContents On Line 114
+            Warning - 1 : Skipping Token layerContents On Line 126
+            Warning - 1 : Skipping Token layerContents On Line 138
+            Warning - 1 : Skipping Token layerContents On Line 148
+        EndSection
+
+        Section : Generating SCH Library - SJ-3523-SMT-TR.SchLib
+        EndSection
+    EndSection
+EndSection
