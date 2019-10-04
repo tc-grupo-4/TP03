@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.18)  4 OCT 2019 08:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.10.4)  4 OCT 2019 09:14
 entering extended mode
 **"./Informe TP02 - Grupo 4.tex"
 ("Informe TP02 - Grupo 4.tex"
@@ -376,8 +376,8 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \mc@col@check@num=\count116
 )
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/latex/circuitikz\circuitikz.sty
-Package: circuitikz 2019/07/13{} The CircuiTikz circuit drawing package version
- 0.9.3
+Package: circuitikz 2019/08/30{} The CircuiTikz circuit drawing package version
+ 0.9.4
 
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/frontendlayer\tikz.sty
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/basiclayer\pgf.sty
@@ -751,6 +751,7 @@ es.tex
 \pgf@circ@res@temp=\dimen268
 \pgfstartlinewidth=\dimen269
 \pgf@circ@Rlen=\dimen270
+\pgf@circ@scaled@Rlen=\dimen271
 )
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/generic/circuitikz\pgfcircutils.
 tex)
@@ -789,8 +790,8 @@ Package: mathtools 2019/07/31 v1.22 mathematical typesetting tools
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count142
 \calc@Bcount=\count143
-\calc@Adimen=\dimen271
-\calc@Bdimen=\dimen272
+\calc@Adimen=\dimen272
+\calc@Bdimen=\dimen273
 \calc@Askip=\skip48
 \calc@Bskip=\skip49
 LaTeX Info: Redefining \setlength on input line 80.
@@ -806,14 +807,14 @@ LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_MT_multlinerow_int=\count145
-\l_MT_multwidth_dim=\dimen273
+\l_MT_multwidth_dim=\dimen274
 \origjot=\skip51
-\l_MT_shortvdotswithinadjustabove_dim=\dimen274
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen275
-\l_MT_above_intertext_sep=\dimen276
-\l_MT_below_intertext_sep=\dimen277
-\l_MT_above_shortintertext_sep=\dimen278
-\l_MT_below_shortintertext_sep=\dimen279
+\l_MT_shortvdotswithinadjustabove_dim=\dimen275
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen276
+\l_MT_above_intertext_sep=\dimen277
+\l_MT_below_intertext_sep=\dimen278
+\l_MT_above_shortintertext_sep=\dimen279
+\l_MT_below_shortintertext_sep=\dimen280
 )
 ("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
 Package: babel 2019/07/19 3.33 The Babel package
@@ -834,7 +835,7 @@ Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
 ("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
 File: babel.def 2019/07/19 3.33 Babel common definitions
 \babel@savecnt=\count146
-\U@D=\dimen280
+\U@D=\dimen281
 
 ("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
 \bbl@dirlevel=\count147
@@ -848,10 +849,10 @@ Package babel Info: Making > an active character on input line 707.
 ))
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/latex/siunitx\siunitx.sty
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3.sty
-Package: expl3 2019-08-14 L3 programming layer (loader) 
+Package: expl3 2019-09-19 L3 programming layer (loader) 
 
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3-code.tex
-Package: expl3 2019-08-14 L3 programming layer (code)
+Package: expl3 2019-09-19 L3 programming layer (code)
 \c_max_int=\count149
 \l_tmpa_int=\count150
 \l_tmpb_int=\count151
@@ -864,12 +865,12 @@ Package: expl3 2019-08-14 L3 programming layer (code)
 \l__iow_line_target_int=\count158
 \l__iow_one_indent_int=\count159
 \l__iow_indent_int=\count160
-\c_zero_dim=\dimen281
-\c_max_dim=\dimen282
-\l_tmpa_dim=\dimen283
-\l_tmpb_dim=\dimen284
-\g_tmpa_dim=\dimen285
-\g_tmpb_dim=\dimen286
+\c_zero_dim=\dimen282
+\c_max_dim=\dimen283
+\l_tmpa_dim=\dimen284
+\l_tmpb_dim=\dimen285
+\g_tmpa_dim=\dimen286
+\g_tmpb_dim=\dimen287
 \c_zero_skip=\skip52
 \c_max_skip=\skip53
 \l_tmpa_skip=\skip54
@@ -884,7 +885,7 @@ Package: expl3 2019-08-14 L3 programming layer (code)
 \g_tmpb_muskip=\muskip16
 \l_keys_choice_int=\count161
 \l__intarray_loop_int=\count162
-\c__intarray_sp_dim=\dimen287
+\c__intarray_sp_dim=\dimen288
 \g__intarray_font_int=\count163
 \c__fp_leading_shift_int=\count164
 \c__fp_middle_shift_int=\count165
@@ -961,23 +962,23 @@ Package: expl3 2019-08-14 L3 programming layer (code)
 \l_tmpb_box=\box70
 \g_tmpa_box=\box71
 \g_tmpb_box=\box72
-\l__box_top_dim=\dimen288
-\l__box_bottom_dim=\dimen289
-\l__box_left_dim=\dimen290
-\l__box_right_dim=\dimen291
-\l__box_top_new_dim=\dimen292
-\l__box_bottom_new_dim=\dimen293
-\l__box_left_new_dim=\dimen294
-\l__box_right_new_dim=\dimen295
+\l__box_top_dim=\dimen289
+\l__box_bottom_dim=\dimen290
+\l__box_left_dim=\dimen291
+\l__box_right_dim=\dimen292
+\l__box_top_new_dim=\dimen293
+\l__box_bottom_new_dim=\dimen294
+\l__box_left_new_dim=\dimen295
+\l__box_right_new_dim=\dimen296
 \l__box_internal_box=\box73
 \l__coffin_internal_box=\box74
-\l__coffin_internal_dim=\dimen296
-\l__coffin_offset_x_dim=\dimen297
-\l__coffin_offset_y_dim=\dimen298
-\l__coffin_x_dim=\dimen299
-\l__coffin_y_dim=\dimen300
-\l__coffin_x_prime_dim=\dimen301
-\l__coffin_y_prime_dim=\dimen302
+\l__coffin_internal_dim=\dimen297
+\l__coffin_offset_x_dim=\dimen298
+\l__coffin_offset_y_dim=\dimen299
+\l__coffin_x_dim=\dimen300
+\l__coffin_y_dim=\dimen301
+\l__coffin_x_prime_dim=\dimen302
+\l__coffin_y_prime_dim=\dimen303
 \c_empty_coffin=\box75
 \l__coffin_aligned_coffin=\box76
 \l__coffin_aligned_internal_coffin=\box77
@@ -985,28 +986,27 @@ Package: expl3 2019-08-14 L3 programming layer (code)
 \l_tmpb_coffin=\box79
 \g_tmpa_coffin=\box80
 \g_tmpb_coffin=\box81
-\l__coffin_bounding_shift_dim=\dimen303
-\l__coffin_left_corner_dim=\dimen304
-\l__coffin_right_corner_dim=\dimen305
-\l__coffin_bottom_corner_dim=\dimen306
-\l__coffin_top_corner_dim=\dimen307
-\l__coffin_scaled_total_height_dim=\dimen308
-\l__coffin_scaled_width_dim=\dimen309
+\l__coffin_bounding_shift_dim=\dimen304
+\l__coffin_left_corner_dim=\dimen305
+\l__coffin_right_corner_dim=\dimen306
+\l__coffin_bottom_corner_dim=\dimen307
+\l__coffin_top_corner_dim=\dimen308
+\l__coffin_scaled_total_height_dim=\dimen309
+\l__coffin_scaled_width_dim=\dimen310
 \c__coffin_empty_coffin=\box82
 \l__coffin_display_coffin=\box83
 \l__coffin_display_coord_coffin=\box84
 \l__coffin_display_pole_coffin=\box85
-\l__coffin_display_offset_dim=\dimen310
-\l__coffin_display_x_dim=\dimen311
-\l__coffin_display_y_dim=\dimen312
-\g__file_internal_ior=\read2
+\l__coffin_display_offset_dim=\dimen311
+\l__coffin_display_x_dim=\dimen312
+\l__coffin_display_y_dim=\dimen313
+\g__char_data_ior=\read2
 \l__seq_internal_a_int=\count300
 \l__seq_internal_b_int=\count301
 )
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/latex/l3backend\l3backend-pdfmod
 e.def
-File: l3backend-pdfmode.def 2019-04-06 v L3 Experimental backend support: PDF m
-ode
+File: l3backend-pdfmode.def 2019-04-06 v L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count302
 \l__pdf_internal_box=\box86
 ))
@@ -1021,9 +1021,9 @@ Package: xparse 2019-05-28 L3 Experimental document command parser
 Package: siunitx 2018/05/17 v2.7s A comprehensive (SI) units package
  ("C:\Program Files\MiKTeX 2.9\tex/latex/tools\array.sty"
 Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
-\col@sep=\dimen313
+\col@sep=\dimen314
 \ar@mcellbox=\box87
-\extrarowheight=\dimen314
+\extrarowheight=\dimen315
 \NC@list=\toks38
 \extratabsurround=\skip58
 \backup@length=\skip59
@@ -1034,7 +1034,7 @@ Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box89
-\l__siunitx_tmp_dim=\dimen315
+\l__siunitx_tmp_dim=\dimen316
 \l__siunitx_tmp_int=\count307
 \l__siunitx_number_mantissa_length_int=\count308
 \l__siunitx_number_uncert_length_int=\count309
@@ -1047,8 +1047,8 @@ Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_group_min_int=\count316
 \l__siunitx_angle_marker_box=\box90
 \l__siunitx_angle_unit_box=\box91
-\l__siunitx_angle_marker_dim=\dimen316
-\l__siunitx_angle_unit_dim=\dimen317
+\l__siunitx_angle_marker_dim=\dimen317
+\l__siunitx_angle_unit_dim=\dimen318
 \l__siunitx_unit_int=\count317
 \l__siunitx_unit_denominator_int=\count318
 \l__siunitx_unit_numerator_int=\count319
@@ -1058,15 +1058,15 @@ Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_number_product_int=\count323
 \c__siunitx_one_fill_skip=\skip60
 \l__siunitx_table_unit_align_skip=\skip61
-\l__siunitx_table_exponent_dim=\dimen318
-\l__siunitx_table_integer_dim=\dimen319
-\l__siunitx_table_mantissa_dim=\dimen320
-\l__siunitx_table_marker_dim=\dimen321
-\l__siunitx_table_result_dim=\dimen322
-\l__siunitx_table_uncert_dim=\dimen323
-\l__siunitx_table_fill_pre_dim=\dimen324
-\l__siunitx_table_fill_post_dim=\dimen325
-\l__siunitx_table_fill_mid_dim=\dimen326
+\l__siunitx_table_exponent_dim=\dimen319
+\l__siunitx_table_integer_dim=\dimen320
+\l__siunitx_table_mantissa_dim=\dimen321
+\l__siunitx_table_marker_dim=\dimen322
+\l__siunitx_table_result_dim=\dimen323
+\l__siunitx_table_uncert_dim=\dimen324
+\l__siunitx_table_fill_pre_dim=\dimen325
+\l__siunitx_table_fill_post_dim=\dimen326
+\l__siunitx_table_fill_mid_dim=\dimen327
 \l__siunitx_table_pre_box=\box92
 \l__siunitx_table_post_box=\box93
 \l__siunitx_table_mantissa_box=\box94
@@ -1082,13 +1082,6 @@ Package: relsize 2013/03/29 ver 4.1
 ("Informe TP02 - Grupo 4.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-
-
-LaTeX Warning: Label `fig:montecarlodiferencial' multiply defined.
-
-
-LaTeX Warning: Label `fig:montecarlodiferencial' multiply defined.
-
 )
 \openout1 = `"Informe TP02 - Grupo 4.aux"'.
 
@@ -1106,7 +1099,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 3.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 3.
@@ -1152,13 +1146,13 @@ Package geometry Warning: The marginal notes overrun the paper.
 (C:\Users\milto\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
-\scratchdimen=\dimen327
+\scratchdimen=\dimen328
 \scratchbox=\box96
 \nofMPsegments=\count325
 \nofMParguments=\count326
 \everyMPshowfont=\toks39
 \MPscratchCnt=\count327
-\MPscratchDim=\dimen328
+\MPscratchDim=\dimen329
 \MPnumerator=\count328
 \makeMPintoPDFobject=\count329
 \everyMPtoPDFconversion=\toks40
@@ -1228,52 +1222,52 @@ Package pdftex.def Info: resources/itba.png  used on input line 34.
 /itba.png>]) ("Informe TP02 - Grupo 4.toc"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [1])
+ [1]
+[2])
 \tf@toc=\write4
 \openout4 = `"Informe TP02 - Grupo 4.toc"'.
 
-
-[2] [3] (../parte1/informe/parte1.tex
+ [3] (../parte1/informe/parte1.tex
 (../parte1/informe/resources/GIC_generic.tex
-\realshift=\dimen329
 \realshift=\dimen330
 \realshift=\dimen331
 \realshift=\dimen332
 \realshift=\dimen333
+\realshift=\dimen334
 ) [4]
 (../parte1/informe/resources/GIC_aislado.tex
-\realshift=\dimen334
 \realshift=\dimen335
 \realshift=\dimen336
 \realshift=\dimen337
 \realshift=\dimen338
+\realshift=\dimen339
 )
 (../parte1/informe/resources/circuito_inductancia.tex
-\realshift=\dimen339
 \realshift=\dimen340
 \realshift=\dimen341
+\realshift=\dimen342
 )
 (../parte1/informe/resources/circuito_completo.tex
-\realshift=\dimen342
 \realshift=\dimen343
 \realshift=\dimen344
 \realshift=\dimen345
 \realshift=\dimen346
 \realshift=\dimen347
 \realshift=\dimen348
+\realshift=\dimen349
 )
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5] [6]
-<../parte1/informe/resources/1_polos_reales.png, id=46, 680.84363pt x 504.98662
+<../parte1/informe/resources/1_polos_reales.png, id=47, 680.84363pt x 504.98662
 pt>
 File: ../parte1/informe/resources/1_polos_reales.png Graphic file (type png)
 <use ../parte1/informe/resources/1_polos_reales.png>
 Package pdftex.def Info: ../parte1/informe/resources/1_polos_reales.png  used o
 n input line 169.
 (pdftex.def)             Requested size: 340.42097pt x 252.49269pt.
-<../parte1/informe/resources/1_polos_complejos.png, id=47, 685.96275pt x 507.39
+<../parte1/informe/resources/1_polos_complejos.png, id=48, 685.96275pt x 507.39
 563pt>
 File: ../parte1/informe/resources/1_polos_complejos.png Graphic file (type png)
 
@@ -1281,7 +1275,7 @@ File: ../parte1/informe/resources/1_polos_complejos.png Graphic file (type png)
 Package pdftex.def Info: ../parte1/informe/resources/1_polos_complejos.png  use
 d on input line 176.
 (pdftex.def)             Requested size: 342.98053pt x 253.69719pt.
-<../parte1/informe/resources/1_polo_doble.png, id=48, 676.32675pt x 509.20238pt
+<../parte1/informe/resources/1_polo_doble.png, id=49, 676.32675pt x 509.20238pt
 >
 File: ../parte1/informe/resources/1_polo_doble.png Graphic file (type png)
 <use ../parte1/informe/resources/1_polo_doble.png>
@@ -1300,7 +1294,7 @@ r/m/n/10 = 12906\OML/cmm/m/it/10 rad=seg$\OT1/cmr/m/n/10 .
  []
 
 [9 <../parte1/informe/resources/1_polos_complejos.png>]
-<../parte1/informe/resources/polos_sens_Q.png, id=61, 666.69075pt x 521.24738pt
+<../parte1/informe/resources/polos_sens_Q.png, id=62, 666.69075pt x 521.24738pt
 >
 File: ../parte1/informe/resources/polos_sens_Q.png Graphic file (type png)
 <use ../parte1/informe/resources/polos_sens_Q.png>
@@ -1308,7 +1302,7 @@ Package pdftex.def Info: ../parte1/informe/resources/polos_sens_Q.png  used on
 input line 308.
 (pdftex.def)             Requested size: 333.34456pt x 260.62305pt.
  [10 <../parte1/informe/resources/1_polo_doble.png>]
-<../parte1/informe/resources/bode_segundo_opamp.png, id=65, 867.24pt x 511.6113
+<../parte1/informe/resources/bode_segundo_opamp.png, id=66, 867.24pt x 511.6113
 7pt>
 File: ../parte1/informe/resources/bode_segundo_opamp.png Graphic file (type png
 )
@@ -1342,7 +1336,6 @@ Package pdftex.def Info: ../parte1/informe/resources/vin_max_TL082.png  used on
 (pdftex.def)             Requested size: 344.11955pt x 206.20674pt.
 
 (../parte1/informe/resources/circuito_implementado.tex
-\realshift=\dimen349
 \realshift=\dimen350
 \realshift=\dimen351
 \realshift=\dimen352
@@ -1352,6 +1345,7 @@ Package pdftex.def Info: ../parte1/informe/resources/vin_max_TL082.png  used on
 \realshift=\dimen356
 \realshift=\dimen357
 \realshift=\dimen358
+\realshift=\dimen359
 )
 <../parte1/informe/resources/pcb.png, id=77, 503.17987pt x 504.08325pt>
 File: ../parte1/informe/resources/pcb.png Graphic file (type png)
@@ -1735,10 +1729,12 @@ Package pdftex.def Info: ../Ex3/puente.png  used on input line 183.
 
 [43 <../Ex3/Bode-COMun.png> <../Ex3/puente.png>]) [44] (../Ex4/Informe/ej4.tex
 (../Ex4/Informe/amp_inst.tex
-\realshift=\dimen359
 \realshift=\dimen360
-\realshift=\dimen361
+\alshift=\dimen361
 \realshift=\dimen362
+\realshift=\dimen363
+\alshift=\dimen364
+\realshift=\dimen365
 ) [45] [46]
 <../Ex4/Informe/res/spice/spice_cm_dc_sch.png, id=287, 469.755pt x 181.42781pt>
 
@@ -1797,8 +1793,8 @@ _cm_dc_mc.png>]
 [49 <../Ex4/Informe/res/spice/spice_dm_dc.png> <../Ex4/Informe/res/spice/spice_
 dm_dc_mc.png>] [50 <../Ex4/Informe/res/altium/sch.png> <../Ex4/Informe/res/alti
 um/pcb.png>]
-\realshift=\dimen363
-\realshift=\dimen364
+\realshift=\dimen366
+\realshift=\dimen367
  [51]
 <../Ex4/Informe//res/probeta.png, id=313, 286.06876pt x 257.763pt>
 File: ../Ex4/Informe//res/probeta.png Graphic file (type png)
@@ -1813,46 +1809,490 @@ Package pdftex.def Info: ../Ex4/Informe//res/medysim.png  used on input line 41
 0.
 (pdftex.def)             Requested size: 369.03154pt x 159.89859pt.
  [52 <../Ex4/Informe//res/probeta.png>]) [53 <../Ex4/Informe//res/medysim.png (
-PNG copy)>] ("Informe TP02 - Grupo 4.aux"
+PNG copy)>]
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\latin1.def"
+File: latin1.def 2018/08/11 v1.3c Input encoding file
+) (../Ex5/Ex5.tex
+<../Ex5/Resources/Circuito.png, id=322, 479.54156pt x 413.29407pt>
+File: ../Ex5/Resources/Circuito.png Graphic file (type png)
+<use ../Ex5/Resources/Circuito.png>
+Package pdftex.def Info: ../Ex5/Resources/Circuito.png  used on input line 8.
+(pdftex.def)             Requested size: 239.77019pt x 206.64651pt.
+
+Overfull \hbox (0.86116pt too wide) in paragraph at lines 17--20
+[]\OT1/cmr/m/n/10 Al cal-cu-lar la trans-fe-ren-cia ge-ne-ri-ca-men-te pa-ra cu
+al-quier va-lor de im-pe-dan-cias, y lla-man-do a $\OML/cmm/m/it/10 R[] \OT1/cm
+r/m/n/10 = \OML/cmm/m/it/10 R[]K  ;   R[] \OT1/cmr/m/n/10 =
+ []
+
+[54 <../Ex5/Resources/Circuito.png>]
+<../Ex5/Resources/DiagramaParametrico.png, id=327, 462.528pt x 346.896pt>
+File: ../Ex5/Resources/DiagramaParametrico.png Graphic file (type png)
+<use ../Ex5/Resources/DiagramaParametrico.png>
+Package pdftex.def Info: ../Ex5/Resources/DiagramaParametrico.png  used on inpu
+t line 97.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<../Ex5/Resources/RtaEnFrecuanciaParametrica.png, id=328, 462.528pt x 346.896pt
+>
+File: ../Ex5/Resources/RtaEnFrecuanciaParametrica.png Graphic file (type png)
+<use ../Ex5/Resources/RtaEnFrecuanciaParametrica.png>
+Package pdftex.def Info: ../Ex5/Resources/RtaEnFrecuanciaParametrica.png  used 
+on input line 105.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+ [55 <../Ex5/Resources/DiagramaParametrico.png>]
+<../Ex5/Resources/DiagramaDePolosYCerosCompleto.png, id=333, 462.528pt x 346.89
+6pt>
+File: ../Ex5/Resources/DiagramaDePolosYCerosCompleto.png Graphic file (type png
+)
+<use ../Ex5/Resources/DiagramaDePolosYCerosCompleto.png>
+Package pdftex.def Info: ../Ex5/Resources/DiagramaDePolosYCerosCompleto.png  us
+ed on input line 148.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+ [56 <../Ex5/Resources/RtaEnFrecuanciaParametrica.png>]
+<../Ex5/Resources/DiagramaDePolosYCerosHasta05.png, id=338, 462.528pt x 346.896
+pt>
+File: ../Ex5/Resources/DiagramaDePolosYCerosHasta05.png Graphic file (type png)
+
+<use ../Ex5/Resources/DiagramaDePolosYCerosHasta05.png>
+Package pdftex.def Info: ../Ex5/Resources/DiagramaDePolosYCerosHasta05.png  use
+d on input line 163.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+<../Ex5/Resources/DiagramaDePolosYCerosDesde05.png, id=339, 462.528pt x 346.896
+pt>
+File: ../Ex5/Resources/DiagramaDePolosYCerosDesde05.png Graphic file (type png)
+
+<use ../Ex5/Resources/DiagramaDePolosYCerosDesde05.png>
+Package pdftex.def Info: ../Ex5/Resources/DiagramaDePolosYCerosDesde05.png  use
+d on input line 172.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+ [57 <../Ex5/Resources/DiagramaDePolosYCerosCompleto.png> <../Ex5/Resources/Dia
+gramaDePolosYCerosHasta05.png>]
+<"../Ex5/Resources/Ecualizador de fase".png, id=345, 404.26031pt x 319.1925pt>
+File: "../Ex5/Resources/Ecualizador de fase".png Graphic file (type png)
+<use "../Ex5/Resources/Ecualizador de fase".png>
+Package pdftex.def Info: "../Ex5/Resources/Ecualizador de fase".png  used on in
+put line 197.
+(pdftex.def)             Requested size: 282.98029pt x 223.43321pt.
+ [58 <../Ex5/Resources/DiagramaDePolosYCerosDesde05.png> <../Ex5/Resources/Ecua
+lizador de fase.png>]
+<../Ex5/Resources/SimulacionEqFase.png, id=350, 496.85625pt x 448.67625pt>
+File: ../Ex5/Resources/SimulacionEqFase.png Graphic file (type png)
+<use ../Ex5/Resources/SimulacionEqFase.png>
+Package pdftex.def Info: ../Ex5/Resources/SimulacionEqFase.png  used on input l
+ine 232.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+<../Ex5/Resources/SimulacionEqFase_Fase.png, id=351, 496.85625pt x 448.67625pt>
+
+File: ../Ex5/Resources/SimulacionEqFase_Fase.png Graphic file (type png)
+<use ../Ex5/Resources/SimulacionEqFase_Fase.png>
+Package pdftex.def Info: ../Ex5/Resources/SimulacionEqFase_Fase.png  used on in
+put line 232.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+Overfull \hbox (13.15814pt too wide) in paragraph at lines 232--233
+ [][][] 
+ []
+
+<../Ex5/Resources/CircuitoConEqFase.png, id=352, 755.82375pt x 416.30531pt>
+File: ../Ex5/Resources/CircuitoConEqFase.png Graphic file (type png)
+<use ../Ex5/Resources/CircuitoConEqFase.png>
+Package pdftex.def Info: ../Ex5/Resources/CircuitoConEqFase.png  used on input 
+line 253.
+(pdftex.def)             Requested size: 377.91095pt x 208.15215pt.
+[59 <../Ex5/Resources/SimulacionEqFase.png> <../Ex5/Resources/SimulacionEqFase_
+Fase.png>]
+<../Ex5/Resources/SimulacionDeCambioConEqDeFase.png, id=358, 496.85625pt x 448.
+67625pt>
+File: ../Ex5/Resources/SimulacionDeCambioConEqDeFase.png Graphic file (type png
+)
+<use ../Ex5/Resources/SimulacionDeCambioConEqDeFase.png>
+Package pdftex.def Info: ../Ex5/Resources/SimulacionDeCambioConEqDeFase.png  us
+ed on input line 261.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+ [60 <../Ex5/Resources/CircuitoConEqFase.png> <../Ex5/Resources/SimulacionDeCam
+bioConEqDeFase.png>]
+<../Ex5/Resources/SpectogramBohemiamRhapsody.png, id=364, 766.36313pt x 493.845
+pt>
+File: ../Ex5/Resources/SpectogramBohemiamRhapsody.png Graphic file (type png)
+<use ../Ex5/Resources/SpectogramBohemiamRhapsody.png>
+Package pdftex.def Info: ../Ex5/Resources/SpectogramBohemiamRhapsody.png  used 
+on input line 328.
+(pdftex.def)             Requested size: 383.18063pt x 246.92189pt.
+<../Ex5/Resources/OsciloscopeBohemiamRhapsody.png, id=365, 763.35187pt x 487.82
+25pt>
+File: ../Ex5/Resources/OsciloscopeBohemiamRhapsody.png Graphic file (type png)
+<use ../Ex5/Resources/OsciloscopeBohemiamRhapsody.png>
+Package pdftex.def Info: ../Ex5/Resources/OsciloscopeBohemiamRhapsody.png  used
+ on input line 336.
+(pdftex.def)             Requested size: 381.675pt x 243.91064pt.
+ [61 <../Ex5/Resources/SpectogramBohemiamRhapsody.png>]
+<../Ex5/Resources/SpectogramBohemiamRhapsodySoloVoz.png, id=369, 742.27313pt x 
+290.58563pt>
+File: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloVoz.png Graphic file (type
+ png)
+<use ../Ex5/Resources/SpectogramBohemiamRhapsodySoloVoz.png>
+Package pdftex.def Info: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloVoz.png
+  used on input line 346.
+(pdftex.def)             Requested size: 371.13567pt x 145.29245pt.
+<../Ex5/Resources/SpectogramBohemiamRhapsodySoloPiano.png, id=370, 738.50906pt 
+x 290.58563pt>
+File: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloPiano.png Graphic file (ty
+pe png)
+<use ../Ex5/Resources/SpectogramBohemiamRhapsodySoloPiano.png>
+Package pdftex.def Info: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloPiano.p
+ng  used on input line 356.
+(pdftex.def)             Requested size: 369.25363pt x 145.29245pt.
+<../Ex5/Resources/SpectogramBohemiamRhapsodySoloGuitarra.png, id=371, 746.03719
+pt x 293.59688pt>
+File: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloGuitarra.png Graphic file 
+(type png)
+<use ../Ex5/Resources/SpectogramBohemiamRhapsodySoloGuitarra.png>
+Package pdftex.def Info: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloGuitarr
+a.png  used on input line 364.
+(pdftex.def)             Requested size: 373.01767pt x 146.79807pt.
+ [62 <../Ex5/Resources/OsciloscopeBohemiamRhapsody.png> <../Ex5/Resources/Spect
+ogramBohemiamRhapsodySoloVoz.png> <../Ex5/Resources/SpectogramBohemiamRhapsodyS
+oloPiano.png>]
+<../Ex5/Resources/SpectogramBohemiamRhapsodySoloBajo.png, id=375, 743.02594pt x
+ 292.84406pt>
+File: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloBajo.png Graphic file (typ
+e png)
+<use ../Ex5/Resources/SpectogramBohemiamRhapsodySoloBajo.png>
+Package pdftex.def Info: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloBajo.pn
+g  used on input line 372.
+(pdftex.def)             Requested size: 371.51205pt x 146.42166pt.
+<../Ex5/Resources/SpectogramBohemiamRhapsodySoloBateria.png, id=376, 742.27313p
+t x 292.09125pt>
+File: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloBateria.png Graphic file (
+type png)
+<use ../Ex5/Resources/SpectogramBohemiamRhapsodySoloBateria.png>
+Package pdftex.def Info: ../Ex5/Resources/SpectogramBohemiamRhapsodySoloBateria
+.png  used on input line 380.
+(pdftex.def)             Requested size: 371.13567pt x 146.04526pt.
+ [63 <../Ex5/Resources/SpectogramBohemiamRhapsodySoloGuitarra.png> <../Ex5/Reso
+urces/SpectogramBohemiamRhapsodySoloBajo.png> <../Ex5/Resources/SpectogramBohem
+iamRhapsodySoloBateria.png>]
+<../Ex5/Resources/FiltroGraves.png, id=380, 496.85625pt x 448.67625pt>
+File: ../Ex5/Resources/FiltroGraves.png Graphic file (type png)
+<use ../Ex5/Resources/FiltroGraves.png>
+Package pdftex.def Info: ../Ex5/Resources/FiltroGraves.png  used on input line 
+515.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+<../Ex5/Resources/FiltroGravesFase.png, id=381, 496.85625pt x 448.67625pt>
+File: ../Ex5/Resources/FiltroGravesFase.png Graphic file (type png)
+<use ../Ex5/Resources/FiltroGravesFase.png>
+Package pdftex.def Info: ../Ex5/Resources/FiltroGravesFase.png  used on input l
+ine 515.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+Overfull \hbox (13.15814pt too wide) in paragraph at lines 515--516
+ [][][] 
+ []
+
+[64]
+<../Ex5/Resources/FiltroMedios.png, id=385, 496.85625pt x 448.67625pt>
+File: ../Ex5/Resources/FiltroMedios.png Graphic file (type png)
+<use ../Ex5/Resources/FiltroMedios.png>
+Package pdftex.def Info: ../Ex5/Resources/FiltroMedios.png  used on input line 
+534.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+<../Ex5/Resources/FiltroMediosFase.png, id=386, 496.85625pt x 448.67625pt>
+File: ../Ex5/Resources/FiltroMediosFase.png Graphic file (type png)
+<use ../Ex5/Resources/FiltroMediosFase.png>
+Package pdftex.def Info: ../Ex5/Resources/FiltroMediosFase.png  used on input l
+ine 534.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+Overfull \hbox (13.15814pt too wide) in paragraph at lines 534--535
+ [][][] 
+ []
+
+<../Ex5/Resources/FiltroAgudos.png, id=387, 496.85625pt x 448.67625pt>
+File: ../Ex5/Resources/FiltroAgudos.png Graphic file (type png)
+<use ../Ex5/Resources/FiltroAgudos.png>
+Package pdftex.def Info: ../Ex5/Resources/FiltroAgudos.png  used on input line 
+548.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+<../Ex5/Resources/FiltroAgudosFase.png, id=388, 496.85625pt x 448.67625pt>
+File: ../Ex5/Resources/FiltroAgudosFase.png Graphic file (type png)
+<use ../Ex5/Resources/FiltroAgudosFase.png>
+Package pdftex.def Info: ../Ex5/Resources/FiltroAgudosFase.png  used on input l
+ine 548.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+Overfull \hbox (13.15814pt too wide) in paragraph at lines 548--549
+ [][][] 
+ []
+
+[65 <../Ex5/Resources/FiltroGraves.png> <../Ex5/Resources/FiltroGravesFase.png>
+ <../Ex5/Resources/FiltroMedios.png> <../Ex5/Resources/FiltroMediosFase.png>]
+<../Ex5/Resources/DiagramaParalelo.png, id=396, 603.25375pt x 282.05376pt>
+File: ../Ex5/Resources/DiagramaParalelo.png Graphic file (type png)
+<use ../Ex5/Resources/DiagramaParalelo.png>
+Package pdftex.def Info: ../Ex5/Resources/DiagramaParalelo.png  used on input l
+ine 581.
+(pdftex.def)             Requested size: 301.62613pt x 141.02652pt.
+<../Ex5/Resources/InterconexionEnParaleloSimulacion.png, id=397, 496.85625pt x 
+448.67625pt>
+File: ../Ex5/Resources/InterconexionEnParaleloSimulacion.png Graphic file (type
+ png)
+<use ../Ex5/Resources/InterconexionEnParaleloSimulacion.png>
+Package pdftex.def Info: ../Ex5/Resources/InterconexionEnParaleloSimulacion.png
+  used on input line 590.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+<../Ex5/Resources/InterconexionEnParaleloSimulacionFase.png, id=398, 496.85625p
+t x 448.67625pt>
+File: ../Ex5/Resources/InterconexionEnParaleloSimulacionFase.png Graphic file (
+type png)
+<use ../Ex5/Resources/InterconexionEnParaleloSimulacionFase.png>
+Package pdftex.def Info: ../Ex5/Resources/InterconexionEnParaleloSimulacionFase
+.png  used on input line 590.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+Overfull \hbox (13.15814pt too wide) in paragraph at lines 590--591
+ [][][] 
+ []
+
+[66 <../Ex5/Resources/FiltroAgudos.png> <../Ex5/Resources/FiltroAgudosFase.png>
+ <../Ex5/Resources/DiagramaParalelo.png>]
+<../Ex5/Resources/DiagramaCascada.png, id=406, 483.8075pt x 81.30376pt>
+File: ../Ex5/Resources/DiagramaCascada.png Graphic file (type png)
+<use ../Ex5/Resources/DiagramaCascada.png>
+Package pdftex.def Info: ../Ex5/Resources/DiagramaCascada.png  used on input li
+ne 616.
+(pdftex.def)             Requested size: 241.90315pt x 40.65176pt.
+<../Ex5/Resources/InterconexionEnCascadaSimulacionSinCorregir.png, id=407, 496.
+85625pt x 448.67625pt>
+File: ../Ex5/Resources/InterconexionEnCascadaSimulacionSinCorregir.png Graphic 
+file (type png)
+<use ../Ex5/Resources/InterconexionEnCascadaSimulacionSinCorregir.png>
+Package pdftex.def Info: ../Ex5/Resources/InterconexionEnCascadaSimulacionSinCo
+rregir.png  used on input line 625.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+<../Ex5/Resources/InterconexionEnCascadaSimulacionSinCorregirFase.png, id=408, 
+496.85625pt x 448.67625pt>
+File: ../Ex5/Resources/InterconexionEnCascadaSimulacionSinCorregirFase.png Grap
+hic file (type png)
+<use ../Ex5/Resources/InterconexionEnCascadaSimulacionSinCorregirFase.png>
+Package pdftex.def Info: ../Ex5/Resources/InterconexionEnCascadaSimulacionSinCo
+rregirFase.png  used on input line 625.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+Overfull \hbox (13.15814pt too wide) in paragraph at lines 625--626
+ [][][] 
+ []
+
+[67 <../Ex5/Resources/InterconexionEnParaleloSimulacion.png> <../Ex5/Resources/
+InterconexionEnParaleloSimulacionFase.png> <../Ex5/Resources/DiagramaCascada.pn
+g>]
+<../Ex5/Resources/InterconexionEnCascadaSimulacion.png, id=415, 496.85625pt x 4
+48.67625pt>
+File: ../Ex5/Resources/InterconexionEnCascadaSimulacion.png Graphic file (type 
+png)
+<use ../Ex5/Resources/InterconexionEnCascadaSimulacion.png>
+Package pdftex.def Info: ../Ex5/Resources/InterconexionEnCascadaSimulacion.png 
+ used on input line 677.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+<../Ex5/Resources/InterconexionEnCascadaSimulacionFase.png, id=416, 496.85625pt
+ x 448.67625pt>
+File: ../Ex5/Resources/InterconexionEnCascadaSimulacionFase.png Graphic file (t
+ype png)
+<use ../Ex5/Resources/InterconexionEnCascadaSimulacionFase.png>
+Package pdftex.def Info: ../Ex5/Resources/InterconexionEnCascadaSimulacionFase.
+png  used on input line 677.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+Overfull \hbox (13.15814pt too wide) in paragraph at lines 677--678
+ [][][] 
+ []
+
+[68 <../Ex5/Resources/InterconexionEnCascadaSimulacionSinCorregir.png> <../Ex5/
+Resources/InterconexionEnCascadaSimulacionSinCorregirFase.png>]
+<"../Ex5/Resources/Ecualizador Simulacion".png, id=422, 496.85625pt x 448.67625
+pt>
+File: "../Ex5/Resources/Ecualizador Simulacion".png Graphic file (type png)
+<use "../Ex5/Resources/Ecualizador Simulacion".png>
+Package pdftex.def Info: "../Ex5/Resources/Ecualizador Simulacion".png  used on
+ input line 729.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+ [69 <../Ex5/Resources/InterconexionEnCascadaSimulacion.png> <../Ex5/Resources/
+InterconexionEnCascadaSimulacionFase.png>]
+<"../Ex5/Resources/Ecualizador Simulacion Fase".png, id=428, 496.85625pt x 448.
+67625pt>
+File: "../Ex5/Resources/Ecualizador Simulacion Fase".png Graphic file (type png
+)
+<use "../Ex5/Resources/Ecualizador Simulacion Fase".png>
+Package pdftex.def Info: "../Ex5/Resources/Ecualizador Simulacion Fase".png  us
+ed on input line 738.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+
+pdfTeX warning: pdflatex (file ../Ex5/Resources/Esquematico.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<../Ex5/Resources/Esquematico.pdf, id=429, 845.04686pt x 597.50786pt>
+File: ../Ex5/Resources/Esquematico.pdf Graphic file (type pdf)
+<use ../Ex5/Resources/Esquematico.pdf>
+Package pdftex.def Info: ../Ex5/Resources/Esquematico.pdf  used on input line 7
+49.
+(pdftex.def)             Requested size: 338.01276pt x 238.9989pt.
+[70 <../Ex5/Resources/Ecualizador Simulacion.png> <../Ex5/Resources/Ecualizador
+ Simulacion Fase.png>]
+
+pdfTeX warning: pdflatex (file ../Ex5/Resources/PCB.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<../Ex5/Resources/PCB.pdf, id=435, 845.04686pt x 597.50786pt>
+File: ../Ex5/Resources/PCB.pdf Graphic file (type pdf)
+<use ../Ex5/Resources/PCB.pdf>
+Package pdftex.def Info: ../Ex5/Resources/PCB.pdf  used on input line 758.
+(pdftex.def)             Requested size: 253.516pt x 179.25374pt.
+<../Ex5/Resources/IMG_20190928_115414.jpg, id=436, 1900.09875pt x 2289.55376pt>
+
+File: ../Ex5/Resources/IMG_20190928_115414.jpg Graphic file (type jpg)
+<use ../Ex5/Resources/IMG_20190928_115414.jpg>
+Package pdftex.def Info: ../Ex5/Resources/IMG_20190928_115414.jpg  used on inpu
+t line 766.
+(pdftex.def)             Requested size: 190.021pt x 228.96878pt.
+<../Ex5/Resources/IMG_20190928_115428.jpg, id=437, 1629.08624pt x 2110.88625pt>
+
+File: ../Ex5/Resources/IMG_20190928_115428.jpg Graphic file (type jpg)
+<use ../Ex5/Resources/IMG_20190928_115428.jpg>
+Package pdftex.def Info: ../Ex5/Resources/IMG_20190928_115428.jpg  used on inpu
+t line 766.
+(pdftex.def)             Requested size: 162.91817pt x 211.10098pt.
+[71 <../Ex5/Resources/Esquematico.pdf> <../Ex5/Resources/PCB.pdf>]
+<../Ex5/Resources/mediciones/MAX.png, id=455, 422.32782pt x 356.83313pt>
+File: ../Ex5/Resources/mediciones/MAX.png Graphic file (type png)
+<use ../Ex5/Resources/mediciones/MAX.png>
+Package pdftex.def Info: ../Ex5/Resources/mediciones/MAX.png  used on input lin
+e 776.
+(pdftex.def)             Requested size: 211.16339pt x 178.41612pt.
+<../Ex5/Resources/mediciones/MAX_PHASE.png, id=456, 422.32782pt x 356.83313pt>
+File: ../Ex5/Resources/mediciones/MAX_PHASE.png Graphic file (type png)
+<use ../Ex5/Resources/mediciones/MAX_PHASE.png>
+Package pdftex.def Info: ../Ex5/Resources/mediciones/MAX_PHASE.png  used on inp
+ut line 776.
+(pdftex.def)             Requested size: 211.16339pt x 178.41612pt.
+<../Ex5/Resources/mediciones/MIN.png, id=457, 422.32782pt x 356.83313pt>
+File: ../Ex5/Resources/mediciones/MIN.png Graphic file (type png)
+<use ../Ex5/Resources/mediciones/MIN.png>
+Package pdftex.def Info: ../Ex5/Resources/mediciones/MIN.png  used on input lin
+e 784.
+(pdftex.def)             Requested size: 211.16339pt x 178.41612pt.
+<../Ex5/Resources/mediciones/MIN_PHASE.png, id=458, 422.32782pt x 356.83313pt>
+File: ../Ex5/Resources/mediciones/MIN_PHASE.png Graphic file (type png)
+<use ../Ex5/Resources/mediciones/MIN_PHASE.png>
+Package pdftex.def Info: ../Ex5/Resources/mediciones/MIN_PHASE.png  used on inp
+ut line 784.
+(pdftex.def)             Requested size: 211.16339pt x 178.41612pt.
+<../Ex5/Resources/mediciones/BUFF.png, id=459, 410.2828pt x 356.83313pt>
+File: ../Ex5/Resources/mediciones/BUFF.png Graphic file (type png)
+<use ../Ex5/Resources/mediciones/BUFF.png>
+Package pdftex.def Info: ../Ex5/Resources/mediciones/BUFF.png  used on input li
+ne 791.
+(pdftex.def)             Requested size: 205.1409pt x 178.41612pt.
+<../Ex5/Resources/mediciones/BUFF_PHASE.png, id=460, 410.2828pt x 357.58594pt>
+File: ../Ex5/Resources/mediciones/BUFF_PHASE.png Graphic file (type png)
+<use ../Ex5/Resources/mediciones/BUFF_PHASE.png>
+Package pdftex.def Info: ../Ex5/Resources/mediciones/BUFF_PHASE.png  used on in
+put line 791.
+(pdftex.def)             Requested size: 205.1409pt x 178.79253pt.
+ [72 <../Ex5/Resources/IMG_20190928_115414.jpg> <../Ex5/Resources/IMG_20190928_
+115428.jpg> <../Ex5/Resources/mediciones/MAX.png> <../Ex5/Resources/mediciones/
+MAX_PHASE.png> <../Ex5/Resources/mediciones/MIN.png> <../Ex5/Resources/medicion
+es/MIN_PHASE.png>]
+<"../Ex5/Resources/mediciones/Impedancia de entrada eq".png, id=469, 496.85625p
+t x 448.67625pt>
+File: "../Ex5/Resources/mediciones/Impedancia de entrada eq".png Graphic file (
+type png)
+<use "../Ex5/Resources/mediciones/Impedancia de entrada eq".png>
+Package pdftex.def Info: "../Ex5/Resources/mediciones/Impedancia de entrada eq"
+.png  used on input line 800.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+<"../Ex5/Resources/mediciones/Impedancia de salida eq".png, id=470, 496.85625pt
+ x 448.67625pt>
+File: "../Ex5/Resources/mediciones/Impedancia de salida eq".png Graphic file (t
+ype png)
+<use "../Ex5/Resources/mediciones/Impedancia de salida eq".png>
+Package pdftex.def Info: "../Ex5/Resources/mediciones/Impedancia de salida eq".
+png  used on input line 808.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+ [73 <../Ex5/Resources/mediciones/BUFF.png> <../Ex5/Resources/mediciones/BUFF_P
+HASE.png> <../Ex5/Resources/mediciones/Impedancia de entrada eq.png>]
+<"../Ex5/Resources/mediciones/impedancia entrada parlantes".png, id=477, 496.85
+625pt x 448.67625pt>
+File: "../Ex5/Resources/mediciones/impedancia entrada parlantes".png Graphic fi
+le (type png)
+<use "../Ex5/Resources/mediciones/impedancia entrada parlantes".png>
+Package pdftex.def Info: "../Ex5/Resources/mediciones/impedancia entrada parlan
+tes".png  used on input line 817.
+(pdftex.def)             Requested size: 248.4275pt x 224.33757pt.
+
+[74 <../Ex5/Resources/mediciones/Impedancia de salida eq.png> <../Ex5/Resources
+/mediciones/impedancia entrada parlantes.png>]) (../Ex5/Datasheet.tex [75]
+<"../Ex5/../Ex5/Resources/EQ".png, id=486, 888.31876pt x 322.95656pt>
+File: "../Ex5/../Ex5/Resources/EQ".png Graphic file (type png)
+<use "../Ex5/../Ex5/Resources/EQ".png>
+Package pdftex.def Info: "../Ex5/../Ex5/Resources/EQ".png  used on input line 1
+4.
+(pdftex.def)             Requested size: 444.1583pt x 161.47787pt.
+File: "../Ex5/Resources/Ecualizador Simulacion".png Graphic file (type png)
+<use "../Ex5/Resources/Ecualizador Simulacion".png>
+Package pdftex.def Info: "../Ex5/Resources/Ecualizador Simulacion".png  used on
+ input line 51.
+(pdftex.def)             Requested size: 124.21375pt x 112.16878pt.
+File: "../Ex5/Resources/Ecualizador Simulacion Fase".png Graphic file (type png
+)
+<use "../Ex5/Resources/Ecualizador Simulacion Fase".png>
+Package pdftex.def Info: "../Ex5/Resources/Ecualizador Simulacion Fase".png  us
+ed on input line 51.
+(pdftex.def)             Requested size: 124.21375pt x 112.16878pt.
+)
+[76 <../Ex5/../Ex5/Resources/EQ.png>]
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\latin1.def"
+File: latin1.def 2018/08/11 v1.3c Input encoding file
+) (../Ex6/Ex6.tex
+<../Ex6/mainwindow.png, id=490, 1028.34187pt x 530.73282pt>
+File: ../Ex6/mainwindow.png Graphic file (type png)
+<use ../Ex6/mainwindow.png>
+Package pdftex.def Info: ../Ex6/mainwindow.png  used on input line 15.
+(pdftex.def)             Requested size: 483.69687pt x 249.63881pt.
+
+[77 <../Ex6/mainwindow.png>] [78]) [79] ("Informe TP02 - Grupo 4.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+) ) 
 Here is how much of TeX's memory you used:
- 42544 strings out of 492969
- 996858 string characters out of 3134438
- 1124491 words of memory out of 3000000
- 45843 multiletter control sequences out of 15000+200000
- 546986 words of font info for 75 fonts, out of 3000000 for 9000
+ 43267 strings out of 492969
+ 1013955 string characters out of 3134438
+ 1132677 words of memory out of 3000000
+ 46497 multiletter control sequences out of 15000+200000
+ 547345 words of font info for 76 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,79p,936b,1004s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\milto\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm1000.pk> <C:\Users\milto\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
-ec/dpi600\tcbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmti7.pfb>
-Output written on "Informe TP02 - Grupo 4.pdf" (54 pages, 13213678 bytes).
+ <C:\Users\milto\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600
+\tcrm1000.pk> <C:\Users\milto\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen
+/ec/dpi600\tcbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmti7.pfb>
+Output written on "Informe TP02 - Grupo 4.pdf" (80 pages, 21898024 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
+ 576 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 323 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 568 words of extra memory for PDF output out of 10000 (max. 10000000)
 

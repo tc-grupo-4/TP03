@@ -91,3 +91,42 @@
 \contentsline {subsection}{\numberline {25.2}Resultados}{52}% 
 \contentsline {subsection}{\numberline {25.3}An\IeC {\'a}lisis de Resultados}{52}% 
 \contentsline {section}{\numberline {26}Conclusi\IeC {\'o}n}{53}% 
+\contentsline {part}{V\hspace {1em}Ecualizador basado en Bohemian Rhapsody}{54}% 
+\contentsline {section}{\numberline {27}Transferencia}{54}% 
+\contentsline {section}{\numberline {28}An\'alisis de frecuencia central}{54}% 
+\contentsline {section}{\numberline {29}An\'alisis param\'etrico}{55}% 
+\contentsline {section}{\numberline {30}An\'alisis de singularidades}{56}% 
+\contentsline {subsection}{\numberline {30.1}An\'alisis de Ceros}{56}% 
+\contentsline {subsection}{\numberline {30.2}An\'alisis de polos}{56}% 
+\contentsline {subsection}{\numberline {30.3}An\'alisis de singularidades param\'etricas}{56}% 
+\contentsline {subsection}{\numberline {30.4}Sistema de fase m\IeC {\'\i }nima}{58}% 
+\contentsline {subsubsection}{\numberline {30.4.1}Ecualizador de fase}{58}% 
+\contentsline {section}{\numberline {31}Dise\~no de un ecualizador de 3 bandas}{60}% 
+\contentsline {subsection}{\numberline {31.1}An\'alisis del espectro audible}{60}% 
+\contentsline {subsection}{\numberline {31.2}An\'alisis del espectro de la musica}{61}% 
+\contentsline {subsection}{\numberline {31.3}Elecci\'on de la ganancia de los filtros}{64}% 
+\contentsline {subsection}{\numberline {31.4}Simulacion de cada filtro}{64}% 
+\contentsline {subsubsection}{\numberline {31.4.1}Filtro para tonos graves}{64}% 
+\contentsline {subsubsection}{\numberline {31.4.2}Filtro para tonos medios}{65}% 
+\contentsline {subsubsection}{\numberline {31.4.3}Filtro para tonos agudos}{65}% 
+\contentsline {subsubsection}{\numberline {31.4.4}Conclusi\'on}{66}% 
+\contentsline {subsection}{\numberline {31.5}Interconexi\'on de filtros}{66}% 
+\contentsline {subsubsection}{\numberline {31.5.1}Interconexion en paralelo}{66}% 
+\contentsline {subsubsection}{\numberline {31.5.2}Interconexion en cascada}{67}% 
+\contentsline {subsection}{\numberline {31.6}Conclusi\'on}{68}% 
+\contentsline {section}{\numberline {32}Implementaci\'on}{69}% 
+\contentsline {subsection}{\numberline {32.1}Mediciones}{72}% 
+\contentsline {subsection}{\numberline {32.2}Impedancias}{73}% 
+\contentsline {section}{\numberline {33}Conclusi\'on}{74}% 
+\contentsline {section}{\numberline {34}Caracter\IeC {\'\i }sticas generales}{76}% 
+\contentsline {section}{\numberline {35}Circuito interno}{76}% 
+\contentsline {section}{\numberline {36}Consumo}{76}% 
+\contentsline {part}{VI\hspace {1em}Medici\'on autom\'atica de respuesta en frecuencia}{77}% 
+\contentsline {section}{\numberline {37}Introducci\'on}{77}% 
+\contentsline {section}{\numberline {38}Medici\'on de se\~nales peque\~nas o ruidosas}{77}% 
+\contentsline {section}{\numberline {39}Anatom\IeC {\'\i }a del programa}{77}% 
+\contentsline {subsection}{\numberline {39.1}Panel \emph {Measurement Settings}}{78}% 
+\contentsline {subsection}{\numberline {39.2}Panel \emph {Measurements}}{78}% 
+\contentsline {subsection}{\numberline {39.3}Panel \emph {Instrument Settings}}{78}% 
+\contentsline {section}{\numberline {40}Din\'amica sugerida de uso}{78}% 
+\contentsline {section}{\numberline {41}Instrucciones para correr el programa}{79}% 
