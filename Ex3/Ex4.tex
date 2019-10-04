@@ -5,7 +5,7 @@
 
 \part{Amplificadores de instrumentación}
 \section{Introducción}
-	Los amplificadores de instrumentación son dispositivos que permiten medir una diferencia de tensión entre sus entradas de forma precisa ya que generan a la salida de los mismos una tensión proporcional a esa diferencia, se utilizan para poder realizar mediciones de precisión sobre pequeñas señales que en otro caso no podrían distinguirse del ruido porque poseen una gran inmunidad frente al ruido.
+	Los amplificadores de instrumentación son dispositivos que permiten medir una diferencia de tensión entre sus entradas de forma precisa ya que generan a la salida de los mismos una tensión proporcional a esa diferencia, se utilizan para poder realizar mediciones de precisión sobre pequeñas señales que en otro caso no podrían distinguirse del ruido porque poseen una gran inmunidad frente al mismo.
 	
 \subsection{Amplificador de diferencias}
 
@@ -83,13 +83,13 @@ Un amplificador de instrumentación es un amplificador de diferencias que cumple
 \section{Análisis del circuito}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{circcatedra.png}
+\includegraphics[scale=0.7]{circcatedra.png}
 \caption{Circuito propuesto por la cátedra.}
 \label{fig:circcatedra}
 \end{figure}
 
 \subsection{Caso ideal}
-	El amplificador $\mathit{U4}$ en este caso fija una tensión nula en su propia entrada no inversora, su propia salida, en la entrada no inversora del amplificador $\mathit{U3}$ y en la salida del amplificador $\mathit{U2}$ 
+	El amplificador $\mathit{U4}$ en este caso fija una tensión nula en su propia entrada no inversora, su propia salida, en la entrada no inversora del amplificador $\mathit{U3}$ y en la salida del amplificador $\mathit{U2}$.
 
 	El resto del circuito puede ser separado en dos etapas, por una parte tenemos a los amplificadores $\mathit{U1}$ y $\mathit{U2}$ que conforman la etapa de entrada y se encargan de amplificar, además de otorgar a todo el circuito la característica de impedancias de entrada altas, y la etapa de salida conformada por el amplificador $\mathit{U3}$ que teniendo en cuenta lo dicho en el párrafo anterior conforma un amplificador de diferencias con las resistencias $R1 \, , R2 \, , R8$ y $R9$. Un último detalle a mencionar es que se asume que los cuatro amplificadores poseen la misma ganancia $A$.
 
@@ -113,11 +113,13 @@ A_{DM} = \dfrac{R_2}{R_1} \left( 1 + \dfrac{R_4}{R_3} \right)
 \end{equation}
 
 	Podemos notar dos cosas, que la ganancia en modo diferencial es la multiplicación de las ganancias de ambas etapas, y que las resistencias $R_5 \, R_6 \, R_7 \, R_8 \, \text{y} \, R_9$ no afectan a la ganancia del mismo en el caso ideal.
-	Esto ayuda a poder elegir las resistencias a utilizar a la hora de la implementación del circuito, se deseaba una ganancia de aproximadamente $125 \, dB$, por lo que se eligieron los siguientes valores: $R_1 = 2k \si{\ohm} \, , R_2 = 124.7k \si{\ohm} \, \text{(implementada con dos resistencias en serie)} \, , \text{y} \, R_3 = R_4 30.1k \si{\ohm}$. Para seguir manteniendo la igualdad para que se encuentre balanceado, se eligió el mismo valor de $R_3$ y $R_4$ para $R_6$ y $R_7$.
+	Esto ayuda a poder elegir las resistencias a utilizar a la hora de la implementación del circuito, se deseaba una ganancia de aproximadamente $125 \, dB$, por lo que se eligieron los siguientes valores: $R_1 = 2k \si{\ohm} \, , R_2 = 124.7k \si{\ohm} \, \text{(implementada con dos resistencias en serie)} \, , \text{y} \, R_3 = R_4 = 30.1k \si{\ohm}$. Para seguir manteniendo la igualdad para que se encuentre balanceado, se eligió el mismo valor de $R_3$ y $R_4$ para $R_6$ y $R_7$.
 
 \subsection{Función de R5}
 	Mediante simulaciones se fue variando el valor de $R5$ y se observó que no se encontraron diferencias al valor de dicha resistencia en el modo diferencial, mientras que en el modo común esta afectaba gravemente atenuando todas las frecuencias e incluso provocando la aparición de un sobrepico.
+	
 	Esta resistencia forma parte del lazo de realimentación de un operacional, para ciertos valores esta provocaría que dicha retroalimentación sea positiva y esto se encargará de generar oscilaciones a la salida del sistema.
+	
 	A la hora de realizar el circuito se utilizó una resistencia de $7.5k\si{ohm}$ ya que se observaba en las mediciones de modo diferencial que funcionaba, sin contemplar el modo común,luego se descubrió que no era un valor óptimo en el momento de las mediciones, en una futura implementación del circuito se agregará o directamente se cambiará esta resistencia por un preset para poder observar los cambios que dichos valores de resistencias provocan en modo común.
 	
 \section{Implementación del circuito}
@@ -139,6 +141,8 @@ Tanto para las simulaciones como para las mediciones se conecto $V_1$ a un gener
 	\label{fig:montecarlodiferencial}
 	\end{figure}
 \end{center}
+
+	Se puede observar que algunos valores están por encima de $0 \, dB$, lo que nos indica que para algunos casos podría tener una ganancia en lugar de una gran atenuación a frecuencias bajas que es donde se obtiene la ganancia deseada del modo diferencial.
 
 \begin{center}
 	\begin{figure}[H]	
@@ -162,12 +166,21 @@ Tanto para las simulaciones como para las mediciones se conecto $V_1$ a un gener
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{Bode-DIFerencial.png}
-\caption{Superposición bode medido y bode simulado}
-\label{fig:bodemedido}
+\caption{Superposición bode medido y bode simulado para el modo diferencial}
+\label{fig:bodemedidodif}
 \end{figure}
 
 A la hora de medir el modo diferencial los resultados fueron los esperados y concordaban con gran precisión con lo simulado, esto se debe a que no había grandes cambios de valores en las resistencias que perturbaran el equilibrio balanceado que se busco obtener con la ganancia de modo diferencial.
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{Bode-COMun.png}
+\caption{Superposición bode medido y bode simulado para el modo común}
+\label{fig:bodemedidocomun}
+\end{figure}
+
+	Las mediciones para este modo resultaron no ser iguales a las simuladas cuando no se tiene en cuenta la tolerancia de los componentes, pero se puede notar que pertenecen a una de las curvas de la simulación de montecarlo, mostrando también que no se logró el cometido de obtener $0 \, V$ en modo común
+	
 \section{Puente de Wheatstone}
 
 \begin{figure}[H]
