@@ -1,0 +1,66 @@
+\begin{circuitikz}[scale=0.65, transform shape]
+
+	\node [label=above:$V$](VGIC) at (0,0){};
+	\node [below=1cm of VGIC](n1){};
+	\node [below=1cm of n1](n2){};
+	\node [below=1cm of n2](n3){};
+	\node [below=1cm of n3](n4){};
+	\node [below=1cm of n4](n5){};
+	\node [below=1cm of n5](n6){};
+	\node [below=1cm of n6](n7){};
+	\node [below=1cm of n7](n8){};
+	\node [below=1cm of n8](n9){};
+	\node [below=1cm of n9](n10){};
+	\node [below=1cm of n10](GND){};
+	
+
+	
+	\node (Vp1) at ($(VGIC)!0.5!(n1)$){};
+	\node (Vo2) at ($(n2)!0.5!(n3)$){};
+	\node (Vn) 	at ($(n4)!0.5!(n5)$){};
+	\node (Vo1) at ($(n6)!0.5!(n7)$){};
+	\node (Vp2) at ($(n8)!0.5!(n9)$){};
+	
+	\node [right=1cm of Vp1](n11){};
+	\node [right=1cm of Vn](n12){};
+	\node [left=1cm of Vn](n13){};
+	\node [left=1cm of Vp2](n14){};
+		
+	\node [right=2.5cm of Vo2](nop1){};
+	\node [left=2.5cm of Vo1](nop2){};
+
+	\draw (VGIC) to[short, o-] (n1);
+	\draw (n1) to[generic=$Z_1$,-] (n2);
+	\draw (n2) to[short] (n3);
+	\draw (n3) to[generic=$Z_2$,-] (n4);
+	\draw (n4) to[short] (n5);
+	\draw (n5) to[generic=$Z_3$,-] (n6);
+	\draw (n6) to[short] (n7);
+	\draw (n7) to[generic=$Z_4$,-] (n8);
+	\draw (n8) to[short] (n9);
+	\draw (n9) to[generic=$Z_5$,-] (n10);
+	\draw (n10) to[short, -] (GND) node[ground]{};
+	
+	\draw (nop1) node[op amp,yscale=-1](amp1){};
+	\draw (nop2) node[op amp,rotate=180,yscale=-1](amp2){};
+	
+	\draw (Vp1) to[short,*-] (n11);
+	\draw (n11) to[short,-] (n11 |- amp1.+) to[short,-] (amp1.+);
+	
+	\draw (Vn) to[short,*-] (n12);
+	\draw (n12) to[short,-] (n12 |- amp1.-) to [short,-] (amp1.-);	
+	
+	\draw (amp1.out) to[short,-] ++(1,0) coordinate (right_amp1);
+	\draw (right_amp1) to[short] (right_amp1 |- Vo1) to[short,-*] (Vo1);
+	\draw (right_amp1) to[short, -o] ++(1,0) node[label=right:$V_{out}$](){};
+	
+	\draw (Vn) to[short,*-] (n13);
+	\draw (n13) to[short,-] (n13 |- amp2.-) to [short,-] (amp2.-);	
+	
+	\draw (Vp2) to[short,*-] (n14);
+	\draw (n14) to[short,-] (n14 |- amp2.+) to[short,-] (amp2.+);
+	
+	\draw (amp2.out) to[short,-] ++(-1,0) coordinate (right_amp2);
+	\draw (right_amp2) to[short] (right_amp2 |- Vo2) to[short,-*] (Vo2);
+
+\end{circuitikz}

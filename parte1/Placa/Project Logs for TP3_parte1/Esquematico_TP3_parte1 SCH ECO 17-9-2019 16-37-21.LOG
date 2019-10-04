@@ -1,0 +1,2 @@
+Remove Pin=SIGNAL-1 From Net=Vin
+Remove Pin=SIGNAL-2 From Net=GND

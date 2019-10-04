@@ -1,0 +1,96 @@
+Added Component: Designator=C2_a(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C2_b(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C6_a(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C6_b(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C+Vcc(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C-Vcc(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=GND(TPSMD)
+Add component. Clean all parameters for all variants
+Added Component: Designator=GND(TPSMD)
+Add component. Clean all parameters for all variants
+Added Component: Designator=IN(TPSMD)
+Add component. Clean all parameters for all variants
+Added Component: Designator=LM833(DIP8)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Code_JEDEC"; Value = "MO-001-AN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.st.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.st.com/stonline/products/literature/ds/2169/lm833.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Dec-1997"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "06-Jun-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 8 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "DIP8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "24-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=OUT(TPSMD)
+Add component. Clean all parameters for all variants
+Added Component: Designator=POWER(MOLEX3)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R3(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R4(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R6(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R8(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SIGNAL(MOLEX2)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=+Vcc Pin=C+Vcc-1
+Added Pin To Net: NetName=+Vcc Pin=LM833-8
+Added Pin To Net: NetName=+Vcc Pin=POWER-1
+Added Net: Name=+Vcc
+Added Pin To Net: NetName=-Vcc Pin=C-Vcc-1
+Added Pin To Net: NetName=-Vcc Pin=LM833-4
+Added Pin To Net: NetName=-Vcc Pin=POWER-3
+Added Net: Name=-Vcc
+Added Pin To Net: NetName=GND Pin=C6_a-2
+Added Pin To Net: NetName=GND Pin=C6_b-2
+Added Pin To Net: NetName=GND Pin=C+Vcc-2
+Added Pin To Net: NetName=GND Pin=C-Vcc-2
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=GND-1
+Added Pin To Net: NetName=GND Pin=POWER-2
+Added Pin To Net: NetName=GND Pin=R8-2
+Added Net: Name=GND
+Added Pin To Net: NetName=NetC2_a_1 Pin=C2_a-1
+Added Pin To Net: NetName=NetC2_a_1 Pin=C2_b-1
+Added Pin To Net: NetName=NetC2_a_1 Pin=LM833-7
+Added Pin To Net: NetName=NetC2_a_1 Pin=R1-2
+Added Net: Name=NetC2_a_1
+Added Pin To Net: NetName=NetC2_a_2 Pin=C2_a-2
+Added Pin To Net: NetName=NetC2_a_2 Pin=C2_b-2
+Added Pin To Net: NetName=NetC2_a_2 Pin=LM833-2
+Added Pin To Net: NetName=NetC2_a_2 Pin=LM833-6
+Added Pin To Net: NetName=NetC2_a_2 Pin=R3-1
+Added Net: Name=NetC2_a_2
+Added Pin To Net: NetName=NetLM833_5 Pin=LM833-5
+Added Pin To Net: NetName=NetLM833_5 Pin=R4-2
+Added Pin To Net: NetName=NetLM833_5 Pin=R8-1
+Added Net: Name=NetLM833_5
+Added Pin To Net: NetName=VGIC Pin=C6_a-1
+Added Pin To Net: NetName=VGIC Pin=C6_b-1
+Added Pin To Net: NetName=VGIC Pin=LM833-3
+Added Pin To Net: NetName=VGIC Pin=R1-1
+Added Pin To Net: NetName=VGIC Pin=R6-2
+Added Net: Name=VGIC
+Added Pin To Net: NetName=Vin Pin=IN-1
+Added Pin To Net: NetName=Vin Pin=R6-1
+Added Net: Name=Vin
+Added Pin To Net: NetName=Vout Pin=LM833-1
+Added Pin To Net: NetName=Vout Pin=OUT-1
+Added Pin To Net: NetName=Vout Pin=R3-2
+Added Pin To Net: NetName=Vout Pin=R4-1
+Added Net: Name=Vout
+Added Class: Name=Esquematico_TP3_parte1
+Added Room: Name=Esquematico_TP3_parte1

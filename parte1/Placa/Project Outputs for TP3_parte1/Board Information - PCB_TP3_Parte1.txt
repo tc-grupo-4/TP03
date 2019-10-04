@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : C:\Users\lisan\Documents\Repositorios\TC\TP03\parte1\Placa\PCB_TP3_Parte1.PcbDoc
+Date         : 18/9/2019
+Time         : 10:59:12
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 100,00%
+    Connections, 31
+    Connections routed, 31
+    Connections remaining, 0
+count : 4

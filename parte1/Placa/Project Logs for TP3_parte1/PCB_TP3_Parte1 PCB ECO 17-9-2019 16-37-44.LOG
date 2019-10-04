@@ -1,0 +1,5 @@
+Added Component: Designator=SIGNAL(MOLEX2)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=Esquematico_TP3_parte1 Member=Component GND TP
+Added Member To Class: ClassName=Esquematico_TP3_parte1 Member=Component SIGNAL MOLEX2
+Added Room: Name=Esquematico_TP3_parte1
