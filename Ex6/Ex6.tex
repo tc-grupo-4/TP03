@@ -1,0 +1,50 @@
+\part{Medición automática de respuesta en frecuencia}
+\section{Introducción}
+Se realizó un programa para la medición automática de respuesta en frecuencia. El código está escrito en Python, y para la \emph{graphical user interface}, o interfaz de usuario (en adelante GUI) se hizo uso de las librerías de Qt, un \emph{framework} multiplataforma orientado a objetos para la creación de interfaces gráficas.
+
+El programa permite ajustar los parámetros para la medición y algunos parámetros de los instrumentos, además de facilitar la exportación de los datos en distintos formatos. Adicionalmente, provee una plataforma interactiva con funciones que permiten tomar más mediciones si resulta pertinente.
+
+\section{Medición de señales pequeñas o ruidosas}\label{ruido}
+El programa realiza mediciones en distintos puntos de frecuencia. En cada uno de ellos, toma un mínimo de tres mediciones y realiza un cálculo de variación estándar de la muestra. Si la variación estandar resulta aceptable de acuerdo al criterio del usuario, finaliza la medición en este punto y se continúa con el siguiente. En caso de que la muestra no sea satisfactoria, se le agregan mediciones hasta que la variación estándar sea aceptable o se llegue a un máximo de 30 (predeterminado) mediciones. De esta manera, se obtienen valores más precisos para señales ruidosas.
+
+\section{Anatomía del programa}
+La interfaz gráfica, como se observa en la figura \ref{fig:mainwindow}, es bastante sencilla. Se compone de tres paneles de control flotantes, inicialmente anexados a la ventana principal, donde se encuentra la figura sobre la que se grafican los resultados de las mediciones. Estos paneles pueden ser convenientemente retirados de la ventana principal para ser mostrados en ventanas individuales, aumentando el espacio disponible para la figura. Uno de los paneles, titulado \emph{Measurement settings}, corresponde a los ajustes propios de la medición; otro, \emph{Measurements}, permite administrar las mediciones ya tomadas y elegir qué se incluye en la figura principal, y el último, \emph{Instrument Settings}, facilita la realización de cambios en los ajustes de los instrumentos.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{mainwindow}
+    \caption{Ventana principal del programa}
+    \label{fig:mainwindow}
+\end{figure}
+
+Apoyar el puntero sobre la mayoría de los elementos de la interfaz gráfica mostrará una descripción instructiva en la barra de estado del programa, facilitando el uso a usuarios que no están familiarizados con el mismo.
+
+A continuación, se explican en detalle las funciones de cada panel.
+\subsection{Panel \emph{Measurement Settings}}
+Este panel permite configurar la medición a realizar. Comprende las siguientes opciones:
+\begin{itemize}
+    \item \emph{Scale}: escala en la que se separan los puntos de frecuencia en los que se medirá la respuesta. Puede ser logarítmica (predeterminado) o lineal.
+    \item \emph{Points}: cantidad de puntos en los que se medirá la respuesta.
+    \item \emph{Start Frequency}: es la frecuencia de inicio del intervalo de frecuencias a medir.
+    \item \emph{Stop Frequency}: es la frecuencia de finalización del intervalo de frecuencias a medir.
+    \item \emph{Span}: es la rango del intervalo de frecuencias a medir. Si no está acompañado de \emph{Center}, se le suma a \emph{Start Frequency}. Si se ingresa el valor 0 (predeterminado), se usan los valores de inicio y finalización.
+    \item \emph{Center}: es la frecuencia central del intervalo de frecuencias a medir.
+    \item \emph{Noise Tolerance}: es la frecuencia de finalización del intervalo de frecuencias a medir. Este es el criterio del usuario mencionado en la sección \ref{ruido}. El valor puede variar entre 0.01 y 1, y representa la fracción del valor medio de la señal.
+    \item \emph{Get from plot}: este botón habilita la posibilidad de clic y arrastre sobre el gráfico para resaltar una zona de interés en la que se han de realizar más mediciones. Resulta particularmente útil para obtener gráficos más fieles en los puntos críticos del circuito. Estas mediciones se adicionan a las ya existentes.
+    \item \emph{Channel In}: es el canal del osciloscopio al que se conecta la punta que medirá la señal de entrada.
+    \item \emph{Channel Out}: es el canal del osciloscopio al que se conecta la punta que medirá la señal de salida. En su menú desplegable también está la opción \emph{Math}, que permite al usuario realizar operaciones matemáticas básicas entre dos puntas de salida, a seleccionar a continuación.
+    \item \emph{Math}: este menú solo está en actividad cuando se selecciona la opción \emph{Math} en el menú desplegable de \emph{Channel Out}. Se selecciona la operación y los canales correspondientes.
+    \item \emph{Measure}: este botón da inicio al proceso de medición. Cabe notar que durante este proceso, la interfaz gráfica permanecerá inactiva. Al final del mismo, en caso de una medición normal, se mostrará el diagrama de Bode en la figura central, con sus respectivos trazos de fase y relación. En caso de una operación matemática, deberán seleccionarse los valores a graficar en el panel \emph{Measurements}.
+\end{itemize}
+\subsection{Panel \emph{Measurements}}
+Este panel permite administrar los trazos en pantalla, así como eliminarlos por completo y exportarlos a distintos formatos: como CSV o al portapapeles en forma de \emph{string} o separados por tabulaciones para su fácil pegado en hojas de cálculos.
+\subsection{Panel \emph{Instrument Settings}}
+Este panel permite ajustar la configuración de los instrumentos durante la operación del programa. Incluye las preferencias de \emph{acquire} y \emph{trigger} del osciloscopio, así como la posibilidad de configurar el valor de salida del generador y su forma de onda. Además, presenta la opción de \emph{Auto off}, que permite el apagado automático de la salida del generador cuando esta no esté en uso.
+\section{Dinámica sugerida de uso}
+Gracias a la posibilidad de obtener más puntos en mediciones posteriores y agregarlos al gráfico, se sugiere configurar la cantidad de puntos a un valor cerca de 10 y fijarlo allí. A continuación, tomar mediciones en el rango de interés, y luego explorar cada zona crítica del gráfico, agregando otras 10 mediciones donde resulte pertinente. De esta manera, se acelera mucho la toma de mediciones. 
+
+Resulta relevante notar que en bajas frecuencias (valores menores a 1000Hz), el osciloscopio tiene una base de tiempo considerable y las mediciones son mucho más lentas. Por este motivo, si no interesa al usuario realizarlas en este rango, se aconseja comenzar en valores más altos. ¡Siempre se pueden sumar nuevos puntos más tarde!
+\section{Instrucciones para correr el programa}
+Para el correcto funcionamiento del programa, se necesita instalar algunas librerías que se detallan en el archivo \emph{requirements.txt}. Asimismo, es necesario tener instalado el software NI VISA de National Instruments, que administra la comunicación y los controladores de los instrumentos.
+
+El programa se corre desde el archivo \emph{guiElements.py}, presente en la carpeta \emph{automeasurements}.

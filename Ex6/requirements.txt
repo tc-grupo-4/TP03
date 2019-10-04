@@ -1,6 +1,0 @@
-numpy
-matplotlib
-scipy
-pyyaml
-visa
-python >= 3.0
