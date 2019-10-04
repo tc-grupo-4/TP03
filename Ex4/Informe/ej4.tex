@@ -1,4 +1,4 @@
-\chapter{Medidor de Presión}
+\part{Medidor de Presión}
 Utilizando un sensor de presión $MDX2010DP$ se diseñó e implementó en PCB un circuito un medidor de presión utilizando un amplificador de instrumentación que cumpla con las especificaciones de la Tabla \ref{e4:tab_specs}, alimentado por una única fuente de tensión.
 
 \begin{table}[ht]
@@ -44,7 +44,7 @@ Es posible calcular la ganancia del circuito completo observando que el primer b
 
 \begin{figure}[ht]
 \begin{center}
-\input{amp_inst.tex}
+\input{../Ex4/Informe/amp_inst.tex}
 \label{e4:fig_amp_inst}
 \end{center}
 \end{figure}
@@ -159,7 +159,7 @@ Con los componentes seleccionados en la Tabla \ref{e4:tab_res_vals} se construy�
 .
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=\linewidth]{res/spice/spice_cm_dc_sch.png}
+\includegraphics[width=\linewidth]{../Ex4/Informe/res/spice/spice_cm_dc_sch.png}
 \caption{Esquemático de la simulación en Modo Común en CC}
 \label{e4:fig_spice_cm_dc}
 \end{center}
@@ -167,7 +167,7 @@ Con los componentes seleccionados en la Tabla \ref{e4:tab_res_vals} se construy�
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=\linewidth]{res/spice/spice_dm_dc_sch.png}
+\includegraphics[width=\linewidth]{../Ex4/Informe/res/spice/spice_dm_dc_sch.png}
 \caption{Esquemático de la simulación en Modo Diferencial en CC}
 \label{e4:fig_spice_dm_dc}
 \end{center}
@@ -197,7 +197,7 @@ A partir de las simulaciones en \textit{LTSpice} se obtuvieron los gráficos de 
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.9\linewidth]{res/spice/spice_cm_dc.png}
+\includegraphics[width=0.9\linewidth]{../Ex4/Informe/res/spice/spice_cm_dc.png}
 \caption{Resultado de la simulación en Modo Común en CC}
 \label{e4:fig_spice_cm_dc_res}
 \end{center}
@@ -205,7 +205,7 @@ A partir de las simulaciones en \textit{LTSpice} se obtuvieron los gráficos de 
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.85\linewidth]{res/spice/spice_cm_dc_mc.png}
+\includegraphics[width=0.85\linewidth]{../Ex4/Informe/res/spice/spice_cm_dc_mc.png}
 \caption{Resultado del Análisis de Montecarlo en Modo Común en CC}
 \label{e4:fig_spice_cm_dc_mc}
 \end{center}
@@ -213,7 +213,7 @@ A partir de las simulaciones en \textit{LTSpice} se obtuvieron los gráficos de 
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.85\linewidth]{res/spice/spice_dm_dc.png}
+\includegraphics[width=0.85\linewidth]{../Ex4/Informe/res/spice/spice_dm_dc.png}
 \caption{Resultado de la simulación en Modo Diferencial en CC}
 \label{e4:fig_spice_dm_dc_res}
 \end{center}
@@ -221,7 +221,7 @@ A partir de las simulaciones en \textit{LTSpice} se obtuvieron los gráficos de 
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.85\linewidth]{res/spice/spice_dm_dc_mc.png}
+\includegraphics[width=0.85\linewidth]{../Ex4/Informe/res/spice/spice_dm_dc_mc.png}
 \caption{Resultado del Análisis de Montecarlo en Modo Diferencial en CC}
 \label{e4:fig_spice_dm_dc_mc}
 \end{center}
@@ -237,7 +237,7 @@ Siguiendo el esquemático de la Figura \ref{e4:fig_pcb_sch} se contruyó el PCB 
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{res/altium/sch.png}
+\includegraphics[width=0.7\linewidth]{../Ex4/Informe/res/altium/sch.png}
 \caption{Esquemático del Amplificador de Instrumentación}
 \label{e4:fig_pcb_sch}
 \end{center}
@@ -245,7 +245,7 @@ Siguiendo el esquemático de la Figura \ref{e4:fig_pcb_sch} se contruyó el PCB 
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[height=7cm]{res/altium/pcb.png}
+\includegraphics[height=7cm]{../Ex4/Informe/res/altium/pcb.png}
 \caption{Routeado del PCB del Amplificador de Instrumentación}
 \label{e4:fig_pcb_route}
 \end{center}
@@ -360,7 +360,7 @@ Se colocó un extremo de un tubo a la entrada de presión positiva del sensor de
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[scale=0.5]{./res/probeta.png}
+\includegraphics[scale=0.5]{../Ex4/Informe//res/probeta.png}
 \caption{Sistema de medición de la presión}
 \end{center}
 \end{figure}
@@ -407,7 +407,7 @@ De \eqref{e4:eq_p} se puede observar cómo la presión ejercida por una columna 
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.6]{./res/medysim.png}
+\includegraphics[scale=0.6]{../Ex4/Informe//res/medysim.png}
 \caption{Resultados de la Medición de la presión en la probeta con agua}
 \label{e4:fig_p}
 \end{center}
