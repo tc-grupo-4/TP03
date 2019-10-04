@@ -1,28 +1,4 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[siunitx,american]{circuitikz}
-\usepackage{pgfplots}
-\usepackage[margin=0.5in]{geometry}
-\usepackage{textcomp}
-\usepackage[spanish, es-tabla]{babel}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage{amsmath}
-\usepackage{tikz}
-\usepackage{booktabs}
-\usetikzlibrary{arrows}
 
-
-\usepackage{parskip}
-\usepackage{fancyhdr}
-\usepackage{vmargin}
-\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
-
-
-\pgfplotsset{compat=1.15}
-
-\begin{document}
 
 \part{Introducción al diseño de filtros activos}
 \section{Introducción teórica del \textit{Gyrator}}
@@ -30,7 +6,7 @@ El concepto de \textit{Gyrator} fue introducido en 1948 por Bernard D.H.Tellegen
 el transformador ideal. Es un elemento electrónico de dos puertas no reciproco cuyo símbolo se puede ver en la Figura \ref{ej2_gyrator_symbol}.
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.4\textwidth, height=4cm]{Resources/ej2_gyrator_symbol.png}
+    \centering\includegraphics[width=0.4\textwidth, height=4cm]{../Ex2/Resources/ej2_gyrator_symbol.png}
     \caption{Símbolo del \textit{Gyrator}}
     \label{ej2_gyrator_symbol}
     \end{figure}
@@ -70,7 +46,7 @@ Gracias (\ref{ej2_ecua_gyrator_1}) y (\ref{ej2_ecua_gyrator_2}) se pueden enumer
         \begin{equation} L =  \frac{C}{G^2} \label{ej2_ecua_gyrator_inversion_impedancia}\end{equation}
 
         \begin{figure}[h!]                                                       
-            \centering\includegraphics[width=0.7\textwidth, height=4cm]{Resources/ej2_gyrator_prop2.png}
+            \centering\includegraphics[width=0.7\textwidth, height=4cm]{../Ex2/Resources/ej2_gyrator_prop2.png}
             \caption{Propiedad de inversión de impedancia}
             \label{ej2_gyrator_prop2}
             \end{figure}
@@ -80,7 +56,7 @@ Gracias (\ref{ej2_ecua_gyrator_1}) y (\ref{ej2_ecua_gyrator_2}) se pueden enumer
         En la Figura \ref{ej2_gyrator_prop3} se puede apreciar esta propiedad con mayor detalle.  
 
         \begin{figure}[h!]                                                       
-            \centering\includegraphics[width=0.7\textwidth, height=4cm]{Resources/ej2_gyrator_prop3.png}
+            \centering\includegraphics[width=0.7\textwidth, height=4cm]{../Ex2/Resources/ej2_gyrator_prop3.png}
             \caption{Propiedad de inversión corriente - voltaje}
             \label{ej2_gyrator_prop3}
             \end{figure}
@@ -97,14 +73,14 @@ En la Figura \ref{ej2_inductor_model} se puede ver el modelo del inductor. Si se
 \begin{equation} Z_{in} = R_L + sL \label{ej2_ecua_inductor}\end{equation}
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.4\textwidth, height=4cm]{Resources/ej2_inductor_model.png}
+    \centering\includegraphics[width=0.4\textwidth, height=4cm]{../Ex2/Resources/ej2_inductor_model.png}
     \caption{Modelo del inductor}
     \label{ej2_inductor_model}
     \end{figure}
 
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.4\textwidth, height=4cm]{Resources/ej2_gyrator_inductor.png}
+    \centering\includegraphics[width=0.4\textwidth, height=4cm]{../Ex2/Resources/ej2_gyrator_inductor.png}
     \caption{\textit{Gyrator} equivalente a un inductor}
     \label{ej2_gyrator_inductor}
     \end{figure}
@@ -196,7 +172,7 @@ Al tener la expresión de la impedancia de entrada (\ref{equ:ej2_impedancia_gyra
     
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.9\textwidth, height=9cm]{Resources/ej2_gyrator_sim.png}
+    \centering\includegraphics[width=0.9\textwidth, height=9cm]{../Ex2/Resources/ej2_gyrator_sim.png}
     \caption{Simulación de \textit{Gyrator} }
     \label{ej2_sim_inductor}
     \end{figure}
@@ -257,7 +233,7 @@ Haciendo un análisis previo de estas condiciones, se puede decir que que la mas
 Un circuito clásico de segundo orden que representa un pasa altos es un RCL con salida en la inductancia. En la Figura \ref{ej2_filto_HP} se puede ver dicho circuito. 
 %Grafico clasico RCL
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=5cm, height=3cm]{Resources/ej2_hp.png}
+    \centering\includegraphics[width=5cm, height=3cm]{../Ex2/Resources/ej2_hp.png}
     \caption{Pasa altos de segundo orden}
     \label{ej2_filto_HP}
     \end{figure}
@@ -278,7 +254,7 @@ Teniendo en mente el circuito de la Figura \ref{ej2_filto_HP}, se propone un nue
 
 %Circuito propuesto
 \begin{figure}[!]                                                       
-    \centering\includegraphics[width=0.4\textwidth, height=4cm]{Resources/ej2_hp_gyrator.png}
+    \centering\includegraphics[width=0.4\textwidth, height=4cm]{../Ex2/Resources/ej2_hp_gyrator.png}
     \caption{Circuito propuesto}
     \label{fig:ej2_HP_propuesto}
     \end{figure}
@@ -349,7 +325,7 @@ Antes de continuar con la medición se realiza una simulación montecarlo para e
 se utilizan todos componentes de montaje superficial con tolerancias $1\%$. El resultado de la simulación se ve en la Figura \ref{fig:monte}. 
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.9\textwidth, height=7cm]{Resources/ej2_montecarlo.png}
+    \centering\includegraphics[width=0.9\textwidth, height=7cm]{../Ex2/Resources/ej2_montecarlo.png}
     \caption{Simulación de montecarlo}
     \label{fig:monte}
     \end{figure}
@@ -360,7 +336,7 @@ La simulación muestra una variación prácticamente imperceptible ya que las to
 Si se simula el circuito propuesto (desde $f = 10 Hz$ a $f = 10MHz$) con los componentes de la Tabla \ref{tab:hf_gyrator_components}, se obtiene el gráfico de la Figura \ref{ej2_hp_sim}.
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.9\textwidth, height=9cm]{Resources/ej2_hp_sim.png}
+    \centering\includegraphics[width=0.9\textwidth, height=9cm]{../Ex2/Resources/ej2_hp_sim.png}
     \caption{Simulación del circuito propuesto }
     \label{ej2_hp_sim}
     \end{figure}
@@ -370,7 +346,7 @@ Gracias a las herramientas de LTSpice, se detecta que a la frecuencia $f = 14kHz
 Con respecto a la condición 1, se nota en el diagrama de bode que alrededor de $f = 195 kHz$ la atenuación deja de ser $0dB$ y comienza a aumentar. Esto se debe a que estas frecuencias el \textit{Gyrator} deja de comportarse como un inductor. Para un mejor comprendimiento e lo que sucede, se prosigue a realizar un análisis de linealidad. Gracias a este análisis se puede determinar en que frecuencias el \textit{Gyrator} adquiere la impedancia deseada (\ref{ej2_inductor_model}). Para comenzar el análisis, se simula el \textit{Gyrator} en LTSpice con los valores de $R$, $R_L$ y $C$ propuestos. El resultado se detalla en la Figura \ref{fig:ej2_HP_gyrator_sim}.
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.9\textwidth, height=7cm]{Resources/ej2_hp_gyrator_sim.png}
+    \centering\includegraphics[width=0.9\textwidth, height=7cm]{../Ex2/Resources/ej2_hp_gyrator_sim.png}
     \caption{Simulación del \textit{Gyrator} }
     \label{fig:ej2_HP_gyrator_sim}
     \end{figure}
@@ -384,7 +360,7 @@ Cabe destacar que para ambas simulaciones se utilizo un amplificador operacional
 Al imponer una senoide de $V_{PP} = 3V$ como señal de entrada al circuito en un rango de frecuencias de $[10Hz , 10MHz]$, se obtiene el bode de la Figura \ref{fig:ej2_hp_med_and_sim}. En dicha figura también se superpone la simulación del circuito propuesto.  
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.9\textwidth, height=7cm]{Resources/ej2_hp_med_and_sim.png}
+    \centering\includegraphics[width=0.9\textwidth, height=7cm]{../Ex2/Resources/ej2_hp_med_and_sim.png}
     \caption{Medición y simulación del circuito propuesto }
     \label{fig:ej2_hp_med_and_sim}
     \end{figure}
@@ -416,7 +392,7 @@ Un circuito clásico de segundo orden que representa un pasa bandas es un RCL co
 
 %Grafico clasico RCL
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=5cm, height=3cm]{Resources/ej2_bp.png}
+    \centering\includegraphics[width=5cm, height=3cm]{../Ex2/Resources/ej2_bp.png}
     \caption{Pasa banda}
     \label{ej2_filto_BP}
     \end{figure}
@@ -435,7 +411,7 @@ Se propone el circuito de la Figura \ref{fig:ej2_BP_propuesto}.
 
 %Circuito propuesto
 \begin{figure}[!]                                                       
-    \centering\includegraphics[width=0.4\textwidth, height=4cm]{Resources/ej2_bp_gyrator.png}
+    \centering\includegraphics[width=0.4\textwidth, height=4cm]{../Ex2/Resources/ej2_bp_gyrator.png}
     \caption{Circuito propuesto}
     \label{fig:ej2_BP_propuesto}
     \end{figure}
@@ -493,7 +469,7 @@ Al tener los valores de todos los componentes, se puede formar la Tabla  \ref{ta
 Si se simula el circuito propuesto (desde $f = 1 Hz$ a $f = 10MHz$) con los componentes de la Tabla \ref{tab:bp_gyrator_components}, se obtiene el gráfico de la Figura \ref{ej2_bp_sim}.
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.9\textwidth, height=9cm]{Resources/ej2_bp_sim.png}
+    \centering\includegraphics[width=0.9\textwidth, height=9cm]{../Ex2/Resources/ej2_bp_sim.png}
     \caption{Simulación del circuito propuesto }
     \label{ej2_bp_sim}
     \end{figure}
@@ -506,7 +482,7 @@ Al igual que en la sección anterior, se realiza un análisis lineal. En la Figu
 
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.9\textwidth, height=7cm]{Resources/ej2_bp_gyrator_sim.png}
+    \centering\includegraphics[width=0.9\textwidth, height=7cm]{../Ex2/Resources/ej2_bp_gyrator_sim.png}
     \caption{Simulación del \textit{Gyrator} }
     \label{fig:ej2_BP_gyrator_sim}
     \end{figure}
@@ -519,7 +495,7 @@ En la simulación del \textit{Gyrator}, se puede apreciar que la impedancia tien
 Al imponer una senoide de $V_{PP} = 3V$ como señal de entrada al circuito en un rango de frecuencias de $[10Hz , 1MHz]$, se obtiene el bode de la Figura \ref{fig:ej2_hp_sim_y_medicion}. En dicha imagen también se superpone la simulación anteriormente mostrada para poder comparar resultados. A primera vista el resultado es muy bueno. Tanto para bajas, medias y altas frecuencias el circuito propuesto se comporta como en la simulación. Al igual que en la simulación, la frecuencia máxima se da en aproximadamente la misma frecuencia. Otra cosa para notar es el polo dominante. En este caso, el filtro se beneficia de el ya que a frecuencias altas tiende a atenuar las señales. Esto implica que la condición (\ref{ej2_ecua_condicion_1}) se puede dejar de lado.  
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=0.9\textwidth, height=9cm]{Resources/ej2_bp_med_and_sim.png}
+    \centering\includegraphics[width=0.9\textwidth, height=9cm]{../Ex2/Resources/ej2_bp_med_and_sim.png}
     \caption{Bode de medición y simulación}
     \label{fig:ej2_hp_sim_y_medicion}
     \end{figure}
@@ -577,7 +553,7 @@ En la Figura \ref{ej2_filto_BR} se puede ver un circuito clásico de un filtro r
 
 %Grafico clasico RCL
 \begin{figure}[h!]                                                       
-\centering\includegraphics[width=5cm, height=3cm]{Resources/ej2_br.png}
+\centering\includegraphics[width=5cm, height=3cm]{../Ex2/Resources/ej2_br.png}
 \caption{Rechaza banda}
 \label{ej2_filto_BR}
 \end{figure}
@@ -595,7 +571,7 @@ Se propone el circuito de la Figura \ref{fig:ej2_BR_propuesto}.
 
 %Circuito propuesto
 \begin{figure}[!]                                                       
-\centering\includegraphics[width=0.4\textwidth, height=4cm]{Resources/ej2_br_gyrator.png}
+\centering\includegraphics[width=0.4\textwidth, height=4cm]{../Ex2/Resources/ej2_br_gyrator.png}
 \caption{Circuito propuesto}
 \label{fig:ej2_BR_propuesto}
 \end{figure}
@@ -657,7 +633,7 @@ Componente   & Valor \\ \midrule
 Si se simula el circuito propuesto (desde $f = 1 Hz$ a $f = 10MHz$) con los componentes de la Tabla \ref{tab:br_gyrator_components}, se obtiene el gráfico de la Figura \ref{ej2_br_sim}.
 
 \begin{figure}[h!]                                                       
-\centering\includegraphics[width=0.9\textwidth, height=9cm]{Resources/ej2_br_sim.png}
+\centering\includegraphics[width=0.9\textwidth, height=9cm]{../Ex2/Resources/ej2_br_sim.png}
 \caption{Simulación del circuito propuesto }
 \label{ej2_br_sim}
 \end{figure}
@@ -670,7 +646,7 @@ Al igual que en la sección anterior, se realiza un análisis lineal. En la Figu
 
 
 \begin{figure}[h!]                                                       
-\centering\includegraphics[width=0.9\textwidth, height=7cm]{Resources/ej2_br_gyrator_sim.png}
+\centering\includegraphics[width=0.9\textwidth, height=7cm]{../Ex2/Resources/ej2_br_gyrator_sim.png}
 \caption{Simulación del \textit{Gyrator} }
 \label{fig:ej2_BR_gyrator_sim}
 \end{figure}
@@ -683,7 +659,7 @@ En la simulación del \textit{Gyrator} es muy similar a las simulaciones ya real
 Se realiza un bode con una señal de entrada configurada como senoide de $V_{PP} = 3V$ desde $[10Hz , 1MHz]$. La Figura \ref{fig:ej2_hp_med_and_sim}.
 
 \begin{figure}[h!]                                                    
-\centering\includegraphics[width=0.9\textwidth, height=9cm]{Resources/ej2_br_med_and_sim.png}
+\centering\includegraphics[width=0.9\textwidth, height=9cm]{../Ex2/Resources/ej2_br_med_and_sim.png}
 \caption{Bode de medición y simulación}
 \label{fig:ej2_hp_med_and_sim}
 \end{figure}
@@ -722,7 +698,7 @@ En la Figura \ref{ej2_filto_LP} se puede ver un circuito clásico de un filtro p
 
 %Grafico clasico RCL
 \begin{figure}[h!]                                                       
-\centering\includegraphics[width=5cm, height=3cm]{Resources/ej2_lp.png}
+\centering\includegraphics[width=5cm, height=3cm]{../Ex2/Resources/ej2_lp.png}
 \caption{Rechaza banda}
 \label{ej2_filto_LP}
 \end{figure}
@@ -740,7 +716,7 @@ Se propone el circuito de la Figura \ref{fig:ej2_LP_propuesto}.
 
 %Circuito propuesto
 \begin{figure}[!]                                                       
-\centering\includegraphics[width=0.4\textwidth, height=4cm]{Resources/ej2_lp_gyrator.png}
+\centering\includegraphics[width=0.4\textwidth, height=4cm]{../Ex2/Resources/ej2_lp_gyrator.png}
 \caption{Circuito propuesto}
 \label{fig:ej2_LP_propuesto}
 \end{figure}
@@ -801,7 +777,7 @@ Componente   & Valor \\ \midrule
 Si se simula el circuito propuesto (desde $f = 1 Hz$ a $f = 10MHz$) con los componentes de la Tabla \ref{tab:lp_gyrator_components}, se obtiene el gráfico de la Figura \ref{ej2_lp_sim}.
 
 \begin{figure}[h!]                                                       
-\centering\includegraphics[width=0.9\textwidth, height=9cm]{Resources/ej2_lp_sim.png}
+\centering\includegraphics[width=0.9\textwidth, height=9cm]{../Ex2/Resources/ej2_lp_sim.png}
 \caption{Simulación del circuito propuesto }
 \label{ej2_lp_sim}
 \end{figure}
@@ -814,7 +790,7 @@ A la frecuencia de corte de $f= 4kHz$, la atenuación es de $2.55 dB$. Si bien n
 
 
 \begin{figure}[h!]                                                       
-\centering\includegraphics[width=0.9\textwidth, height=7cm]{Resources/ej2_lp_gyrator_sim.png}
+\centering\includegraphics[width=0.9\textwidth, height=7cm]{../Ex2/Resources/ej2_lp_gyrator_sim.png}
 \caption{Simulación del \textit{Gyrator} }
 \label{fig:ej2_LP_gyrator_sim}
 \end{figure}
@@ -828,7 +804,7 @@ Nuevamente el \textit{Gyrator} describe un comportamiento de impedancias muy sim
 Al imponer una senoide de $V_{PP} = 3V$ como señal de entrada al circuito en un rango de frecuencias de $[10Hz , 1MHz]$, se obtiene el bode de la Figura \ref{fig:ej2_lp_medicion}.
 
 \begin{figure}[h!]                                                       
-\centering\includegraphics[width=0.9\textwidth, height=7cm]{Resources/ej2_lp_med_and_sim.png}
+\centering\includegraphics[width=0.9\textwidth, height=7cm]{../Ex2/Resources/ej2_lp_med_and_sim.png}
 \caption{Medición y simulación del circuito propuesto }
 \label{fig:ej2_lp_medicion}
 \end{figure}
@@ -845,7 +821,7 @@ Si bien para obtener un pasa bajos se tuvo que salir de modo diferencial del cap
 Para realizar todos los filtros mencionados a lo largo de las secciones se decide diseñar un PCB que contenga los cuatro filtros y que utilice el mismo integrado (TL084). En la Figura \ref{fig:pcb} se ve dicho diseño. 
 
 \begin{figure}[h!]                                                       
-    \centering\includegraphics[width=7cm, height=7cm]{Resources/ej2_pcb.png}
+    \centering\includegraphics[width=7cm, height=7cm]{../Ex2/Resources/ej2_pcb.png}
     \caption{Diseño del PCB }
     \label{fig:pcb}
     \end{figure}
@@ -853,5 +829,3 @@ Para realizar todos los filtros mencionados a lo largo de las secciones se decid
 
 
 
-
-\end{document}
