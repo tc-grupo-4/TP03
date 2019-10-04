@@ -3,7 +3,7 @@
 Un circuito GIC(generalized impedance converter) es un circuito RC activo diseñado para simular componentes que varían su comportamiento dependiendo de la frecuencia para usar, por ejemplo, en el diseño de filtros activos como es el caso del presente trabajo.
 Se presentará a continuación el análisis y la implementación de un filtro pasa banda activo, implementado un GIC simulando una inductancia. Se detallarán los cálculos que nos permiten obtener su trasferencia, así como también se desarrollará el criterio para elegir los componentes que lo conforman, en función de una serie de condiciones preestablecidas.
 
-\section{Transferencia del Circuito}
+\section{Transferencia del circuito}
 \subsection{Impedancia equivalente y transferencia del GIC}
 
 La impedancia equivalente que se presenta entre los terminales del circuito esta descripta, en función de las impedancias que lo compongan, por la expresion \ref{exp:impedancia_gic}
@@ -17,7 +17,7 @@ Z = \frac{Z_1Z_3Z_5}{Z_2Z_4}
 
 \begin{figure}[h]
 \centering
-\input{resources/GIC_generic}
+\input{../parte1/informe/resources/GIC_generic}
 \caption{Circuito GIC genérico}
 \label{fig:1_gic_generico}
 \end{figure}
@@ -43,7 +43,7 @@ Z = L_{GIC}j\omega
 
 \begin{figure}[h]
 \centering
-\input{resources/GIC_aislado}
+\input{../parte1/informe/resources/GIC_aislado}
 \caption{Circuito GIC utilizado}
 \label{fig:1_gic_aislado}
 \end{figure}
@@ -60,7 +60,7 @@ La Figura \ref{circuito_induct} muestra el filtro a implementar. Como se explic�
 
 \begin{figure}[h]
 \centering
-\input{resources/circuito_inductancia}
+\input{../parte1/informe/resources/circuito_inductancia}
 \caption{Filtro con inductancia equivalente}
 \label{circuito_induct}
 \end{figure}
@@ -76,7 +76,7 @@ Combinando las expresiones \ref{exp:transferencia_GIC} y \ref{exp:transf_vin_vgi
 
 \begin{figure}[h]
 \centering
-\input{resources/circuito_completo}
+\input{../parte1/informe/resources/circuito_completo}
 \caption{Circuito implementado completo}
 \label{fig:6_circuito_completo}
 \end{figure}
@@ -120,7 +120,6 @@ H(\$) = 2 \frac{\frac{1}{R_6C}\$}{\$^2 + \frac{1}{R_6C}\$ + \frac{1}{(RC)^2}}
 \]
 
 \subsubsection{Función de $R_8$}
-\textcolor{red}{PREGUNTAR Y COMPLETAR}
 
 Cuando $R_8$ tiende a infinito, el circuito GIC queda flotante, es decir sin conexión a tierra, y de esta forma la impedancia es infinita, y se comporta como un circuito abierto. De esta forma, la transferencia total del filtro se reduce a la siguiente expresión
 
@@ -130,7 +129,6 @@ H(\$) = \frac{1}{1 + \frac{\$}{\omega_c}}
 
 La cuál caracteriza un filtro pasa bajos con frecuencia de corte $\omega_c = \frac{1}{R_6C_6}$
 
-\textcolor{red}{VER QUE ONDA CUANDO TIENDE A 0}
 
 \subsection{Comportamiento de $R_6$}\label{1_seccion_r6}
 
@@ -168,21 +166,21 @@ Las figuras \ref{1_polos_reales}, \ref{1_polos_complejos} y \ref{1_polo_doble} m
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.5]{resources/1_polos_reales}
+\includegraphics[scale=0.5]{../parte1/informe/resources/1_polos_reales}
 \caption{Distribución de polos. Dos polos reales}
 \label{1_polos_reales}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.5]{resources/1_polos_complejos}
+\includegraphics[scale=0.5]{../parte1/informe/resources/1_polos_complejos}
 \caption{Distribución de polos. Polos complejos conjugados}
 \label{1_polos_complejos}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.5]{resources/1_polo_doble}
+\includegraphics[scale=0.5]{../parte1/informe/resources/1_polo_doble}
 \caption{Distribución de polos. Polo real doble}
 \label{1_polo_doble}
 \end{figure}
@@ -307,7 +305,7 @@ La Figura \ref{polos_sens_Q} muestra la distribución de las singularidades de l
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{resources/polos_sens_Q}
+\includegraphics[scale=0.5]{../parte1/informe/resources/polos_sens_Q}
 \caption{Dispersión de polos frente a variaciones de Q}
 \label{polos_sens_Q}
 \end{figure}
@@ -334,7 +332,7 @@ Las limitaciones que estos dos fenómenos pudieran imponer sobre el restante ope
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/bode_segundo_opamp}
+\includegraphics[scale=0.4]{../parte1/informe/resources/bode_segundo_opamp}
 \label{1_bode_opamp2}
 \caption{Transferencia en magnitud a la salida del segundo operacional del GIC}
 \end{figure}
@@ -343,7 +341,7 @@ Las figuras muestran las curvas mencionadas para los operacionales TL082, LM833 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/vin_max_LM741}
+\includegraphics[scale=0.4]{../parte1/informe/resources/vin_max_LM741}
 \label{1_vin_max_LM741}
 \caption{Maxima tensión de entrada por saturación y slew rate para LM741}
 \end{figure}
@@ -352,7 +350,7 @@ Se puede observar que en el caso del LM741, el slew rate impone un limite a la t
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/vin_max_LM833}
+\includegraphics[scale=0.4]{../parte1/informe/resources/vin_max_LM833}
 \label{1_vin_max_LM833}
 \caption{Maxima tensión de entrada por saturación y slew rate para LM833}
 \end{figure}
@@ -361,7 +359,7 @@ Respecto al operacional LM833, la distorsión por slew rate impone un limite par
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/vin_max_TL082}
+\includegraphics[scale=0.4]{../parte1/informe/resources/vin_max_TL082}
 \label{1_vin_max_TL082}
 \caption{Maxima tensión de entrada por saturación y slew rate para TL082}
 \end{figure}
@@ -371,10 +369,10 @@ En el caso del TL082, se observa que la salida nunca podrá alcanzar un valor ta
 Si bien ambos operacionales, el LM833 y el TL082, son apropiados respecto a sus limitaciones por saturación y slew rate para implementar el filtro en cuestión, se decidió elegir el operacional LM833 debido a que este presenta una menor tensión de offset a la entrada y una menor distorsión armónica total (THD).
 
 \section{Implementación}
-
+\subsection{Circuito implementado}
 \begin{figure}[ht]
 \centering
-\input{resources/circuito_implementado}
+\input{../parte1/informe/resources/circuito_implementado}
 \caption{Circuito implementado}
 \label{1_circuito_implementado}
 \end{figure}
@@ -383,7 +381,7 @@ Se implementó el circuito de la Figura \ref{1_circuito_implementado} en PCB, pa
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.4]{resources/pcb}
+\includegraphics[scale=0.4]{../parte1/informe/resources/pcb}
 \caption{Diseño final del circuito impreso}
 \label{1_pcb}
 \end{figure}
@@ -396,7 +394,7 @@ La Figura \ref{1_bode} muestra las tres transferencias: calculada, simulada y me
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.4]{resources/bode_todos}
+\includegraphics[scale=0.4]{../parte1/informe/resources/bode_todos}
 \caption{Diseño final del circuito impreso}
 \label{1_bode}
 \end{figure}
@@ -406,14 +404,14 @@ Las figuras muestran la magnitud y la fase de la impedancia de entrada medida so
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/impedancia_entrada_mag}
+\includegraphics[scale=0.4]{../parte1/informe/resources/impedancia_entrada_mag}
 \caption{Magnitud de impedancia de entrada medida vs. calculada}
 \label{1_zin_mag}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/impedancia_entrada_phase}
+\includegraphics[scale=0.4]{../parte1/informe/resources/impedancia_entrada_phase}
 \caption{Fase de impedancia de entrada medida vs. calculada}
 \label{1_zin_phase}
 \end{figure}
@@ -429,14 +427,14 @@ Las figuras \ref{1_mc_mag} y \ref{1_mc_phase} muestran los resultados obtenidos 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/montecarlo_mag}
+\includegraphics[scale=0.4]{../parte1/informe/resources/montecarlo_mag}
 \caption{Análisis de Montecarlo. Transferencia en magnitud del circuito}
 \label{1_mc_mag}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/montecarlo_phase}
+\includegraphics[scale=0.4]{../parte1/informe/resources/montecarlo_phase}
 \caption{Análisis de Montecarlo. Transferencia de fase del circuito}
 \label{1_mc_phase}
 \end{figure}
@@ -449,7 +447,7 @@ Se midió la respuesta al escalón del sistema, obteniéndose los resultados mos
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{resources/step_response}
+\includegraphics[scale=0.4]{../parte1/informe/resources/step_response}
 \caption{Respuesta al escalón calculada, simulada y medida}
 \label{1_step_response}
 \end{figure}

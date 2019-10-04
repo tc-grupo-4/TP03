@@ -1,38 +1,61 @@
 \babel@toc {spanish}{}
-\contentsline {part}{I\hspace {1em}Introducci\IeC {\'o}n al dise\IeC {\~n}o de filtros activos}{2}% 
-\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n te\IeC {\'o}rica del \textit {Gyrator}}{2}% 
-\contentsline {section}{\numberline {2}\textit {Gyrator} como inductor}{3}% 
-\contentsline {section}{\numberline {3}Dise\IeC {\~n}o de filtros activos con \textit {Gyrator}}{7}% 
-\contentsline {subsection}{\numberline {3.1}Filtro pasa altos}{7}% 
-\contentsline {subsubsection}{\numberline {3.1.1}Plantilla}{7}% 
-\contentsline {subsubsection}{\numberline {3.1.2}Funcion transferencia y circuito de segundo orden}{7}% 
-\contentsline {subsubsection}{\numberline {3.1.3}Circuito propuesto}{8}% 
-\contentsline {subsubsection}{\numberline {3.1.4}Dise\IeC {\~n}o del circuito}{8}% 
-\contentsline {subsubsection}{\numberline {3.1.5}Simulacion y analisis lineal}{9}% 
-\contentsline {subsubsection}{\numberline {3.1.6}Medicion y analisis a altas frecuencias}{11}% 
-\contentsline {subsubsection}{\numberline {3.1.7}Conclusion}{11}% 
-\contentsline {subsection}{\numberline {3.2}Pasa Banda}{12}% 
-\contentsline {subsubsection}{\numberline {3.2.1}Plantilla}{12}% 
-\contentsline {subsubsection}{\numberline {3.2.2}Funcion transferencia y circuito de segundo orden}{12}% 
-\contentsline {subsubsection}{\numberline {3.2.3}Circuito propuesto}{12}% 
-\contentsline {subsubsection}{\numberline {3.2.4}Dise\IeC {\~n}o del circuito}{13}% 
-\contentsline {subsubsection}{\numberline {3.2.5}Simulacion y analisis lineal}{13}% 
-\contentsline {subsubsection}{\numberline {3.2.6}Medicion y analisis a altas frecuencias}{14}% 
-\contentsline {subsubsection}{\numberline {3.2.7}Conclusion}{15}% 
-\contentsline {subsection}{\numberline {3.3}Rechaza banda}{15}% 
-\contentsline {subsubsection}{\numberline {3.3.1}Plantilla}{15}% 
-\contentsline {subsubsection}{\numberline {3.3.2}Funcion transferencia y circuito de segundo orden}{15}% 
-\contentsline {subsubsection}{\numberline {3.3.3}Circuito propuesto}{16}% 
-\contentsline {subsubsection}{\numberline {3.3.4}Dise\IeC {\~n}o del circuito}{16}% 
-\contentsline {subsubsection}{\numberline {3.3.5}Simulacion y analisis lineal}{17}% 
-\contentsline {subsubsection}{\numberline {3.3.6}Medicion y analisis a altas frecuencias}{17}% 
-\contentsline {subsubsection}{\numberline {3.3.7}Conclusion}{18}% 
-\contentsline {subsection}{\numberline {3.4}Pasa bajos}{19}% 
-\contentsline {subsubsection}{\numberline {3.4.1}Plantilla}{19}% 
-\contentsline {subsubsection}{\numberline {3.4.2}Funcion transferencia y circuito de segundo orden}{19}% 
-\contentsline {subsubsection}{\numberline {3.4.3}Circuito propuesto}{19}% 
-\contentsline {subsubsection}{\numberline {3.4.4}Dise\IeC {\~n}o del circuito}{20}% 
-\contentsline {subsubsection}{\numberline {3.4.5}Simulacion y analisis lineal}{20}% 
-\contentsline {subsubsection}{\numberline {3.4.6}Medicion y analisis a altas frecuencias}{21}% 
-\contentsline {subsubsection}{\numberline {3.4.7}Conclusion}{21}% 
-\contentsline {section}{\numberline {4}Dise\IeC {\~n}o PCB}{22}% 
+\contentsline {part}{I\hspace {1em}Filtro con GIC}{3}% 
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}% 
+\contentsline {section}{\numberline {2}Transferencia del circuito}{3}% 
+\contentsline {subsection}{\numberline {2.1}Impedancia equivalente y transferencia del GIC}{3}% 
+\contentsline {subsection}{\numberline {2.2}Transferencia del filtro}{4}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Funci\IeC {\'o}n de $R_8$}{6}% 
+\contentsline {subsection}{\numberline {2.3}Comportamiento de $R_6$}{6}% 
+\contentsline {subsubsection}{\numberline {2.3.1}Singularidades $R_6 \rightarrow \infty $, $R_6 \rightarrow 0$}{6}% 
+\contentsline {subsection}{\numberline {2.4}An\IeC {\'a}lisis de sensibilidades}{7}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Sensibilidad de $\omega _0$}{7}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Sensibilidad de $Q$}{7}% 
+\contentsline {subsubsection}{\numberline {2.4.3}Sensibilidad de $|H(j\omega _0)|$}{8}% 
+\contentsline {subsection}{\numberline {2.5}Selecci\IeC {\'o}n de componentes}{9}% 
+\contentsline {subsection}{\numberline {2.6}Distribuci\IeC {\'o}n de las singularidades}{10}% 
+\contentsline {subsection}{\numberline {2.7}Amplificadores operacionales compatibles}{10}% 
+\contentsline {section}{\numberline {3}Implementaci\IeC {\'o}n}{13}% 
+\contentsline {subsection}{\numberline {3.1}Circuito implementado}{13}% 
+\contentsline {section}{\numberline {4}Mediciones}{13}% 
+\contentsline {subsubsection}{\numberline {4.0.1}Transferencia}{13}% 
+\contentsline {subsubsection}{\numberline {4.0.2}Impedancia de entrada}{13}% 
+\contentsline {subsubsection}{\numberline {4.0.3}Error}{15}% 
+\contentsline {section}{\numberline {5}Respuesta al escal\IeC {\'o}n}{16}% 
+\contentsline {section}{\numberline {6}Conclusiones}{17}% 
+\contentsline {part}{II\hspace {1em}Introducci\IeC {\'o}n al dise\IeC {\~n}o de filtros activos}{17}% 
+\contentsline {section}{\numberline {7}Introducci\IeC {\'o}n te\IeC {\'o}rica del \textit {Gyrator}}{17}% 
+\contentsline {section}{\numberline {8}\textit {Gyrator} como inductor}{19}% 
+\contentsline {section}{\numberline {9}Dise\IeC {\~n}o de filtros activos con \textit {Gyrator}}{22}% 
+\contentsline {subsection}{\numberline {9.1}Filtro pasa altos}{22}% 
+\contentsline {subsubsection}{\numberline {9.1.1}Plantilla}{22}% 
+\contentsline {subsubsection}{\numberline {9.1.2}Funcion transferencia y circuito de segundo orden}{23}% 
+\contentsline {subsubsection}{\numberline {9.1.3}Circuito propuesto}{23}% 
+\contentsline {subsubsection}{\numberline {9.1.4}Dise\IeC {\~n}o del circuito}{24}% 
+\contentsline {subsubsection}{\numberline {9.1.5}Simulacion y analisis lineal}{25}% 
+\contentsline {subsubsection}{\numberline {9.1.6}Medicion y analisis a altas frecuencias}{26}% 
+\contentsline {subsubsection}{\numberline {9.1.7}Conclusion}{26}% 
+\contentsline {subsection}{\numberline {9.2}Pasa Banda}{27}% 
+\contentsline {subsubsection}{\numberline {9.2.1}Plantilla}{27}% 
+\contentsline {subsubsection}{\numberline {9.2.2}Funcion transferencia y circuito de segundo orden}{27}% 
+\contentsline {subsubsection}{\numberline {9.2.3}Circuito propuesto}{28}% 
+\contentsline {subsubsection}{\numberline {9.2.4}Dise\IeC {\~n}o del circuito}{28}% 
+\contentsline {subsubsection}{\numberline {9.2.5}Simulacion y analisis lineal}{28}% 
+\contentsline {subsubsection}{\numberline {9.2.6}Medicion y analisis a altas frecuencias}{30}% 
+\contentsline {subsubsection}{\numberline {9.2.7}Conclusion}{30}% 
+\contentsline {subsection}{\numberline {9.3}Rechaza banda}{30}% 
+\contentsline {subsubsection}{\numberline {9.3.1}Plantilla}{30}% 
+\contentsline {subsubsection}{\numberline {9.3.2}Funcion transferencia y circuito de segundo orden}{31}% 
+\contentsline {subsubsection}{\numberline {9.3.3}Circuito propuesto}{31}% 
+\contentsline {subsubsection}{\numberline {9.3.4}Dise\IeC {\~n}o del circuito}{32}% 
+\contentsline {subsubsection}{\numberline {9.3.5}Simulacion y analisis lineal}{32}% 
+\contentsline {subsubsection}{\numberline {9.3.6}Medicion y analisis a altas frecuencias}{33}% 
+\contentsline {subsubsection}{\numberline {9.3.7}Conclusion}{34}% 
+\contentsline {subsection}{\numberline {9.4}Pasa bajos}{34}% 
+\contentsline {subsubsection}{\numberline {9.4.1}Plantilla}{34}% 
+\contentsline {subsubsection}{\numberline {9.4.2}Funcion transferencia y circuito de segundo orden}{34}% 
+\contentsline {subsubsection}{\numberline {9.4.3}Circuito propuesto}{35}% 
+\contentsline {subsubsection}{\numberline {9.4.4}Dise\IeC {\~n}o del circuito}{35}% 
+\contentsline {subsubsection}{\numberline {9.4.5}Simulacion y analisis lineal}{35}% 
+\contentsline {subsubsection}{\numberline {9.4.6}Medicion y analisis a altas frecuencias}{37}% 
+\contentsline {subsubsection}{\numberline {9.4.7}Conclusion}{37}% 
+\contentsline {section}{\numberline {10}Dise\IeC {\~n}o PCB}{37}% 
