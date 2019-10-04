@@ -82,7 +82,7 @@
 \begin_body
 
 \begin_layout Part
-Control de tonos y ecualizador de fase
+Ecualizador basado en Bohemian Rhapsody
 \end_layout
 
 \begin_layout Standard
@@ -1315,6 +1315,13 @@ a lo largo de la canción entera
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "5_12"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1637,6 +1644,20 @@ reference "5t_2"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+A su vez, se puede observar en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_12"
+
+\end_inset
+
+, que las tensiones máximas de salida de la canción no supera los 0(dB),
+ es decir, la tensión de salida del reproductor musical no supera 1(Vpp)
+ de salida, esto es de vital importancia a la hora de definir los valores
+ de amplificación y atenuación del ecualizador.
 \end_layout
 
 \begin_layout Standard
@@ -3984,9 +4005,17 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Resources/IMG_20190916_164017.jpg
-	lyxscale 25
-	scale 15
+	filename Resources/IMG_20190928_115414.jpg
+	lyxscale 10
+	scale 10
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Resources/IMG_20190928_115428.jpg
+	lyxscale 10
+	scale 10
 
 \end_inset
 
@@ -4151,6 +4180,10 @@ Sin ganancia ni atenuación
 
 \end_layout
 
+\begin_layout Subsection
+Impedancias
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -4158,10 +4191,61 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/Impedancia de entrada eq.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Impedancia de salida de un sistema
+Impedancia de entrada al ecualizador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/Impedancia de salida eq.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de salida del ecualizador
 \end_layout
 
 \end_inset
@@ -4176,9 +4260,67 @@ name "5_34"
 
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Resources/mediciones/impedancia entrada parlantes.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de entrada a los parlantes
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "5_36"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede ver, la diferencia entre la impedancia de salida del ecualizador
+ y la impedancia de entrada al parlante es lo suficientemente grande (aproximada
+mente 20 (dB)), por lo cual, no es necesario agregar un buffer a la salida
+ del ecualizador ya que la mayor parte de la tensión del ecualizador caerá
+ en los parlantes.
 \end_layout
 
 \begin_layout Section
@@ -4194,17 +4336,26 @@ reference "5_34"
 \end_inset
 
 , la impedancia de salida del sistema no es lo suficientemente baja, por
- lo tanto, se generará un divisor resistivo a la salida del sistema conectada
- con parlantes convencionales, lo que generará una caida en potencia entregada
+ lo tanto, si en lugar de conectar un parlante con la impedancia de entrada
+ vista en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "5_36"
+
+\end_inset
+
+, se conecta un auricular convencional, que generalmente sus impedancias
+ de entrada rondan las decenas de Ohms, se generará un divisor resistivo
+ a la salida del sistema, lo que generará una caida en potencia entregada
  al parlante, por lo cual, el sonido resultante ecualizado será de menor
  potencia que el original.
  Sin embargo, esto es facilmente solucionable simplemente inyectando un
  buffer a la salida del sistema.
  Hay 2 formas de hacerlo, soldando un integrado extra de amplificadores
  operacionales (lo cual requeriría un costo extra en la produccion del ecualizad
-or), o simplementecambiando las 2 ultimas bandas de tonos agudos del ecualizador
-, por una sola banda de un tono intermedio entre esas 2 banda, asi liberando
- el cuarto amplificador, se lo puede utilizar como buffer.
+or), o simplemente cambiando las 2 ultimas bandas de tonos agudos del ecualizado
+r, por una sola banda de un tono intermedio entre esas 2 banda, asi liberando
+ el cuarto amplificador y se lo puede utilizar como buffer.
  Una ultima solucion posible, es cambiar los componentes pasivos del sistema,
  de manera tal que la amplificacion (o atenuación) de cada banda sea lo
  suficientemente grande como para que la salida del sistema, incluyendo

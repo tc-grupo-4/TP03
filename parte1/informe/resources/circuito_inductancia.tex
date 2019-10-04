@@ -1,0 +1,12 @@
+\begin{circuitikz}
+\node [label=left:$V_{in}$](Vin) at (0,0){};
+\node [right=3cm of Vin](Vc){};
+\node [right=0.5cm of Vc,label=above:$V_{GIC}$](VGIC){};
+\node [right=0.5cm of VGIC](VL){};
+
+\draw (Vin) to[R=$R_6$,o-] (Vc);
+\draw (Vc) to[C=$C_6$] ++(0,-2) node[ground]{};
+\draw (Vc) to[short, -o] (VGIC);
+\draw (VGIC) to[short,o-] (VL);
+\draw (VL) to[L=$L_{GIC}$] ++(0,-2) node[ground]{};
+\end{circuitikz}

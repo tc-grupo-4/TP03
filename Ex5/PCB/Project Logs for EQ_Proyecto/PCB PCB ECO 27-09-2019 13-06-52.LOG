@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=Out Pin=C13-2
+Removed Pin From Net: NetName=VEE Pin=J3-1
+Removed Pin From Net: NetName=GND Pin=J3-2
+Removed Pin From Net: NetName=VCC Pin=J3-3
+Removed Member From Class: ClassName=Esquemático Member=C13
+Removed Member From Class: ClassName=Esquemático Member=J3
+Change Component Designator: OldDesignator=TP4 NewDesignator=GND3
+Change Component Designator: OldDesignator=TP6 NewDesignator=GND4
+Added Component: Designator=B1(BORNERA2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R17(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R18(PRESET H)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VEE Pin=B1-1
+Added Pin To Net: NetName=VCC Pin=B1-2
+Added Pin To Net: NetName=Out Pin=R14-2
+Added Pin To Net: NetName=Out Pin=R16-2
+Added Pin To Net: NetName=GND Pin=R17-1
+Added Pin To Net: NetName=VCC Pin=R17-2
+Added Pin To Net: NetName=VEE Pin=R18-2
+Added Pin To Net: NetName=VEE Pin=R18-2
+Added Pin To Net: NetName=GND Pin=R18-3
+Added Pin To Net: NetName=GND Pin=R18-3
+Added Pin To Net: NetName=Out Pin=U2-7
+Added Member To Class: ClassName=Esquemático Member=Component B1 12V
+Added Member To Class: ClassName=Esquemático Member=Component R17 68K
+Added Member To Class: ClassName=Esquemático Member=Component R18 100K
+Added Room: Name=Esquemático

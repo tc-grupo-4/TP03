@@ -1,0 +1,1422 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.30)  3 OCT 2019 23:11
+entering extended mode
+**"./Informe TP02 - Grupo 4.tex"
+("Informe TP02 - Grupo 4.tex"
+LaTeX2e <2018-12-01>
+(preamble.tex ("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex/lualatex/luainputenc\luainputenc.sty"
+Package: luainputenc 2010/11/19 v0.973 inputenc package for LuaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+))
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.sty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks17
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count91
+\float@exts=\toks18
+\float@box=\box27
+\@float@everytoks=\toks19
+\@floatcapt=\box28
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\textcomp.sty"
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1enc.dfu"
+File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen111
+))
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen114
+\lightrulewidth=\dimen115
+\cmidrulewidth=\dimen116
+\belowrulesep=\dimen117
+\belowbottomsep=\dimen118
+\aboverulesep=\dimen119
+\abovetopsep=\dimen120
+\cmidrulesep=\dimen121
+\cmidrulekern=\dimen122
+\defaultaddspace=\dimen123
+\@cmidla=\count92
+\@cmidlb=\count93
+\@aboverulesep=\dimen124
+\@belowrulesep=\dimen125
+\@thisruleclass=\count94
+\@lastruleclass=\count95
+\@thisrulewidth=\dimen126
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen127
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count96
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count97
+\leftroot@=\count98
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count99
+\DOTSCASE@=\count100
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box29
+\strutbox@=\box30
+\big@size=\dimen128
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count101
+\c@MaxMatrixCols=\count102
+\dotsspace@=\muskip10
+\c@parentequation=\count103
+\dspbrk@lvl=\count104
+\tag@help=\toks21
+\row@=\count105
+\column@=\count106
+\maxfields@=\count107
+\andhelp@=\toks22
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
+\@envbody=\toks23
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/tools\multicol.sty"
+Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
+\c@tracingmulticols=\count108
+\mult@box=\box31
+\multicol@leftmargin=\dimen135
+\c@unbalance=\count109
+\c@collectmore=\count110
+\doublecol@number=\count111
+\multicoltolerance=\count112
+\multicolpretolerance=\count113
+\full@width=\dimen136
+\page@free=\dimen137
+\premulticols=\dimen138
+\postmulticols=\dimen139
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box32
+\last@line=\box33
+\maxbalancingoverflow=\dimen140
+\mult@rightbox=\box34
+\mult@grightbox=\box35
+\mult@gfirstbox=\box36
+\mult@firstbox=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\c@columnbadness=\count114
+\c@finalcolumnbadness=\count115
+\last@try=\dimen141
+\multicolovershoot=\dimen142
+\multicolundershoot=\dimen143
+\mult@nat@firstbox=\box55
+\colbreak@box=\box56
+\mc@col@check@num=\count116
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/circuitikz\circuitikz.sty"
+Package: circuitikz 2019/07/13{} The CircuiTikz circuit drawing package version
+ 0.9.3
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/frontendlayer\tikz.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/utilities\pgfrcs.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-common.tex"
+\pgfutil@everybye=\toks25
+\pgfutil@tempdima=\dimen144
+\pgfutil@tempdimb=\dimen145
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-common-lists.te
+x")) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfutil-latex.def"
+\pgfutil@abb=\box57
+("C:\Program Files\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfrcs.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf\pgf.revision.tex")
+Package: pgfrcs 2019/05/09 v3.1.3 (3.1.3)
+))
+Package: pgf 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgfcore.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/systemlayer\pgfsys.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys.code.tex"
+Package: pgfsys 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeys.code.tex"
+\pgfkeys@pathtoks=\toks26
+\pgfkeys@temptoks=\toks27
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeysfiltered.code.te
+x"
+\pgfkeys@tmptoks=\toks28
+))
+\pgf@x=\dimen146
+\pgf@y=\dimen147
+\pgf@xa=\dimen148
+\pgf@ya=\dimen149
+\pgf@xb=\dimen150
+\pgf@yb=\dimen151
+\pgf@xc=\dimen152
+\pgf@yc=\dimen153
+\pgf@xd=\dimen154
+\pgf@yd=\dimen155
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count117
+\c@pgf@countb=\count118
+\c@pgf@countc=\count119
+\c@pgf@countd=\count120
+\t@pgf@toka=\toks29
+\t@pgf@tokb=\toks30
+\t@pgf@tokc=\toks31
+\pgf@sys@id@count=\count121
+ ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgf.cfg"
+File: pgf.cfg 2019/05/09 v3.1.3 (3.1.3)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+"
+File: pgfsys-common-pdf.def 2019/05/09 v3.1.3 (3.1.3)
+)))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.t
+ex"
+File: pgfsyssoftpath.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgfsyssoftpath@smallbuffer@items=\count122
+\pgfsyssoftpath@bigbuffer@items=\count123
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/systemlayer\pgfsysprotocol.code.t
+ex"
+File: pgfsysprotocol.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcore.code.tex"
+Package: pgfcore 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathcalc.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathutil.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathparser.code.tex"
+\pgfmath@dimen=\dimen156
+\pgfmath@count=\count124
+\pgfmath@box=\box58
+\pgfmath@toks=\toks32
+\pgfmath@stack@operand=\toks33
+\pgfmath@stack@operation=\toks34
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.basic.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.trigonometr
+ic.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.random.code
+.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.comparison.
+code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.base.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.round.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.misc.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfunctions.integerarit
+hmetics.code.tex")))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count125
+))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfint.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+"
+File: pgfcorepoints.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgf@picminx=\dimen157
+\pgf@picmaxx=\dimen158
+\pgf@picminy=\dimen159
+\pgf@picmaxy=\dimen160
+\pgf@pathminx=\dimen161
+\pgf@pathmaxx=\dimen162
+\pgf@pathminy=\dimen163
+\pgf@pathmaxy=\dimen164
+\pgf@xx=\dimen165
+\pgf@xy=\dimen166
+\pgf@yx=\dimen167
+\pgf@yy=\dimen168
+\pgf@zx=\dimen169
+\pgf@zy=\dimen170
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathconstruct.c
+ode.tex"
+File: pgfcorepathconstruct.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgf@path@lastx=\dimen171
+\pgf@path@lasty=\dimen172
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathusage.code.
+tex"
+File: pgfcorepathusage.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgf@shorten@end@additional=\dimen173
+\pgf@shorten@start@additional=\dimen174
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+"
+File: pgfcorescopes.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgfpic=\box59
+\pgf@hbox=\box60
+\pgf@layerbox@main=\box61
+\pgf@picture@serial@count=\count126
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoregraphicstate.co
+de.tex"
+File: pgfcoregraphicstate.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgflinewidth=\dimen175
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoretransformations
+.code.tex"
+File: pgfcoretransformations.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgf@pt@x=\dimen176
+\pgf@pt@y=\dimen177
+\pgf@pt@temp=\dimen178
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorequick.code.tex"
+File: pgfcorequick.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreobjects.code.te
+x"
+File: pgfcoreobjects.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepathprocessing.
+code.tex"
+File: pgfcorepathprocessing.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+"
+File: pgfcorearrows.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgfarrowsep=\dimen179
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgf@max=\dimen180
+\pgf@sys@shading@range@num=\count127
+\pgf@shadingcount=\count128
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreimage.code.te
+x"
+File: pgfcoreimage.code.tex 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoreexternal.code.t
+ex"
+File: pgfcoreexternal.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgfexternal@startupbox=\box62
+))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+"
+File: pgfcorelayers.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcoretransparency.co
+de.tex"
+File: pgfcoretransparency.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorepatterns.code.t
+ex"
+File: pgfcorepatterns.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex"
+File: pgfcorerdf.code.tex 2019/05/09 v3.1.3 (3.1.3)
+))) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleshapes.code.
+tex"
+File: pgfmoduleshapes.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgfnodeparttextbox=\box63
+) ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-0-65.
+sty"
+Package: pgfcomp-version-0-65 2019/05/09 v3.1.3 (3.1.3)
+\pgf@nodesepstart=\dimen181
+\pgf@nodesepend=\dimen182
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/compatibility\pgfcomp-version-1-18.
+sty"
+Package: pgfcomp-version-1-18 2019/05/09 v3.1.3 (3.1.3)
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/utilities\pgffor.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/utilities\pgfkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgfkeys.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex/latex/pgf/math\pgfmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/utilities\pgffor.code.tex"
+Package: pgffor 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.code.tex")
+\pgffor@iter=\dimen183
+\pgffor@skip=\dimen184
+\pgffor@stack=\toks35
+\pgffor@toks=\toks36
+))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex"
+Package: tikz 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/libraries\pgflibraryplothandlers.
+code.tex"
+File: pgflibraryplothandlers.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgf@plot@mark@count=\count129
+\pgfplotmarksize=\dimen185
+)
+\tikz@lastx=\dimen186
+\tikz@lasty=\dimen187
+\tikz@lastxsaved=\dimen188
+\tikz@lastysaved=\dimen189
+\tikzleveldistance=\dimen190
+\tikzsiblingdistance=\dimen191
+\tikz@figbox=\box64
+\tikz@figbox@bg=\box65
+\tikz@tempbox=\box66
+\tikz@tempbox@bg=\box67
+\tikztreelevel=\count130
+\tikznumberofchildren=\count131
+\tikznumberofcurrentchild=\count132
+\tikz@fig@count=\count133
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgfmatrixcurrentrow=\count134
+\pgfmatrixcurrentcolumn=\count135
+\pgf@matrix@numberofcolumns=\count136
+)
+\tikz@expandcount=\count137
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikz
+librarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikz
+librarycalc.code.tex"
+File: tikzlibrarycalc.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/libraries\pgflibraryarrows.meta.c
+ode.tex"
+File: pgflibraryarrows.meta.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgfarrowinset=\dimen192
+\pgfarrowlength=\dimen193
+\pgfarrowwidth=\dimen194
+\pgfarrowlinewidth=\dimen195
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikz
+librarybending.code.tex"
+File: tikzlibrarybending.code.tex 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmodulebending.code.tex
+"
+File: pgfmodulebending.code.tex 2019/05/09 v3.1.3 (3.1.3)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/modules\pgfmodulenonlineartransfo
+rmations.code.tex"
+File: pgfmodulenonlineartransformations.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgftransformnonlinearflatness=\dimen196
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/libraries\pgflibrarycurvilinear.c
+ode.tex"
+File: pgflibrarycurvilinear.code.tex 2019/05/09 v3.1.3 (3.1.3)
+\pgf@curvilinear@time@a=\dimen197
+\pgf@curvilinear@length@a=\dimen198
+\pgf@curvilinear@length@b=\dimen199
+\pgf@curvilinear@length@c=\dimen256
+\pgf@curvilinear@length@d=\dimen257
+)
+\pgf@arrows@the@rigidity=\dimen258
+))
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcirc.defines.tex"
+\pgf@circ@count@a=\count138
+\pgf@circ@count@b=\count139
+\pgf@circ@count@c=\count140
+\pgf@circ@res@up=\dimen259
+\pgf@circ@res@down=\dimen260
+\pgf@circ@res@zero=\dimen261
+\pgf@circ@res@left=\dimen262
+\pgf@circ@res@right=\dimen263
+\pgf@circ@res@other=\dimen264
+\pgf@circ@res@step=\dimen265
+\pgf@circ@res@temp=\dimen266
+\pgfstartlinewidth=\dimen267
+\pgf@circ@Rlen=\dimen268
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircutils.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircshapes.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircmonopoles.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircbipoles.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcirctripoles.tex"
+\pgf@circ@res@count=\count141
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircquadpoles.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircmultipoles.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcirclabel.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircvoltage.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcirccurrent.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircflow.tex")
+("C:\Program Files\MiKTeX 2.9\tex/generic/circuitikz\pgfcircpath.tex")
+
+Package circuitikz Warning: You did not specify one of the voltage directions:
+(circuitikz)                  oldvoltagedirection, nooldvoltagedirection, 
+(circuitikz)                  RPvoltages or EFvoltages 
+(circuitikz)                Default directions may have changed, 
+(circuitikz)                please check the manual.
+
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikz
+librarypositioning.code.tex"
+File: tikzlibrarypositioning.code.tex 2019/05/09 v3.1.3 (3.1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/mathtools\mathtools.sty"
+Package: mathtools 2019/07/31 v1.22 mathematical typesetting tools
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count142
+\calc@Bcount=\count143
+\calc@Adimen=\dimen269
+\calc@Bdimen=\dimen270
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count144
+\calc@Cskip=\skip50
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/mathtools\mhsetup.sty"
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count145
+\l_MT_multwidth_dim=\dimen271
+\origjot=\skip51
+\l_MT_shortvdotswithinadjustabove_dim=\dimen272
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen273
+\l_MT_above_intertext_sep=\dimen274
+\l_MT_below_intertext_sep=\dimen275
+\l_MT_above_shortintertext_sep=\dimen276
+\l_MT_below_shortintertext_sep=\dimen277
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
+Package: babel 2019/04/03 3.29 The Babel package
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
+File: switch.def 2019/04/03 3.29 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/babel-spanish\spanish.ldf"
+Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
+File: babel.def 2019/04/03 3.29 Babel common definitions
+\babel@savecnt=\count146
+\U@D=\dimen278
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
+\bbl@dirlevel=\count147
+)
+\es@quottoks=\toks37
+\es@quotdepth=\count148
+Package babel Info: Making " an active character on input line 561.
+Package babel Info: Making . an active character on input line 662.
+Package babel Info: Making < an active character on input line 707.
+Package babel Info: Making > an active character on input line 707.
+)))
+("Informe TP02 - Grupo 4.aux"
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+
+
+LaTeX Warning: Label `ej2_sim_inductor' multiply defined.
+
+
+LaTeX Warning: Label `fig:ej2_hp_med_and_sim' multiply defined.
+
+
+LaTeX Warning: Label `equ:trans_clasica_br' multiply defined.
+
+)
+\openout1 = `"Informe TP02 - Grupo 4.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 3.
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 3.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+Package geometry Warning: The marginal notes overrun the paper.
+     Add 19.0945pt and more to the right margin.
+
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-129.17549pt
+* \headheight=56.9055pt
+* \headsep=56.9055pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count149
+\scratchdimen=\dimen279
+\scratchbox=\box68
+\nofMPsegments=\count150
+\nofMParguments=\count151
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count152
+\MPscratchDim=\dimen280
+\MPnumerator=\count153
+\makeMPintoPDFobject=\count154
+\everyMPtoPDFconversion=\toks39
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+)))
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+ABD: EveryShipout initializing macros
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
+ (Caratula.tex
+<resources/itba.png, id=4, 813.0375pt x 508.14844pt>
+File: resources/itba.png Graphic file (type png)
+<use resources/itba.png>
+Package pdftex.def Info: resources/itba.png  used on input line 34.
+(pdftex.def)             Requested size: 121.95036pt x 76.21896pt.
+ [1
+
+{C:/Users/lisan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./resources
+/itba.png>])
+("Informe TP02 - Grupo 4.toc"
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [1])
+\tf@toc=\write4
+\openout4 = `"Informe TP02 - Grupo 4.toc"'.
+
+ [2] (../parte1/informe/parte1.tex
+(../parte1/informe/resources/GIC_generic.tex
+\realshift=\dimen281
+\realshift=\dimen282
+\realshift=\dimen283
+\realshift=\dimen284
+\realshift=\dimen285
+) [3]
+(../parte1/informe/resources/GIC_aislado.tex
+\realshift=\dimen286
+\realshift=\dimen287
+\realshift=\dimen288
+\realshift=\dimen289
+\realshift=\dimen290
+)
+(../parte1/informe/resources/circuito_inductancia.tex
+\realshift=\dimen291
+\realshift=\dimen292
+\realshift=\dimen293
+) [4]
+(../parte1/informe/resources/circuito_completo.tex
+\realshift=\dimen294
+\realshift=\dimen295
+\realshift=\dimen296
+\realshift=\dimen297
+\realshift=\dimen298
+\realshift=\dimen299
+\realshift=\dimen300
+) [5]
+<../parte1/informe/resources/1_polos_reales.png, id=42, 680.84363pt x 504.98662
+pt>
+File: ../parte1/informe/resources/1_polos_reales.png Graphic file (type png)
+<use ../parte1/informe/resources/1_polos_reales.png>
+Package pdftex.def Info: ../parte1/informe/resources/1_polos_reales.png  used o
+n input line 169.
+(pdftex.def)             Requested size: 340.42097pt x 252.49269pt.
+<../parte1/informe/resources/1_polos_complejos.png, id=43, 685.96275pt x 507.39
+563pt>
+File: ../parte1/informe/resources/1_polos_complejos.png Graphic file (type png)
+
+<use ../parte1/informe/resources/1_polos_complejos.png>
+Package pdftex.def Info: ../parte1/informe/resources/1_polos_complejos.png  use
+d on input line 176.
+(pdftex.def)             Requested size: 342.98053pt x 253.69719pt.
+<../parte1/informe/resources/1_polo_doble.png, id=44, 676.32675pt x 509.20238pt
+>
+File: ../parte1/informe/resources/1_polo_doble.png Graphic file (type png)
+<use ../parte1/informe/resources/1_polo_doble.png>
+Package pdftex.def Info: ../parte1/informe/resources/1_polo_doble.png  used on 
+input line 183.
+(pdftex.def)             Requested size: 338.16254pt x 254.60056pt.
+ [6] [7 <../parte1/informe/resources/1_polos_reales.png>] [8 <../parte1/informe
+/resources/1_polos_complejos.png>] [9 <../parte1/informe/resources/1_polo_doble
+.png>]
+<../parte1/informe/resources/polos_sens_Q.png, id=61, 666.69075pt x 521.24738pt
+>
+File: ../parte1/informe/resources/polos_sens_Q.png Graphic file (type png)
+<use ../parte1/informe/resources/polos_sens_Q.png>
+Package pdftex.def Info: ../parte1/informe/resources/polos_sens_Q.png  used on 
+input line 308.
+(pdftex.def)             Requested size: 333.34456pt x 260.62305pt.
+ [10 <../parte1/informe/resources/polos_sens_Q.png>]
+<../parte1/informe/resources/bode_segundo_opamp.png, id=66, 867.24pt x 511.6113
+7pt>
+File: ../parte1/informe/resources/bode_segundo_opamp.png Graphic file (type png
+)
+<use ../parte1/informe/resources/bode_segundo_opamp.png>
+Package pdftex.def Info: ../parte1/informe/resources/bode_segundo_opamp.png  us
+ed on input line 335.
+(pdftex.def)             Requested size: 346.88986pt x 204.64091pt.
+<../parte1/informe/resources/vin_max_LM741.png, id=67, 874.467pt x 511.00912pt>
+
+File: ../parte1/informe/resources/vin_max_LM741.png Graphic file (type png)
+<use ../parte1/informe/resources/vin_max_LM741.png>
+Package pdftex.def Info: ../parte1/informe/resources/vin_max_LM741.png  used on
+ input line 344.
+(pdftex.def)             Requested size: 349.7806pt x 204.40002pt.
+<../parte1/informe/resources/vin_max_LM833.png, id=68, 855.195pt x 512.51476pt>
+
+File: ../parte1/informe/resources/vin_max_LM833.png Graphic file (type png)
+<use ../parte1/informe/resources/vin_max_LM833.png>
+Package pdftex.def Info: ../parte1/informe/resources/vin_max_LM833.png  used on
+ input line 353.
+(pdftex.def)             Requested size: 342.07195pt x 205.00226pt.
+ [11 <../parte1/informe/resources/bode_segundo_opamp.png> <../parte1/informe/re
+sources/vin_max_LM741.png>]
+<../parte1/informe/resources/vin_max_TL082.png, id=72, 860.31412pt x 515.526pt>
+
+File: ../parte1/informe/resources/vin_max_TL082.png Graphic file (type png)
+<use ../parte1/informe/resources/vin_max_TL082.png>
+Package pdftex.def Info: ../parte1/informe/resources/vin_max_TL082.png  used on
+ input line 362.
+(pdftex.def)             Requested size: 344.11955pt x 206.20674pt.
+
+(../parte1/informe/resources/circuito_implementado.tex
+\realshift=\dimen301
+\realshift=\dimen302
+\realshift=\dimen303
+\realshift=\dimen304
+\realshift=\dimen305
+\realshift=\dimen306
+\realshift=\dimen307
+\realshift=\dimen308
+\realshift=\dimen309
+\realshift=\dimen310
+)
+<../parte1/informe/resources/pcb.png, id=73, 503.17987pt x 504.08325pt>
+File: ../parte1/informe/resources/pcb.png Graphic file (type png)
+<use ../parte1/informe/resources/pcb.png>
+Package pdftex.def Info: ../parte1/informe/resources/pcb.png  used on input lin
+e 384.
+(pdftex.def)             Requested size: 201.26837pt x 201.62971pt.
+ [12 <../parte1/informe/resources/vin_max_LM833.png> <../parte1/informe/resourc
+es/vin_max_TL082.png>]
+<../parte1/informe/resources/bode_todos.png, id=78, 902.77275pt x 504.6855pt>
+File: ../parte1/informe/resources/bode_todos.png Graphic file (type png)
+<use ../parte1/informe/resources/bode_todos.png>
+Package pdftex.def Info: ../parte1/informe/resources/bode_todos.png  used on in
+put line 397.
+(pdftex.def)             Requested size: 361.1027pt x 201.87062pt.
+<../parte1/informe/resources/impedancia_entrada_mag.png, id=79, 848.57025pt x 5
+06.49225pt>
+File: ../parte1/informe/resources/impedancia_entrada_mag.png Graphic file (type
+ png)
+<use ../parte1/informe/resources/impedancia_entrada_mag.png>
+Package pdftex.def Info: ../parte1/informe/resources/impedancia_entrada_mag.png
+  used on input line 407.
+(pdftex.def)             Requested size: 339.42209pt x 202.5933pt.
+
+[13]
+Overfull \vbox (22.76799pt too high) has occurred while \output is active []
+
+
+[14 <../parte1/informe/resources/pcb.png> <../parte1/informe/resources/bode_tod
+os.png> <../parte1/informe/resources/impedancia_entrada_mag.png>]
+<../parte1/informe/resources/impedancia_entrada_phase.png, id=86, 849.77475pt x
+ 507.99788pt>
+File: ../parte1/informe/resources/impedancia_entrada_phase.png Graphic file (ty
+pe png)
+<use ../parte1/informe/resources/impedancia_entrada_phase.png>
+Package pdftex.def Info: ../parte1/informe/resources/impedancia_entrada_phase.p
+ng  used on input line 414.
+(pdftex.def)             Requested size: 339.90387pt x 203.19554pt.
+<../parte1/informe/resources/montecarlo_mag.png, id=87, 849.47362pt x 509.20238
+pt>
+File: ../parte1/informe/resources/montecarlo_mag.png Graphic file (type png)
+<use ../parte1/informe/resources/montecarlo_mag.png>
+Package pdftex.def Info: ../parte1/informe/resources/montecarlo_mag.png  used o
+n input line 430.
+(pdftex.def)             Requested size: 339.78343pt x 203.67734pt.
+<../parte1/informe/resources/montecarlo_phase.png, id=88, 850.97925pt x 505.588
+88pt>
+File: ../parte1/informe/resources/montecarlo_phase.png Graphic file (type png)
+<use ../parte1/informe/resources/montecarlo_phase.png>
+Package pdftex.def Info: ../parte1/informe/resources/montecarlo_phase.png  used
+ on input line 437.
+(pdftex.def)             Requested size: 340.38567pt x 202.23196pt.
+ [15 <../parte1/informe/resources/impedancia_entrada_phase.png> <../parte1/info
+rme/resources/montecarlo_mag.png>]
+<../parte1/informe/resources/step_response.png, id=92, 853.68938pt x 507.69675p
+t>
+File: ../parte1/informe/resources/step_response.png Graphic file (type png)
+<use ../parte1/informe/resources/step_response.png>
+Package pdftex.def Info: ../parte1/informe/resources/step_response.png  used on
+ input line 450.
+(pdftex.def)             Requested size: 341.4697pt x 203.0751pt.
+) (../Ex2/Ex2.tex [16 <../parte1/informe/resources/montecarlo_phase.png> <../pa
+rte1/informe/resources/step_response.png>]
+<../Ex2/Resources/ej2_gyrator_symbol.png, id=96, 356.33125pt x 282.05376pt>
+File: ../Ex2/Resources/ej2_gyrator_symbol.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_gyrator_symbol.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_gyrator_symbol.png  used on input
+ line 9.
+(pdftex.def)             Requested size: 200.19115pt x 113.80936pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--32
+
+ []
+
+[17 <../Ex2/Resources/ej2_gyrator_symbol.png>]
+<../Ex2/Resources/ej2_gyrator_prop2.png, id=101, 753.81625pt x 321.2pt>
+File: ../Ex2/Resources/ej2_gyrator_prop2.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_gyrator_prop2.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_gyrator_prop2.png  used on input 
+line 49.
+(pdftex.def)             Requested size: 350.3369pt x 113.8087pt.
+<../Ex2/Resources/ej2_gyrator_prop3.png, id=102, 781.92125pt x 317.185pt>
+File: ../Ex2/Resources/ej2_gyrator_prop3.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_gyrator_prop3.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_gyrator_prop3.png  used on input 
+line 59.
+(pdftex.def)             Requested size: 350.33412pt x 113.80899pt.
+ [18 <../Ex2/Resources/ej2_gyrator_prop2.png> <../Ex2/Resources/ej2_gyrator_pro
+p3.png>]
+<../Ex2/Resources/ej2_inductor_model.png, id=109, 298.11375pt x 211.79124pt>
+File: ../Ex2/Resources/ej2_inductor_model.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_inductor_model.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_inductor_model.png  used on input
+ line 76.
+(pdftex.def)             Requested size: 200.19005pt x 113.80971pt.
+<../Ex2/Resources/ej2_gyrator_inductor.png, id=110, 407.5225pt x 251.94125pt>
+File: ../Ex2/Resources/ej2_gyrator_inductor.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_gyrator_inductor.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_gyrator_inductor.png  used on inp
+ut line 83.
+(pdftex.def)             Requested size: 200.19145pt x 113.81076pt.
+ [19 <../Ex2/Resources/ej2_inductor_model.png> <../Ex2/Resources/ej2_gyrator_in
+ductor.png>] [20]
+<../Ex2/Resources/ej2_gyrator_sim.png, id=119, 1898.09125pt x 911.405pt>
+File: ../Ex2/Resources/ej2_gyrator_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_gyrator_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_gyrator_sim.png  used on input li
+ne 175.
+(pdftex.def)             Requested size: 450.42485pt x 256.0817pt.
+
+[21 <../Ex2/Resources/ej2_gyrator_sim.png>]
+<../Ex2/Resources/ej2_hp.png, id=124, 235.88126pt x 115.43124pt>
+File: ../Ex2/Resources/ej2_hp.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_hp.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_hp.png  used on input line 236.
+(pdftex.def)             Requested size: 142.26408pt x 85.35788pt.
+ [22]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 256.
+
+<../Ex2/Resources/ej2_hp_gyrator.png, id=128, 399.4925pt x 274.02374pt>
+File: ../Ex2/Resources/ej2_hp_gyrator.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_hp_gyrator.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_hp_gyrator.png  used on input lin
+e 257.
+(pdftex.def)             Requested size: 200.19073pt x 113.8139pt.
+[23 <../Ex2/Resources/ej2_hp.png> <../Ex2/Resources/ej2_hp_gyrator.png>]
+<../Ex2/Resources/ej2_montecarlo.png, id=134, 1684.2925pt x 906.38625pt>
+File: ../Ex2/Resources/ej2_montecarlo.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_montecarlo.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_montecarlo.png  used on input lin
+e 328.
+(pdftex.def)             Requested size: 450.42172pt x 199.17047pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24]
+
+LaTeX Warning: Reference `tab:hf_gyrator_components' on page 25 undefined on in
+put line 336.
+
+<../Ex2/Resources/ej2_hp_sim.png, id=139, 541.3023pt x 400.3758pt>
+File: ../Ex2/Resources/ej2_hp_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_hp_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_hp_sim.png  used on input line 33
+9.
+(pdftex.def)             Requested size: 450.4454pt x 256.093pt.
+[25 <../Ex2/Resources/ej2_montecarlo.png> <../Ex2/Resources/ej2_hp_sim.png>]
+<../Ex2/Resources/ej2_hp_gyrator_sim.png, id=145, 1899.095pt x 907.39pt>
+File: ../Ex2/Resources/ej2_hp_gyrator_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_hp_gyrator_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_hp_gyrator_sim.png  used on input
+ line 349.
+(pdftex.def)             Requested size: 450.43121pt x 199.16951pt.
+
+Overfull \hbox (1.8797pt too wide) in paragraph at lines 360--361
+[]\OT1/cmr/m/n/10 Al im-po-ner una se-noi-de de $\OML/cmm/m/it/10 V[] \OT1/cmr/
+m/n/10 = 3\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 co-mo se~nal de en-tra-da al cir-
+cui-to en un ran-go de fre-cuen-cias de $[10\OML/cmm/m/it/10 Hz; \OT1/cmr/m/n/1
+0 10\OML/cmm/m/it/10 MHz\OT1/cmr/m/n/10 ]$,
+ []
+
+<../Ex2/Resources/ej2_hp_med_and_sim.png, id=146, 560.0925pt x 426.393pt>
+File: ../Ex2/Resources/ej2_hp_med_and_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_hp_med_and_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_hp_med_and_sim.png  used on input
+ line 363.
+(pdftex.def)             Requested size: 450.45047pt x 199.16855pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[26 <../Ex2/Resources/ej2_hp_gyrator_sim.png>]
+<../Ex2/Resources/ej2_bp.png, id=151, 258.9675pt x 173.64874pt>
+File: ../Ex2/Resources/ej2_bp.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_bp.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_bp.png  used on input line 395.
+(pdftex.def)             Requested size: 142.27054pt x 85.36154pt.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 413.
+
+<../Ex2/Resources/ej2_bp_gyrator.png, id=152, 399.4925pt x 274.02374pt>
+File: ../Ex2/Resources/ej2_bp_gyrator.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_bp_gyrator.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_bp_gyrator.png  used on input lin
+e 414.
+(pdftex.def)             Requested size: 200.19073pt x 113.8139pt.
+[27 <../Ex2/Resources/ej2_hp_med_and_sim.png> <../Ex2/Resources/ej2_bp.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../Ex2/Resources/ej2_bp_sim.png, id=158, 541.3023pt x 400.3758pt>
+File: ../Ex2/Resources/ej2_bp_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_bp_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_bp_sim.png  used on input line 47
+2.
+(pdftex.def)             Requested size: 450.4454pt x 256.093pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../Ex2/Resources/ej2_bp_gyrator_sim.png, id=159, 1898.09125pt x 911.405pt>
+File: ../Ex2/Resources/ej2_bp_gyrator_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_bp_gyrator_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_bp_gyrator_sim.png  used on input
+ line 485.
+(pdftex.def)             Requested size: 450.42485pt x 199.16075pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28 <../Ex2/Resources/ej2_bp_gyrator.png>] [29 <../Ex2/Resources/ej2_bp_sim.png
+> <../Ex2/Resources/ej2_bp_gyrator_sim.png>]
+<../Ex2/Resources/ej2_bp_med_and_sim.png, id=169, 559.3698pt x 426.393pt>
+File: ../Ex2/Resources/ej2_bp_med_and_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_bp_med_and_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_bp_med_and_sim.png  used on input
+ line 498.
+(pdftex.def)             Requested size: 450.44965pt x 256.07849pt.
+<../Ex2/Resources/ej2_br.png, id=170, 176.66pt x 173.64874pt>
+File: ../Ex2/Resources/ej2_br.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_br.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_br.png  used on input line 556.
+(pdftex.def)             Requested size: 142.26625pt x 85.36154pt.
+ [30 <../Ex2/Resources/ej2_bp_med_and_sim.png>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 573.
+
+<../Ex2/Resources/ej2_br_gyrator.png, id=176, 341.275pt x 329.23pt>
+File: ../Ex2/Resources/ej2_br_gyrator.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_br_gyrator.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_br_gyrator.png  used on input lin
+e 574.
+(pdftex.def)             Requested size: 200.19444pt x 113.81053pt.
+[31 <../Ex2/Resources/ej2_br.png> <../Ex2/Resources/ej2_br_gyrator.png>]
+<../Ex2/Resources/ej2_br_sim.png, id=182, 541.3023pt x 400.3758pt>
+File: ../Ex2/Resources/ej2_br_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_br_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_br_sim.png  used on input line 63
+6.
+(pdftex.def)             Requested size: 450.4454pt x 256.093pt.
+<../Ex2/Resources/ej2_br_gyrator_sim.png, id=183, 1898.09125pt x 911.405pt>
+File: ../Ex2/Resources/ej2_br_gyrator_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_br_gyrator_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_br_gyrator_sim.png  used on input
+ line 649.
+(pdftex.def)             Requested size: 450.42485pt x 199.16075pt.
+
+[32 <../Ex2/Resources/ej2_br_sim.png>]
+<../Ex2/Resources/ej2_br_med_and_sim.png, id=188, 560.0925pt x 426.393pt>
+File: ../Ex2/Resources/ej2_br_med_and_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_br_med_and_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_br_med_and_sim.png  used on input
+ line 662.
+(pdftex.def)             Requested size: 450.45047pt x 256.07849pt.
+ [33 <../Ex2/Resources/ej2_br_gyrator_sim.png> <../Ex2/Resources/ej2_br_med_and
+_sim.png>]
+<../Ex2/Resources/ej2_lp.png, id=194, 235.88126pt x 115.43124pt>
+File: ../Ex2/Resources/ej2_lp.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_lp.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_lp.png  used on input line 701.
+(pdftex.def)             Requested size: 142.26408pt x 85.35788pt.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 718.
+
+<../Ex2/Resources/ej2_lp_gyrator.png, id=195, 399.4925pt x 276.03125pt>
+File: ../Ex2/Resources/ej2_lp_gyrator.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_lp_gyrator.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_lp_gyrator.png  used on input lin
+e 719.
+(pdftex.def)             Requested size: 200.19073pt x 113.81374pt.
+[34 <../Ex2/Resources/ej2_lp.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../Ex2/Resources/ej2_lp_sim.png, id=200, 541.3023pt x 400.3758pt>
+File: ../Ex2/Resources/ej2_lp_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_lp_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_lp_sim.png  used on input line 78
+0.
+(pdftex.def)             Requested size: 450.4454pt x 256.093pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../Ex2/Resources/ej2_lp_gyrator_sim.png, id=201, 1898.09125pt x 911.405pt>
+File: ../Ex2/Resources/ej2_lp_gyrator_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_lp_gyrator_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_lp_gyrator_sim.png  used on input
+ line 793.
+(pdftex.def)             Requested size: 450.42485pt x 199.16075pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35 <../Ex2/Resources/ej2_lp_gyrator.png>] [36 <../Ex2/Resources/ej2_lp_sim.png
+> <../Ex2/Resources/ej2_lp_gyrator_sim.png>]
+<../Ex2/Resources/ej2_lp_med_and_sim.png, id=212, 772.8875pt x 289.08pt>
+File: ../Ex2/Resources/ej2_lp_med_and_sim.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_lp_med_and_sim.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_lp_med_and_sim.png  used on input
+ line 807.
+(pdftex.def)             Requested size: 450.43323pt x 199.16986pt.
+<../Ex2/Resources/ej2_pcb.png, id=213, 550.055pt x 550.055pt>
+File: ../Ex2/Resources/ej2_pcb.png Graphic file (type png)
+<use ../Ex2/Resources/ej2_pcb.png>
+Package pdftex.def Info: ../Ex2/Resources/ej2_pcb.png  used on input line 824.
+(pdftex.def)             Requested size: 199.16951pt x 199.16951pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [37 <../Ex2/Resources/ej2_lp_med_and_sim.png>] [38 <../Ex2/Resources/ej2_pcb.
+png>] ("Informe TP02 - Grupo 4.aux"
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 29575 strings out of 492902
+ 713222 string characters out of 3133550
+ 880131 words of memory out of 3000000
+ 33028 multiletter control sequences out of 15000+200000
+ 14434 words of font info for 50 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 64i,10n,79p,936b,901s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\lisan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmti12.pfb>
+Output written on "Informe TP02 - Grupo 4.pdf" (39 pages, 3864447 bytes).
+PDF statistics:
+ 287 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+

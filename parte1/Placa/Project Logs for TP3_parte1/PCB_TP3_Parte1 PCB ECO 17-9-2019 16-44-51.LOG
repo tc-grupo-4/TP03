@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=Vin Pin=SIGNAL-1
+Added Pin To Net: NetName=GND Pin=SIGNAL-2
+Added Member To Class: ClassName=Esquematico_TP3_parte1 Member=Component GND TP
+Added Room: Name=Esquematico_TP3_parte1
